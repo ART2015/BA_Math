@@ -1,0 +1,219 @@
+\chapter{Maxwell-Einstein Theorie}
+Dieser Teil soll die physikalischen Theorien vorstellen, die der
+Kaluza-Klein-Theorie zu Grunde liegen. Dazu zählt neben der 
+in ihrer heutigen Formulierung auf Maxwell zurückgehenden 
+Elektrodynamik, Einsteins allgemeine Relativitätstheorie. 
+Deutlich älter ist die Elektrodynamik, deren fundamentales Gesetz, die Konstanz
+der Lichtgeschwindigkeit, die Grundlage der speziellen Relativitätstheorie
+darstellt.
+Die Ähnlichkeit beider Theorien lässt hoffen, dass eine 
+übergeordnete Theorie beide als Spezialfälle enthält. 
+\section{Elektrodynamik}
+Die Elektrodynamik beschreibt das Wechselspiel von elektrischen und 
+magnetischen Feldern. Die Phänomenologie lässt sich mittels zweier glatter Vektorfelder
+$\vec{E},\vec{B}:\Reals^3\times\Reals\to \Reals^3$ beschreiben.
+Diese Felder erfüllen die auf Maxwell zurückgehenden Gleichungen 
+\begin{equation}
+  \begin{alignedat}{2}
+    \Div\vec{E} &= \rho\,,  & \qquad \Rot\vec{E}+\dpd{\vec{B}}{t}&
+    =0\,,\\
+    \Div\vec{B} &= 0\,,& \qquad\Rot\vec{B}-\dpd{\vec{E}}{t}&
+    =\vec{j}\,.
+  \end{alignedat}
+\end{equation}
+Zusätzlich muss eine weitere Gleichung hinzugefügt werden, die die Dynamik von
+Testteilchen\footnote{Ein Testteilchen ist ein idealisiertes Objekt, welches
+selbst die wirkenden Felder nicht beeinflusst.} beschreibt
+\begin{equation}
+m\ddot{\vec{x}}=\vec{F}(\vec{x},\dot{\vec{x}},t)
+=q\left[\vec{E}(\vec{x},t)+\dot{\vec{x}}\times\vec{B}(\vec{x},t)\right]\,,
+\end{equation}
+dabei ist $\vec{F}$ die so genannte \emph{Lorentzkraft} und $q$, $m$ die
+Ladung bzw. Masse des Teilchens.
+Es lässt sich mittels des Helmholtz-Theorems und der Form der Maxwell-Gleichung
+die Existenz von Potentialen $\vec{A}$, $\Phi$ folgern, sodass
+\begin{equation}
+\vec{B}=\Rot \vec{A}\,,\quad \vec{E}=-\Grad\Phi+\dpd{\vec{A}}{t}\,.
+\end{equation}
+Die Elektrodynamik ist eng mit der speziellen Relativitätstheorie verbunden.
+Diese lässt sich am besten mit Objekten der Differentialgeometrie beschreiben.
+Die Potentiale werden als Komponenten
+$\tensor{A}{^\mu}=(\Phi,\vec{A})\transpose$ einer 1-Form
+$A=\tensor{A}{_\mu}\dif\tensor{x}{^\mu}$ aufgefasst. Der Elektromagnetische Feldstärketensor ist definiert als
+\begin{equation}
+F:=\dif
+A\,,
+\end{equation}
+bzw. in lokalen Koordinaten
+\begin{equation}
+\tensor{F}{_\mu_\nu}:=\partial_\mu\tensor{A}{_\nu}-\partial_\nu\tensor{A}{_\mu}\,.
+\end{equation}
+Damit reduzieren sich die Maxwell-Gleichungen zu zwei Gleichungen
+\begin{align}
+\pdif{_\mu}\tensor{F}{^\mu^\nu}&=\tensor{J}{^\nu}
+\label{eq:MaxwellInhom}\\
+\pdif{_{\mu}}\tensor{F}{_\nu_{\rho}}+
+\pdif{_{\mu}}\tensor{F}{_\rho_{\nu}}+
+\pdif{_{\nu}}\tensor{F}{_\mu_{\rho}}&=0
+\label{eq:MaxwellHom}
+\end{align}
+% MW2= Jakobi?
+% Die Lagrange Dichte für das Elektromagnetische Feld im Vakuum $\tensor{J}{^\mu}=0$
+% \begin{equation}
+% \mathcal{L}\left[\partial_\mu
+% A(x),x\right]=-\frac{1}{4}\tensor{F}{_\mu_\nu}\tensor{F}{^\mu^\nu} \,.
+% \end{equation}
+% Wobei Beiträge die die Dynamik von Spin-$\nicefrac{1}{2}$ beschreiben nicht
+% berücksichtigt wurden. 
+\subsection{Eichtransformationen}
+\section{Allgemeine Relativitätstheorie}
+\subsection{Einsteinsche Feldgleichungen}
+Die Einsteinschen Feldgleichungen lauten\footnote{Der Term proportional zur
+kosmologischen Konstante $\Lambda$ hat über kleine Distanzen
+vernachlässigbaren Einfluss und wird im Folgenden nicht berücksichtigt.}
+\begin{equation}
+\tensor{R}{_\mu_\nu} - \frac{R}{2}\, \tensor{g}{_\mu_\nu}
++\Lambda\, \tensor{g}{_\mu_\nu}
+=\tensor{T}{_\mu_\nu}\,.
+\end{equation}
+Der Tensor $\tensor{T}{_\mu_\nu}$ heißt \emph{Energie-Impuls-Tensor} und
+enthält Information über die Materie, d.h. über die Felder im Raum. Im Vakuum
+gilt $\tensor{T}{_\mu_\nu}=0$.
+Bilden wir die Spur der Einsteingleichungen so finden wir das die Skalarkrümmung
+$R$ verschwindet:
+\begin{equation}
+0=R- \frac{R}{2}\, \tensor{g}{^\mu_\mu}= -R\,.
+\end{equation}
+Einsetzen in die Einsteingleichungen liefert wiederum
+\begin{equation}
+\tensor{R}{_\mu_\nu}=0\,.
+\end{equation}
+\subsection{Variationsprinzip}
+Eine elegante Ableitung der Einsteingleichungen ergibt sich mithilfe eines auf
+Hilbert zurückgehenden Variationsprinzips. 
+Die Idee lautet: wähle die Metrik $g$ als kritischen
+Punkt eines Funktionales, dass nur von der Krümmung abhängt. Das
+einfachste solche Funktional ist die so genannte
+\emph{Einstein-Hilbert-Wirkung}
+\begin{equation}
+S\textsubscript{EH}[g]=\int_{M}\sqrt{-g}R[g] \dif{}^4x \,.
+\end{equation}
+Bei der Variation dieses Funktionals treten verschiedene Terme auf. Wir
+betrachten zunächst den Volumenfaktor $\sqrt{-g}$
+\begin{equation}
+\delta g = g  \tensor{g}{^\mu^\nu}\delta\tensor{g}{_\mu_\nu}
+\end{equation}
+\begin{equation}
+\begin{split}
+\delta \sqrt{-g} 
+&= -\frac{1}{2\sqrt{-g}}\delta g \\
+&= \frac{1}{2} \sqrt{-g} \left(\tensor{g}{^\mu^\nu} \delta
+\tensor{g}{_\mu_\nu}\right)\\
+&= -\frac{1}{2} \sqrt{-g} \left(\tensor{g}{_\mu_\nu} \delta
+\tensor{g}{^\mu^\nu}\right)
+\end{split}
+\end{equation}
+Um die Variation des Krümmungskalars zu berechnen wähle man zweckmäßigerweise
+ein Riemannsches Normalkoodinatensystem\footnote{Ein Koordinatensystem in dem
+$\cSym{\rho}{\mu}{\sigma}=0$ im betrachteten Punkt},
+\begin{equation}
+\begin{split}
+\delta \tensor{R}{^\rho_\mu_\nu_\sigma}
+&=\delta \tensor{\partial}{_\nu}\cSym{\rho}{\mu}{\sigma}
+-\delta \tensor{\partial}{_\mu}\cSym{\rho}{\nu}{\sigma}\\
+&=\tensor{\partial}{_\nu}\delta \cSym{\rho}{\mu}{\sigma}
+-\tensor{\partial}{_\mu}\delta \cSym{\rho}{\nu}{\sigma}\\
+\end{split}
+\end{equation}
+\begin{equation}
+\begin{split}
+\delta \tensor{R}{_\mu_\nu}
+&=\delta \tensor{R}{^\rho_\mu_\rho_\nu}\\
+&=\tensor{\partial}{_\rho}\delta \cSym{\rho}{\mu}{\nu}
+-\tensor{\partial}{_\mu}\delta \cSym{\rho}{\rho}{\nu}\\
+&=\tensor{\nabla}{_\rho}\delta \cSym{\rho}{\mu}{\nu}
+-\tensor{\nabla}{_\mu}\delta \cSym{\rho}{\rho}{\nu}\\
+\end{split}
+\end{equation}
+Die Gleichung ist koordinatenunabhängig, da sie eine Tensor Gleichung ist.
+Weiter berechnet man 
+\begin{equation}
+\begin{split}
+\delta R &=\delta \left(\tensor{g}{^\mu^\nu}\tensor{R}{_\mu_\nu}\right)\\
+&=\tensor{R}{_\mu_\nu}\delta\tensor{g}{^\mu^\nu}
++\tensor{g}{^\mu^\nu}\delta\tensor{R}{_\mu_\nu}\,.
+\end{split}
+\end{equation}
+Damit ist die Variation des EH-Funktionals gegeben als
+\begin{equation}
+\begin{split}
+\delta S\textsubscript{EH}
+&=\fourint \left[
+R\delta\sqrt{-g}+\sqrt{-g}\delta R\right]\\
+&=\fourint \left[
+\frac{1}{2}\sqrt{-g}\tensor{g}{^\mu^\nu}\delta\tensor{g}{_\mu_\nu}
+R+\sqrt{-g}\left(\tensor{R}{_\mu_\nu}\delta\tensor{g}{^\mu^\nu}
++\tensor{g}{^\mu^\nu}\delta\tensor{R}{_\mu_\nu}\right)\right]\\
+&=\fourint \sqrt{-g}\left(
+\frac{1}{2}\tensor{g}{^\mu^\nu}
+R+\tensor{R}{^\mu^\nu}\right)\delta\tensor{g}{_\mu_\nu}
++\fourint \sqrt{-g}\tensor{g}{^\mu^\nu}\delta\tensor{R}{_\mu_\nu}
+\,.
+\end{split}
+\end{equation}
+Das zweite Integral liefert nur einen Oberflächenterm:
+\begin{equation}
+\begin{split}
+\fourint \sqrt{-g}\tensor{g}{^\mu^\nu}\delta\tensor{R}{_\mu_\nu}
+&=\fourint \sqrt{-g}\tensor{g}{^\mu^\nu}\left(\tensor{\nabla}{_\rho}\delta
+\cSym{\rho}{\mu}{\nu} -\tensor{\nabla}{_\mu}\delta \cSym{\rho}{\rho}{\nu}\right)
+\\
+&=\fourint \tensor{\nabla}{_\rho}\left(\sqrt{-g}\tensor{g}{^\mu^\nu}\delta
+\cSym{\rho}{\mu}{\nu}\right)-\int\dif{}^4 x \tensor{\nabla}{_\mu}\left(\sqrt{-g}\tensor{g}{^\mu^\nu}\delta
+\cSym{\rho}{\rho}{\nu}\right)\,.
+\end{split}
+\end{equation}
+Damit verbleibt 
+\begin{equation}
+\begin{split}
+\delta S\textsubscript{EH}
+&=\fourint \sqrt{-g}\left(
+\frac{1}{2}\tensor{g}{^\mu^\nu}
+R+\tensor{R}{^\mu^\nu}\right)\delta\tensor{g}{_\mu_\nu}\,.
+\end{split}
+\end{equation}
+Wir können also die Variation nach der Metrik berechnen 
+\begin{equation}
+\frac{\delta
+S\textsubscript{EH}[\tensor{g}{_\mu_\nu}(x)]}{\delta\tensor{g}{_\mu_\nu}(x')}
+=\sqrt{-g}\left(\frac{1}{2}\tensor{g}{^\mu^\nu}
+R+\tensor{R}{^\mu^\nu}\right)
+\end{equation}
+Die Extremalforderung impliziert
+\begin{equation}
+\tensor{R}{^\mu^\nu}+\frac{R}{2}\tensor{g}{^\mu^\nu}=0\, .
+\end{equation}
+Die Einsteingleichungen lassen sich also aus dem Variationsprinzip herleiten.
+\subsection{Skalar-Tensor Theorien}
+Brans-Dicke-Theorie
+\section{Gemeinsamkeiten und Unterschiede}
+Unterschiede:
+\begin{itemize}
+  	\item Lorentz-Kraft muss postuliert werden. Reine ART enthält keine Kräfte,
+ 	alle Teilchen bewegen sich frei auf Geodätischen.
+	\item Ladung hat zwei Vorzeichen, d.h. es kann mittels umgekehrter Ladung
+	entschieden werden ob man frei fällt oder nicht
+	\item Die Einsteingleichungen sind nichtlinear und zweiter Ordnung die
+	Maxwellgleichungen linear und erster Ordnung
+\end{itemize}
+Gemeinsamkeiten:
+\begin{itemize}
+  	\item Diffeomorphismeninvarianz/Eichinvarianz
+	\item In der nichtrelativistischen Näherung $1/r^2$ Gesetz.
+	\item Massenloses bosonisches Vermittlerteilchen.
+\end{itemize}
+Insgesamt lässt sich hoffen das eine vereinheitlichte Theorie so formuliert
+werden kann das sie einerseits die Ähnlichkeiten erklärt und auf gemeinsame
+Ursachen zurückführt, andererseits aber auch Gründe für die Unterschiede gibt
+bzw. diese möglicherweise ausräumt.
+

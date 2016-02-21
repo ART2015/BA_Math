@@ -1,0 +1,537 @@
+\chapter{Kaluzas erste Schritte}
+Wie bereits in den vorherigen Kapiteln klar wurde, weißt die Struktur von
+Elektromagnetismus und allgeneiner Relativitätstheorie deutliche Parallelen auf.
+Dies wurde bereits in den ersten Jahren nach der Entwicklung der
+allgemeinen Relativitätstheorie untersucht und mündete
+unter anderem in Theorien von \name{H. Weyl}\cite{weyl1918gravitation} und
+\name{G. Nordström} \cite{nordstrom1914moglichkeit}.
+
+Dem Finnen \name{Nordström} gebührt dabei die Ehre, als Erster den
+Elektromagnetismus als Phänomen einer fünfdimensionalen Raumzeit zu deuten.
+Dabei baute seine Theorie auf der \name{Nordström}schen Gravitationstheorie
+auf, welche allerdings verworfen wurde, da Voraussagen macht, welche nicht in
+Einklang mit den Beobachtungen stehen\footnote{Beispielsweise drastische
+Abweichungen in der Gravitationellen Zeitverschiebung und der Periheldrehung des Merkur.} .
+Nicht zuletzt deshalb fand die Theorie seinerzeit wenig Beachtung, ist heute
+allerdings weiterhin von theoretischem Interesse.
+\name{Kaluza} bezieht sich vor allem auf \name{Weyl}s Arbeit, die aber ihrem
+Charakter nach deutlich verschieden von der \name{Kaluza}-Theorie ist.
+\section{Kaluza-Theorie}
+\name{Kaluza} erkennt die Verwandschaft der Theorien an der Form der
+Christoffelsymbolen. Dazu bemerkt er\cite{kaluza1921unitatsproblem}:
+%zu welcher er bei dem Vortrag \enquote{zum Unitätsproblem der Physik}
+\begin{quote}
+Die Rotorform der elektromagnetischen Feldkomponenten
+$\tensor{F}{_\mu_\nu}$, noch mehr aber das
+unverkennbare formale Entsprechen im Bau der Gravitations- 
+und der elektromagnetischen Gleichungen fordern förmlich
+die Vermutung heraus, die Feldkomponenten könnten so etwas wie
+verstümmelte Dreizeigergrößen [Christoffelsymbole] sein.
+\end{quote}
+Er bezieht sich dabei darauf das die Gestalt der Christoffelsymbole erster Art
+\begin{equation}
+\tensor*{\Gamma}{_\lambda_\mu_\nu}=\frac{1}{2}
+\left(\tensor{\partial}{_\nu} \tensor{g}{_\lambda_\mu} +
+\tensor{\partial}{_\mu}
+\tensor{g}{_\lambda_\nu} - \tensor{\partial}{_\lambda} 
+\tensor{g}{_\mu_\nu}\right)\,,
+\end{equation}
+welche formal identisch zu 
+\begin{equation}
+\tensor{F}{_\mu_\nu}=\partial_\mu\tensor{A}{_\nu}-\partial_\nu\tensor{A}{_\mu}\,.
+\end{equation}
+wären, falls einer der Terme vom Typ $\tensor{\partial}{_\nu}
+\tensor{g}{_\lambda_\mu}$ wegfiele.
+
+Um die Gravitation mit der Elektrodynamik zu vereinigen werden aber zunächst 
+zusätzliche Freiheitsgrade benötigt, die bereits in $\tensor{g}{_\mu_\nu}$
+enthaltenen sind für die Gravitation verbraucht.
+Statt des üblichen Minkovski Raums $\Reals^4$ (bzw. einer entsprechenden
+Riemanschen Manigfaltigkeit), führen wir eine zusätzliche fünfte Raumdimension
+ein sodass wir lokal homöomorph zu $\Reals^5$ sind. 
+Die neue Koordinate benennen wir $\tensor{x}{^4}$\footnote{Kaluza
+bezeichnet die Zusatzkomponente mit $x^0$, was bei uns für die Zeitkomponente
+vorbehalten ist.}.
+Dadurch stehen zusätzlich fünf
+unabhängige Freiheitsgrade $\tensor{\hat{g}}{_4_i}$ zur Verfügung. Da eine
+fünften Raumdimension nicht beobachtet wird, fordert Kaluza zuätzlich das die
+Metrik nicht von der neuen Koordinate abhängt
+\begin{equation}
+\tensor{\partial}{_4} \tensor{\hat{g}}{_i_j}=0\,,\label{eq:Zylinderbed}
+\end{equation}
+die sogenannte \emph{Zylinderbedingung}.
+%TODO Erklären wieso die so heißt
+Es mag jetzt zunächst so erscheinen als ob die Zusaztdimension dadurch überhaupt
+keinen Einfluss mehr auf die Physik hätte. Das dem nicht so ist zeigt sich im
+Folgenden.
+
+Kommen wir zu den Christoffelsymbolen zurück, die 
+Ausgangspunkt unserer Überlegungen waren. In fünf Dimensionen haben diese die
+Gestalt
+\begin{equation}
+\tensor*{\hat{\Gamma}}{_i_j_k}=\frac{1}{2}
+\left(\tensor{\partial}{_i}
+\tensor{\hat{g}}{_k_j}+\tensor{\partial}{_j} \tensor{\hat{g}}{_k_i} -
+\tensor{\partial}{_k} \tensor{\hat{g}}{_i_j}\right)\, .
+\end{equation}
+% \begin{equation}
+% \tensor*{\Gamma}{_\lambda_\mu_\nu}=\frac{1}{2}
+% \left(\tensor{\partial}{_\lambda} \tensor{g}{_\mu_\nu} + \tensor{\partial}{_\mu} \tensor{g}{_\lambda_\nu} -
+% \tensor{\partial}{_\nu} \tensor{g}{_\lambda_\mu}\right)
+% \end{equation}
+Mit der Zylinderbedingung \eqref{eq:Zylinderbed} findet man 
+\begin{equation}
+\begin{split}
+\tensor*{\hat{\Gamma}}{_4_\mu_\nu}&=\frac{1}{2}
+	\left(\tensor{\partial}{_4}\tensor{\hat{g}}{_\mu_\nu} 
++ 	\tensor{\partial}{_\mu}\tensor{\hat{g}}{_\nu_4} 
+- 	\tensor{\partial}{_\nu}\tensor{\hat{g}}{_4_\mu}\right)\\
+&=\frac{1}{2}
+\left(\tensor{\partial}{_\mu}
+\tensor{\hat{g}}{_4_\nu} - \tensor{\partial}{_\nu}
+\tensor{\hat{g}}{_4_\mu}\right)\,,
+\end{split}
+\end{equation}
+also tatsächlich die gewünschte \enquote{Rotorform}. 
+Für die verbleibenden unabhängigen Komponenten ergibt sich analog
+\begin{align}
+\tensor*{\hat{\Gamma}}{_\mu_\nu_4}&=\frac{1}{2}
+\left(\tensor{\partial}{_\mu}
+\tensor{\hat{g}}{_4_\nu}+\tensor{\partial}{_\nu}
+\tensor{\hat{g}}{_4_\mu}\right)\,,\\
+\tensor*{\hat{\Gamma}}{_4_\mu_4}&=-\tensor*{\hat{\Gamma}}{_\mu_4_4}=\frac{1}{2}\tensor{\partial}{_\mu}
+\tensor{\hat{g}}{_4_4}\,,\\
+\tensor*{\hat{\Gamma}}{_4_4_4}&= 0\,.
+\end{align}
+Es liegt nahe die neue
+Feldkomponente
+$\tensor{\hat{g}}{_4_\mu}$ mit
+dem Viererpotential $ $ zu verknüpfen
+\begin{equation}
+\tensor{\hat{g}}{_4_\mu}=2\alpha\tensor{A}{_\mu}\,.
+\end{equation}
+Die Proportionalitätskonstante $\alpha$ wird dabei erst später angepasst.
+ Weiter benötigen wir neben der antisymmetrisierten
+Ableitung $\tensor{F}{_\mu_\nu}=\tensor{\partial}{_{[\mu}}\tensor{A}{_{\nu]}}$, auch die
+symmetrisierte Form $\tensor{\partial}{_{(\mu}}\tensor{A}{_{\nu)}}$, um alle
+auftretenden Terme abzudecken. Dazu führen wir das \emph{Nebenfeld}
+\begin{equation}
+\tensor{H}{_\mu_\nu}:=\tensor{\partial}{_{(\mu}}\tensor{A}{_{\nu)}}=\partial_\mu\tensor{A}{_\nu}+\partial_\nu\tensor{A}{_\mu}
+\end{equation}
+ein. Zuletzt identifizieren wir die Größe $\tensor{\hat{g}}{_4_4}$  mit einem
+Skalar\footnote{Bei Kaluza als \emph{Eckpotential} bezeichnet.}
+\begin{equation}
+\phi:=\frac{1}{2}\tensor{\hat{g}}{_4_4}\,.
+\end{equation}
+Die unabhängigen Christoffelsymbole sind damit von der Gestalt
+% \begin{align}
+% \tensor*{\hat{\Gamma}}{_\lambda_\mu_\nu}&=\tensor*{\Gamma}{_\lambda_\mu_\nu}\,,\\
+% \tensor*{\hat{\Gamma}}{_\mu_\nu_4}&=-\alpha \tensor{H}{_\mu_\nu}\, ,\\
+% \tensor*{\hat{\Gamma}}{_4_\mu_\nu}&=\alpha\tensor{F}{_\mu_\nu}\,,\\
+% \tensor*{\hat{\Gamma}}{_4_4_\mu}&=-\tensor*{\hat{\Gamma}}{_4_\mu_4}
+% =\tensor{\partial}{_\mu}\phi\,.
+% \end{align}
+% \begin{equation}
+%     \tensor*{\hat{\Gamma}}{_\lambda_\mu_\nu}=\tensor*{\Gamma}{_\lambda_\mu_\nu}\,,
+%     \quad\tensor*{\hat{\Gamma}}{_\mu_\nu_4}=-\alpha \tensor{H}{_\mu_\nu}\,,
+%     \quad\tensor*{\hat{\Gamma}}{_4_\mu_\nu}=\alpha\tensor{F}{_\mu_\nu}\,,
+%    \quad\tensor*{\hat{\Gamma}}{_4_4_\mu}=-\tensor*{\hat{\Gamma}}{_4_\mu_4}=\tensor{\partial}{_\mu}\phi\,.
+% \end{equation}
+\begin{equation}
+  \begin{alignedat}{2}
+    \tensor*{\hat{\Gamma}}{_\lambda_\mu_\nu}&=\tensor*{\Gamma}{_\lambda_\mu_\nu}\,,
+    & \qquad \tensor*{\hat{\Gamma}}{_4_\mu_\nu}&=\alpha\tensor{F}{_\mu_\nu},\\
+    \tensor*{\hat{\Gamma}}{_\mu_\nu_4}&=-\alpha \tensor{H}{_\mu_\nu}\,,&
+    \qquad\quad\tensor*{\hat{\Gamma}}{_4_4_\mu}&=-\tensor*{\hat{\Gamma}}{_4_\mu_4}=\tensor{\partial}{_\mu}\phi\,.
+  \end{alignedat}
+\end{equation}
+\begin{lemma}
+\label{lemma:Christrel}
+Die Christoffelsymbole erfüllen die Relation
+\begin{equation}
+\pdif{_m}\left(\tensor*{\hat{\Gamma}}{_i_k_\ell}+\tensor*{\hat{\Gamma}}{_k_\ell_i}+\tensor*{\hat{\Gamma}}{_\ell_i_k}\right)
+=\tensor*{\hat{\Gamma}}{_m_i_k_{,\ell}}+\tensor*{\hat{\Gamma}}{_m_k_\ell_{,i}}+\tensor*{\hat{\Gamma}}{_m_\ell_i_{,k}}\,.
+\end{equation}
+\end{lemma}
+\begin{proof}
+\begin{equation*}
+\begin{split}
+\pdif{_m}\left(\tensor*{\hat{\Gamma}}{_i_k_\ell}+\tensor*{\hat{\Gamma}}{_k_\ell_i}+\tensor*{\hat{\Gamma}}{_\ell_i_k}\right)
+&=\tensor*{\hat{\Gamma}}{_i_k_\ell_{,m}}+\tensor*{\hat{\Gamma}}{_k_\ell_i_{,m}}+\tensor*{\hat{\Gamma}}{_\ell_i_k_{,m}}\\
+&=\frac{1}{2}
+\left( \tensor{\hat{g}}{_\ell_i_{,km}} + \tensor{\hat{g}}{_\ell_k_{,im}}
+-\tensor{\hat{g}}{_i_k_{,\ell m}}\right)\\
+&\phantom{=}+\frac{1}{2}\left( \tensor{\hat{g}}{_i_\ell_{,km}} +
+\tensor{\hat{g}}{_i_k_{,\ell m}} -\tensor{\hat{g}}{_k_\ell_{,im}}\right)\\
+&\phantom{=}+\frac{1}{2}\left( \tensor{\hat{g}}{_k_\ell_{,im}} +
+\tensor{\hat{g}}{_k_i_{,\ell m}} -\tensor{\hat{g}}{_i_\ell_{,km}}\right)\\
+&=\frac{1}{2}
+\left( \tensor{\hat{g}}{_\ell_i_{,km}} + \tensor{\hat{g}}{_\ell_k_{,im}}
++\tensor{\hat{g}}{_i_k_{,\ell m}}\right)\\
+\end{split}
+\end{equation*}
+Durch Nulladdition von $\tensor{\hat{g}}{_k_m_{,i\ell}}$, $
+\tensor{\hat{g}}{_i_m_{,\ell k}}$ und
+$\tensor{\hat{g}}{_i_m_{,\ell k}}$ erhält man
+\begin{equation}
+\begin{split}
+\pdif{_m}\left(\tensor*{\hat{\Gamma}}{_i_k_\ell}+\tensor*{\hat{\Gamma}}{_k_\ell_i}+\tensor*{\hat{\Gamma}}{_\ell_i_k}\right)
+&=\frac{1}{2}
+\left( \tensor{\hat{g}}{_k_m_{,i\ell}} + \tensor{\hat{g}}{_k_i_{,m\ell}}
+-\tensor{\hat{g}}{_m_i_{,k\ell}}\right)\\
+&\phantom{=}+\frac{1}{2}\left( \tensor{\hat{g}}{_\ell_m_{,ki}} +
+\tensor{\hat{g}}{_\ell_k_{,mi}} -\tensor{\hat{g}}{_m_k_{,\ell i}}\right)\\
+&\phantom{=}+\frac{1}{2}\left( \tensor{\hat{g}}{_i_m_{,\ell k}} +
+\tensor{\hat{g}}{_i_\ell_{,mk}} -\tensor{\hat{g}}{_m_\ell_{,ik}}\right)\\
+&=\tensor*{\hat{\Gamma}}{_m_i_k_{,\ell}}+\tensor*{\hat{\Gamma}}{_m_k_\ell_{,i}}+\tensor*{\hat{\Gamma}}{_m_\ell_i_{,k}}
+\,. \qedhere
+\end{split}
+\end{equation}
+\end{proof}
+Lemma~\ref{lemma:Christrel} impliziert dann für $m=4$, zusammen mit der
+Zylinderbedingung
+\begin{equation}
+0=\tensor*{\hat{\Gamma}}{_4_i_k_{,\ell}}+\tensor*{\hat{\Gamma}}{_4_k_\ell_{,i}}+\tensor*{\hat{\Gamma}}{_4_\ell_i_{,k}}\,.
+\label{eq:fdchristrel}
+\end{equation}
+Setzt man $\ell = \lambda$, $i=\nu$, $k = \mu$, erhält man weiter 
+\begin{equation}
+\begin{split}
+0&=\tensor*{\hat{\Gamma}}{_4_\nu_\mu_{,\lambda}}
++\tensor*{\hat{\Gamma}}{_4_\mu_\lambda_{,\nu}}
++\tensor*{\hat{\Gamma}}{_4_\lambda_\nu_{,\mu}}\\
+&=\alpha\left(\tensor{F}{_\nu_\mu_{,\lambda}}
++\tensor{F}{_\mu_\lambda_{,\nu}}
++\tensor{F}{_\lambda_\nu_{,\mu}}\right)\,,
+\end{split}
+\end{equation}
+die homogenen Maxwellgleichungen \eqref{eq:MaxwellHom}. Alle weiteren
+Relationen, welche sich aus \eqref{eq:fdchristrel} ableiten lassen sind
+trivial
+\footnote{Zum einen erhält man falls zwei Indizes gleich vier sind
+$0=\tensor{\phi}{_{,\nu\mu}}-\tensor{\phi}{_{,\mu\nu}}$, was aber nach dem
+Satz von Schwarz für beliebige glatte $\phi$ erfüllt ist. Falls alle
+Indizes gleich vier sind, verschwindet auch die rechte Seite der Gleichung.}.
+%für
+% $\ell = 4$, $i=\nu$, $k = \mu$ erhält man weiter
+% \begin{equation}
+% \begin{split}
+% 0&=\tensor*{\hat{\Gamma}}{_4_\nu_\mu_{,4}}
+% +\tensor*{\hat{\Gamma}}{_4_\mu_4_{,\nu}}
+% +\tensor*{\hat{\Gamma}}{_4_4_\nu_{,\mu}}\\
+% &=\tensor{\phi}{_{,\nu\mu}}-\tensor{\phi}{_{,\mu\nu}}
+% \end{split}
+% \end{equation}
+% Was nach dem Satz von Schwartz erfüllt ist. Wenn mindestens zwei Indizes 4 sind
+% ist die Gleichung mit der Zylinderbedingung ref erfüllt.
+
+Wir wollen nun weiter überprüfen, welche Gleichungen sich aus den
+fünfdimensionalen Analogien der Feld- und Geodätengleichugen ergeben.
+Kaluza führte seine Berechnungen in der linearisierten Theorie durch, d.h. 
+die auftretenden Energien sind klein.
+%TODO wie klein
+In der linearisierten Theorie gilt insbesondere
+\begin{align}
+\Gamma^2&\approx 0\tag{N1}\label{eq:N1}\,,\\
+R&\approx 0\tag{N2}\label{eq:N2}\,,
+\end{align}
+wobei $\Gamma^2$ einen beliebigen, quadratischen Ausdruck in den
+Christoffelsymbolen bezeichne.
+Zur Berechnung des Ricci Tensors
+$\tensor{\hat{R}}{_i_j}$ ist die folgende Formel nützlich:
+\begin{equation}
+\tensor{\hat{R}}{_i_j}=\tensor{\partial}{_l}\tensor*{\hat{\Gamma}}{^l_i_j}
+-\tensor*{\hat{\Gamma}}{^m_i_l}\tensor*{\hat{\Gamma}}{^l_j_m}
+-\tensor{\nabla}{_j}\left[\tensor{\partial}{_i}\left(\log\sqrt{-\hat{g}}\right)\right]\,
+.\end{equation}
+Insbesondere gilt aufgrund der Zylinderbedingung und der Näherungen
+\eqref{eq:N1}`
+%TODO wie schauts mit RNKS aus sind die resultierenden gleichungen tensoriell?
+\begin{equation}
+\tensor{\hat{R}}{_4_j}=\tensor{\partial}{_\ell}\tensor*{\hat{\Gamma}}{^\ell_4_j}
+=\tensor{\partial}{^\ell}\tensor*{\hat{\Gamma}}{_4_j_\ell}
+=\tensor{\partial}{^\lambda}\tensor*{\hat{\Gamma}}{_4_j_\lambda}\,.
+\end{equation}
+% \begin{equation}
+% \tensor{\hat{R}}{_4_j}=\tensor{\partial}{_\lambda}\tensor*{\hat{\Gamma}}{^\lambda_4_j}
+% -\tensor*{\hat{\Gamma}}{^m_4_l}\tensor*{\hat{\Gamma}}{^l_j_m}\,
+% .\end{equation}
+Damit berechnen wir für die zuätzlichen Komponenten von $\tensor{\hat{R}}{_i_j}$ 
+% \begin{equation}
+% \begin{split}
+% \tensor{\hat{R}}{_4_4}
+% &=\tensor{\partial}{_\lambda}\tensor*{\hat{\Gamma}}{^\lambda_4_4}
+% -\tensor*{\hat{\Gamma}}{^m_4_l}\tensor*{\hat{\Gamma}}{^l_4_m}\\
+% &=\tensor{\partial}{_\lambda}\tensor*{\hat{\Gamma}}{^\lambda_4_4}
+% -\tensor*{\hat{\Gamma}}{^\mu_4_\lambda}\tensor*{\hat{\Gamma}}{^\lambda_4_\mu}
+% -\tensor*{\hat{\Gamma}}{^\mu_4_4}\tensor*{\hat{\Gamma}}{^4_4_\mu}
+% -\tensor*{\hat{\Gamma}}{^4_4_\lambda}\tensor*{\hat{\Gamma}}{^\lambda_4_4}
+% \\
+% &=-\tensor{\partial}{_\lambda}\tensor{\partial}{^\lambda}\phi
+% -\alpha^2\tensor{F}{^\mu_\lambda}\tensor{F}{^\lambda_\mu}
+% +\tensor{\partial}{^\mu}\phi\tensor{\partial}{_\mu}\phi
+% +\tensor{\partial}{_\lambda}\phi\tensor{\partial}{^\lambda}\phi\\
+% &=-\alpha^2\tensor{F}{_\mu_\nu}\tensor{F}{^\mu^\nu}-\square\phi
+% +2\tensor{\partial}{^\mu}\phi\tensor{\partial}{_\mu}\phi
+% \end{split}
+% \end{equation}
+% \begin{equation}
+% \begin{split}
+% \tensor{\hat{R}}{_4_\nu}
+% &=\tensor{\partial}{_\lambda}\tensor*{\hat{\Gamma}}{^\lambda_4_\nu}
+% -\tensor*{\hat{\Gamma}}{^m_4_l}\tensor*{\hat{\Gamma}}{^l_\nu_m}\\
+% &=\tensor{\partial}{_\lambda}\tensor*{\hat{\Gamma}}{^\lambda_4_\nu}
+% -\tensor*{\hat{\Gamma}}{^\mu_4_\lambda}\tensor*{\hat{\Gamma}}{^\lambda_\nu_\mu}
+% -\tensor*{\hat{\Gamma}}{^\mu_4_4}\tensor*{\hat{\Gamma}}{^4_\nu_\mu}
+% -\tensor*{\hat{\Gamma}}{^4_4_\lambda}\tensor*{\hat{\Gamma}}{^\lambda_\nu_4}\\
+% &=-\alpha\tensor{\partial}{_\lambda}\tensor{F}{^\lambda_\nu}
+% +\alpha\tensor{F}{^\mu_\lambda}\tensor*{\Gamma}{^\lambda_\nu_\mu}
+% +\alpha\tensor{\partial}{^\mu}\phi\tensor{H}{_\nu_\mu}
+% -\alpha\tensor{\partial}{_\lambda}\phi\tensor{F}{^\lambda_\nu}\\
+% &=-\alpha\left(\tensor{\partial}{^\mu}\tensor{F}{_\mu_\nu}
+% +\tensor*{\Gamma}{_\lambda_\mu_\nu}\tensor{F}{^\mu^\lambda}
+% +2\tensor{\partial}{^\mu}\phi\tensor{\partial}{_\nu}\tensor{A}{_\mu}\right)
+% \end{split}
+% \end{equation}
+\begin{equation}
+\tensor{\hat{R}}{_4_4}
+=\tensor{\partial}{^\lambda}\tensor*{\hat{\Gamma}}{_4_4_\lambda}
+=\tensor{\partial}{^\lambda}\tensor{\partial}{_\lambda}\phi=\square\phi\,, 
+\end{equation}
+für die 44 Komponente, sowie 
+\begin{equation}
+\tensor{\hat{R}}{_4_\nu}
+=\tensor{\partial}{^\lambda}\tensor*{\hat{\Gamma}}{_\lambda_4_\nu}
+=-\alpha\tensor{\partial}{^\lambda}\tensor{F}{_\lambda_\nu}
+=:-\alpha\tensor{J}{_\nu}\,.
+\end{equation}
+Trivialerweise gilt zudem $\tensor{\hat{R}}{_\mu_\nu}=\tensor{R}{_\mu_\nu}$. Die
+, auf 5 dimensionen verallgemeinerten, Feldgleichungen sind unter Näherung
+\eqref{eq:N2} und mit Annahme verschwindender kosmologischer Konstante
+\begin{equation}
+\kappa\tensor{\hat{T}}{_i_j}=\tensor{\hat{R}}{_i_j}\,.
+\end{equation}
+Damit ergeben sich zusätzlich zu den vierdimensionalen Einsteinschen
+Feldgleichungen
+\begin{equation}
+\kappa\tensor{\hat{T}}{_4_4}=-\square\phi, \quad
+\kappa\tensor{\hat{T}}{_4_\mu}=-\alpha\tensor{J}{_\mu}\,.\label{eq:ZusatzFG}
+\end{equation}
+Die $\tensor{\hat{T}}{_4_4}$ Komponente entspricht also der Masse des Feldes
+$\phi$, $\tensor{\hat{T}}{_4_\mu}$ ist proportional zur Stromdichte.
+ Wir definieren die Fünfergeschwindigkeit $\tensor{\hat{u}}{_i}$
+\begin{equation}
+\tensor{\hat{u}}{_i}:=\dod{\tensor{x}{_i}}{\hat{\tau}}\,,
+\quad\dif\hat{\tau}^2=\tensor{\hat{g}}{_i_j}\dif\tensor{x}{^i}\dif\tensor{x}{^j}\,.
+\end{equation}
+Im Weiteren machen wir zusätzlich die Näherung, dass alle
+Geschwindigkeiten\footnote{Im Fall von $\tensor{u}{_4}$ spricht man
+besser von kleiner spezifischer Ladung.} klein sind, sprich
+\begin{equation}
+\tensor{\hat{u}}{_1},\tensor{\hat{u}}{_2},\tensor{\hat{u}}{_3},\tensor{\hat{u}}{_4}\ll 1
+\,,\quad\tensor{\hat{u}}{_0}\approx 1\, .\tag{N3}\label{eq:N3}
+\end{equation}
+Wir beschreiben unser System durch Staub, d.h. wir vernachlässigen den Druck. 
+Den zugehörigen Energie-Impuls-Tensor $\tensor{T}{_\mu_\nu}$
+verallgemeinern wir auf fünf Dimensionen
+\begin{equation}
+\tensor{\hat{T}}{_i_j}=\mu_0\tensor{\hat{u}}{_i}\tensor{\hat{u}}{_j}\, ,
+\end{equation}
+wobei $\mu_0$ die Ruhemassendichte des Staubs bezeichnet. Für die
+Zusatzkomponenten findet man 
+\begin{equation}
+\tensor{\hat{T}}{_4_\mu}
+=\mu_0\tensor{\hat{u}}{_4}\tensor{\hat{u}}{_\mu}\approx\mu_0\tensor{\hat{u}}{_4}\tensor{u}{_\mu}\,,
+\label{eq:StaubEMTens}
+\end{equation}
+da wegen \eqref{eq:N3} auch $\dif\hat{\tau}\approx\dif\tau$ gilt.
+Dabei ist $\tensor{u}{_\mu}$ die gewöhnliche Vierergeschwindigkeit.
+Setz man jetzt \eqref{eq:ZusatzFG} und \eqref{eq:StaubEMTens} gleich so erhält
+man
+\begin{equation}
+-\alpha\tensor{J}{_\mu}\approx\kappa\mu_0\tensor{\hat{u}}{_4}\tensor{u}{_\mu}
+\,,
+\end{equation}
+und damit mit $\tensor{J}{_\mu}=\varrho_0\tensor{u}{_\mu}$
+\begin{equation}
+\varrho_0=-\frac{\kappa\mu_0}{\alpha}\tensor{\hat{u}}{_4}\,.\label{eq:murhorel}
+\end{equation}
+Wenden wir uns den Geodätischen zu. Die verallgemeinerte Geodätengleichung
+lautet
+\begin{equation}
+\od{\tensor{\hat{u}}{^\ell}}{\hat{\tau}}=-\tensor*{\hat{\Gamma}}{^\ell_m_n}\tensor{\hat{u}}{^m}\tensor{\hat{u}}{^n}
+\, ,
+\end{equation}
+Da wir uns für die Bahnen in den uns zugänglichen vier Raumzeitdimensionen
+interessieren ist, sind natürlich vorallem diese Komponenten interessant.
+Hierbei gilt
+\begin{equation}
+\begin{split}
+\dod{\tensor{\hat{u}}{^\lambda}}{\hat{\tau}}
++\tensor*{\hat{\Gamma}}{^\lambda_\mu_\nu}\tensor{\hat{u}}{^\mu}\tensor{\hat{u}}{^\nu}
+&=
+-\tensor*{\hat{\Gamma}}{^\lambda_m_n}\tensor{\hat{u}}{^m}\tensor{\hat{u}}{^n}
++\tensor*{\hat{\Gamma}}{^\lambda_\mu_\nu}\tensor{\hat{u}}{^\mu}\tensor{\hat{u}}{^\nu}\\
+&=
+-\tensor*{\hat{\Gamma}}{^\lambda_4_4}\tensor{\hat{u}}{^4}\tensor{\hat{u}}{^4}
+-\tensor*{\hat{\Gamma}}{^\lambda_4_\nu}\tensor{\hat{u}}{^4}\tensor{\hat{u}}{^\nu}
+-\tensor*{\hat{\Gamma}}{^\lambda_\mu_4}\tensor{\hat{u}}{^\mu}\tensor{\hat{u}}{^4}
+-\tensor*{\hat{\Gamma}}{^\lambda_\mu_\nu}\tensor{\hat{u}}{^\mu}\tensor{\hat{u}}{^\nu}
++\tensor*{\hat{\Gamma}}{^\lambda_\mu_\nu}\tensor{\hat{u}}{^\mu}\tensor{\hat{u}}{^\nu}
+\\
+&=
+\tensor{\partial}{_\lambda}\phi\left(\tensor{\hat{u}}{^4}\right)^2
++\alpha\tensor{F}{^\lambda_\nu}\tensor{\hat{u}}{^4}\tensor{\hat{u}}{^\nu}
++\alpha\tensor{F}{^\lambda_\mu}\tensor{\hat{u}}{^\mu}\tensor{\hat{u}}{^4}\\
+&=
+\tensor{\partial}{_\lambda}\phi\left(\tensor{\hat{u}}{^4}\right)^2
++2\alpha\tensor{F}{^\lambda_\nu}\tensor{\hat{u}}{^4}\tensor{\hat{u}}{^\nu}\,.
+\end{split}
+\end{equation}
+Nach Voraussetzung ist $\tensor{\hat{u}}{^4}$ klein und damit
+näherungsweise
+\begin{equation}
+\dod{\tensor{u}{^\lambda}}{\tau}
++\tensor*{\Gamma}{^\lambda_\mu_\nu}\tensor{u}{^\mu}\tensor{u}{^\nu}
+=2\alpha\tensor{F}{^\lambda^\nu}\tensor{\hat{u}}{^4}\tensor{\hat{u}}{_\nu}\,.
+\label{eq:KaluzaGeo}
+\end{equation}
+Damit sind wir am Ziel, denn der Parameter $\alpha$ ist weiterhin eine
+freie Größe, wir setzen 
+ $\alpha=\sqrt{\frac{\kappa}{2}}\approx 3,06\cdot 10^{-14}$ und
+erhalten vermöge \eqref{eq:murhorel}
+\begin{equation}
+2\alpha\tensor{\hat{u}}{^4}=-
+\frac{\varrho_0}{\mu_0}\,.
+\end{equation}
+Die Tatsache, dass $\alpha$ klein ist, legitimiert
+die zuvor gemachten Näherungen im Nachhinein, denn Terme die quadratisch in den
+Christoffelsymbolen sind sind auch quadratisch in $\alpha$.
+Setzt man nun in \eqref{eq:KaluzaGeo} ein, so erhält man
+\begin{equation}
+\dod{\tensor{u}{^\lambda}}{\tau}
++\tensor*{\Gamma}{^\lambda_\mu_\nu}\tensor{u}{^\mu}\tensor{u}{^\nu}
+=-\frac{\varrho_0}{\mu_0}\tensor{F}{^\lambda^\nu}\tensor{u}{_\nu}\, ,
+\end{equation}
+die Formel für die Geodätischen mit Massendichte $\mu_0$ und Ladungsdichte
+$\varrho_0$, unter Einwirkung der Lorentzkraft! Es verbleibt eine
+Untersuchung der 4. Komponente
+\begin{equation}
+\begin{split}
+\dod{\tensor{\hat{u}}{^4}}{\hat{\tau}}
+&=
+-\tensor*{\hat{\Gamma}}{^4_m_n}\tensor{\hat{u}}{^m}\tensor{\hat{u}}{^n}\\
+&=
+-\tensor*{\hat{\Gamma}}{^4_4_\nu}\tensor{\hat{u}}{^4}\tensor{\hat{u}}{^\nu}
+-\tensor*{\hat{\Gamma}}{^4_\mu_4}\tensor{\hat{u}}{^\mu}\tensor{\hat{u}}{^4}
+-\tensor*{\hat{\Gamma}}{^4_\mu_\nu}\tensor{\hat{u}}{^\mu}\tensor{\hat{u}}{^\nu}\\
+&=
+-\tensor*{\hat{\Gamma}}{^4_4_\nu}\tensor{\hat{u}}{^4}\tensor{\hat{u}}{^\nu}
+-\tensor*{\hat{\Gamma}}{^4_\mu_4}\tensor{\hat{u}}{^\mu}\tensor{\hat{u}}{^4}
+-\alpha\tensor{H}{_\mu_\nu}\tensor{\hat{u}}{^\mu}\tensor{\hat{u}}{^\nu}\\
+&\approx
+-\alpha\tensor{H}{_0_0}\\
+&=
+-2\alpha\tensor{A}{_0}\\
+\end{split}
+\end{equation}
+aufgrund der Näherung ist $\dod{\tensor{\hat{u}}{^4}}{\hat{\tau}}\approx 0$ und
+damit $\alpha$ konstant
+\begin{equation}
+\begin{split}
+\tensor{\partial}{_0}\left(\frac{\varrho_0}{\mu_0}\right)
+=-2\alpha\tensor{\partial}{_0}u_4=
+4\alpha^2\tensor{A}{_0}
+\end{split}
+\end{equation}
+\begin{bemerkung}
+In den physikalisch relevanten Gleichungen taucht das Nebenfeld
+$\tensor{H}{_\mu_\nu}$ nicht mehr auf. Eine Abhängigkeit der Gleichungen stünde
+allerdings auch im Widerspruch zur Eichinvarianz.
+\end{bemerkung}
+\begin{bemerkung}
+Wir verzichten darauf Indices mit der Metrik zu heben bzw. zu senken, da dies
+nicht Wohldefiniert ist:
+\begin{equation}
+\tensor*{\delta}{*_\mu^\nu}=\tensor{\hat{g}}{_\mu_a}\tensor{\hat{g}}{^a^\nu}
+=\tensor{g}{_\mu_\sigma}\tensor{g}{^\sigma^\nu}+\tensor{\hat{g}}{_\mu_5}\tensor{\hat{g}}{^5^\nu}
+\end{equation}
+\begin{equation}
+\tensor{g}{_\mu_\sigma}\tensor{g}{^\sigma^\nu}
+=\tensor*{\delta}{*_\mu^\nu}-\tensor{\hat{g}}{_\mu_5}\tensor{\hat{g}}{^5^\nu}\neq\tensor*{\delta}{*_\mu^\nu}
+\end{equation}
+\end{bemerkung}
+\subsection{Erfolg}
+Die Ableitung Kaluzas hat Charme. Insbesondere, dass er die
+Lorentzkraft den fünfdimensionalen Einsteingleichungen folgern kann ist sehr 
+befriedigend, da weniger Annahmen gemacht werden müssen als in der klassischen
+Theorie. Die Annahme das die Spezifische Ladung klein ist ist schon für relativ
+generische Objekte wie beispielsweise ein Elektron verletzt: die spezifische
+Elementarladung, d.h. das Verhältnis eines Elektrons zu seiner Masse, beträgt nähmlich
+$\frac{e}{m}\approx1.76\cdot10^{11}\unitfrac{C}{kg}$.
+Letztlich ist die Theorie damit mehr ein Spezialfall für "`schwach"' geladene
+Objekte. Auch ist das Prozedere sehr konstruktiv und an vielen Stellen müssen
+Näherungen gemacht werden.
+Insgesamt ist durch Kaluzas Arbeit allerdings der Grundstein für die
+Vereinheitlichung der Kräfte gelegt. Eine modernere Formulierung die sich unter
+anderem an der Arbeiten von Klein, Jordan und Thiry orientiert wird im nächsten
+Kapitel vorgestellt.
+
+%
+%
+% Um weitere Freiheitsgrade zu erhalten führen wir eine weitere Raumdimension ein
+% (Weitere Zeitdimensionen bereiten Probleme), da nur 3
+% raumdimensionen beobachtet werden muss es einen Grund dafür geben das diese
+% nicht sichtbar sind. Wir erweitern die Theorie deshalb um eine zusätzliche
+% \emph{kompakte} Raumdimension mit ``Ausdehnung'' auf einer uns nicht
+% zugänglichen Skala ($r\sim l\textsubscript{Plank}$ = Welche Länge? = Welche
+% Energie Vgl. mit zugänglicher Energieskala am LHC).
+% Wir nehmen an das die kompakte Dimension durch $\Sphere^1$ beschrieben wird, die
+% Raumzeitmanigfaltigkeit als lokal(?) homoömorph zu $\Reals^4\times\Sphere^1$
+% ist.
+% Wir nehmen an das auch in dieser 5 dimensionalen Raumzeit die
+% Einsteingleichungen ihre gültigkeit behalten. Allerdings erhalten wir nun
+% anstatt der 10 Gleichungen 15 also 5 zusätzliche Freiheitsgrade (???)
+
+% \section{Kleins Ansatz}
+% 
+% 
+% 
+% \section{Kaluzas Erweiterung}
+% \section{Probleme}
+% \section{Faserbündel}
+% \section{Yang-Mills}
+% \section{Flache Raumzeit}
+% Falls die 4-Raumzeit flach ist also die betrachtete Manigfaltigkeit
+% $M=\Reals^4\times\Sphere^1$ (Achtung hier braucht man eigendlich Faserbündel!!!)
+% ergibt sich als Metrik mit $z=\left(x,\theta\right)$
+% \begin{equation}
+% \tensor{g}{_i_j}\dif\tensor{z}{^i}\dif\tensor{z}{^j}
+% =\tensor{\eta}{_\mu_\nu}\dif\tensor{x}{^\mu}\dif\tensor{x}{^\nu}+r^2\dif\theta^2
+% \end{equation}
+% Untersuchung von Störungen dieser Metrik
+% \begin{equation}
+% \tensor{\hat{g}}{_i_j}\dif\tensor{z}{^i}\dif\tensor{z}{^j}
+% =e^{-\phi/3}\left[e^{\phi}\left(\dif\theta+\kappa\tensor{A}{_\mu}\dif\tensor{x}{^\mu}\right)^2
+% +\tensor{g}{_\mu_\nu}\dif\tensor{x}{^\mu}\dif\tensor{x}{^\nu}\right]
+% \end{equation}
+
+%\begin{equation}
+%\tensor{\hat{g}}{_{MN}}\dif\tensor{z}{^M}\dif\tensor{z}{^N}
+%=e^{-\phi/3}\left[e^{\phi}\left(\dif\theta+\kappa\tensor{A}{_\mu}\dif\tensor{x}{^\mu}\right)^2
+% +\tensor{g}{_\mu_\nu}\dif\tensor{x}{^\mu}\dif\tensor{x}{^\nu}\right]
+%\end{equation}
+% Entwicklung in Fourrierreihen
+% \begin{align*}
+% \tensor{g}{_\mu_\nu}(z)&=\sum_{n=-\infty}^\infty
+% \tensor*{g}{*^{(n)}*_\mu*_\nu}\left(x\right)e^{\imI n \theta}\\
+% \tensor{A}{_\mu}(z)&=\sum_{n=-\infty}^\infty
+% \tensor*{A}{*^{(n)}*_\mu}\left(x\right)e^{\imI n \theta}\\
+% \phi(z)&=\sum_{n=-\infty}^\infty
+% \phi^{(n)}\left(x\right)e^{\imI n \theta}
+% \end{align*}
+% \section{Zylinderbedingung}
+% \section{Nordströms Theorie} 
+% Bereits vor Einstein formulierte Gunnar Nordström 1912, eine rein geometrische Theorie der Gravitation (Zusammenhang?)
+% 
+% TODO ist dtheta ein killing vektorfeld?

@@ -1,0 +1,124 @@
+\chapter{Allgemeine Begriffe}
+
+\section{Konventionen}
+Bereits Rechnungen in der "`gewöhnlichen"' Relativitätstheorie haben die Tendenz
+unübersichtlich zu werden, das Einführen zusätzlicher Dimensionen hilft dabei
+natürlich kaum.
+Es ist deshalb an dieser Stelle nützlich einige Konventionen festzulegen. Im
+Folgenden bezeichnet $n$ die Anzahl der Zusatzdimensionen.\footnote{Im Weiteren
+meist $n=1$}
+
+Die Metrik soll stets die Signatur $(1,3)$, bzw. $(1,3+n)$, insbesondere sind
+die Zusatzdimensionen. Die meisten Rechnungen werden in lokalen Koordinaten
+durchgeführt.
+Wir beginnen die Indizierung bei 0, wobei die 0. Komponente mit der Zeit identifiziert wird.
+Griechische Indices laufen über ersten vier Raum-Zeit Koordinaten
+$\mu=0,\ldots,3\,$, lateinische über alle inklusive der
+Zusatzkomponenten \footnote{Verwirrung bezüglich der gängigen Konvention
+mit lateinischen Indices die Raumkomponenten zu benennen sollte dabei nicht
+aufkommen.}, $i=0,\ldots,3+n\,$. Weiter verwenden wir die Einsteinsche
+Summenkonvention, d.h. über paare von indices wird implizit summiert.
+
+Im Zusammenhang mit Zusatzdimensionen tauchen Größen auf, die sowohl ein 4, als
+auch ein $4+n$ dimensionales Pendant besitzen. Um diese von einander zu
+unterscheiden, kennzeichnen wir die $4+n$ dimensionale Version mit einem
+Zirkumflex. 
+Beispielsweise bezeichnen wir den $4+n$ dimensionalen Ricci-Tensor mit
+$\tensor{\hat{R}}{_i_j}$. Mit $g$ bezeichnen wir die Determinante der Metrik.
+\subsection*{Geometrisierte Einheiten}
+Wir verwenden geometrisierte Einheiten, d.h. Einheiten in denen
+$8\pi G=c=1$. Es verbleibt nur noch eine Längendimension.
+\section{Differentialgeometrie}
+\subsection{Vektoren und Tensoren}
+Riemann-Tensor, Ricci-Tensor, Geodätische.
+\subsection{Lie-Gruppen}
+\subsection{Quotientenmanigfaltigkeiten}
+\subsection[G-Räume]{$G$-Räume}
+Gruppen können auf Mengen operieren. Ein einfaches Beispiel ist die Wirkung
+der Drehgruppe $SO(2)$ auf $\Reals^2$ durch Multiplikation von
+Vektoren mit Drehmatritzen. Um die Diskussion allgemeiner zu gestalten definieren wir
+Operationen allgemeiner Gruppen. Die Hauptforderung an die Wirkung der Gruppe
+auf der Menge ist, dass die Operation mit der Gruppenoperation kompatibel ist.
+ \begin{definition}[Gruppenwirkung]
+Sei $G$ eine Gruppe, $X$ eine Menge. Eine Abbildung
+\begin{equation}
+\phi:G\times X\to X\,,\quad (g,x)\mapsto\phi_g(x)\,\,.
+\end{equation}
+heißt \emph{Gruppenwirkung} von $G$ auf $X$, falls die folgende Eigenschaften
+erfüllt sind
+\begin{enumerate}
+  \item \emph{Identität} Für das neutrale Element $e\in G$ gilt
+  $\displaystyle\phi_e=\id_X$
+  \item \emph{Verträglichkeit} $\displaystyle\phi_{gh}=\phi_g\circ\phi_h$
+\end{enumerate}
+$X$ heißt dann auch $G$-Menge.
+\end{definition}
+Statt $\phi_g(x)$ schreiben wir im folgenden kurz $g\gmal x$.
+Ist die Gruppe $G$ eine Lie-Gruppe und $X=M$ eine Mannigfaltigkeit und $\phi_g$
+ differenzierbar, so spricht man von einer \emph{Lie-Gruppenwirkuqng}. $M$ heißt dann auch $G$-Mannigfaltigkeit.
+\begin{definition}[Orbit]
+Sei $X$ eine $G$-Menge, $x\in X$, dann heißt die Menge
+\begin{equation}
+G \gmal x=\{g \gmal x\,|\,g\in G\}
+\end{equation}
+Orbit von $x$.
+\end{definition}
+Die Orbits stellen eine Partition der Menge $X$ dar, somit ist der Quotient 
+$X/G$ wohldefiniert.
+% Definieren
+Wir wollen im folgenden Quotienten der Form $M/G$ betrachten, für
+$G$-Mannigfaltigkeit $M$ betrachten. Dieser Quotient muss allerdings im
+Allgemeinen keine Mannigfaltigkeit sein. 
+\begin{beispiel}[Ein nicht Hausdorffer Quotient]
+% Let Z/2 act on R×{0}∪R×{1} by g⋅(t,0)=(t,1) and g⋅(t,1)=(t,0) if t≠0 and
+% g⋅(0,0)=(0,0) and g⋅(1,1)=1. Then the quotient space is the line with 
+% two origins which is certainly not Hausdorff.
+\end{beispiel}
+% Bsp nicht M/G nicht Hausdorf?
+Das Slice Theorem liefert, das falls $G$ kompakt und fixpunktfrei ist $M/G$ eine
+Manigfaltigkeitstruktur besitzt, bzw. sogar $M\to M/G$ ein $G$-Hauptfaserbündel
+ist.
+% %http://math.stackexchange.com/questions/1315445/quotient-manifold-theorem-provides-a-fibrations
+Da die Gruppenwirkung differenzierbar ist lasst sich auch die Orbitkarte 
+\begin{equation}
+\sigma_x:G\to M\,,\quad x\mapsto g \gmal x
+\end{equation}
+bei in der Identität differenzierbar. Man erhält so zu jedem $x\in M$ einen
+Vektor insgesammt erhält man ein Vektorfeld $V$ auf $M$.
+%Gefaserte Manigfaltigkeiten.
+\begin{theorem}[Principal Orbit Theorem]
+\end{theorem}
+\section{Variationsprinzip}
+Feldtheorien lassen sich meist über 
+Variationsprinzipien formulieren. Dies gilt insbesondere für
+Elektromagnetismus und allgemeine Relativitätstheorie.
+\subsection{Lagrange Dichte}
+Wald\cite{wald2010general} S.454 ff.
+\begin{definition}[Tensordichte]
+Eine Tensordichte $\mathcal{T}$ vom Gewicht $w$
+\end{definition}
+Wirkungsintegral, Lagrangedichte, Lokalität
+\begin{beispiel}[Levi-Civita-Symbol]
+\end{beispiel}
+\begin{definition}[Variationsableitung]
+% es wird nach einem Feld gesucht nicht nach einem "`optimalen"' Weg, quasi
+% unendlichdimensionale Form
+% https://en.wikipedia.org/wiki/Lagrangian_system
+\end{definition}
+\subsubsection{Skalarfelder (Spin-0)}
+\begin{equation}
+\mathcal{L}\left[\phi(x),\nabla_\alpha\phi(x),x\right]=
+\end{equation}
+\subsubsection{Vektorfelder (Spin-1)}
+\begin{equation}
+\mathcal{L}\left[A_\alpha(x),\nabla_\beta
+A_\alpha(x),x\right]=-\frac{1}{4}\tensor{F}{_\mu_\nu}\tensor{F}{^\mu^\nu}\,.
+\end{equation}
+%https://en.wikipedia.org/wiki/Euler%E2%80%93Lagrange_equation
+%https://en.wikipedia.org/wiki/Functional_derivative#cite_note-2
+
+% Fibred manifold vs principal bundle (spezialfall\ldots)
+% In topology, the words fiber (Faser in German) and fiber space (gefaserter Raum)
+% appeared for the first time in a paper by Seifert in 1932
+% Seifert, H. (1932). "Topologie dreidimensionaler geschlossener Räume". Acta
+% Math. (in French) 60: 147–238. doi:10.1007/bf02398271.
