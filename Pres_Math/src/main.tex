@@ -1,0 +1,567 @@
+\documentclass[10pt,oneside,a4paper]{scrartcl} 
+
+%language and encoding
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+%\usepackage{lmodern}
+\usepackage[english,ngerman]{babel}
+
+%graphics
+\usepackage{graphicx}
+\usepackage{xcolor}
+
+%math
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{thmtools}
+\usepackage{mathtools}
+\usepackage{tensor}
+\usepackage{commath}
+\usepackage{dsfont}		% double stroke characters
+\usepackage{braket}
+\usepackage{mdframed}	% framed environments that can split at page bound­aries
+\usepackage{eufrak}
+
+%science
+\usepackage{units}
+\usepackage{bpchem}	% type­set chem­i­cal names, for­mu­lae, etc
+
+%layout + style
+\definecolor{section_color}{rgb}{0.35,0.0,0}								% colors
+\definecolor{MyGray}{rgb}{0.96,0.97,0.98}
+
+\usepackage[bottom]{footmisc}
+\usepackage[automark,headsepline]{scrlayer-scrpage} 						% headings
+\renewcommand*{\headfont}{\normalfont}										% nicht kursive Kopfzeile
+\usepackage{setspace}														% set space be­tween lines
+\usepackage[font=small,labelfont=bf,labelsep=endash,format=plain]{caption}	% change style of captions
+\usepackage[section]{placeins}												% de­fines a \FloatBar­rier com­mand, be­yond which floats may not pass.
+\usepackage[protrusion=true,expansion=true]{microtype}						% sublim­i­nal re­fine­ments to­wards ty­po­graph­i­cal per­fec­tion
+\addtokomafont{caption}{\small\linespread{1}\selectfont}					% Ändert Schriftgröße und Zeilenabstand bei captions
+\usepackage{enumerate} % better way to config enumerates
+\usepackage{pdflscape} % landscape mode
+\usepackage{afterpage}
+% styles for math environments
+\declaretheoremstyle[														
+  spaceabove = 6pt,
+  spacebelow = 6pt,
+  headfont = \color{section_color}\sffamily\bfseries,
+  notefont = \mdseries,
+  notebraces = {(}{)},
+  bodyfont = \normalfont,
+  postheadspace = 1em,
+  qed = ,
+]{mythmstyle} %theorems
+\declaretheoremstyle[														
+  spaceabove = 6pt,
+  spacebelow = 6pt,
+  headfont = \color{section_color}\sffamily\bfseries,
+  notefont = \mdseries,
+  notebraces = {(}{)},
+  bodyfont = \normalfont,
+  postheadspace = 1em,
+  qed = ,
+]{myrmstyle} %remarks
+
+\renewcommand{\labelitemi}{\scriptsize$\blacksquare$} 
+\renewcommand{\labelenumi}{\textsf{\textbf{\arabic{enumi}}}.}
+% \renewcommand{\labelitemi}{\color{section_color}\scriptsize$\blacksquare$} 
+% \renewcommand{\labelenumi}{\color{section_color}\textsf{\textbf{\arabic{enumi}}}.}
+
+%tikz
+\usepackage{tikz}
+\usetikzlibrary{decorations.markings,arrows.meta}
+
+\tikzset{
+	->-/.style={decoration={
+			markings,
+			mark=at position .85 with {\arrow{Latex}}},postaction={decorate}},
+	-<-/.style={decoration={
+			markings,
+			mark=at position .15 with {\arrow{Latex[reversed]}}},postaction={decorate}},
+}
+%tables
+\usepackage{tabularx}	% tab­u­lars with ad­justable-width columns
+\usepackage{multirow}	% create tab­u­lar cells span­ning mul­ti­ple rows
+\usepackage{booktabs}	% publi­ca­tion qual­ity ta­bles in LaTeX
+\usepackage{array}
+\usepackage{dcolumn}	% align on the dec­i­mal point of num­bers in tab­u­lar columns
+
+%hyperref
+\usepackage[pdftex]{hyperref}
+\hypersetup{
+	pdftitle={General Relativity},
+	pdfsubject={General Relativity},
+	pdfkeywords={general,relativity,space,time,minkowksi},
+	pdfauthor={Michael Ruf and Benjamin Rottler},
+	pdfcreator={Michael Ruf and Benjamin Rottler},
+	pdfproducer={Michael Ruf and Benjamin Rottler},
+	bookmarksnumbered=true, % bookmarks are numbered
+	bookmarksopen=true,     % show bookmarks at start of pdf viewer
+	bookmarksopenlevel=2,   % level to which the bookmarks are opened
+	bookmarksdepth=3,       % depth of bookmarks 
+    unicode=true,           % non-Latin characters in pdf viewer's bookmarks
+    pdftoolbar=false,       % show pdf viewer's toolbar?
+    pdfmenubar=true,        % show pdf viewer's menu?
+    pdffitwindow=false,     % window fit to page when opened
+    pdfstartview={FitH},    % fits the width of the page to the window
+    pdfnewwindow=true,      % links in new window
+    pdfborder={0 0 1},		% no border for links
+    colorlinks=false,		% false: black links; true: colored links
+    linkcolor=section_color,         % color of internal links (change box color with
+    % linkbordercolor)
+    citecolor=green,        % color of links to bibliography
+    filecolor=magenta,      % color of file links
+    urlcolor=blue			% color of external links
+}
+\usepackage{nameref}
+
+%general stuff
+\usepackage{cite}
+\usepackage{glossaries}	% create glos­saries and lists of acronyms
+
+
+%%% NEW COMMANDS %%%
+
+\newcommand\grad{\ensuremath{^\circ}}
+\newcommand{\imI}{\ensuremath{\mathrm{i}}}
+\newcommand{\Reals}{\ensuremath{\mathbb{R}}}
+\newcommand{\Complex}{\ensuremath{\mathbb{C}}}
+\newcommand{\Sphere}{\ensuremath{\mathbb{S}}}
+\newcommand{\transpose}{^\top}
+\newcommand{\cSym}[3]{\ensuremath{\begin{Bmatrix} #1 \\ #2 #3 \end{Bmatrix}}}
+\newcommand{\csym}[3]{\ensuremath{[#1 #2,\, #3]}}
+\newcommand{\affin}[3]{\ensuremath{\Gamma^{#1}_{#2 #3}}}
+\newcommand{\landauO}{\mathcal{O}}
+\newcommand{\name}[1]{\textsc{#1}}
+\newcommand{\fourint}{\int\dif{}^4 x\,}
+\DeclareMathOperator{\tr}{Tr}
+\DeclareMathOperator{\re}{Re}
+\DeclareMathOperator{\im}{Im}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\Div}{div}
+\let\originalleft\left  %fix bracket spacing when using \left( \right)
+\let\originalright\right
+\renewcommand{\left}{\mathopen{}\mathclose\bgroup\originalleft}
+\renewcommand{\right}{\aftergroup\egroup\originalright}
+\renewcommand{\vec}{\mathbf}
+\def\mathunderline#1#2{\color{#1}\underline{{\color{black}#2}}\color{black}}
+\newcommand{\liedif}[2]{\ensuremath{\mathcal{L}_{#1}#2}}
+\newcommand{\lagrangian}{\mathcal{L}}
+\DeclareMathOperator{\diag}{diag}
+\newcommand{\const}{\text{const.}}
+\DeclareMathOperator{\difD}{D}
+
+%new environments
+\newenvironment{thm}[1][]{%
+  \definecolor{shadethmcolor}{rgb}{.9,.9,.95}%
+  \definecolor{shaderulecolor}{rgb}{0.0,0.0,0.4}%
+  %\setlength{\shadeboxrule}{1.5pt}%
+  \begin{thms}[#1]\hspace*{1mm}%
+}{\end{thms}}
+\newtheorem{theorem}{Theorem}
+% \declaretheorem[
+%   style = mythmstyle,
+%   name = Theorem,
+%   shaded = {
+%     bgcolor = MyGray,
+%     padding = 2mm,
+%     textwidth = 0.98\textwidth
+% }
+% ]{theorem}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+\newtheorem{sidenote}{Aside}
+\newtheorem{example}{Example}
+% \declaretheorem[
+%   style = mythmstyle,
+%   name = Definition,
+%   numberlike=theorem,
+%   shaded = {
+%     bgcolor = MyGray,
+%     padding = 2mm,
+%     textwidth = 0.98\textwidth
+% }
+% ]{definition}
+% \declaretheorem[
+%   style = myrmstyle,
+%   name = Remark,
+%   numberlike=theorem,
+%   shaded = {
+%     bgcolor = white,
+%     padding = 2mm,
+%     textwidth = 0.98\textwidth
+% }
+% ]{remark}
+% \declaretheorem[
+% style = myrmstyle,
+% name = Aside,
+% numberlike=theorem,
+% shaded = {
+% bgcolor = white,
+% padding = 2mm,
+% textwidth = 0.98\textwidth
+% }
+% ]{sidenote}
+% \declaretheorem[
+%   style = myrmstyle,
+%   name = Example,
+%   numberlike=theorem,
+%   shaded = {
+%     bgcolor = white,
+%     padding = 2mm,
+%     textwidth = 0.98\textwidth
+% }
+% ]{example}
+% 
+% \makeatletter
+% \newtoks\FTN@ftn
+% \def\pushftn{%
+%  \let\@footnotetext\FTN@ftntext\let\@xfootnotenext\FTN@xftntext
+%   \let\@xfootnote\FTN@xfootnote}
+% \def\popftn{%
+%  \global\FTN@ftn\expandafter{\expandafter}\the\FTN@ftn}
+% \long\def\FTN@ftntext#1{%
+%   \edef\@tempa{\the\FTN@ftn\noexpand\footnotetext
+%                     [\the\csname c@\@mpfn\endcsname]}%
+%   \global\FTN@ftn\expandafter{\@tempa{#1}}}%
+% \long\def\FTN@xftntext[#1]#2{%
+%   \global\FTN@ftn\expandafter{\the\FTN@ftn\footnotetext[#1]{#2}}}
+% \def\FTN@xfootnote[#1]{%
+%    \begingroup
+%      \csname c@\@mpfn\endcsname #1\relax
+%      \unrestored@protected@xdef\@thefnmark{\thempfn}%
+%    \endgroup
+%    \@footnotemark\FTN@xftntext[#1]}
+
+
+%\newtheorem*{sidenote}{Sidenote}
+%\newtheorem*{example}{Example}
+\newenvironment{tabulars}[1]{\renewcommand*{\arraystretch}{2}\tabular{#1}}{\endtabular}		% stretched table
+
+%%% DOCUMENT %%%
+
+\begin{document}
+\onehalfspacing
+\selectlanguage{ngerman}
+\section{Inhalt}
+\begin{itemize}
+  \item Evolution of the scale factor
+  \item singularities
+  \item Big Bang
+  \item Red shifts and distances
+  \item Our universe
+\end{itemize}
+Literatur
+\begin{itemize}
+  \item  Carroll (8.4, 8.5, 8.7)
+  \item  Schutz (Chapter 12)
+\end{itemize}
+\section{Hauptteil}
+\begin{equation}
+\dif s^2=\dif
+t^2-a(t)^2\tensor{\gamma}{_i_j}\dif\tensor{x}{^i}\dif\tensor{x}{^j}
+\end{equation}
+\begin{equation}
+\tensor{\gamma}{_r_r}=\frac{1}{1-\kappa r^2}\,,
+\quad\tensor{\gamma}{_\theta_\theta}=r^2\,,
+\quad\tensor{\gamma}{_\varphi_\varphi}=r^2\sin^2\theta 
+\end{equation}
+Wdh(Tafel):
+Friedmann-Gl.:
+$H$ Hubble Parameter
+$a$ scale factor
+metric
+
+aquivalent zu Einsteingleichungen
+
+> **Definition 1** A spacetime $(M,g)$ is *stationary* if there exists a timelike Killing field $K$, i.e. a vector field $K$ such that $\langle K,K\rangle<0$ and $\mathcal{L}_Kg=0$. 
+
+We shall show that Definition 1 implies the existence of local coordinates for which $g_{\mu\nu}$ is independent of time. 
+
+Choose a spacelike hypersurface $\Sigma$ of $M$ and consider the integral curves of $K$ passing through $\Sigma$. In $\Sigma$ we choose arbitrary coordinates and introduce local coordinates of $M$ as follows: If $p=\phi_t(p_0)$, where $p_0\in\Sigma$ and $\phi_t$ is the flow of $K$, then the Lagrange coordinates of $p$ are $(t,\vec{x}(p_0))$. In terms of these coordinates, we have $$K=\frac{\partial}{\partial t}$$ and $\mathcal{L}_Kg=0$ implies
+$$\partial_tg_{\mu\nu}=0$$
+We call such coordinates *adapted* to the Killing field.
+Timelike Killing vectors are associated with conservation of energy, and space-like Killing vectors with the conservation of momentum quantities. But the energy-momentum tensor is always 'conserved' - well in GR, this goes to it's divergence being zero. And , the FRW metric does not possess a time-like Killing vector - so energy is not conserved. It possess space-like ones, and momentum is thus conserved.
+
+%Reference
+% https://www.physicsforums.com/threads/killing-tensor-vector-very-basic-context-question-about-consevation.790924/
+%TODO killing tensoren schon definiert? Ansonsten Zeigen das konservierung gilt
+\section{Wiederholung}
+Robertson–Walker Metrik
+\begin{equation}
+\dif s^2=\dif
+t^2-a(t)^2\tensor{\gamma}{_i_j}\dif\tensor{x}{^i}\dif\tensor{x}{^j}
+\end{equation}
+$a=$ Skalenfaktor. $\gamma$ Metrik auf räumlichen Anteil
+\begin{equation}
+\tensor{\gamma}{_r_r}=\frac{1}{1-\kappa r^2}\,,
+\quad\tensor{\gamma}{_\theta_\theta}=r^2\,,
+\quad\tensor{\gamma}{_\varphi_\varphi}=r^2\sin^2\theta 
+\end{equation}
+Skalarkrümmung
+\begin{equation}
+R=6\left[\frac{\ddot{a}}{a}+\left(\frac{\dot{a}}{a}\right)^2+\frac{\kappa}{a^2}\right]
+\end{equation}
+Friedmann-Gleichungen
+\begin{align}
+H^2&=\left(\frac{\dot{a}}{a}\right)^2
+=\frac{8\pi G}{3}\rho-\frac{\kappa}{a^2}
+\\
+\frac{\ddot{a}}{a}
+&=-\frac{4\pi G}{3}\left(\rho+3p\right)
+\end{align}
+Zustandsparameter
+\begin{equation}
+w_i=\frac{p_i}{\rho_i}
+\end{equation}
+Dichteparameter
+\begin{equation}
+\Omega_i=\frac{8\pi G}{3H^2}\rho_i
+\end{equation}
+\section{Entwicklung des Skalenfaktors und Urknall}
+Krümmung wird ebenfalls mit Energiedichte identifiziert
+Zur Lösung der Friedmann Gleichungen wird benötigt:
+$\kappa$ sowie Zustandsgleichung $p(\rho)$. Allgemein: numerische Lösung.
+Vereinfacht nimmt man an dass sich die Energiedichten gemäß eines Potenzgesetzes
+entwickeln.
+\begin{equation}
+\rho_i=\hat{\rho}_i a^{-n_i}
+\end{equation}
+Einflüsse sind stark Zeitabhängig $a\to 0$ Vakuum vernachlässigbar $a\to \infty$
+Materie und Krümmung vernachlässigbar.
+\begin{table}
+\centering
+\begin{tabular}{lr}
+\toprule
+Materie& 3\\
+Strahlung&4\\
+Krümmung&2\\
+Vakuum&0\\
+\bottomrule
+\end{tabular}
+\end{table}
+Zustandsparameter 
+\begin{equation}
+w_i=\frac{p_i}{\rho_i}=\frac{1}{3}n_i-1
+\end{equation}
+
+\begin{equation}
+H^2=\frac{8\pi G}{3}\sum \rho_i
+\end{equation}
+\begin{equation}
+1=\sum \Omega_i
+\end{equation}
+\begin{equation}
+\begin{split}
+\dot{H}&=\frac{\ddot{a}}{a}-\left(\frac{\dot{a}}{a}\right)^2\\
+&=-\frac{4\pi G}{3}\left(\rho+3p\right)-H^2\\
+&=-\frac{4\pi G}{3}\sum 1\rho_i+3p_i+2\rho_i\\
+&=-\frac{4\pi G}{3}\sum \left(1+w_i\right)\rho_i\leq 0\\
+\end{split}
+\end{equation}
+$\dot{H}\leq 0$ 
+\subsection{Spezialfall nur eine Materieform}
+Friedmann Gleichung mit nur einem Term ($\rho\propto a^{-n}$):
+\begin{equation}
+a=\beta a^{1-n/2}
+\end{equation}
+Fall 1: $n\neq 0$
+\begin{equation}
+a=\beta t^{2/n}
+\end{equation}
+Fall 2: Vakuum $n =0$  $H=const$
+\begin{equation}
+a=\exp(Ht)
+\end{equation}
+Kein Urknall?
+Statische Lösung
+Kosmologische Konstante 
+Was ist eine Singularität?
+Lösungen der Verschiedenen Modelle.
+$H$vs$a$
+Die Theorie sagt zwar eine Singularität voraus aber: $t\to 0$ $a\to 0$
+$\rho\to\infty$ damit muss Quantengravitation zur Beschreibung herangezogen
+werden.
+\section{Rotverschiebung und Entfernungen}
+Die RW Metrik besitzt klarerweise keine zeitartigen Killing Vektorfelder.
+Die Energie ist i.A. auch nicht erhalten (Materie bleibt gleich, Strahlung
+veringert sich (Rotverschiebung),Vakuum erhöht sich ) (Raum maximal symmetrisch)
+$\implies$ Konzept von Killing-Vektorfeldern muss erweitert werden um
+Erhaltungsgrößen zu erhalten.
+\begin{theorem}
+Sei
+$T=\tensor{T}{_{\mu_1\dots\mu_n}}\dif\tensor{x}{^{\mu_1}}\otimes\cdots\otimes\dif\tensor{x}{^{\mu_n}}
+\in\mathfrak{T}^{0,n}$
+ein Tensorfeld mit 
+\begin{equation}
+\tensor{\nabla}{_{(\nu}}\tensor{T}{_{\mu_1\dots\mu_n)}}=0\,,
+\end{equation}
+dann ist die Größe
+\begin{equation}
+\bar{T}
+:=\tensor{T}{_{\mu_1\dots\mu_n}}\tensor{V}{^{\mu_1}}\cdots\tensor{V}{^{\mu_n}}
+\end{equation}
+entlang von Geodätischen mit Vierergeschwindigkeit $V$ konstant.
+\end{theorem}
+\begin{proof}
+\begin{equation}
+\begin{split}
+\nabla_V\bar{T}
+&=\tensor{V}{^\nu}\tensor{\nabla}{_\nu}\left(\tensor{T}{_{\mu_1\dots\mu_n}}
+\tensor{V}{^{\mu_1}}\cdots\tensor{V}{^{\mu_n}}\right)\\
+&=\tensor{V}{^{\mu_1}}\cdots\tensor{V}{^{\mu_n}}
+\tensor{V}{^\nu}\tensor{\nabla}{_\nu}\tensor{T}{_{\mu_1\dots\mu_n}}\\
+&=\tensor{V}{^{\mu_1}}\cdots\tensor{V}{^{\mu_n}}
+\tensor{V}{^\nu}\tensor{\nabla}{_{(\nu}}\tensor{T}{_{\mu_1\dots\mu_n)}}\\
+&=0\\
+\end{split}
+\end{equation}
+\end{proof}
+Betrachte den Tensor
+\begin{equation}\label{FLRWKillingTensor}
+K_{\mu\nu}
+=a^{2}\left(U_{\mu}U_{\nu}-g_{\mu\nu}\right),
+\end{equation}
+wobei $U$, die Vierergeschwindigkeit eines mitbewegten (comoving)
+Teilchens.
+Der Tensor ist ein Killing Tensor der RW Metrik, d.h.
+\begin{equation}
+\nabla_{(\sigma}K_{\mu\nu)}=0.
+\end{equation}
+\begin{proof}
+Skizze:
+\begin{itemize}
+  \item Gehe in Ruhesystem des Teilchens s.d.\
+  $\tensor{U}{_\mu}=a\delta_{\mu}^{0}$
+  \item Berechne explizit $\tensor{\nabla}{_\sigma}\tensor{K}{_\mu_\nu}$
+  mithilfe der Christoffelsymbole der RW- Metrik
+\end{itemize}
+\end{proof}
+
+Erhaltungsgröße
+\begin{equation}
+K^2:=\tensor{K}{_\mu_\nu}\tensor{V}{^\mu}\tensor{V}{^\nu}=a^2\left[\tensor{V}{_\mu}\tensor{V}{^\mu}
++\left(\tensor{U}{_\mu}\tensor{V}{^\mu}\right)^2\right]
+\end{equation}
+\subsection{Massive Teilchen ($\tensor{V}{_\mu}\tensor{V}{^\mu}=-1$)}
+\begin{equation}
+\left(V^0\right)^2=1+|\vec{V}|^2\,,\quad\tensor{V}{_\mu}\tensor{U}{^\mu}=-V^0
+\end{equation}
+$|\vec{V}|^2=\tensor{V}{^i}\tensor{V}{_i}$
+Einsetzen
+\begin{equation}
+|\vec{V}|=\frac{K}{a}
+\end{equation}
+Teilchen verlieren bei der Expansion Geschwindikeit, Materie kühlt ab.
+\subsection{Strahlung/massenlose Teilchen
+($\tensor{V}{_\mu}\tensor{V}{^\mu}=0$)} $\tensor{V}{_\mu}\tensor{V}{^\mu}=0$ also
+$\omega=-\tensor{V}{_\mu}\tensor{U}{^\mu}=-\frac{K}{a}$
+\begin{equation}
+\frac{\omega\textsubscript{obs}}{\omega\textsubscript{em}}
+=\frac{a\textsubscript{em}}{a\textsubscript{obs}}
+\end{equation}
+Wenn das Universum expandiert,
+$a\textsubscript{obs}>a\textsubscript{em}\implies\omega\textsubscript{obs}<\omega\textsubscript{em}$,
+ergo rotverschoben.
+\section{Unser Universum}
+Alter
+There is a growing consensus among cosmologists that the universe is flat and
+will continue to expand foreve
+\section{Sonstiges}
+Im Ruhesystem des Teilchens gilt:
+\begin{equation}K_{\mu\nu}=a^{4}\delta_{\mu}^{0}\delta_{\nu}^{0}
+-a^{2}g_{\mu\nu}.\end{equation}
+\begin{align*}
+\tensor{\nabla}{_\sigma}\tensor{K}{_\mu_\nu}&
+=a^4\tensor{\nabla}{_\sigma}
+\left(\tensor*{\delta}{_\mu^0}\tensor*{\delta}{_\nu^0}\right)
++\left(2a^{2}\tensor*{\delta}{_\mu^0}\tensor*{\delta}{_\nu^0}
+-\tensor{g}{_\mu_\nu}\right)\cdot 2a\tensor{\nabla}{_\sigma}a\\
+&=-a^{4}
+\left(\tensor*{\Gamma}{^0_\sigma_\mu}\tensor*{\delta}{_\nu^0}
++\tensor*{\Gamma}{^0_\sigma_\nu}\tensor*{\delta}{_\mu^0}\right)
++h_{\mu\nu}\cdot 2a\partial_{\sigma}a\\
+&=-a^{2}
+\left(\Gamma_{0\sigma\mu}\delta_{\nu}^{0}
++\Gamma_{0\sigma\nu}\delta_{\mu}^{0}\right)
++2a\dot{a}h_{\mu\nu}\delta_{\sigma}^{0},
+\end{align*}
+where $h_{\mu\nu}=g_{\mu\nu}
+-2a^{2}\delta_{\mu}^{0}\delta_{\nu}^{0}$.
+On calculating the Christoffel symbols
+\begin{align*}
+\tensor*{\Gamma}{_0_0_0}&=\frac{1}{2}\tensor{\partial}{_0}\tensor{g}{_0_0}
+=a\dot{a}=\frac{\dot{a}}{a}\tensor{g}{_0_0};\\
+\tensor*{\Gamma}{_0_0_i}&=0\\
+\tensor*{\Gamma}{_0_i_j}&=-\frac{1}{2}\tensor{\partial}{_0}\tensor{g}{_i_j}
+=-\frac{\dot{a}}{a}g_{ij}
+\end{align*}
+we see that they can be put down in the form
+\begin{equation}\Gamma_{0\mu\nu}=\frac{\dot{a}}{a}
+\big[2a^2\delta_{\mu}^{0}\delta_{\nu}^{0}
+-g_{\mu\nu}\big]=
+-\frac{\dot{a}}{a}h_{\mu\nu}.\end{equation}
+Then
+\begin{equation}\nabla_{\sigma}K_{\mu\nu}
+=a\dot{a}\big[
+2\delta_{\sigma}^{0}h_{\mu\nu}
+-\delta_{\mu}^{0}h_{\sigma\nu}
+-\delta_{\nu}^{0}h_{\sigma\mu}\big],\end{equation}
+and on symmetrization we obtain the desired generalization of the Killing equation
+\begin{equation}\nabla_{(\sigma}K_{\mu\nu)}=0.\end{equation}
+
+% \section{Robertson Walker Metric}
+% Konforme Faktoren.
+% Invarianten.
+% \footnote{This is a very long footnote, isn't it?}
+% Annahme:
+% \begin{itemize}
+% 	\item Isotropie
+% 	\item Homogenit�t
+% \end{itemize}
+% Metrik:
+% \begin{equation}
+% \dif s^2=-\dif t^2+R^2(t)\dif \sigma^2
+% \end{equation}
+% Maximal symmetrischer Raum, nicht maximal symmetrische Raumzeit
+% \begin{equation}
+% \dif \sigma^2:=\gamma_{ij}\dif u^i\dif u^j
+% \end{equation}
+% wobei maximal symmetrisch bedeutet das der Ricci Tensor proportional zur Metrik $\gamma_{ij}$ ist
+% \begin{equation}
+% 	R_{ij}=\kappa\gamma_{ij}
+% \end{equation}
+% \begin{equation}
+% 	R=R\indices{^i_i}=\kappa\gamma^{ij}\gamma_{ij}=\kappa\tr\gamma=3\kappa
+% \end{equation}
+% Radialsymmetrie impliziert das das Linienelement die Form
+% \begin{equation}
+% 	\dif \sigma^2=e^{2\alpha(r)}\dif r^2+e^{2\beta(r)}r^2 \dif \Omega^2
+% \end{equation}
+% besitzen muss. Variablenwechsel $\overline{r}=e^{2\beta(r)}r$ liefert
+% \begin{equation}
+% \dif \overline{r}^2 =\left(2\od{\beta}{r}+1\right)e^{2\beta(r)}\dif r
+% \end{equation}
+% Mit $e^{2\tilde{\beta}(\overline{r})}:=\left(2\od{\beta}{r}+1\right)e^{2\beta(r)}$
+% \begin{equation}
+% \dif \sigma^2=e^{2\tilde{\beta}(\overline{r})}\dif \overline{r}^2+\overline{r}^2 \dif \Omega^2
+% \end{equation}
+% Dies impliziert zusammen mit (R=gamma) die Gleichungen
+% \begin{align}
+% 	\kappa e^{2\tilde{\beta}(\overline{r})}=R_{rr}&=\\
+% 	\kappa R_{\vartheta\vartheta}&=
+% \end{align}
+% Die entsprechende $R_{\varphi\varphi}$ Gleichung ist dann aufgrund der Form der Metrik ebenfalls erf�llt. Die Gleichungen zusammen f�hren auf
+% \begin{equation}
+% 	\beta=-\frac{1}{2}\ln\left(1-kr^2\right)
+% \end{equation}
+% implizieren. Wenn man wieder in das Linienelement einsetzt erh�lt man die \emph{Robertson-Walker Metrik}
+% \begin{equation}
+% \dif s^2=-\dif t^2+R^2(t)\left(\frac{\dif {\bar{r}}^2}{1-k\bar{r}^2}+\overline{r}^2\dif \Omega^2\right)
+% \end{equation}
+\end{document}

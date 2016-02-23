@@ -201,8 +201,58 @@ Dabei transformieren $\psi$, $\tensor{A}{_\mu}$ und $\tensor{g}{_\mu_\nu}$ als
 Skalar, Vektor, bzw. Tensor.
 %TODO sind noch weitere Trafos erlaubt?
 \section{Eigenschaften der Klein-Metrik}
-Berechnungen angelehnt an \cite{Coquereaux:1990qs}
-\cite{williams2015field}.
+An jedem Punkt lässt sich die Metrik $\hat{g}$ durch eine symmetrische
+(Block-)Matrix
+\begin{equation}
+\widehat{G}=\begin{pmatrix}A& B\\B\transpose&
+C\end{pmatrix}
+\end{equation}
+beschreiben, wobei
+$A\in\operatorname{Sym}_4$
+\footnote{$\operatorname{Sym}_k$ bezeichnet die Menge aller symmetrischen
+$k\times k$-Matritzen.} , $C\in\operatorname{Sym}_n$.
+Im folgenden sei zudem die Matrix $C$ invertierbar. 
+Da die Matrix reell symmetrisch ist, ist sie (block-) diagonalisierbar
+\begin{equation}
+\begin{split}
+\widehat{G}
+&=
+\begin{pmatrix}1& D\\0& 1\end{pmatrix}
+\begin{pmatrix}G& 0\\0& C
+\end{pmatrix}
+\begin{pmatrix}1& 0\\D\transpose& 1\end{pmatrix}\,.
+\end{split}
+\end{equation}
+Die Blöcke sind gegeben als $G=A-BC^{-1}B\transpose$, $D=BC^{-1}$.
+Damit lässt sich direkt die Determinante angeben
+\begin{equation}
+\det(\hat{g})=\det(C)\det(g)
+\end{equation}
+Die Transformation lässt sich leicht umkehren
+\begin{equation}
+\begin{pmatrix}1& D\\0& 1\end{pmatrix}^{-1}=\begin{pmatrix}1& -D\\0&
+1\end{pmatrix}\,.
+\end{equation}
+Mit diesen Relationen ergibt sich eine alternative Darstellung des
+Linienelements
+\begin{equation}
+\begin{split}
+\dif \hat{s}^2&=\dif \vec{x}\transpose G
+\dif \vec{x}\\
+&=\dif \vec{x}\transpose
+\begin{pmatrix}1& -D\\0& 1\end{pmatrix}
+\begin{pmatrix}g& 0\\0& C
+\end{pmatrix}
+\begin{pmatrix}1& 0\\-D\transpose& 1\end{pmatrix}
+\dif \vec{x}\\
+&=\tensor{g}{_\mu_\nu}\dif \tensor{x}{^\mu}\dif\tensor{x}{^\nu}
++\tensor{C}{_a_b}\left(\dif\tensor{x}{^a}-\tensor*{D}{^a_\mu}\dif\tensor{x}{^\mu}\right)
+\left(\dif\tensor{x}{^b}-\tensor*{D}{^b_\mu}\dif\tensor{x}{^\mu}\right)
+\end{split}
+\end{equation}
+Da diese Darstellung im Wesentlichen vom Typ ist wie sie von Klein verwendet
+wurde soll wird sie im Folgenden als Klein-Metrik bezeichnet. Berechnungen
+angelehnt an \cite{Coquereaux:1990qs} \cite{williams2015field}.
 \subsection{Darstellung in lokalen Koordinaten}
 \begin{equation}
 \tensor{\hat{g}}{_\mu_\nu}=\tensor{g}{_\mu_\nu}-\psi\tensor{A}{_\mu}\tensor{A}{_\nu}\,,\quad
@@ -532,8 +582,8 @@ der Ladung $Q$ eines Teilchens identifizieren.
  der Beitrag der elektrische Beitrag zu \eqref{eq:Lagrange2} verschwindet also.
  Dies führt die Konstruktion ad absurdum. Einziger Ausweg ist die $\tensor{g}{_4_4}$-Komponente
 \emph{a priori} konstant zu setzen und nicht zu variieren. Dies trübt
-die Allgemeinheit der Theorie da dadurch diese Komponente gegenüber den anderen
-ausgezeichnet ist. Zusätzliche Skalare Felder Tauchen häufig in theorien auf die
+die Allgemeinheit der Theorie, da dadurch diese Komponente gegenüber den anderen
+ausgezeichnet ist. Zusätzliche skalare Felder tauchen häufig in Theorien auf die
 sich der dimensionalen Reduktion bedienen. Sie werden häufig mit einem Teilchen,
 dem \emph{Dilaton} identifiziert. Zusätzliche Teilchen stellen an sich kein
 Probleme dar, einige ungelöste Fragestellungen der Physik (dunkle
