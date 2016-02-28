@@ -8,6 +8,133 @@ mathematisch. Annahmen:
 \item Testteilchen bewegen sich auf Geodäten
 \item die Eigenzeit ist durch die Bogenlänge gegeben
 \end{enumerate}
+\section{Alternative Darstellung $n+4$ dimensionaler Biliearformen}
+\section{Eigenschaften der Klein-Metrik}
+An jedem Punkt lässt sich die Metrik $\hat{g}$ durch eine symmetrische
+(Block-)Matrix
+\begin{equation}
+\widehat{G}=\begin{pmatrix}B& C\\
+C\transpose& H\end{pmatrix}
+\end{equation}
+beschreiben, wobei
+$B\in\operatorname{Sym}_4$
+\footnote{$\operatorname{Sym}_k$ bezeichnet die Menge aller symmetrischen
+$k\times k$-Matritzen.} , $H\in\operatorname{Sym}_n$.
+$H$ ist nicht entartet, $g$ nicht entartet ist. 
+Da die Matrix reell symmetrisch ist, ist sie (block-) diagonalisierbar
+\begin{equation}
+\begin{split}
+\widehat{G}
+&=
+\begin{pmatrix}1& A\\0& 1\end{pmatrix}
+\begin{pmatrix}G& 0\\0& H
+\end{pmatrix}
+\begin{pmatrix}1& 0\\A\transpose& 1\end{pmatrix}\,.
+\end{split}
+\end{equation}
+Die Blöcke sind gegeben als
+\begin{equation}
+G=B-CH^{-1}C\transpose\,,\quad A=CH^{-1}\,.
+\end{equation}
+Damit lässt sich direkt die Determinante angeben
+\begin{equation}
+\det(\hat{G})=\det(G)\det(H)
+\end{equation}
+Die Transformation lässt sich leicht umkehren
+\begin{equation}
+\begin{pmatrix}1& A\\0& 1\end{pmatrix}^{-1}=\begin{pmatrix}1& -A\\0&
+1\end{pmatrix}\,.
+\end{equation}
+Mit diesen Relationen ergibt sich eine alternative Darstellung des
+Linienelements
+\begin{equation}
+\begin{split}
+\dif \hat{s}^2&=\dif \vec{x}\transpose G
+\dif \vec{x}\\
+&=\dif \vec{x}\transpose
+\begin{pmatrix}1& -A\\0& 1\end{pmatrix}
+\begin{pmatrix}G& 0\\0& H
+\end{pmatrix}
+\begin{pmatrix}1& 0\\-A\transpose& 1\end{pmatrix}
+\dif \vec{x}\\
+&=\tensor{g}{_\mu_\nu}\dif \tensor{x}{^\mu}\dif\tensor{x}{^\nu}
++\tensor{h}{_a_b}\left(\dif\tensor{x}{^a}-\tensor*{A}{^a_\mu}\dif\tensor{x}{^\mu}\right)
+\left(\dif\tensor{x}{^b}-\tensor*{A}{^b_\mu}\dif\tensor{x}{^\mu}\right)
+\end{split}
+\end{equation}
+Da diese Darstellung im Wesentlichen vom Typ ist wie sie von Klein verwendet
+wurde soll wird sie im Folgenden als Klein-Darstellung bzw. eine Metrik vom Typ
+als Klein-Metrik bezeichnen.
+Berechnungen angelehnt an \cite{Coquereaux:1990qs} \cite{williams2015field}.
+\subsection{Darstellung in lokalen Koordinaten}
+\begin{equation}
+\tensor{\hat{g}}{_\mu_\nu}=\tensor{g}{_\mu_\nu}+\tensor{h}{_a_b}\tensor{A}*{^a_\mu}\tensor*{A}{^b_\nu}\,,\quad
+\tensor{\hat{g}}{_a_\mu}=\tensor{h}{_a_b}\tensor*{A}{^b_\mu}\,,\quad
+\tensor{\hat{g}}{_a_b}=\tensor{h}{_a_b}
+\end{equation}
+\subsection{Inverse}
+Wie sich leicht nachprüfen lässt ist die Inverse der Klein-Metrik gegeben als
+\begin{equation}
+\tensor{\hat{g}}{^\mu^\nu}=\tensor{g}{^\mu^\nu}\,,\quad
+\tensor{\hat{g}}{^a^\mu}=-\tensor{A}{^a^\mu}\,,\quad
+\tensor{\hat{g}}{^a^b}=\tensor*{A}{^a_\mu}\tensor*{A}{^b^\mu}+\tensor{h}{^a^b}\,.
+\end{equation}
+% \subsection{Determinante}
+% Die Determinante wird wie üblich zur Berechnung von Volumenelementen benötigt.
+% Bei der Berechnung ist folgende Formel für Matrizen $A,B,C,D$ hilfreich:
+% \begin{equation}
+% \begin{split}
+% \det\begin{pmatrix}A& B\\ C& D\end{pmatrix}&=\det\left[
+% \begin{pmatrix}1& B\\0& D\end{pmatrix}\begin{pmatrix}A-BD^{-1}C& 0\\DC^{-1
+% }& 1\end{pmatrix} \right]\\
+% &= \det(D) \det\left(A - B D^{-1}
+% C\right)\,.
+% \end{split}
+% \end{equation}
+% %TODO evtl. Beweis
+% Damit ergibt sich 
+% \begin{equation}
+% \begin{split}
+%  \hat{g}&=
+%  \det\begin{pmatrix}\tensor{g}{_\mu_\nu}+\psi\tensor{A}{_\mu}\tensor{A}{_\nu}
+%  &\psi \tensor{A}{_\mu}\\
+%  \psi \tensor{A}{_\mu}	 & \psi
+%  \end{pmatrix}\\
+%  &=\psi
+%  \det\left(\tensor{g}{_\mu_\nu}+\psi\tensor{A}{_\mu}\tensor{A}{_\nu}
+%  -\psi\tensor{A}{_\mu}\psi^{-1}\psi\tensor{A}{_\nu}\right)\\
+%  &=\psi \det\left(\tensor{g}{_\mu_\nu}\right)\\
+%  &=\psi g\,.
+% \end{split}
+% \end{equation}
+% Die Determinante der fünfdimensionalen Metrik ist also proportional zur 4
+% dimensionalen. 
+% \begin{bemerkung}
+% Die entsprechenden Ausdrücke für die Kaluza-Metrik sind deutlich komplizierter.
+% \end{bemerkung}
+\subsection{Christoffelsymbole}
+Siehe Williams: "`Field Equations and Lagrangian for the Kaluza Metric
+Evaluated with Tensor Algebra Software"'\cite{williams2015field}
+\subsection{Skalarkrümmung}
+\begin{equation}
+\hat{R}=R-\frac{1}{4}\psi\tensor{F}{_\mu_\nu}\tensor{F}{^\mu^\nu}
++\frac{1}{2\psi^2}(\pdif{_\mu}\psi)(\pdif{^\mu}\psi)
+-\frac{1}{\psi}\square\psi
+\end{equation}
+Wir führen zwei weitere Felder $\psi=:\phi^2$ und $\psi=:e^{2\sigma}$ ein womit
+sich der Term nochmals vereinfacht \footnote{Dies stellt keine Einschränkung
+dar, da $\psi$ positiv sein muss, damit $\hat{g}$ das gleiche Vorzeichen hat wie $g$. (Bei der Zusatzdimension handelt es sich um
+eine Raumdimension)}:
+\begin{equation}
+\hat{R}=R-\frac{1}{4}\phi^2\tensor{F}{_\mu_\nu}\tensor{F}{^\mu^\nu}
+-\frac{2}{\phi}\square \phi
+\end{equation}
+
+\begin{equation}
+\hat{R}=R-\frac{1}{4}e^{2\sigma}\tensor{F}{_\mu_\nu}\tensor{F}{^\mu^\nu}
+-2e^{-\sigma}\square e^{\sigma}
+\end{equation}
+
 \section{Die fünfdimensionale Raumzeit}
 Konstruktion der MFG: Siehe "`Coquereau Geometry of Multidimensional
 Universes"'\cite{coquereaux1983geometry}.
@@ -200,127 +327,7 @@ Transformationsverhalten unter vierdimensionalen Koordinatenwechseln.
 Dabei transformieren $\psi$, $\tensor{A}{_\mu}$ und $\tensor{g}{_\mu_\nu}$ als
 Skalar, Vektor, bzw. Tensor.
 %TODO sind noch weitere Trafos erlaubt?
-\section{Eigenschaften der Klein-Metrik}
-An jedem Punkt lässt sich die Metrik $\hat{g}$ durch eine symmetrische
-(Block-)Matrix
-\begin{equation}
-\widehat{G}=\begin{pmatrix}A& B\\B\transpose&
-C\end{pmatrix}
-\end{equation}
-beschreiben, wobei
-$A\in\operatorname{Sym}_4$
-\footnote{$\operatorname{Sym}_k$ bezeichnet die Menge aller symmetrischen
-$k\times k$-Matritzen.} , $C\in\operatorname{Sym}_n$.
-Im folgenden sei zudem die Matrix $C$ invertierbar. 
-Da die Matrix reell symmetrisch ist, ist sie (block-) diagonalisierbar
-\begin{equation}
-\begin{split}
-\widehat{G}
-&=
-\begin{pmatrix}1& D\\0& 1\end{pmatrix}
-\begin{pmatrix}G& 0\\0& C
-\end{pmatrix}
-\begin{pmatrix}1& 0\\D\transpose& 1\end{pmatrix}\,.
-\end{split}
-\end{equation}
-Die Blöcke sind gegeben als $G=A-BC^{-1}B\transpose$, $D=BC^{-1}$.
-Damit lässt sich direkt die Determinante angeben
-\begin{equation}
-\det(\hat{g})=\det(C)\det(g)
-\end{equation}
-Die Transformation lässt sich leicht umkehren
-\begin{equation}
-\begin{pmatrix}1& D\\0& 1\end{pmatrix}^{-1}=\begin{pmatrix}1& -D\\0&
-1\end{pmatrix}\,.
-\end{equation}
-Mit diesen Relationen ergibt sich eine alternative Darstellung des
-Linienelements
-\begin{equation}
-\begin{split}
-\dif \hat{s}^2&=\dif \vec{x}\transpose G
-\dif \vec{x}\\
-&=\dif \vec{x}\transpose
-\begin{pmatrix}1& -D\\0& 1\end{pmatrix}
-\begin{pmatrix}g& 0\\0& C
-\end{pmatrix}
-\begin{pmatrix}1& 0\\-D\transpose& 1\end{pmatrix}
-\dif \vec{x}\\
-&=\tensor{g}{_\mu_\nu}\dif \tensor{x}{^\mu}\dif\tensor{x}{^\nu}
-+\tensor{C}{_a_b}\left(\dif\tensor{x}{^a}-\tensor*{D}{^a_\mu}\dif\tensor{x}{^\mu}\right)
-\left(\dif\tensor{x}{^b}-\tensor*{D}{^b_\mu}\dif\tensor{x}{^\mu}\right)
-\end{split}
-\end{equation}
-Da diese Darstellung im Wesentlichen vom Typ ist wie sie von Klein verwendet
-wurde soll wird sie im Folgenden als Klein-Metrik bezeichnet. Berechnungen
-angelehnt an \cite{Coquereaux:1990qs} \cite{williams2015field}.
-\subsection{Darstellung in lokalen Koordinaten}
-\begin{equation}
-\tensor{\hat{g}}{_\mu_\nu}=\tensor{g}{_\mu_\nu}-\psi\tensor{A}{_\mu}\tensor{A}{_\nu}\,,\quad
-\tensor{\hat{g}}{_4_\mu}=\psi\tensor{A}{_\mu}\,,\quad
-\tensor{\hat{g}}{_4_4}=\psi
-\end{equation}
-\subsection{Inverse}
-Wie sich leicht nachprüfen lässt ist die Inverse der Klein-Metrik gegeben als
-\begin{equation}
-\tensor{\hat{g}}{^\mu^\nu}=\tensor{g}{^\mu^\nu}\,,\quad
-\tensor{\hat{g}}{^4^\mu}=-\tensor{A}{^\mu}\,,\quad
-\tensor{\hat{g}}{^4^4}=\tensor{A}{_\mu}\tensor{A}{^\mu}+\frac{1}{\psi}\,.
-\end{equation}
-\subsection{Determinante}
-Die Determinante wird wie üblich zur Berechnung von Volumenelementen benötigt.
-Bei der Berechnung ist folgende Formel für Matrizen $A,B,C,D$ hilfreich:
-\begin{equation}
-\begin{split}
-\det\begin{pmatrix}A& B\\ C& D\end{pmatrix}&=\det\left[
-\begin{pmatrix}1& B\\0& D\end{pmatrix}\begin{pmatrix}A-BD^{-1}C& 0\\DC^{-1
-}& 1\end{pmatrix} \right]\\
-&= \det(D) \det\left(A - B D^{-1}
-C\right)\,.
-\end{split}
-\end{equation}
-%TODO evtl. Beweis
-Damit ergibt sich 
-\begin{equation}
-\begin{split}
- \hat{g}&=
- \det\begin{pmatrix}\tensor{g}{_\mu_\nu}+\psi\tensor{A}{_\mu}\tensor{A}{_\nu}
- &\psi \tensor{A}{_\mu}\\
- \psi \tensor{A}{_\mu}	 & \psi
- \end{pmatrix}\\
- &=\psi
- \det\left(\tensor{g}{_\mu_\nu}+\psi\tensor{A}{_\mu}\tensor{A}{_\nu}
- -\psi\tensor{A}{_\mu}\psi^{-1}\psi\tensor{A}{_\nu}\right)\\
- &=\psi \det\left(\tensor{g}{_\mu_\nu}\right)\\
- &=\psi g\,.
-\end{split}
-\end{equation}
-Die Determinante der fünfdimensionalen Metrik ist also proportional zur 4
-dimensionalen. 
-\begin{bemerkung}
-Die entsprechenden Ausdrücke für die Kaluza-Metrik sind deutlich komplizierter.
-\end{bemerkung}
-\subsection{Christoffelsymbole}
-Siehe Williams: "`Field Equations and Lagrangian for the Kaluza Metric
-Evaluated with Tensor Algebra Software"'\cite{williams2015field}
-\subsection{Skalarkrümmung}
-\begin{equation}
-\hat{R}=R-\frac{1}{4}\psi\tensor{F}{_\mu_\nu}\tensor{F}{^\mu^\nu}
-+\frac{1}{2\psi^2}(\pdif{_\mu}\psi)(\pdif{^\mu}\psi)
--\frac{1}{\psi}\square\psi
-\end{equation}
-Wir führen zwei weitere Felder $\psi=:\phi^2$ und $\psi=:e^{2\sigma}$ ein womit
-sich der Term nochmals vereinfacht \footnote{Dies stellt keine Einschränkung
-dar, da $\psi$ positiv sein muss, damit $\hat{g}$ das gleiche Vorzeichen hat wie $g$. (Bei der Zusatzdimension handelt es sich um
-eine Raumdimension)}:
-\begin{equation}
-\hat{R}=R-\frac{1}{4}\phi^2\tensor{F}{_\mu_\nu}\tensor{F}{^\mu^\nu}
--\frac{2}{\phi}\square \phi
-\end{equation}
 
-\begin{equation}
-\hat{R}=R-\frac{1}{4}e^{2\sigma}\tensor{F}{_\mu_\nu}\tensor{F}{^\mu^\nu}
--2e^{-\sigma}\square e^{\sigma}
-\end{equation}
 \section{Lagrangedichte}
 %Karte auf $M/G$?
 Kleins Idee war es das Wirkungsprinzip nach Hilbert auf fünf Dimensionen zu
