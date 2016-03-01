@@ -106,8 +106,7 @@ t.p= \begin{pmatrix}
 0&0&1
 \end{pmatrix}p\,,\quad p\in Z\subset \Reals^3
 \end{equation}
-Wie man sich leicht klar macht ist die Wirkung glatt, frei und eigentlich sowie
-$Z$ eine $G$-Manigfaltigkeit.
+Wie man sich leicht klar macht ist die Wirkung glatt, frei und eigentlich.
 %TODO eigentlich?
 \end{beispiel}
 \begin{figure}[!htbp]
@@ -135,7 +134,7 @@ $Z$ eine $G$-Manigfaltigkeit.
 \draw[densely dashed]  (-1,2) arc (-180:0:1cm and 0.5cm);
 \draw[thick, red, -latex] (0,2) [partial ellipse=-60:-140:1cm and 0.5cm];
 %\draw[thick, blue!80!black,-latex] (0.51,1.57)-- (0.51,3);
-\node at (2,4) {$\mathbb{R}\times\mathbb{S}^1$};
+\node at (2.2,4) {$Z=\mathbb{R}\times\mathbb{S}^1$};
 \node at (2+0.3,-1-0.2) {$y$};
 \node at (-2+0.3,-1-0.2) {$x$};
 \node at (0.3,5) {$z$};
@@ -192,7 +191,7 @@ also lokal als Produkt von Orbitraum und Orbit darstellen.
 \draw[red,thick]  (-1,2) arc (-180:0:1cm and 0.5cm);
 % \draw[thick, red, -latex] (0,2) [partial ellipse=-60:-140:1cm and 0.5cm];
 \draw[thick, blue!80!black] (0.51,-0.4)-- (0.51,3.55);
-\node at (2,4) {$\mathbb{R}\times\mathbb{S}^1$};
+\node at (2.2,4) {$Z=\mathbb{R}\times\mathbb{S}^1$};
 \node[red] at (1.7,2) {$G.p$};
 \node[ blue!80!black] at (0.6,-0.9) {$M/G$};
 \node at (2+0.3,-1-0.2) {$y$};
@@ -238,8 +237,9 @@ also lokal als Produkt von Orbitraum und Orbit darstellen.
 % \end{figure}
 Interessant sind insbesondere Fälle in denen der Orbitraum selbst wieder eine
 Manigfaltigkeit darstellt. Dass dabei auch Probleme auftreten können zeigt
-folgendes \begin{beispiel}[Ein nicht Hausdorfscher Quotient]
-Sei $G=(\Reals,+)$, $M=\Reals$ und $G$ wirke auf $M$ durch $t.x=e^tx$.
+folgendes \begin{beispiel}[Ein nicht Hausdorfscher Quotient
+\cite{abraham1978foundations}] Sei $G=(\Reals,+)$, $M=\Reals$ und $G$ wirke auf
+$M$ durch $t.x=e^tx$.
 Der Quotient $M/G$ enthält die drei Äquivalenzklassen $[-1],[0],[1]$, da die
 Abbildung das Vorzeichen nicht ändert.
 Die Quotiententopologie $\tau$ lässt sich explizit angeben:
@@ -308,10 +308,8 @@ Fälle auschließt.
 % \end{equation}
 % bei in der Identität differenzierbar. Man erhält so zu jedem $x\in M$ einen
 % Vektor insgesammt erhält man ein Vektorfeld $V$ auf $M$.
-Typen von Orbits. Maximale Orbits.
-\begin{theorem}[Principal Orbit Theorem]
-\end{theorem}
-\begin{theorem}[Quotient Manifold Theorem]
+%TODO Typen von Orbits. Maximale Orbits.
+\begin{theorem}[Quotient Manifold Theorem \cite{lee2003smooth}]
 Sei $G$ eine Lie Gruppe, die glatt, frei und eigentlich auf einer glatten
 Manigfaltigkeit $M$ wirkt, dann ist der Orbitraum eine topologische
 Manigfaltigkeit der Dimension $\dim M/G=\dim M -\dim G$ und es existiert eine
@@ -322,13 +320,6 @@ Sei $G$ eine Lie Gruppe, die glatt, frei und eigentlich auf einer glatten
 Manigfaltigkeit $M$ wirkt. Dann ist $\pi:M\to M/G$ ein glattes Hauptfaserbündel,
 mit Basis $M/G$ und typischer Faser $G$.
 \end{korollar}
-\subsection{\ldots}
-Im folgenden sei $G$ eine $d$-dimensionale kompakte Liegruppe, $E$ eine
-$(4+d)$-dimensionale (pseudo-)riemannsche $G$-Manigfaltigkeit mit $G$
-invarianter Metrik $g$. Weiter operiere $G$ frei auf $E$. Mit $M=E/G$ bezeichen
-wir die $4$-dimensionale Untermanigfaltigkeit von $E$ die durch identifikation
-der Orbits gegeben ist. Die kanonische Projektion $\pi:E\to M$ macht $E$ ein
-$G$-Hauptfaserbündel mit typischer Faser $G$.
 \subsection[Integration inv Fkt]{Integration $G$ invarianter Funktionen}
 \begin{definition}
 Sei $X$ eine $G$-Menge, $Y$-Menge, $f:X\to Y$ mit
@@ -339,7 +330,7 @@ dann heißt $f$ $G$-invariant.
 \end{definition}
 Sei $\pi: E\to M$ ein $G$-Hauptfaserbündel, ausgestattet mit einer
 $G$-invarianten (pseudo-)riemanschen Metrik $g$, weiter sei
-$f:E\to \mathrm{R}$, $G$-invariant und integrierbar. Eine Tivialisierung einer
+$f:E\to \Reals$, $G$-invariant und integrierbar. Eine Tivialisierung einer
 offenen Menge $U\subset M=E/G$, ist ein Homoemorphismus
 \begin{equation}
 \Psi:\pi^{-1}(U)\to U\times G\,.
