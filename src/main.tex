@@ -75,7 +75,7 @@
 	bookmarksnumbered=true, % bookmarks are numbered
 	bookmarksopen=true,     % show bookmarks at start of pdf viewer
 	bookmarksopenlevel=2,   % level to which the bookmarks are opened
-	bookmarksdepth=3,       % depth of bookmarks 
+	bookmarksdepth=2,       % depth of bookmarks 
 	unicode=true,           % non-Latin characters in pdf viewer's bookmarks
 	pdftoolbar=false,       % show pdf viewer's toolbar?
 	pdfmenubar=true,        % show pdf viewer's menu?
@@ -95,6 +95,25 @@
 %general stuff
 \usepackage{cite}
 \usepackage{glossaries}	% create glos­saries and lists of acronyms
+\usepackage[nohyperlinks]{acronym}
+\setcounter{tocdepth}{1} 
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}			% line for title page
+\newcommand*\EmptyPage{\newpage\null\thispagestyle{empty}\newpage}
+
+\addto\extrasenglish{
+	\renewcommand{\chapterautorefname}{Chapter}
+	\renewcommand{\sectionautorefname}{Chapter}
+	\renewcommand{\subsectionautorefname}{Chapter}
+ 	\renewcommand{\subsubsectionautorefname}{Chapter}
+}
+
+\addto\extrasngerman{
+	\renewcommand{\sectionautorefname}{Kapitel}
+	\renewcommand{\subsectionautorefname}{Kapitel}
+ 	\renewcommand{\subsubsectionautorefname}{Kapitel}
+}
+\newcommand{\const}{const.}		
 
 
 % general math
@@ -141,7 +160,6 @@
 % miscellaneous
 
 \newcommand{\imI}{\ensuremath{\mathrm{i}}}
-\newcommand{\const}{\text{const.}}
 \newcommand{\landauO}{\mathcal{O}}
 \newcommand{\name}[1]{\textsc{#1}}
 \newcommand\grad{\ensuremath{^\circ}}
@@ -158,6 +176,7 @@
 \newtheorem{lemma}{Lemma}
 \newtheorem{satz}{Satz}
 \newtheorem{proposition}{Proposition}
+\newtheorem{korollar}{Korollar}
 
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}
@@ -173,13 +192,24 @@
 \begin{document}
 \selectlanguage{ngerman}
 \onehalfspacing
+\input{cover}
 
+\EmptyPage
 
 \hypersetup{pageanchor=false} %stop page numbering (hyperref) to prevent for double page numers
 
+
+\input{cover}
+
+\EmptyPage
+
 \input{titlepage}
 \thispagestyle{empty}
-\newpage
+
+\EmptyPage
+
+\input{declaration}
+\thispagestyle{empty}
 
 \pagenumbering{roman}
 \setcounter{page}{1}
