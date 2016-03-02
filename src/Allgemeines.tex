@@ -29,6 +29,7 @@ $\tensor{\hat{R}}{_i_j}$. Mit $g$ bezeichnen wir die Determinante der Metrik.
 Wir verwenden geometrisierte Einheiten, d.h. Einheiten in denen
 $8\pi G=c=1$. Es verbleibt nur noch eine Längendimension.
 \section{Differentialgeometrie}
+%TODO symmetrien!
 Wir wollen Manigfaltigkeiten betrachten, welche gewisse Symmetrien besitzen.
 Anschaulich beschreibt eine Symmetrie die Invarianz eines Objektes unter einer
 Operation.
@@ -60,15 +61,17 @@ R(\alpha)=
 0&0&1
 \end{pmatrix}
 \end{equation}
+%TODO zusammenhang SO(2) und R/Z
 Das diese Gruppe eine differenzierbare Struktur besitz ist klar da die
 Komponenten der Matrizen differenzierbar sind.
-\begin{definition}[Lie Gruppe]
+\begin{definition}[Lie-Gruppe]
 
 \end{definition}
 
 Gruppen können auf Mengen operieren.  Um die Diskussion allgemeiner zu gestalten definieren wir
-Operationen allgemeiner Gruppen. Die Hauptforderung an die Wirkung der Gruppe
-auf der Menge ist, dass die Operation mit der Gruppenoperation kompatibel ist.
+Operationen allgemeiner Gruppen. 
+Eine sinvolle Operation einer Gruppe sollte mit den Gruppenoperationen
+kompatibel sein. 
 \begin{definition}[Gruppenwirkung]
 Sei $G$ eine Gruppe, $X$ eine Menge. Eine Abbildung
 \begin{equation}
@@ -90,10 +93,11 @@ $G$-Mannigfaltigkeit.
 \begin{definition}
 Sei $X$ eine $G$-Menge. Die Wirkung von $G$ heißt:
 \begin{enumerate}
-  \item \emph{eigentlich}, falls unter der Abbildung $\Gamma_G:(g,x)\mapsto (g
-  \gmal x,x)$, Urbilder kompakter Mengen kompakt sind
-  \item \emph{(fixpunkt-)frei}, falls nur die Identität Fixpunkte besitz, d.h.
-  $g\gmal x=x$, impliziert $g=e$.
+  \item \emph{eigentlich}, falls unter der Abbildung $\Gamma:
+  G\times X\to X\times X\,,(g,x)\mapsto (g \gmal x,x)$, Urbilder kompakter
+  Mengen kompakt sind
+  \item \emph{(fixpunkt-)frei}, falls nur die Identität Fixpunkte besitzt, d.h.
+  aus $g\gmal x=x$, folgt $g=e$.
 \end{enumerate}
 \end{definition}
 \begin{beispiel}[Wirkung von $\Reals/\Integers$ auf einem Zylinder]
@@ -145,26 +149,30 @@ Wie man sich leicht klar macht ist die Wirkung glatt, frei und eigentlich.
 \caption{Wirkung von $\Reals/\Integers$ auf dem Zylinder $Z$.}
 \end{figure}
 \section{Orbiträume}
+Die Wirkung einer Gruppe definiert in natürlicher
+Weise Äquivalenklassen auf einer Manigfaltigkeit, welche gerade diejenigen
+Elemente enthalten, die sich durch $G$-Wirkung ineinander überführt werden.
+Eine solche Äquivalenzklasse nennen wir Bahn oder Orbit. 
 \begin{definition}[Orbit]
 Sei $X$ eine $G$-Menge, $x\in X$, dann heißt die Menge
 \begin{equation}
 G \gmal x=\{g \gmal x\,|\,g\in G\}
 \end{equation}
-Orbit von $x$. Als \emph{Orbitraum} bezeichnen wir die Menge aller Orbits
+\emph{Orbit} von $x$. Als \emph{Orbitraum} bezeichnen wir die Menge aller Orbits
 \begin{equation}
 M/G=\{[x]=G.x\,|\,x\in M\}\,,
 \end{equation}
+versehen mit der Quotiententopologie, der gröbsten Topologie für die die
+kanonische Projektion $x\mapsto [x]$ stetig ist.
 \end{definition}
-zusammen mit der Quotiententopologie, der gröbsten Topologie für die die kanonische Projektion
-$x\mapsto [x]$ stetig ist.
 \begin{beispiel}[Orbits von $\Reals/\Integers$ auf $Z$]
 Wenn wir wieder das Beispiel $G=\Reals/\Integers$, $M=Z$ heranziehen, so sind die Orbits gegeben durch
 \begin{equation}
 G.(0,0,z)=\left\{(\sin (2\pi t),\sin (2\pi t),z)\,,t \in
 [0,1)\right\}\cong\Sphere^1\,.
 \end{equation}
-Der Orbitraum $M/G$ ist diffeomorph zu $\Reals$. Der Zylinder lässt sich
-also lokal als Produkt von Orbitraum und Orbit darstellen.
+Der Orbitraum $M/G$ selbs ist offensichtlich diffeomorph zu $\Reals$. Der
+Zylinder lässt sich also lokal als Produkt von Orbitraum und Orbit darstellen.
 \end{beispiel}
 \begin{figure}[!htbp]
 \centering
@@ -235,9 +243,10 @@ also lokal als Produkt von Orbitraum und Orbit darstellen.
 %   \node at (1,3) {$\mathbb{S}^1\times\mathbb{S}^1$};
 % \end{tikzpicture}
 % \end{figure}
-Interessant sind insbesondere Fälle in denen der Orbitraum selbst wieder eine
-Manigfaltigkeit darstellt. Dass dabei auch Probleme auftreten können zeigt
-folgendes \begin{beispiel}[Ein nicht Hausdorfscher Quotient
+Interessant sind insbesondere Fälle, in denen der Orbitraum selbst wieder eine
+Manigfaltigkeit darstellt. Dass dabei auch Probleme auftreten können, zeigt
+folgendes 
+\begin{beispiel}[Ein nicht Hausdorffscher Quotient
 \cite{abraham1978foundations}] Sei $G=(\Reals,+)$, $M=\Reals$ und $G$ wirke auf
 $M$ durch $t.x=e^tx$.
 Der Quotient $M/G$ enthält die drei Äquivalenzklassen $[-1],[0],[1]$, da die
@@ -246,8 +255,8 @@ Die Quotiententopologie $\tau$ lässt sich explizit angeben:
 \begin{equation}
 \tau =\big\{\emptyset,\{[-1]\},\{[1]\},\{[-1],[1]\},M/G\big\}\,.
 \end{equation}
-Offensichtlich ist die einzige Menge die $[0]$ enthält $M/G$. Die Elemente
-$[0],[1]$ lassen sich also nicht durch offene Mengen trennen, d.h. $(M/G,\tau)$
+Offensichtlich ist die einzige Menge, die $[0]$ enthält $M/G$. Die Elemente
+$[0],[1]$ lassen sich damit nicht durch offene Mengen trennen, d.h. $(M/G,\tau)$
 ist nicht Hausdorff.
 \begin{figure}[!htbp]
 \centering
@@ -279,9 +288,10 @@ ist nicht Hausdorff.
 \end{figure}
 \end{beispiel}
 Tatsächlich scheitert die Konstruktion daran, dass die Wirkung nicht eigentlich
-ist, beispielsweise ist das Urbild $\Gamma_G^{-1}\big([0,1]\times
+ist, beispielsweise ist das Urbild $\Gamma^{-1}\big([0,1]\times
 \{1\}\big)=(-\infty,0]\times \{1\}$ nicht kompakt.
-Tatsächlich ist die Forderung notwendig dafür, dass der Quotient Hausdorff ist.
+Vielmehr lässt sich zeigen dass der Quotient genau dann Hausdorff ist, wenn die
+Gruppe frei wirkt.
 %TODO REF
 
 Wir geben nun eine Charakterisierung, die solche pathologische
@@ -310,73 +320,137 @@ Fälle auschließt.
 % Vektor insgesammt erhält man ein Vektorfeld $V$ auf $M$.
 %TODO Typen von Orbits. Maximale Orbits.
 \begin{theorem}[Quotient Manifold Theorem \cite{lee2003smooth}]
-Sei $G$ eine Lie Gruppe, die glatt, frei und eigentlich auf einer glatten
+Sei $G$ eine Lie-Gruppe, die glatt, frei und eigentlich auf einer glatten
 Manigfaltigkeit $M$ wirkt, dann ist der Orbitraum eine topologische
 Manigfaltigkeit der Dimension $\dim M/G=\dim M -\dim G$ und es existiert eine
-eindeutige glatte Struktur sodass $\pi:M\to  M/G$ eine Glatte submersion ist.
+eindeutige glatte Struktur sodass $\pi:M\to  M/G$ eine Glatte Submersion ist.
 \end{theorem}
 \begin{korollar}
-Sei $G$ eine Lie Gruppe, die glatt, frei und eigentlich auf einer glatten
+Sei $G$ eine Lie-Gruppe, die glatt, frei und eigentlich auf einer glatten
 Manigfaltigkeit $M$ wirkt. Dann ist $\pi:M\to M/G$ ein glattes Hauptfaserbündel,
 mit Basis $M/G$ und typischer Faser $G$.
 \end{korollar}
-\subsection[Integration inv Fkt]{Integration $G$ invarianter Funktionen}
-\begin{definition}
-Sei $X$ eine $G$-Menge, $Y$-Menge, $f:X\to Y$ mit
+\section[Integration inv Fkt]{Integration auf Faserbündeln}
+\begin{theorem}[Verallgemeinerter Fubini\label{th:fubini}]
+Sei $M,N$, $m$ bzw. $n$-dimensionale, orientierbare Manigfaligkeiten, mit $m\geq
+n$.
+Sei $\varphi:M\to N$ glatt, $\omega$ eine $(m-n)$-form auf $M$, sowie $\eta$
+eine $n$-Form auf $N$. Sei $f:M\to \Reals$ Lebesgue integrabel, dann existiert
+das Integral 
 \begin{equation}
-f(g.p)=f(p)\,,\quad \forall g\in G\,,p\in E\,,
+F(p)=\int_{\varphi^{-1}(p)}f\omega 
+\end{equation}
+für fast alle $p\in N$ und $F$ ist messbar. Es gilt
+\begin{equation}
+\int_{M}f\omega\wedge\varphi^*\eta=\int_{N}F \eta\,.
+\end{equation}
+% Seien $M$, $N$ orientierbare Manigfaltigkeiten, $\pi$ die Projektion auf $M$
+% bzw $N$, $\eta$, $\omega$ differentialformen auf $M$ bzw. $N$, $h:M\times N\to
+% \Reals$ glatt, dann gilt
+% \begin{equation}
+% \int_{M\times N} h\pi_1^\star\eta\wedge\pi_2^\star\omega
+% =\int_M g\eta\,,\quad g(p):=\int_N h(p,\cdot)\omega\,.
+% \end{equation}
+\end{theorem}
+\begin{proof}
+Sulantke und Wintgen
+\end{proof}
+\begin{bemerkung}
+Bei \autoref{th:fubini} handelt es sich um eine Verallgemeinerung des aus der
+Analysis bekannten Satzes von Fubini. 
+Sei $M=\Reals^m$, $N=\Reals^n$, und 
+\begin{align*}
+  \pi :M &\to N\\
+  (x_1,\dots,x_n,y_1,\dots,y_k) &\mapsto (x_1,\dots,x_n)\,.
+\end{align*}
+Wir definieren Differentialformen auf $N$ bzw. $M$ durch 
+$\omega=\dif{x}^1\wedge\cdots\wedge\dif{x}^n$ und
+$\eta=\dif{x}^{n+1}\wedge\cdots\wedge\dif{x}^m$.
+Nach\autoref{th:fubini}gilt
+\begin{equation}
+\begin{split}
+\int_{\Reals^m} f\dif{}^m x &= \int_{\Reals^m}
+f\dif{x}^1\wedge\cdots\wedge\dif{x}^n\wedge\dif{x}^{n+1}\wedge\cdots\wedge\dif{x}^m\\
+&= \int_{\Reals^m}f\,\omega\wedge\pi^*\eta\\
+&= \int_{\Reals^n}\left(\int_{\pi^{-1}(x)}f\,\omega\right)\eta\\
+&= \int_{\Reals^n}\left(\int_{\{x\}\times\Reals^{(m-n)}}f\,\omega\right)\eta\,,
+\end{split}
+\end{equation}
+was der bekannten Formel entspricht.
+\end{bemerkung}
+Ein interessantes Resultat ergibt sich wenn wir Funktionen betrachten, die
+entlang der Fasern $\pi^{-1}(x)$ konstant sind.
+\begin{definition}
+Sei $X$ eine $G$-Menge, $Y$ eine Menge, $f:X\to Y$ mit
+\begin{equation}
+f(g\gmal p)=f(p)\,,\quad \forall g\in G\,,p\in E\,,
 \end{equation}
 dann heißt $f$ $G$-invariant.
 \end{definition}
-Sei $\pi: E\to M$ ein $G$-Hauptfaserbündel, ausgestattet mit einer
-$G$-invarianten (pseudo-)riemanschen Metrik $g$, weiter sei
-$f:E\to \Reals$, $G$-invariant und integrierbar. Eine Tivialisierung einer
-offenen Menge $U\subset M=E/G$, ist ein Homoemorphismus
-\begin{equation}
-\Psi:\pi^{-1}(U)\to U\times G\,.
-\end{equation}
-Wir definieren eine Abbildung $\tilde{f}: M\to\mathrm{R}$
-\begin{equation}
-\tilde{f}\left(x\right):=\left(f\circ \Psi^{-1}\right)(x,e)\,.
-\end{equation}
-% Diese ist wohldefiniert, denn
-% \begin{equation}
-% \begin{split}
-% f\left(\Psi^{-1}(x,h)\right)&=f\left(\Psi^{-1}(x,h.e)\right)\\
-% &=f\left(h.\Psi^{-1}(x,e)\right)\\
-% &=f\left(\Psi^{-1}(x,e)\right)\,.
-% \end{split}
-% \end{equation}
-Damit gilt
+Sei $G$ eine Liegruppe mit endlichem Volumen $\vol(G):=\int_G\dif h<\infty$. 
+Wir betrachten ein $G$-Hauptfaserbündel $\pi: E\to M$,
+ausgestattet mit einer $G$-invarianten (pseudo-)riemanschen Metrik $g$. 
+Die Abbildung $f:E\to \Reals$ sei $G$-invariant und integrierbar. Dann gilt nach
+\autoref{th:fubini}
 \begin{equation}
 \begin{split}
-\int_{\pi^{-1}(U)}f(x)\dif x&=
-\int_{\Psi\left(\pi^{-1}(U)\right)}\left[f\circ\Psi^{-1}\right](y,h)\dif y
-\dif h\\
-&=
-\int_{U\times G}\left[f\circ\Psi^{-1}\right](y,h)\dif y
-\dif h\\
-&=\int_G\int_{U}\tilde{f}\left(y\right)\dif y
-\dif h\\
-&=\vol (G)\int_{U}\tilde{f}\left(y\right)\dif y\,,\label{eq:Intprod}
+\int_E f\sqrt{g}\dif{}\hat{x}&=\int_{M}\int_{G}f\sqrt{g}\dif^{}h \dif x\\
+&=\int_{M}f\sqrt{g}\int_{G}\dif^{}h \dif x\\
+&=\vol(G)\int_{M}f\sqrt{g} \dif x\\
 \end{split}
 \end{equation}
-wobei im zweiten Schritt der Satz von Fubini-Tonelli genutzt wurde, und
-$\vol(G):=\int\dif h<\infty$ Eine anschauliche Betrachtung $\tilde{f}$ als
-Mittelung der makroskopischen Funktion $f$ über die Zusatzdimension auffassen.
-Phsikalisch liegt ein solcher Fall vor, falls die Auflösung einer Messung zu
-gering ist um die kompakte Dimension zu beobachten. Bisher konnten kompakte
-Zusatzdimensionen nicht beobachtet werden, neue Erkentnisse bringt
-möglicherweise der 2015 gestarteten Lauf des Large Hadron Coliders am CERN. Die
-lokalen Trivialisierungen überdecken $M$, damit lassen sich auch Integrale auf dem gesammten Raum auf
-Integrale von der Form \eqref{eq:Intprod} zurückführen insbesondere gilt für die
-$G$-invariante Funktion $f\sqrt{g}$
-\begin{equation}
-\int_{E}f(x)\sqrt{g(x)}\dif x=\vol
-(G)\int_{M}\tilde{f}\left(y\right)\sqrt{\tilde{g}(y)}\dif y
-\end{equation}
-wobei $\tilde{g}(y)=\left[g\circ\Psi^{-1}\right](y,h)$. Im folgenden lassen wir
-die Tilden weg und identifizieren die Ausdrücke stillschweigend miteinander.
+Die Integration über den Totalraum $E$ kann also mit einer Integration über die
+Basis $M$ identifiziert werden.
+% Eine
+% Tivialisierung einer offenen Menge $U\subset M=E/G$, ist ein Homoemorphismus
+% \begin{equation}
+% \Psi:\pi^{-1}(U)\to U\times G\,.
+% \end{equation}
+% Wir definieren eine Abbildung $\tilde{f}: M\to\mathrm{R}$
+% \begin{equation}
+% \tilde{f}\left(x\right):=\left(f\circ \Psi^{-1}\right)(x,e)\,.
+% \end{equation}
+% % Diese ist wohldefiniert, denn
+% % \begin{equation}
+% % \begin{split}
+% % f\left(\Psi^{-1}(x,h)\right)&=f\left(\Psi^{-1}(x,h.e)\right)\\
+% % &=f\left(h.\Psi^{-1}(x,e)\right)\\
+% % &=f\left(\Psi^{-1}(x,e)\right)\,.
+% % \end{split}
+% % \end{equation}
+% Damit gilt
+% \begin{equation}
+% \begin{split}
+% \int_{\pi^{-1}(U)}f(x)\dif x&=
+% \int_{\Psi\left(\pi^{-1}(U)\right)}\left[f\circ\Psi^{-1}\right](y,h)\dif y
+% \dif h\\
+% &=
+% \int_{U\times G}\left[f\circ\Psi^{-1}\right](y,h)\dif y
+% \dif h\\
+% &=\int_G\int_{U}\tilde{f}\left(y\right)\dif y
+% \dif h\\
+% &=\vol (G)\int_{U}\tilde{f}\left(y\right)\dif y\,,\label{eq:Intprod}
+% \end{split}
+% \end{equation}
+% Eine anschauliche Betrachtung $\tilde{f}$ als Mittelung der makroskopischen Funktion $f$ über die Zusatzdimension auffassen.
+% Phsikalisch liegt ein solcher Fall vor, falls die Auflösung einer Messung zu
+% gering ist um die kompakte Dimension zu beobachten. Bisher konnten kompakte
+% Zusatzdimensionen nicht beobachtet werden, neue Erkentnisse bringt
+% möglicherweise der 2015 gestarteten Lauf des Large Hadron Coliders am CERN. Die
+% lokalen Trivialisierungen überdecken $M$, damit lassen sich auch Integrale auf dem gesammten Raum auf
+% Integrale von der Form \eqref{eq:Intprod} zurückführen insbesondere gilt für die
+% $G$-invariante Funktion $f\sqrt{g}$
+% \begin{equation}
+% \int_{E}f(x)\sqrt{g(x)}\dif x=\vol
+% (G)\int_{M}\tilde{f}\left(y\right)\sqrt{\tilde{g}(y)}\dif y
+% \end{equation}
+% wobei $\tilde{g}(y)=\left[g\circ\Psi^{-1}\right](y,h)$. Im folgenden lassen wir
+% die Tilden weg und identifizieren die Ausdrücke stillschweigend miteinander.
+% Wir beenden dieses Kapitel mit einem Beispiel, der sogenannten
+%\emph{ADM-decomposition}.
+\begin{beispiel}[ADM-decomposition]
+ 
+ \end{beispiel}
 \section{Variationsprinzip}
 Feldtheorien lassen sich meist über
 Variationsprinzipien formulieren. Dies gilt insbesondere für
