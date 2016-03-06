@@ -68,8 +68,8 @@ Damit reduzieren sich die Maxwell-Gleichungen zu zwei Gleichungen
 \subsection{Eichtransformationen}
 \section{Allgemeine Relativitätstheorie}
 \subsection{Einsteinsche Feldgleichungen}
-Die Einsteinschen Feldgleichungen lauten\footnote{Der Term proportional zur
-kosmologischen Konstante $\Lambda$ hat über kleine Distanzen
+Die Einsteinschen Feldgleichungen lauten in lokalen Koordinaten\footnote{Der
+Term proportional zur kosmologischen Konstante $\Lambda$ hat über kleine Distanzen
 vernachlässigbaren Einfluss und wird im Folgenden nicht berücksichtigt.}
 \begin{equation}
 \tensor{R}{_\mu_\nu} - \frac{R}{2}\, \tensor{g}{_\mu_\nu}
@@ -77,18 +77,21 @@ vernachlässigbaren Einfluss und wird im Folgenden nicht berücksichtigt.}
 =\tensor{T}{_\mu_\nu}\,.
 \end{equation}
 Der Tensor $\tensor{T}{_\mu_\nu}$ heißt \emph{Energie-Impuls-Tensor} und
-enthält Information über die Materie, d.h. über die Felder im Raum. Im Vakuum
-gilt $\tensor{T}{_\mu_\nu}=0$.
-Bilden wir die Spur der Einsteingleichungen so finden wir das die Skalarkrümmung
-$R$ verschwindet:
+enthält Information über die Materie, d.h. über die Felder im Raum. Eine
+besonders einfache Form nehmen die Gleichungen im Vakuum an, denn dann gilt 
+$\tensor{T}{_\mu_\nu}=0$.
+Bilden wir die Spur der Einsteingleichungen, so finden wir 
 \begin{equation}
-0=R- \frac{R}{2}\, \tensor{g}{^\mu_\mu}= -R\,.
+0=R- \frac{R}{2}\, \tensor{g}{^\mu_\mu}= -R\,,
 \end{equation}
+die Skalarkrümmung $R$ verschwindet.
 Einsetzen in die Einsteingleichungen liefert wiederum
 \begin{equation}
 \tensor{R}{_\mu_\nu}=0\,.
 \end{equation}
 \subsection{Variationsprinzip}
+% TODO So formulieren Das S: Rank2sym->R problem S-> Max und
+% |_\alphS(g+\alphah)=0 für alle Testfunktionen. Rechenregeln
 Eine elegante Ableitung der Einsteingleichungen ergibt sich mithilfe eines auf
 Hilbert zurückgehenden Variationsprinzips. 
 Die Idee lautet: wähle die Metrik $g$ als kritischen
@@ -96,9 +99,9 @@ Punkt eines Funktionales, dass nur von der Krümmung abhängt. Das
 einfachste solche Funktional ist die so genannte
 \emph{Einstein-Hilbert-Wirkung}
 \begin{equation}
-S\textsubscript{EH}[g]=\int_{M}\sqrt{-g}R[g] \dif{}^4x \,.
+S[g]=\int_{M}\sqrt{-g}R[g] \dif{}^4x \,.
 \end{equation}
-Bei der Variation dieses Funktionals treten verschiedene Terme auf. Wir
+Bei der Variation dieses Funktionales treten verschiedene Terme auf. Wir
 betrachten zunächst den Volumenfaktor $\sqrt{-g}$
 \begin{equation}
 \delta g = g  \tensor{g}{^\mu^\nu}\delta\tensor{g}{_\mu_\nu}
@@ -113,8 +116,8 @@ betrachten zunächst den Volumenfaktor $\sqrt{-g}$
 \tensor{g}{^\mu^\nu}\right)
 \end{split}
 \end{equation}
-Um die Variation des Krümmungskalars zu berechnen wähle man zweckmäßigerweise
-ein Riemannsches Normalkoodinatensystem\footnote{Ein Koordinatensystem in dem
+Um die Variation des Krümmungskalar zu berechnen wähle man zweckmäßigerweise
+ein Riemannsches Normalkoordinatensystem\footnote{Ein Koordinatensystem in dem
 $\cSym{\rho}{\mu}{\sigma}=0$ im betrachteten Punkt},
 \begin{equation}
 \begin{split}
@@ -144,10 +147,10 @@ Weiter berechnet man
 +\tensor{g}{^\mu^\nu}\delta\tensor{R}{_\mu_\nu}\,.
 \end{split}
 \end{equation}
-Damit ist die Variation des EH-Funktionals gegeben als
+Damit ist die Variation des EH-Funktionales gegeben als
 \begin{equation}
 \begin{split}
-\delta S\textsubscript{EH}
+\delta S
 &=\fourint \left[
 R\delta\sqrt{-g}+\sqrt{-g}\delta R\right]\\
 &=\fourint \left[
@@ -205,12 +208,14 @@ Unterschiede:
 	entschieden werden ob man frei fällt oder nicht
 	\item Die Einsteingleichungen sind nichtlinear und zweiter Ordnung die
 	Maxwellgleichungen linear und erster Ordnung
+	\item Kraft vs Geometrie
 \end{itemize}
 Gemeinsamkeiten:
 \begin{itemize}
   	\item Diffeomorphismeninvarianz/Eichinvarianz
 	\item In der nichtrelativistischen Näherung $1/r^2$ Gesetz.
 	\item Massenloses bosonisches Vermittlerteilchen.
+	\item Lagrangeformulierung
 \end{itemize}
 Insgesamt lässt sich hoffen das eine vereinheitlichte Theorie so formuliert
 werden kann das sie einerseits die Ähnlichkeiten erklärt und auf gemeinsame

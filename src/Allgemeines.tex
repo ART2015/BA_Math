@@ -17,7 +17,7 @@ $\mu=0,\ldots,3\,$, lateinische über alle inklusive der
 Zusatzkomponenten \footnote{Verwirrung bezüglich der gängigen Konvention
 mit lateinischen Indices die Raumkomponenten zu benennen sollte dabei nicht
 aufkommen.}, $i=0,\ldots,3+n\,$. Weiter verwenden wir die Einsteinsche
-Summenkonvention, d.h. über paare von indices wird implizit summiert.
+Summenkonvention, d.h. über paare von Indizes wird implizit summiert.
 
 Im Zusammenhang mit Zusatzdimensionen tauchen Größen auf, die sowohl ein 4, als
 auch ein $4+n$ dimensionales Pendant besitzen. Um diese von einander zu
@@ -28,28 +28,46 @@ $\tensor{\hat{R}}{_i_j}$. Mit $g$ bezeichnen wir die Determinante der Metrik.
 \subsection*{Geometrisierte Einheiten}
 Wir verwenden geometrisierte Einheiten, d.h. Einheiten in denen
 $8\pi G=c=1$. Es verbleibt nur noch eine Längendimension.
-\section{Differentialgeometrie}
-%TODO symmetrien!
-Wir wollen Manigfaltigkeiten betrachten, welche gewisse Symmetrien besitzen.
-Anschaulich beschreibt eine Symmetrie die Invarianz eines Objektes unter einer
-Operation.
-Ein einfaches Beispiel für eine solche Symmetrie stellt der Zylinder
+\section{Modell einer höherdimensionalen Raumzeit}
+In diesem Kapitel wollen wir ein möglichst allgemeines Modell einer
+$d+4$-dimensionalen Raumzeit entwerfen. Häufig weisen Probleme in der Physik
+Symmetrien auf, d.h. \ldots
+Kontinuierliche Symmetrien lassen sich beispielsweise mithilfe besonderer
+Gruppen, den so genannten \emph{Lie-Gruppen} beschreiben.
+Bevor wir uns allerdings in die Konstruktion vertiefen ,geben wir ein einfaches
+Beispiel für eine Symmetrie, dass uns auch im folgenden als Anschauungsobjekt
+dienen wird.
+\begin{beispiel}[Symmetrien eines Zylinders]
+Wir betrachten einen Zylinder 
 \begin{equation}
-Z=\Reals\times\Sphere^1=\left\{(x,y,z)\in\Reals^3\,\Big|\,x^2+y^2=1\right\}
+Z=\Reals\times\Sphere^1=\left\{(x,y,z)\in\Reals^3\,\Big|\,x^2+y^2=1\right\}\,,
 \end{equation}
-dar. Offensichtlich kann wird dieser durch Drehung um die $z$-Achse in sich
-selbst überführt.
-Wir werden uns auf bestimmte Symmetrien beschränken, die
-beispielsweise infinitisimal erzeugt werden können, dies schließt Spiegelungen
-und andere diskrete Symmetrien aus.
-Wir wollen dieses Konzept nun etwas formalisieren. Der Zylinder dient dabei als
-Anschauungsobjekt um die abstrakten Begriffe zu veranschaulichen.
-\subsection{Vektoren und Tensoren}
-Riemann-Tensor, Ricci-Tensor, Geodätische.
-\section{Gruppenwirkungen}
+als Teilmenge des $\Reals^3$. 
+Offensichtlich besitzt dieser zwei Symmetrien. Zum Einen wird er durch
+Drehung um die $z$-Achse in sich selbst überführt (Rotationsinvarianz), zum
+Anderen können wir den Ursprung entlang der $z$-Achse beliebig wählen
+(Translationsinvarianz).
+\end{beispiel}
+Eine formale Beschreibung solcher Symmetrien bieten wie bereits angedeutet die
+sogenannten Lie-Gruppen, Gruppen die zusätzlich eine Differenzierbare Struktur
+besitzten.
+\begin{definition}[Lie-Gruppe]
+
+\end{definition}
+\begin{bemerkung}
+Der Zylinder $Z$ besitzt offensichtlich auch eine Spiegelsymmetrie bezüglich der
+Koordinatenachsen. Dabei handelt es sich aber um eine diskrete Symmetrien,
+welche sich nicht durch Lie-Gruppen beschreiben lassen.
+\end{bemerkung}
+% 
+% \subsection{Vektoren und Tensoren}
+% Riemann-Tensor, Ricci-Tensor, Geodätische.
+
 %\subsection{Lie-Gruppen}
-Eine Lie-Gruppe ist eine Gruppe, die zusätzlich eine Differenzierbare Struktur
-besitzt.
+\begin{beispiel}[$SO(n)$]
+
+\end{beispiel}
+\section{Gruppenwirkungen}
 In unserem Fall ist die Lie-Gruppe die die Operationen beschreibt die Gruppe der
 Drehungen um die $z$-Achse. Diese wird mit $SO(2)$ bezeichnet, eine Darstellung
 ergit sich beispielsweise durch Matrizen der Form
@@ -62,7 +80,7 @@ R(\alpha)=
 \end{pmatrix}
 \end{equation}
 %TODO zusammenhang SO(2) und R/Z
-Das diese Gruppe eine differenzierbare Struktur besitz ist klar da die
+Das diese Gruppe eine differenzierbare Struktur besitzt ist klar da die
 Komponenten der Matrizen differenzierbar sind.
 \begin{definition}[Lie-Gruppe]
 
@@ -70,7 +88,7 @@ Komponenten der Matrizen differenzierbar sind.
 
 Gruppen können auf Mengen operieren.  Um die Diskussion allgemeiner zu gestalten definieren wir
 Operationen allgemeiner Gruppen. 
-Eine sinvolle Operation einer Gruppe sollte mit den Gruppenoperationen
+Eine sinnvolle Operation einer Gruppe sollte mit den Gruppenoperationen
 kompatibel sein. 
 \begin{definition}[Gruppenwirkung]
 Sei $G$ eine Gruppe, $X$ eine Menge. Eine Abbildung
@@ -88,15 +106,15 @@ $X$ heißt dann auch $G$-Menge.
 \end{definition}
 Statt $\Phi_g(x)$ schreiben wir im folgenden kurz $g\gmal x$.
 Ist die Gruppe $G$ eine Lie-Gruppe, $X=M$ eine Mannigfaltigkeit und $\Phi_g$
-glatt, so spricht man von einer \emph{Lie-Gruppenwirkuqng}. $M$ heißt dann auch
-$G$-Mannigfaltigkeit.
+glatt, so spricht man von einer \emph{Lie-Gruppenwirkung}. $M$ heißt dann
+auch $G$-Mannigfaltigkeit.
 \begin{definition}
 Sei $X$ eine $G$-Menge. Die Wirkung von $G$ heißt:
 \begin{enumerate}
   \item \emph{eigentlich}, falls unter der Abbildung $\Gamma:
   G\times X\to X\times X\,,(g,x)\mapsto (g \gmal x,x)$, Urbilder kompakter
   Mengen kompakt sind
-  \item \emph{(fixpunkt-)frei}, falls nur die Identität Fixpunkte besitzt, d.h.
+  \item \emph{(Fixpunkt-)frei}, falls nur die Identität Fixpunkte besitzt, d.h.
   aus $g\gmal x=x$, folgt $g=e$.
 \end{enumerate}
 \end{definition}
@@ -150,7 +168,7 @@ Wie man sich leicht klar macht ist die Wirkung glatt, frei und eigentlich.
 \end{figure}
 \section{Orbiträume}
 Die Wirkung einer Gruppe definiert in natürlicher
-Weise Äquivalenklassen auf einer Manigfaltigkeit, welche gerade diejenigen
+Weise Äquivalenzklassen auf einer Mannigfaltigkeit, welche gerade diejenigen
 Elemente enthalten, die sich durch $G$-Wirkung ineinander überführt werden.
 Eine solche Äquivalenzklasse nennen wir Bahn oder Orbit. 
 \begin{definition}[Orbit]
@@ -171,7 +189,7 @@ Wenn wir wieder das Beispiel $G=\Reals/\Integers$, $M=Z$ heranziehen, so sind di
 G.(0,0,z)=\left\{(\sin (2\pi t),\sin (2\pi t),z)\,,t \in
 [0,1)\right\}\cong\Sphere^1\,.
 \end{equation}
-Der Orbitraum $M/G$ selbs ist offensichtlich diffeomorph zu $\Reals$. Der
+Der Orbitraum $M/G$ selbst ist offensichtlich diffeomorph zu $\Reals$. Der
 Zylinder lässt sich also lokal als Produkt von Orbitraum und Orbit darstellen.
 \end{beispiel}
 \begin{figure}[!htbp]
@@ -244,11 +262,11 @@ Zylinder lässt sich also lokal als Produkt von Orbitraum und Orbit darstellen.
 % \end{tikzpicture}
 % \end{figure}
 Interessant sind insbesondere Fälle, in denen der Orbitraum selbst wieder eine
-Manigfaltigkeit darstellt. Dass dabei auch Probleme auftreten können, zeigt
+Mannigfaltigkeit darstellt. Dass dabei auch Probleme auftreten können, zeigt
 folgendes 
 \begin{beispiel}[Ein nicht Hausdorffscher Quotient
 \cite{abraham1978foundations}] Sei $G=(\Reals,+)$, $M=\Reals$ und $G$ wirke auf
-$M$ durch $t.x=e^tx$.
+$M$ durch $t \gmal x=e^tx$.
 Der Quotient $M/G$ enthält die drei Äquivalenzklassen $[-1],[0],[1]$, da die
 Abbildung das Vorzeichen nicht ändert.
 Die Quotiententopologie $\tau$ lässt sich explizit angeben:
@@ -284,7 +302,7 @@ ist nicht Hausdorff.
 \node at (-0.3,0){$)$};
 \node at (0.3,0){$($};
 \end{tikzpicture}
-\caption{Konstruktion eines nicht Hausdorffschen Quotients.}
+\caption{Konstruktion eines nicht Hausdorffschen Quotienten.}
 \end{figure}
 \end{beispiel}
 Tatsächlich scheitert die Konstruktion daran, dass die Wirkung nicht eigentlich
@@ -295,7 +313,7 @@ Gruppe frei wirkt.
 %TODO REF
 
 Wir geben nun eine Charakterisierung, die solche pathologische
-Fälle auschließt.
+Fälle ausschließt.
 % \begin{proposition}
 % Sei $M$ eine $G$-Manigfaltigkeit, $R:=\big\{(g,g.x)|g\in G x\in M\big\}$ dann
 % ist $R$ genau dann eine abgeschlossene Untermanigfaltigkeit von $M\times M$,
@@ -321,26 +339,26 @@ Fälle auschließt.
 %TODO Typen von Orbits. Maximale Orbits.
 \begin{theorem}[Quotient Manifold Theorem \cite{lee2003smooth}]
 Sei $G$ eine Lie-Gruppe, die glatt, frei und eigentlich auf einer glatten
-Manigfaltigkeit $M$ wirkt, dann ist der Orbitraum eine topologische
-Manigfaltigkeit der Dimension $\dim M/G=\dim M -\dim G$ und es existiert eine
-eindeutige glatte Struktur sodass $\pi:M\to  M/G$ eine Glatte Submersion ist.
+Mannigfaltigkeit $M$ wirkt, dann ist der Orbitraum eine topologische
+Mannigfaltigkeit der Dimension $\dim M/G=\dim M -\dim G$ und es existiert eine
+eindeutige glatte Struktur sodass $\pi:M\to  M/G$ eine glatte Submersion ist.
 \end{theorem}
 \begin{korollar}
 Sei $G$ eine Lie-Gruppe, die glatt, frei und eigentlich auf einer glatten
-Manigfaltigkeit $M$ wirkt. Dann ist $\pi:M\to M/G$ ein glattes Hauptfaserbündel,
+Mannigfaltigkeit $M$ wirkt. Dann ist $\pi:M\to M/G$ ein glattes Hauptfaserbündel,
 mit Basis $M/G$ und typischer Faser $G$.
 \end{korollar}
 \section[Integration inv Fkt]{Integration auf Faserbündeln}
 \begin{theorem}[Verallgemeinerter Fubini\label{th:fubini}]
-Sei $M,N$, $m$ bzw. $n$-dimensionale, orientierbare Manigfaligkeiten, mit $m\geq
-n$.
-Sei $\varphi:M\to N$ glatt, $\omega$ eine $(m-n)$-form auf $M$, sowie $\eta$
+Sei $M,N$, $m$ bzw. $n$-dimensionale, orientierbare Mannigfaltigkeiten, mit
+$m\geq n$.
+Sei $\varphi:M\to N$ glatt, $\omega$ eine $(m-n)$-Form auf $M$, sowie $\eta$
 eine $n$-Form auf $N$. Sei $f:M\to \Reals$ Lebesgue integrabel, dann existiert
-das Integral 
 \begin{equation}
-F(p)=\int_{\varphi^{-1}(p)}f\omega 
+F(p)=\int_{\varphi^{-1}(p)}f\omega\,,
 \end{equation}
-für fast alle $p\in N$ und $F$ ist messbar. Es gilt
+das Integral entlang der Faser, für fast alle $p\in N$ und $F$ ist messbar. Es
+gilt
 \begin{equation}
 \int_{M}f\omega\wedge\varphi^*\eta=\int_{N}F \eta\,.
 \end{equation}
@@ -354,6 +372,7 @@ für fast alle $p\in N$ und $F$ ist messbar. Es gilt
 \end{theorem}
 \begin{proof}
 Sulantke und Wintgen
+%Polynomial Convexity Edgar Lee Stout
 \end{proof}
 \begin{bemerkung}
 Bei \autoref{th:fubini} handelt es sich um eine Verallgemeinerung des aus der
@@ -389,7 +408,7 @@ dann heißt $f$ $G$-invariant.
 \end{definition}
 Sei $G$ eine Liegruppe mit endlichem Volumen $\vol(G):=\int_G\dif h<\infty$. 
 Wir betrachten ein $G$-Hauptfaserbündel $\pi: E\to M$,
-ausgestattet mit einer $G$-invarianten (pseudo-)riemanschen Metrik $g$. 
+ausgestattet mit einer $G$-invarianten (pseudo-)riemannschen Metrik $g$. 
 Die Abbildung $f:E\to \Reals$ sei $G$-invariant und integrierbar. Dann gilt nach
 \autoref{th:fubini}
 \begin{equation}
@@ -452,22 +471,115 @@ Basis $M$ identifiziert werden.
  
  \end{beispiel}
 \section{Variationsprinzip}
-Feldtheorien lassen sich meist über
-Variationsprinzipien formulieren. Dies gilt insbesondere für
-Elektromagnetismus und allgemeine Relativitätstheorie.
-\subsection{Lagrange Dichte}
-Wald\cite{wald2010general} S.454 ff.
+Variationsprinzipien stellen eine elegante Möglichkeit dar, physikalische
+Theorien zu formulieren. 
+Die physikalischen Parameter werden dabei als in gewisser Weise optimal
+angenommen. 
+Dieses Kapitel orientiert sich an Wald \cite[s.454 ff]{wald2010general}.
+Im folgenden bezeichnet \emph{Feld} allgemein ein Tensorfeld, wobei wir den
+Grad nicht angeben. Eine \emph{Feldkonfiguration} bezeichnet ein Tupel von
+Feldern. 
+Wir wollen nun einen Formalismus entwickeln, der es erlaubt ein Funktional, nach
+einer Funktion abzuleiten, was es ermöglicht Extremalbedingunen in Analogie zur
+klassischen Analysis zu formulieren.
+\begin{definition}[Funktionalableitung] 
+\label{def:Funktionalableitung}
+Sei $M$ eine Mannigfaltigkeit,
+$X\subseteq C^\infty(M)$ ein Funktionenraum. Sei $I:X\to \Reals$ ein Funktional,
+$\left(f_\lambda\right)_{\lambda\in \Reals}\subseteq X$, eine einparametrige
+Familie von Funktionen, die differenzierbar von $\lambda$ abhängt.
+Angenommen $\lambda\mapsto I[f_\lambda]$ ist für alle solche Familien in
+$\lambda=0$ differenzierbar und es existiert eine Distribution $g$, sodass
+ \begin{equation}
+ \dod{}{\lambda}\Big|_{\lambda=0}I[f_\lambda]
+ =\int_M g\dod{}{\lambda}\Big|_{\lambda=0}f_\lambda\dif x\,
+ \label{eq:Vardiff1}
+ \end{equation}
+ für alle Familien $f_\lambda$, dann heißt
+ \begin{equation}
+ \delta_f I :=\frac{\delta{I}}{\delta{f}}\bigg|_{f_0}:=g
+ \end{equation}
+ \emph{Variationsableitung} von $I$ in $f_0$.
+\end{definition}
+\begin{bemerkung}
+Der Begriff der Variationsableitung lässt sich auf natürliche Weise auf 
+Funktionale von Feldern oder allgemeiner Feldkonfigurationen erweitern wenn wir
+in \autoref{def:Funktionalableitung} Funktion durch Feld bzw. Feldkonfiguration
+ersetzen, sowie  in \eqref{eq:Vardiff1} die Tensorindizes der
+Felder $g$ und $f_\lambda$ kontrahieren.
+\end{bemerkung}
+\subsection{Lagrangeformalismus}
+Einen wichtigen Spezialfall stellen Funktionale dar, die durch eine lokale
+Funktion beschrieben werden. 
+\begin{equation}
+S[\Psi]=\int L[\Psi,\partial_i\Psi,x]\dif x
+\end{equation}
+
+\begin{equation}
+\begin{split}
+\dod{S}{\lambda}
+&=\int_M\dod{L}{\lambda}\dif x\\
+&=\int_M\dpd{L}{\Psi}\dpd{\Psi}{\lambda}
++\dpd{L}{(\partial_i\Psi)}\dpd{(\partial_i\Psi)}{\lambda}\dif x\\
+&=\int_M\dpd{L}{\Psi}\dpd{\Psi}{\lambda}
++\dpd{L}{(\partial_i\Psi)}\partial_i\dpd{(\Psi)}{\lambda}\dif x\\
+&=\int_M\dpd{L}{\Psi}\dpd{\Psi}{\lambda}
+-\partial_i\dpd{L}{(\partial_i\Psi)}\dpd{\Psi}{\lambda}\dif x
++\int_{\partial M}\dpd{L}{(\partial_i\Psi)}\dpd{\Psi}{\lambda}\,,
+\end{split}
+\end{equation}
+dabei wurde im zweiten Schritt die Kettenregel im dritten die Vertauschbarkeit
+der Partiellen ableitungen, und  Die Integration über den Rand der
+Mannigfaltigkeit $\partial M$ wird typischerweise zu null angenommen, was sich beispielsweise dadurch begründen
+lässt das die Variation $\dpd{\Psi}{\lambda}$ auf dem Rand verschwindet.
+\begin{equation}
+\begin{split}
+\dod{S}{\lambda}
+&=\int_M\left(\dpd{L}{\Psi}
+-\partial_i\dpd{L}{(\partial_i\Psi)}\right)\dpd{\Psi}{\lambda}\dif x
+\end{split}
+\end{equation}
+
+
+
+Sei $\Psi_\lambda$ eine ein parameter Familie von Feldkonfiguration, $S[\Psi]$
+ein Funktional, sodass   
 \begin{definition}[Tensordichte]
 Eine Tensordichte $\mathcal{T}$ vom Gewicht $w$
 \end{definition}
 Wirkungsintegral, Lagrangedichte, Lokalität
 \begin{beispiel}[Levi-Civita-Symbol]
 \end{beispiel}
-\begin{definition}[Variationsableitung]
-% es wird nach einem Feld gesucht nicht nach einem "`optimalen"' Weg, quasi
-% unendlichdimensionale Form
-% https://en.wikipedia.org/wiki/Lagrangian_system
-\end{definition}
+% \begin{definition}[Variationsableitung]
+% Sei $\Omega$ ein normierter Vektorraum, $I:\Omega\to \Reals$ ein Funktional,
+% das auf einer offenen Umgebung von $x\in \Omega$ definiert ist $h\in \Omega$,
+% dann heißt der Ausdruck
+% \begin{equation}
+% \delta_h I=\lim_{\varepsilon\to 0} \frac{I(x+\varepsilon h)-I(x)}{\varepsilon}
+% \end{equation}
+% \emph{G\^ateaux Ableitung} von $I$, bzw. \emph{erste Variation} von $I$ nach
+% $h$, sofern er existiert.
+% % es wird nach einem Feld gesucht nicht nach einem "`optimalen"' Weg, quasi
+% % unendlichdimensionale Form
+% % https://en.wikipedia.org/wiki/Lagrangian_system
+% \end{definition}
+% \begin{beispiel}[Lokale Funktionale]
+% Sei $I$ ein Lokales Funktional 
+% \begin{equation}
+% I(f)=\int_M \mathcal{I}[f(x),\partial_i f(x),x]\dif x
+% \end{equation}
+% \begin{equation}
+% \begin{split}
+% \mathcal{I}[f(x)+\varepsilon h(x),\partial_i
+% f(x)+\varepsilon\partial_i h,x]
+% &=\dpd{\mathcal{I}}{f}h+\dpd{\mathcal{I}}{(\partial_i
+% f)}\partial_i h
+% \end{split}
+% \end{equation}
+%\end{beispiel}
+\begin{lemma}[Variationsprinzip]
+Extremum $\implies\delta_h I = 0$
+\end{lemma}
 \subsubsection{Skalarfelder (Spin-0)}
 \begin{equation}
 \mathcal{L}\left[\phi(x),\nabla_\alpha\phi(x),x\right]=
