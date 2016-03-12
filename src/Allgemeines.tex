@@ -90,6 +90,7 @@ Gruppen können auf Mengen operieren.  Um die Diskussion allgemeiner zu gestalte
 Operationen allgemeiner Gruppen. 
 Eine sinnvolle Operation einer Gruppe sollte mit den Gruppenoperationen
 kompatibel sein. 
+%TODO wedge product äußere Ableitung 
 \begin{definition}[Gruppenwirkung]
 Sei $G$ eine Gruppe, $X$ eine Menge. Eine Abbildung
 \begin{equation}
@@ -470,14 +471,14 @@ Basis $M$ identifiziert werden.
 \begin{beispiel}[ADM-decomposition]
  
  \end{beispiel}
-\section{Variationsprinzip}
+\section{Ein Variationsprinzip}
 Variationsprinzipien stellen eine elegante Möglichkeit dar, physikalische
-Theorien zu formulieren. 
-Die physikalischen Parameter werden dabei als in gewisser Weise optimal
-angenommen. 
-Dieses Kapitel orientiert sich an Wald \cite[s.454 ff]{wald2010general}.
+Theorien zu formulieren. Die Physik wird dabei durch einen Satz
+von Parametern bzw. Funktionen beschrieben die in gewisser Weise "`optimal"' sind. 
+Wir orientieren uns in diesem Kapitel an den Ausführungen von \name{R.Wald}
+\cite[s.454 ff]{wald2010general}.
 Im folgenden bezeichnet \emph{Feld} allgemein ein Tensorfeld, wobei wir den
-Grad nicht angeben. Eine \emph{Feldkonfiguration} bezeichnet ein Tupel von
+Grad nicht angeben, sowie \emph{Feldkonfiguration} ein Tupel solcher
 Feldern. 
 Wir wollen nun einen Formalismus entwickeln, der es erlaubt ein Funktional, nach
 einer Funktion abzuleiten, was es ermöglicht Extremalbedingunen in Analogie zur
@@ -488,8 +489,8 @@ Sei $M$ eine Mannigfaltigkeit,
 $X\subseteq C^\infty(M)$ ein Funktionenraum. Sei $I:X\to \Reals$ ein Funktional,
 $\left(f_\lambda\right)_{\lambda\in \Reals}\subseteq X$, eine einparametrige
 Familie von Funktionen, die differenzierbar von $\lambda$ abhängt.
-Angenommen $\lambda\mapsto I[f_\lambda]$ ist für alle solche Familien in
-$\lambda=0$ differenzierbar und es existiert eine Distribution $g$, sodass
+Angenommen $\lambda\mapsto I\left[f_\lambda\right]$ ist für alle solche Familien
+in $\lambda=0$ differenzierbar und es existiert eine Distribution $g$, sodass
  \begin{equation}
  \dod{}{\lambda}\Big|_{\lambda=0}I[f_\lambda]
  =\int_M g\dod{}{\lambda}\Big|_{\lambda=0}f_\lambda\dif x\,
@@ -497,7 +498,7 @@ $\lambda=0$ differenzierbar und es existiert eine Distribution $g$, sodass
  \end{equation}
  für alle Familien $f_\lambda$, dann heißt
  \begin{equation}
- \delta_f I :=\frac{\delta{I}}{\delta{f}}\bigg|_{f_0}:=g
+\frac{\delta{I}}{\delta{f}}\bigg|_{f_0}:=g
  \end{equation}
  \emph{Variationsableitung} von $I$ in $f_0$.
 \end{definition}
@@ -508,42 +509,173 @@ in \autoref{def:Funktionalableitung} Funktion durch Feld bzw. Feldkonfiguration
 ersetzen, sowie  in \eqref{eq:Vardiff1} die Tensorindizes der
 Felder $g$ und $f_\lambda$ kontrahieren.
 \end{bemerkung}
-\subsection{Lagrangeformalismus}
-Einen wichtigen Spezialfall stellen Funktionale dar, die durch eine lokale
-Funktion beschrieben werden. 
+\subsection{Der Lagrangeformalismus}
+Einen wichtigen Spezialfall stellen Funktionale dar, die durch eine
+lokale\footnote{"`Lokal"' bezieht sich anschaulich darauf, dass der Wert des
+Integranden in $x\in M$ lediglich von diesem Punkt abhängt.} Funktion
+${L:\Reals^3\to \Reals}$ charakterisiert werden, d.h. \footnote{Hier
+und im folgenden bezeichnet $\partial_i$ eine Differentiation nach der $i$-ten
+Koordinate.}
 \begin{equation}
-S[\Psi]=\int L[\Psi,\partial_i\Psi,x]\dif x
+I[f]=\int_M L\left(f(x),\partial_i f(x),x\right)\dif x\,.
 \end{equation}
-
-\begin{equation}
-\begin{split}
-\dod{S}{\lambda}
-&=\int_M\dod{L}{\lambda}\dif x\\
-&=\int_M\dpd{L}{\Psi}\dpd{\Psi}{\lambda}
-+\dpd{L}{(\partial_i\Psi)}\dpd{(\partial_i\Psi)}{\lambda}\dif x\\
-&=\int_M\dpd{L}{\Psi}\dpd{\Psi}{\lambda}
-+\dpd{L}{(\partial_i\Psi)}\partial_i\dpd{(\Psi)}{\lambda}\dif x\\
-&=\int_M\dpd{L}{\Psi}\dpd{\Psi}{\lambda}
--\partial_i\dpd{L}{(\partial_i\Psi)}\dpd{\Psi}{\lambda}\dif x
-+\int_{\partial M}\dpd{L}{(\partial_i\Psi)}\dpd{\Psi}{\lambda}\,,
-\end{split}
-\end{equation}
-dabei wurde im zweiten Schritt die Kettenregel im dritten die Vertauschbarkeit
-der Partiellen ableitungen, und  Die Integration über den Rand der
-Mannigfaltigkeit $\partial M$ wird typischerweise zu null angenommen, was sich beispielsweise dadurch begründen
-lässt das die Variation $\dpd{\Psi}{\lambda}$ auf dem Rand verschwindet.
+Die Funktion $L$ heißt dabei auch \emph{Lagrange-Funktion} oder auch
+\emph{Lagrangian}.
+Die Variation des Funktionals $I$ führt in diesem Fall auf
 \begin{equation}
 \begin{split}
-\dod{S}{\lambda}
-&=\int_M\left(\dpd{L}{\Psi}
--\partial_i\dpd{L}{(\partial_i\Psi)}\right)\dpd{\Psi}{\lambda}\dif x
+\dod{I}{\lambda}
+&=\int_M\dod{}{\lambda}L(f_\lambda,\partial_i
+f_\lambda,x)\dif x\\
+&=\int_M\dpd{L}{ f}\dpd{ f_\lambda}{\lambda}
++\dpd{L}{(\partial_i f)}\dpd{(\partial_i f_\lambda)}{\lambda}\dif x\\
+&=\int_M\dpd{L}{ f}\dpd{ f_\lambda}{\lambda}
++\dpd{L}{(\partial_i f)}\partial_i\left(\dpd{
+f_\lambda}{\lambda}\right)\dif x\\
+&=\int_M\left\{\dpd{L}{ f}
+-\partial_i\left[\dpd{L}{(\partial_i f)}\right]\right\}\dpd{
+f_\lambda}{\lambda}\dif x +\int_{\partial
+M}\dpd{L}{(\partial_i f)}\dpd{
+f_\lambda}{\lambda}n_i\dif\sigma\,,
 \end{split}
 \end{equation}
+dabei haben wir im dritten Schritt die Vertauschbarkeit
+der partiellen Ableitungen nach dem Satz von Schwarz, sowie im letzten
+partielle Integration verwendet, wobei $n_i$ ein Vektorfeld normal zu $\partial M$
+bezeichnet, wir nehmen dabei an, dass die Mannigfaltigkeit orientierbar ist,
+d.h.\ ein solches Normalenfeld existiert.
+%TODO partielle Integration auf MF
+Häufig beschränkt man sich auf kompakte Variationen, d.h. für alle $\lambda$ ist
+$f_\lambda(x)=f_0(x)$, bzw. $\pd{ f_\lambda}{\lambda}=0$ auf $\partial M$. Die
+Integration über den Rand verschwindet damit und es ergibt sich
+\begin{equation}
+\begin{split}
+\dod{I}{\lambda}
+&=\int_M\left\{\dpd{L}{ f}
+-\partial_i\left[\dpd{L}{(\partial_i f)}\right]\right\}\dpd{
+f_\lambda}{\lambda}\dif x\,.
+\end{split}
+\end{equation}
+Geht man nun davon aus, dass eine bestimmte Funktion $f$ das Funktional
+$I$ minimiert, d.h. $\od{I}{\lambda}=0$ für eine beliebige Variation, 
+so muss nach dem Lemma der Variationsrechnung
+\begin{equation}
+\dpd{L}{f}
+-\partial_i\left[\dpd{L}{(\partial_i f)}\right]=0\,,
+\end{equation}
+die \emph{Euler-Lagrange-Gleichung}. Diese spielt eine bedeutende Rolle in der
+theoretischen Mechanik. Der Formalismus eine Funktion als Extremum eines
+Funktionals zu wählen ist unter dem Namen \emph{Lagrange-Formalismus} bekannt und lässt sich auf
+natürliche Weise auf Feldkonfigurationen $\Psi$ verallgemeinern. Das
+Funktional ist dann von der Form
+\begin{equation}
+I[\Psi]=\int_M L\left(\Psi,\partial_i \Psi,x\right)\dif x
+\end{equation}
+und die resultierenden Euler-Lagrange-Gleichungen lauten
+\begin{equation}
+\dpd{L}{\Psi}
+-\partial_i\left[\dpd{L}{(\partial_i\Psi)}\right]=0\,,
+\end{equation}
+wobei dieser Ausdruck als eine Gleichung pro
+unabhängige Feldkomponente zu interpretieren ist.
+\begin{beispiel}[Spin-1 Felder]
+Als Beispiel betrachten wir das elektromagnetische Feld, welches durch eine
+1-Form $A$ beschrieben werden kann. In lokalen Koordinaten wird $A$
+durch Funktionen $A_0,\dots,A_3$ beschreiben. Nehmen wir an der Lagrange
+Funktion $L$ sei gegeben durch \footnote{Diese muss nicht "`geraten"'
+werden, vielmehr handelt es sich um den allgemeinste solche Funktion die
+gewissen Symmetrien genügt. }
+\begin{equation}
+L\left(A_\alpha(x),\nabla_\beta
+A_\alpha(x),x\right)=-\frac{1}{4}\tensor{F}{_\mu_\nu}\tensor{F}{^\mu^\nu}\,.
+\end{equation}
+mit
+$\tensor{F}{_\mu_\nu}=\tensor{\partial}{_\mu}\tensor{A}{_\nu}-\tensor{\partial}{_\nu}\tensor{A}{_\mu}$.
+Unabhängigkeit der Felder bedeutet
+\begin{equation}
+\pd{\tensor{F}{_\mu_\nu}}{(\tensor{\partial}{_\alpha}\tensor{A}{_\beta})}
+=\tensor*{\delta}{^\alpha_\mu}\tensor*{\delta}{^\beta_\nu}\,.
+\end{equation}
+Damit können wir $L$ nach $\tensor{A}{_\mu}$ differenzieren:
+\begin{equation}
+\begin{split}
+\dpd{L}{(\tensor{\partial}{_\alpha}\tensor{A}{_\beta})}
+&=\dpd{\tensor{F}{_\mu_\nu}}{(\tensor{\partial}{_\alpha}\tensor{A}{_\beta})}\tensor{F}{^\mu^\nu}
++\dpd{\tensor{F}{^\mu^\nu}}{(\tensor{\partial}{_\alpha}\tensor{A}{_\beta})}\tensor{F}{_\mu_\nu}
+\\
+&=\dpd{\tensor{F}{_\mu_\nu}}{(\tensor{\partial}{_\alpha}\tensor{A}{_\beta})}\tensor{F}{^\mu^\nu}
++\dpd{(\tensor{g}{^\mu^\delta}\tensor{g}{^\mu^\gamma}\tensor{F}{_\delta_\gamma})}{(\tensor{\partial}{_\alpha}\tensor{A}{_\beta})}\tensor{F}{_\mu_\nu}
+\\
+&=\dpd{\tensor{F}{_\mu_\nu}}{(\tensor{\partial}{_\alpha}\tensor{A}{_\beta})}\tensor{F}{^\mu^\nu}
++\dpd{\tensor{F}{_\delta_\gamma}}{(\tensor{\partial}{_\alpha}\tensor{A}{_\beta})}\tensor{g}{^\mu^\delta}\tensor{g}{^\mu^\gamma}\tensor{F}{_\mu_\nu}
+\\
+&=2\dpd{\tensor{F}{_\mu_\nu}}{(\tensor{\partial}{_\alpha}\tensor{A}{_\beta})}\tensor{F}{^\mu^\nu}\\
+&=2\tensor*{\delta}{^\alpha_\mu}\tensor*{\delta}{^\beta_\nu}\tensor{F}{^\mu^\nu}\\
+&=2\tensor{F}{^\alpha^\beta}\,.
+\end{split}
+\end{equation}
+Mit $\pd{L}{\tensor{A}{_\alpha}}=0$ lauten die Euler-Lagrange-Gleichungen
+\begin{equation}
+\partial_\alpha\tensor{F}{^\alpha^\beta}=0\,,
+\end{equation}
+die Maxwell Gleichungen die in Kapitel ??? vorgestellt werden
+%TODO 
+\end{beispiel}
+% \begin{equation}
+% \begin{split}
+% \dod{S}{\lambda}
+% &=\int_M\left\{\dpd{L}{\Psi}
+% -\partial_i\left[\dpd{L}{(\partial_i\Psi)}\right]\right\}\dpd{\Psi}{\lambda}\dif
+% x\,.
+% \end{split}
+% \end{equation}
+% Identifizieren wir die Felder mit ihren lokalen Darstellungen im $\Reals^m$ und
+% bezeichnet $d=\dim M$ die Dimension der Mannigfaltigkeit, so können wir
+% $L$ als Funktion
+% \begin{equation}
+% L:\Reals^m\times\Reals^{m\cdot d}\times \Reals^d\to\Reals 
+% \end{equation}
+% auffassen. Damit ist klar was unter den Ausdrücken 
+% \begin{equation}
+% \dpd{L}{\Psi},\dpd{L}{(\partial_i\Psi)},\dots
+% \end{equation}
+% zu verstehen ist. Die Variation des Funktionals $I$ führt auf 
+% \begin{equation}
+% \begin{split}
+% \dod{I}{\lambda}
+% &=\int_M\dod{L}{\lambda}\dif x\\
+% &=\int_M\dpd{L}{\Psi}\dpd{\Psi}{\lambda}
+% +\dpd{L}{(\partial_i\Psi)}\dpd{(\partial_i\Psi)}{\lambda}\dif x\\
+% &=\int_M\dpd{L}{\Psi}\dpd{\Psi}{\lambda}
+% +\dpd{L}{(\partial_i\Psi)}\partial_i\left[\dpd{\Psi}{\lambda}\right]\dif
+% x\\
+% &=\int_M\left\{\dpd{L}{\Psi}
+% -\partial_i\left[\dpd{L}{(\partial_i\Psi)}\right]\right\}\dpd{\Psi}{\lambda}\dif x
+% +\int_{\partial
+% M}\dpd{L}{(\partial_i\Psi)}\dpd{\Psi}{\lambda}n_i\dif\sigma\,,
+% \end{split}
+% \end{equation}
+% dabei wurde im zweiten Schritt die Kettenregel im dritten die Vertauschbarkeit
+% der partiellen Ableitungen und im letzten partielle Integration verwendet. Die
+% Integration über den Rand der Mannigfaltigkeit $\partial M$ wird typischerweise zu null angenommen, was sich beispielsweise dadurch begründen
+% lässt, dass die Variation $\dpd{\Psi}{\lambda}$ auf dem Rand verschwindet. Dann
+% ergibt sich
+% \begin{equation}
+% \begin{split}
+% \dod{S}{\lambda}
+% &=\int_M\left\{\dpd{L}{\Psi}
+% -\partial_i\left[\dpd{L}{(\partial_i\Psi)}\right]\right\}\dpd{\Psi}{\lambda}\dif
+% x\,.
+% \end{split}
+% \end{equation}
+% Geht man nun davon aus, dass eine bestimmte Konfiguration $\Psi$ das Funktional
+% $S$ minimiert, d.h. $\dod{S}{\lambda}=0$ für eine beliebige Variation.
+% Dann muss nach dem Lemma der Variationsrechnung 
+% \begin{equation}
+% \dpd{L}{\Psi}
+% -\partial_i\left[\dpd{L}{(\partial_i\Psi)}\right]=0
+% \end{equation}
 
-
-
-Sei $\Psi_\lambda$ eine ein parameter Familie von Feldkonfiguration, $S[\Psi]$
-ein Funktional, sodass   
 \begin{definition}[Tensordichte]
 Eine Tensordichte $\mathcal{T}$ vom Gewicht $w$
 \end{definition}
@@ -577,18 +709,18 @@ Wirkungsintegral, Lagrangedichte, Lokalität
 % \end{split}
 % \end{equation}
 %\end{beispiel}
-\begin{lemma}[Variationsprinzip]
-Extremum $\implies\delta_h I = 0$
-\end{lemma}
-\subsubsection{Skalarfelder (Spin-0)}
-\begin{equation}
-\mathcal{L}\left[\phi(x),\nabla_\alpha\phi(x),x\right]=
-\end{equation}
-\subsubsection{Vektorfelder (Spin-1)}
-\begin{equation}
-\mathcal{L}\left[A_\alpha(x),\nabla_\beta
-A_\alpha(x),x\right]=-\frac{1}{4}\tensor{F}{_\mu_\nu}\tensor{F}{^\mu^\nu}\,.
-\end{equation}
+% \begin{lemma}[Variationsprinzip]
+% Extremum $\implies\delta_h I = 0$
+% \end{lemma}
+% \subsubsection{Skalarfelder (Spin-0)}
+% \begin{equation}
+% \mathcal{L}\left[\phi(x),\nabla_\alpha\phi(x),x\right]=
+% \end{equation}
+% \subsubsection{Vektorfelder (Spin-1)}
+% \begin{equation}
+% \mathcal{L}\left[A_\alpha(x),\nabla_\beta
+% A_\alpha(x),x\right]=-\frac{1}{4}\tensor{F}{_\mu_\nu}\tensor{F}{^\mu^\nu}\,.
+% \end{equation}
 %https://en.wikipedia.org/wiki/Euler%E2%80%93Lagrange_equation
 %https://en.wikipedia.org/wiki/Functional_derivative#cite_note-2
 

@@ -33,7 +33,8 @@ Ladung bzw. Masse des Teilchens.
 Es lässt sich mittels des Helmholtz-Theorems und der Form der Maxwell-Gleichung
 die Existenz von Potentialen $\vec{A}$, $\Phi$ folgern, sodass
 \begin{equation}
-\vec{B}=\Rot \vec{A}\,,\quad \vec{E}=-\Grad\Phi+\dpd{\vec{A}}{t}\,.
+\vec{B}=\Rot \vec{A}\,,\quad
+\vec{E}=-\Grad\Phi+\dpd{\vec{A}}{t}\,.\label{eq:Vecpot}
 \end{equation}
 Die Elektrodynamik ist eng mit der speziellen Relativitätstheorie verbunden.
 Diese lässt sich am besten mit Objekten der Differentialgeometrie beschreiben.
@@ -48,15 +49,34 @@ bzw. in lokalen Koordinaten
 \begin{equation}
 \tensor{F}{_\mu_\nu}:=\partial_\mu\tensor{A}{_\nu}-\partial_\nu\tensor{A}{_\mu}\,.
 \end{equation}
-Damit reduzieren sich die Maxwell-Gleichungen zu zwei Gleichungen
+Die physikalischen Felder lassen sich aus dem Feldstärketensor wiederum durch 
+\begin{equation}
+\vec{E}_{i}=\tensor{F}{_0_i}\,,\quad
+\vec{B}_i=\frac{1}{2}\tensor{\varepsilon}{^i^j^k}\tensor{F}{^j^k}
+\end{equation}
+zurückgewinnen, wie man sich leicht mit Hilfe der Definition von $F$ und
+\eqref{eq:Vecpot} nachrechnet.
+Damit reduzieren sich die Maxwell-Gleichungen zu zwei
+Gleichungen
+% \begin{align} 
+% \pdif{_\mu}\tensor{F}{^\mu^\nu}&=\tensor{J}{^\nu}
+% \label{eq:MaxwellInhom}\\
+% \pdif{_{\mu}}\tensor{F}{_\nu_{\rho}}+
+% \pdif{_{\mu}}\tensor{F}{_\rho_{\nu}}+
+% \pdif{_{\nu}}\tensor{F}{_\mu_{\rho}}&=0
+% \label{eq:MaxwellHom}
+% \end{align}
 \begin{align}
 \pdif{_\mu}\tensor{F}{^\mu^\nu}&=\tensor{J}{^\nu}
-\label{eq:MaxwellInhom}\\
-\pdif{_{\mu}}\tensor{F}{_\nu_{\rho}}+
-\pdif{_{\mu}}\tensor{F}{_\rho_{\nu}}+
-\pdif{_{\nu}}\tensor{F}{_\mu_{\rho}}&=0
+\label{eq:MaxwellInhom}\,,\\
+\tensor{\varepsilon}{^\alpha^\beta^\gamma^\delta}
+\pdif{_{\alpha}}\tensor{F}{_\gamma_{\delta}}&=0\,.
 \label{eq:MaxwellHom}
 \end{align}
+Bzw in indexfreier Notation
+\begin{equation}
+\quad \dif\star F= J\,,\quad\dif F = 0\,.
+\end{equation}
 % MW2= Jakobi?
 % Die Lagrange Dichte für das Elektromagnetische Feld im Vakuum $\tensor{J}{^\mu}=0$
 % \begin{equation}
