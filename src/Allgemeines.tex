@@ -471,13 +471,14 @@ Basis $M$ identifiziert werden.
 \begin{beispiel}[ADM-decomposition]
  
  \end{beispiel}
-\section{Ein Variationsprinzip}
+\section{Variationsrechnung}
 Variationsprinzipien stellen eine elegante Möglichkeit dar, physikalische
 Theorien zu formulieren. Die Physik wird dabei durch einen Satz
-von Parametern bzw. Funktionen beschrieben die in gewisser Weise "`optimal"' sind. 
+von Parametern bzw. Funktionen beschrieben, die in gewisser Weise "`optimal"'
+sind.
 Wir orientieren uns in diesem Kapitel an den Ausführungen von \name{R.Wald}
 \cite[s.454 ff]{wald2010general}.
-Im folgenden bezeichnet \emph{Feld} allgemein ein Tensorfeld, wobei wir den
+Im folgenden bezeichne \emph{Feld} allgemein ein Tensorfeld, wobei wir den
 Grad nicht angeben, sowie \emph{Feldkonfiguration} ein Tupel solcher
 Feldern. 
 Wir wollen nun einen Formalismus entwickeln, der es erlaubt ein Funktional, nach
@@ -509,6 +510,7 @@ in \autoref{def:Funktionalableitung} Funktion durch Feld bzw. Feldkonfiguration
 ersetzen, sowie  in \eqref{eq:Vardiff1} die Tensorindizes der
 Felder $g$ und $f_\lambda$ kontrahieren.
 \end{bemerkung}
+%TODO Variationsableitung erfüllt Produktregel etc.
 \subsection{Der Lagrangeformalismus}
 Einen wichtigen Spezialfall stellen Funktionale dar, die durch eine
 lokale\footnote{"`Lokal"' bezieht sich anschaulich darauf, dass der Wert des
@@ -541,9 +543,9 @@ f_\lambda}{\lambda}n_i\dif\sigma\,,
 \end{equation}
 dabei haben wir im dritten Schritt die Vertauschbarkeit
 der partiellen Ableitungen nach dem Satz von Schwarz, sowie im letzten
-partielle Integration verwendet, wobei $n_i$ ein Vektorfeld normal zu $\partial M$
-bezeichnet, wir nehmen dabei an, dass die Mannigfaltigkeit orientierbar ist,
-d.h.\ ein solches Normalenfeld existiert.
+partielle Integration verwendet. Das Vektorfeld $n_i$ ist normal zum Rand
+$\partial M$ der Mannigfaltigkeit, wir nehmen dabei an, dass die
+Mannigfaltigkeit orientierbar ist, d.h.\ ein solches Normalenfeld existiert.
 %TODO partielle Integration auf MF
 Häufig beschränkt man sich auf kompakte Variationen, d.h. für alle $\lambda$ ist
 $f_\lambda(x)=f_0(x)$, bzw. $\pd{ f_\lambda}{\lambda}=0$ auf $\partial M$. Die
@@ -553,21 +555,30 @@ Integration über den Rand verschwindet damit und es ergibt sich
 \dod{I}{\lambda}
 &=\int_M\left\{\dpd{L}{ f}
 -\partial_i\left[\dpd{L}{(\partial_i f)}\right]\right\}\dpd{
-f_\lambda}{\lambda}\dif x\,.
+f_\lambda}{\lambda}\dif x
 \end{split}
 \end{equation}
+und somit per Definition 
+\begin{equation}
+\frac{\delta I}{\delta f}=\dpd{L}{ f}
+-\partial_i\left[\dpd{L}{(\partial_i f)}\right]\,.
+\end{equation}
+% Geht man nun davon aus, dass eine bestimmte Funktion $f$ das Funktional
+% $I$ minimiert, d.h. $\od{I}{\lambda}=0$ für eine beliebige Variation, 
+% so muss nach dem Lemma der Variationsrechnung
 Geht man nun davon aus, dass eine bestimmte Funktion $f$ das Funktional
-$I$ minimiert, d.h. $\od{I}{\lambda}=0$ für eine beliebige Variation, 
-so muss nach dem Lemma der Variationsrechnung
+$I$ minimiert, d.h. $\frac{\delta I}{\delta f}=0$ so ergibt sich die
+\emph{Euler-Lagrange-Gleichung}
 \begin{equation}
 \dpd{L}{f}
--\partial_i\left[\dpd{L}{(\partial_i f)}\right]=0\,,
+-\partial_i\left[\dpd{L}{(\partial_i f)}\right]=0\,.
 \end{equation}
-die \emph{Euler-Lagrange-Gleichung}. Diese spielt eine bedeutende Rolle in der
-theoretischen Mechanik. Der Formalismus eine Funktion als Extremum eines
-Funktionals zu wählen ist unter dem Namen \emph{Lagrange-Formalismus} bekannt und lässt sich auf
-natürliche Weise auf Feldkonfigurationen $\Psi$ verallgemeinern. Das
-Funktional ist dann von der Form
+Diese ist von zentraler Bedeutung unter anderem in der theoretischen
+Formulierung der klassischen Mechanik, spielt aber auch in Feldtheorien eine
+wichtige Rolle.
+Der Formalismus eine Funktion als Extremum eines Funktionals zu wählen,
+ist unter dem Namen \emph{Lagrange-Formalismus} bekannt und lässt sich auf
+natürliche Weise auf Feldkonfigurationen $\Psi$ verallgemeinern. Das Funktional ist dann von der Form
 \begin{equation}
 I[\Psi]=\int_M L\left(\Psi,\partial_i \Psi,x\right)\dif x
 \end{equation}
@@ -577,16 +588,18 @@ und die resultierenden Euler-Lagrange-Gleichungen lauten
 -\partial_i\left[\dpd{L}{(\partial_i\Psi)}\right]=0\,,
 \end{equation}
 wobei dieser Ausdruck als eine Gleichung pro
-unabhängige Feldkomponente zu interpretieren ist.
-\begin{beispiel}[Spin-1 Felder]
-Als Beispiel betrachten wir das elektromagnetische Feld, welches durch eine
-1-Form $A$ beschrieben werden kann. In lokalen Koordinaten wird $A$
-durch Funktionen $A_0,\dots,A_3$ beschreiben. Nehmen wir an der Lagrange
+unabhängige Feldkomponente zu interpretieren ist. Das folgende Beispiel soll
+erläutern wie der Formalismus anzuwenden ist.
+ \begin{beispiel}[Spin-1 Felder] \label{bsp:Spinone}
+Als Beispiel betrachten wir ein Feld, welches durch eine
+1-Form $A$ beschrieben wird, ein solches Feld beschreibt physikalische Teilchen
+mit Spin-1.
+In lokalen Koordinaten wird $A$ durch Funktionen $A_0,\dots,A_3$ beschreiben. Nehmen wir an die Lagrange
 Funktion $L$ sei gegeben durch \footnote{Diese muss nicht "`geraten"'
 werden, vielmehr handelt es sich um den allgemeinste solche Funktion die
 gewissen Symmetrien genügt. }
 \begin{equation}
-L\left(A_\alpha(x),\nabla_\beta
+L\left(A_\alpha(x),\partial_\beta
 A_\alpha(x),x\right)=-\frac{1}{4}\tensor{F}{_\mu_\nu}\tensor{F}{^\mu^\nu}\,.
 \end{equation}
 mit
@@ -596,7 +609,8 @@ Unabhängigkeit der Felder bedeutet
 \pd{\tensor{F}{_\mu_\nu}}{(\tensor{\partial}{_\alpha}\tensor{A}{_\beta})}
 =\tensor*{\delta}{^\alpha_\mu}\tensor*{\delta}{^\beta_\nu}\,.
 \end{equation}
-Damit können wir $L$ nach $\tensor{A}{_\mu}$ differenzieren:
+Damit können wir $L$ nach $\tensor{\partial}{_\mu}\tensor{A}{_\nu}$
+differenzieren:
 \begin{equation}
 \begin{split}
 \dpd{L}{(\tensor{\partial}{_\alpha}\tensor{A}{_\beta})}
@@ -618,7 +632,8 @@ Mit $\pd{L}{\tensor{A}{_\alpha}}=0$ lauten die Euler-Lagrange-Gleichungen
 \begin{equation}
 \partial_\alpha\tensor{F}{^\alpha^\beta}=0\,,
 \end{equation}
-die Maxwell Gleichungen die in Kapitel ??? vorgestellt werden
+in Kapitel ??? werden wir sehen das es sich hierbei gerade um die
+Maxwell-Gleichungen im Vakuum handelt.
 %TODO 
 \end{beispiel}
 % \begin{equation}
@@ -682,6 +697,7 @@ Eine Tensordichte $\mathcal{T}$ vom Gewicht $w$
 Wirkungsintegral, Lagrangedichte, Lokalität
 \begin{beispiel}[Levi-Civita-Symbol]
 \end{beispiel}
+% TODO Volumenformen 
 % \begin{definition}[Variationsableitung]
 % Sei $\Omega$ ein normierter Vektorraum, $I:\Omega\to \Reals$ ein Funktional,
 % das auf einer offenen Umgebung von $x\in \Omega$ definiert ist $h\in \Omega$,

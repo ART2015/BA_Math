@@ -15,15 +15,15 @@ $\vec{E},\vec{B}:\Reals^3\times\Reals\to \Reals^3$ beschreiben.
 Diese Felder erfüllen die auf Maxwell zurückgehenden Gleichungen 
 \begin{equation}
   \begin{alignedat}{2}
-    \Div\vec{E} &= \rho\,,  & \qquad \Rot\vec{E}+\dpd{\vec{B}}{t}&
-    =0\,,\\
-    \Div\vec{B} &= 0\,,& \qquad\Rot\vec{B}-\dpd{\vec{E}}{t}&
+  \Div\vec{B} &= 0    \,,  & \qquad \Div\vec{E} &= \rho
+    \,,\\
+    \Rot\vec{E}+\dpd{\vec{B}}{t}&=0\,,& \qquad\Rot\vec{B}-\dpd{\vec{E}}{t}&
     =\vec{j}\,.
   \end{alignedat}
 \end{equation}
-Zusätzlich muss eine weitere Gleichung hinzugefügt werden, die die Dynamik von
-Testteilchen\footnote{Ein Testteilchen ist ein idealisiertes Objekt, welches
-selbst die wirkenden Felder nicht beeinflusst.} beschreibt
+Die links stehenden Gleichungen werden als \emph{homogene}, die rechten als
+\emph{inhomogene} Maxwell-Gleichungen bezeichnet. Zusätzlich muss eine weitere
+Gleichung hinzugefügt werden, die die Dynamik von Testteilchen\footnote{Ein Testteilchen ist ein idealisiertes Objekt, welches selbst die wirkenden Felder nicht beeinflusst.} beschreibt
 \begin{equation}
 m\ddot{\vec{x}}=\vec{F}(\vec{x},\dot{\vec{x}},t)
 =q\left[\vec{E}(\vec{x},t)+\dot{\vec{x}}\times\vec{B}(\vec{x},t)\right]\,,
@@ -31,7 +31,7 @@ m\ddot{\vec{x}}=\vec{F}(\vec{x},\dot{\vec{x}},t)
 dabei ist $\vec{F}$ die so genannte \emph{Lorentzkraft} und $q$, $m$ die
 Ladung bzw. Masse des Teilchens.
 Es lässt sich mittels des Helmholtz-Theorems und der Form der Maxwell-Gleichung
-die Existenz von Potentialen $\vec{A}$, $\Phi$ folgern, sodass
+die Existenz von \emph{Potentialen} $\vec{A}$, $\Phi$ folgern, sodass
 \begin{equation}
 \vec{B}=\Rot \vec{A}\,,\quad
 \vec{E}=-\Grad\Phi+\dpd{\vec{A}}{t}\,.\label{eq:Vecpot}
@@ -54,9 +54,9 @@ Die physikalischen Felder lassen sich aus dem Feldstärketensor wiederum durch
 \vec{E}_{i}=\tensor{F}{_0_i}\,,\quad
 \vec{B}_i=\frac{1}{2}\tensor{\varepsilon}{^i^j^k}\tensor{F}{^j^k}
 \end{equation}
-zurückgewinnen, wie man sich leicht mit Hilfe der Definition von $F$ und
-\eqref{eq:Vecpot} nachrechnet.
-Damit reduzieren sich die Maxwell-Gleichungen zu zwei
+zurückgewinnen, wie man leicht mit Hilfe der Definition von $F$ und
+\eqref{eq:Vecpot} nachrechnet. Führt man auch eine Viererstromdichte
+$\tensor{J}{^\nu}=(\rho,\vec{j})\transpose$ ein, reduzieren sich die Maxwell-Gleichungen zu zwei
 Gleichungen
 % \begin{align} 
 % \pdif{_\mu}\tensor{F}{^\mu^\nu}&=\tensor{J}{^\nu}
@@ -66,16 +66,16 @@ Gleichungen
 % \pdif{_{\nu}}\tensor{F}{_\mu_{\rho}}&=0
 % \label{eq:MaxwellHom}
 % \end{align}
-\begin{align}
-\pdif{_\mu}\tensor{F}{^\mu^\nu}&=\tensor{J}{^\nu}
-\label{eq:MaxwellInhom}\,,\\
+\begin{equation}
 \tensor{\varepsilon}{^\alpha^\beta^\gamma^\delta}
-\pdif{_{\alpha}}\tensor{F}{_\gamma_{\delta}}&=0\,.
-\label{eq:MaxwellHom}
-\end{align}
+\pdif{_{\alpha}}\tensor{F}{_\gamma_{\delta}}=0\,,\quad
+\pdif{_\mu}\tensor{F}{^\mu^\nu}=\tensor{J}{^\nu}\,.
+\end{equation}
+Die Homogene Gleichung dabei trivial, da sie bereits aus der Form des
+Feldstärketensors folgt.
 Bzw in indexfreier Notation
 \begin{equation}
-\quad \dif\star F= J\,,\quad\dif F = 0\,.
+\quad \dif(\star F)= J\,,\quad\dif F = 0\,.
 \end{equation}
 % MW2= Jakobi?
 % Die Lagrange Dichte für das Elektromagnetische Feld im Vakuum $\tensor{J}{^\mu}=0$
@@ -85,12 +85,31 @@ Bzw in indexfreier Notation
 % \end{equation}
 % Wobei Beiträge die die Dynamik von Spin-$\nicefrac{1}{2}$ beschreiben nicht
 % berücksichtigt wurden. 
+Wie in \autoref{bsp:Spinone} gezeigt wurde, erfüllen die Felder die (Vakuum-)
+Maxwell-Gleichungen\footnote{Der Fal $J^\mu\neq 0$ erfordert zusätzlich das
+Einführen des Elektronfeldes, worauf wir der Einfachheit halber hier
+verzichten.}, sofern sie das zum Lagrangian
+ \begin{equation}
+L\left(\partial_\mu
+A(x),x\right)=-\frac{1}{4}\tensor{F}{_\mu_\nu}\tensor{F}{^\mu^\nu} \,.
+ \end{equation}
+korrespondierende Wirkungsintegral maximieren.
 \subsection{Eichtransformationen}
+In den Maxwell-Gleichungen taucht das Feld $A$ nie explizit, sondern stets in
+der durch $F$ vorgegebenen Kombination auf. Man macht sich leicht klar, das $F$
+invariant unter Transformationen $A\to A+\dif\Lambda$ mit $\Lambda\in
+C^\infty(\Reals^4)$ einer glatten Funktion. Diese zusätzliche Unbestimmtheit
+bezeichnet man als \emph{Eichfreibeit}, bzw. Transformationen der Form als
+Eichtransformationen. 
+%TODO U1 symmetrie
+%TODO relativistische Lorentzkraft
+%TODO QED in gekrümmtem Raum
 \section{Allgemeine Relativitätstheorie}
 \subsection{Einsteinsche Feldgleichungen}
-Die Einsteinschen Feldgleichungen lauten in lokalen Koordinaten\footnote{Der
-Term proportional zur kosmologischen Konstante $\Lambda$ hat über kleine Distanzen
-vernachlässigbaren Einfluss und wird im Folgenden nicht berücksichtigt.}
+Wie die Elektrodynamik, wird auch die allgemeine Relativitätstheorie durch einen
+Satz von Gleichungen beschrieben. Die so genannten \emph{Einsteinschen
+Feldgleichungen} lauten in lokalen Koordinaten\footnote{Der Term proportional
+zur kosmologischen Konstante $\Lambda$ hat über kleine Distanzen vernachlässigbaren Einfluss und wird im Folgenden nicht berücksichtigt.}
 \begin{equation}
 \tensor{R}{_\mu_\nu} - \frac{R}{2}\, \tensor{g}{_\mu_\nu}
 +\Lambda\, \tensor{g}{_\mu_\nu}
@@ -123,6 +142,10 @@ S[g]=\int_{M}\sqrt{-g}R[g] \dif{}^4x \,.
 \end{equation}
 Bei der Variation dieses Funktionales treten verschiedene Terme auf. Wir
 betrachten zunächst den Volumenfaktor $\sqrt{-g}$
+\begin{equation}
+\frac{\delta \det g}{\delta g} = g 
+\tensor{g}{^\mu^\nu}\delta\tensor{g}{_\mu_\nu}
+\end{equation}
 \begin{equation}
 \delta g = g  \tensor{g}{^\mu^\nu}\delta\tensor{g}{_\mu_\nu}
 \end{equation}
