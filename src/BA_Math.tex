@@ -43,6 +43,7 @@
 \usepackage{xcolor}
 \usepackage{subfig}		% subfigures
 \usepackage{wrapfig}	% pro­duces fig­ures which text can flow around
+\usepackage[export]{adjustbox}%
 
 %tikz
 \usepackage{tikz}
@@ -115,7 +116,7 @@
 	\renewcommand{\subsectionautorefname}{Kapitel}
  	\renewcommand{\subsubsectionautorefname}{Kapitel}
 }
-\newcommand{\const}{const.}		
+\newcommand{\const}{\ensuremath{\mathrm{const.}}}		
 
 
 % general math
@@ -258,6 +259,6 @@ type=symbolslist
 %\nocite{*}
 \bibliography{bibfile}
 \clearpage  
-%\printglossary
 \printglossary[type=symbolslist]
+\printglossary
 \end{document}

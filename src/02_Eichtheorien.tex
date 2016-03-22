@@ -1,29 +1,31 @@
 \chapter{Maxwell-Einstein Theorie}
 Dieser Teil soll die physikalischen Theorien vorstellen, die der
-Kaluza-Klein-Theorie zu Grunde liegen. Dazu zählt neben der 
-in ihrer heutigen Formulierung auf Maxwell zurückgehenden 
-Elektrodynamik, Einsteins allgemeine Relativitätstheorie. 
+Kaluza-Klein-Theorie zu Grunde liegen. Dazu zählt neben der
+in ihrer heutigen Formulierung auf Maxwell zurückgehenden
+Elektrodynamik, Einsteins allgemeine Relativitätstheorie.
 Deutlich älter ist die Elektrodynamik, deren fundamentales Gesetz, die Konstanz
 der Lichtgeschwindigkeit, die Grundlage der speziellen Relativitätstheorie
 darstellt.
-Die Ähnlichkeit beider Theorien lässt hoffen, dass eine 
-übergeordnete Theorie beide als Spezialfälle enthält. 
+Die Ähnlichkeit beider Theorien lässt hoffen, dass eine
+übergeordnete Theorie beide als Spezialfälle enthält.
 \section{Elektrodynamik}
-Die Elektrodynamik beschreibt das Wechselspiel von elektrischen und 
+Die Elektrodynamik beschreibt das Wechselspiel von elektrischen und
 magnetischen Feldern. Die Phänomenologie lässt sich mittels zweier glatter Vektorfelder
-$\vec{E},\vec{B}:\Reals^3\times\Reals\to \Reals^3$ beschreiben.
-Diese Felder erfüllen die auf Maxwell zurückgehenden Gleichungen 
+${\vec{E},\vec{B}:\Reals^3\times\Reals\to \Reals^3}$ beschreiben.
+Diese Felder erfüllen die auf Maxwell zurückgehenden Gleichungen
 \begin{equation}
-  \begin{alignedat}{2}
-  \Div\vec{B} &= 0    \,,  & \qquad \Div\vec{E} &= \rho
-    \,,\\
-    \Rot\vec{E}+\dpd{\vec{B}}{t}&=0\,,& \qquad\Rot\vec{B}-\dpd{\vec{E}}{t}&
-    =\vec{j}\,.
-  \end{alignedat}
+\begin{alignedat}{2}
+\Div\vec{B} &= 0    \,,  & \qquad \Div\vec{E} &= \rho
+\,,\\
+\Rot\vec{E}+\dpd{\vec{B}}{t}&=0\,,& \qquad\Rot\vec{B}-\dpd{\vec{E}}{t}&
+=\vec{j}\,.
+\end{alignedat}
 \end{equation}
 Die links stehenden Gleichungen werden als \emph{homogene}, die rechten als
-\emph{inhomogene} Maxwell-Gleichungen bezeichnet. Zusätzlich muss eine weitere
-Gleichung hinzugefügt werden, die die Dynamik von Testteilchen\footnote{Ein Testteilchen ist ein idealisiertes Objekt, welches selbst die wirkenden Felder nicht beeinflusst.} beschreibt
+\emph{inhomogene} Maxwell-Gleichungen bezeichnet. Die Ladungsdichte $\rho$,
+sowie die Stromdichte $\vec{j}$ können als "`Quellen"' der Felder angesehen
+werden. Zusätzlich muss eine weitere Gleichung hinzugefügt werden, die die
+Dynamik von Testteilchen\footnote{Ein Testteilchen ist ein idealisiertes Objekt, welches selbst die wirkenden Felder nicht beeinflusst.} beschreibt
 \begin{equation}
 m\ddot{\vec{x}}=\vec{F}(\vec{x},\dot{\vec{x}},t)
 =q\left[\vec{E}(\vec{x},t)+\dot{\vec{x}}\times\vec{B}(\vec{x},t)\right]\,,
@@ -36,46 +38,43 @@ die Existenz von \emph{Potentialen} $\vec{A}$, $\Phi$ folgern, sodass
 \vec{B}=\Rot \vec{A}\,,\quad
 \vec{E}=-\Grad\Phi+\dpd{\vec{A}}{t}\,.\label{eq:Vecpot}
 \end{equation}
-Die Elektrodynamik ist eng mit der speziellen Relativitätstheorie verbunden.
-Diese lässt sich am besten mit Objekten der Differentialgeometrie beschreiben.
+Es ist von Vorteil, eine Beschreibung mit Hilfe der Differentialgeometrie
+zu wählen.
 Die Potentiale werden als Komponenten
 $\tensor{A}{^\mu}=(\Phi,\vec{A})\transpose$ einer 1-Form
-$A=\tensor{A}{_\mu}\dif\tensor{x}{^\mu}$ aufgefasst. Der Elektromagnetische Feldstärketensor ist definiert als
+$A=\tensor{A}{_\mu}\dif\tensor{x}{^\mu}$ aufgefasst.
+Der Elektromagnetische Feldstärketensor ist definiert als
 \begin{equation}
 F:=\dif
 A\,,
 \end{equation}
 bzw. in lokalen Koordinaten
 \begin{equation}
-\tensor{F}{_\mu_\nu}:=\partial_\mu\tensor{A}{_\nu}-\partial_\nu\tensor{A}{_\mu}\,.
+\tensor{F}{_\mu_\nu}=\partial_\mu\tensor{A}{_\nu}-\partial_\nu\tensor{A}{_\mu}\,.
 \end{equation}
-Die physikalischen Felder lassen sich aus dem Feldstärketensor wiederum durch 
+Die physikalischen Felder lassen sich aus dem Feldstärketensor wiederum durch
 \begin{equation}
 \vec{E}_{i}=\tensor{F}{_0_i}\,,\quad
-\vec{B}_i=\frac{1}{2}\tensor{\varepsilon}{^i^j^k}\tensor{F}{^j^k}
+\vec{B}_i=\frac{1}{2}\tensor{\varepsilon}{_i_j_k}\tensor{F}{^j^k}
 \end{equation}
 zurückgewinnen, wie man leicht mit Hilfe der Definition von $F$ und
 \eqref{eq:Vecpot} nachrechnet. Führt man auch eine Viererstromdichte
-$\tensor{J}{^\nu}=(\rho,\vec{j})\transpose$ ein, reduzieren sich die Maxwell-Gleichungen zu zwei
+$\tensor{J}{^\nu}=(\rho,\vec{j})\transpose$ ein,
+reduzieren sich die Maxwell-Gleichungen zu zwei
 Gleichungen
-% \begin{align} 
-% \pdif{_\mu}\tensor{F}{^\mu^\nu}&=\tensor{J}{^\nu}
-% \label{eq:MaxwellInhom}\\
-% \pdif{_{\mu}}\tensor{F}{_\nu_{\rho}}+
-% \pdif{_{\mu}}\tensor{F}{_\rho_{\nu}}+
-% \pdif{_{\nu}}\tensor{F}{_\mu_{\rho}}&=0
-% \label{eq:MaxwellHom}
-% \end{align}
 \begin{equation}
 \tensor{\varepsilon}{^\alpha^\beta^\gamma^\delta}
 \pdif{_{\alpha}}\tensor{F}{_\gamma_{\delta}}=0\,,\quad
 \pdif{_\mu}\tensor{F}{^\mu^\nu}=\tensor{J}{^\nu}\,.
 \end{equation}
-Die Homogene Gleichung dabei trivial, da sie bereits aus der Form des
+Die homogene Gleichung ist dabei trivial, da sie bereits aus der Form des
 Feldstärketensors folgt.
-Bzw in indexfreier Notation
+%d^2=0 oder 
+% https://en.wikipedia.org/wiki/Yang%E2%80%93Mills_theory
+% ^ Zusammenhang Jakobi und Maxwellgleichung\ldots
+In koordinatenfreier Notation lauten die Gleichungen schließlich 
 \begin{equation}
-\quad \dif(\star F)= J\,,\quad\dif F = 0\,.
+\dif F = 0\,,\quad\quad \dif\,(\star F)= J\,.
 \end{equation}
 % MW2= Jakobi?
 % Die Lagrange Dichte für das Elektromagnetische Feld im Vakuum $\tensor{J}{^\mu}=0$
@@ -84,15 +83,15 @@ Bzw in indexfreier Notation
 % A(x),x\right]=-\frac{1}{4}\tensor{F}{_\mu_\nu}\tensor{F}{^\mu^\nu} \,.
 % \end{equation}
 % Wobei Beiträge die die Dynamik von Spin-$\nicefrac{1}{2}$ beschreiben nicht
-% berücksichtigt wurden. 
+% berücksichtigt wurden.
 Wie in \autoref{bsp:Spinone} gezeigt wurde, erfüllen die Felder die (Vakuum-)
-Maxwell-Gleichungen\footnote{Der Fal $J^\mu\neq 0$ erfordert zusätzlich das
+Maxwell-Gleichungen\footnote{Der Fall $J^\mu\neq 0$ erfordert zusätzlich das
 Einführen des Elektronfeldes, worauf wir der Einfachheit halber hier
 verzichten.}, sofern sie das zum Lagrangian
- \begin{equation}
+\begin{equation}
 L\left(\partial_\mu
 A(x),x\right)=-\frac{1}{4}\tensor{F}{_\mu_\nu}\tensor{F}{^\mu^\nu} \,.
- \end{equation}
+\end{equation}
 korrespondierende Wirkungsintegral maximieren.
 \subsection{Eichtransformationen}
 In den Maxwell-Gleichungen taucht das Feld $A$ nie explizit, sondern stets in
@@ -100,15 +99,15 @@ der durch $F$ vorgegebenen Kombination auf. Man macht sich leicht klar, das $F$
 invariant unter Transformationen $A\to A+\dif\Lambda$ mit $\Lambda\in
 C^\infty(\Reals^4)$ einer glatten Funktion. Diese zusätzliche Unbestimmtheit
 bezeichnet man als \emph{Eichfreibeit}, bzw. Transformationen der Form als
-Eichtransformationen. 
+Eichtransformationen.
 %TODO U1 symmetrie
 %TODO relativistische Lorentzkraft
 %TODO QED in gekrümmtem Raum
 \section{Allgemeine Relativitätstheorie}
 \subsection{Einsteinsche Feldgleichungen}
 Wie die Elektrodynamik, wird auch die allgemeine Relativitätstheorie durch einen
-Satz von Gleichungen beschrieben. Die so genannten \emph{Einsteinschen
-Feldgleichungen} lauten in lokalen Koordinaten\footnote{Der Term proportional
+Satz von Differentialgleichungen beschrieben. Die so genannten
+\emph{Einsteinschen Feldgleichungen} lauten in lokalen Koordinaten\footnote{Der Term proportional
 zur kosmologischen Konstante $\Lambda$ hat über kleine Distanzen vernachlässigbaren Einfluss und wird im Folgenden nicht berücksichtigt.}
 \begin{equation}
 \tensor{R}{_\mu_\nu} - \frac{R}{2}\, \tensor{g}{_\mu_\nu}
@@ -117,9 +116,9 @@ zur kosmologischen Konstante $\Lambda$ hat über kleine Distanzen vernachlässig
 \end{equation}
 Der Tensor $\tensor{T}{_\mu_\nu}$ heißt \emph{Energie-Impuls-Tensor} und
 enthält Information über die Materie, d.h. über die Felder im Raum. Eine
-besonders einfache Form nehmen die Gleichungen im Vakuum an, denn dann gilt 
+besonders einfache Form nehmen die Gleichungen im Vakuum an, denn dann gilt
 $\tensor{T}{_\mu_\nu}=0$.
-Bilden wir die Spur der Einsteingleichungen, so finden wir 
+Bilden wir die Spur der Einsteingleichungen, so finden wir
 \begin{equation}
 0=R- 2 R =-R\,,
 \end{equation}
@@ -131,58 +130,55 @@ Einsetzen in die Einsteingleichungen liefert wiederum die Vakuumgleichung
 \subsection{Variationsprinzip}
 % TODO So formulieren Das S: Rank2sym->R problem S-> Max und
 % |_\alphS(g+\alphah)=0 für alle Testfunktionen. Rechenregeln
-Eine elegante Ableitung der Einsteingleichungen ergibt sich mithilfe eines auf
-Hilbert zurückgehenden Variationsprinzips. 
+Eine elegante Ableitung der Vakuumgleichungen ergibt sich mithilfe eines auf
+Hilbert zurückgehenden Variationsprinzips.
 Die Idee lautet: wähle die Metrik $g$ als kritischen
-Punkt eines lokalen Funktionales, welches nur von der Krümmung abhängt. Das
-einfachste solche Funktional ist die so genannte
+Punkt eines lokalen Funktionales, welches nur vom Riemannschen Krümmungstensor
+abhängt.
+Das einfachste solche Funktional ist die so genannte
 \emph{Einstein-Hilbert-Wirkung}
 \begin{equation}
-S[g]=\int_{M}\sqrt{-g}R[g] \dif{}^4x \,.
+S[g]=\int_{M}R[g]\,\Omega = \int_{M}\sqrt{-g}R[g] \dif{}^4x \,.
+\end{equation}
+Die zugehörige Lagrange Funktion ist gegeben als
+\begin{equation}
+L(g)=\sqrt{-g}R[g]\,.
 \end{equation}
 Bei der Variation dieses Funktionales treten verschiedene Terme auf. Wir
-betrachten zunächst den Volumenfaktor $\sqrt{-g}$
-\begin{equation}
-\frac{\delta \det g}{\delta g} = g 
-\tensor{g}{^\mu^\nu}\delta\tensor{g}{_\mu_\nu}
-\end{equation}
-\begin{equation}
-\delta g = g  \tensor{g}{^\mu^\nu}\delta\tensor{g}{_\mu_\nu}
-\end{equation}
+betrachten zunächst den Volumenfaktor $\sqrt{-g}$, mit Jacobis Formel und der
+Kettenregel
+%TODO REF
 \begin{equation}
 \begin{split}
-\delta \sqrt{-g} 
-&= -\frac{1}{2\sqrt{-g}}\delta g \\
-&= \frac{1}{2} \sqrt{-g} \left(\tensor{g}{^\mu^\nu} \delta
-\tensor{g}{_\mu_\nu}\right)\\
-&= -\frac{1}{2} \sqrt{-g} \left(\tensor{g}{_\mu_\nu} \delta
-\tensor{g}{^\mu^\nu}\right)
+\delta \sqrt{-g}
+&= -\frac{1}{2\sqrt{-g}}  \left(\sqrt{-g}\tensor{g}{_\mu_\nu}
+\delta\tensor{g}{^\mu^\nu} \right)\\
+&= -\frac{1}{2}\sqrt{-g}\tensor{g}{_\mu_\nu}
+\delta\tensor{g}{^\mu^\nu} \\
 \end{split}
 \end{equation}
-Um die Variation des Krümmungskalar zu berechnen wähle man zweckmäßigerweise
+Um die Variation des Krümmungskalar zu berechnen, wählen wir zweckmäßigerweise
 ein Riemannsches Normalkoordinatensystem\footnote{Ein Koordinatensystem in dem
-$\cSym{\rho}{\mu}{\sigma}=0$ im betrachteten Punkt},
+$\cSym{\rho}{\mu}{\sigma}=0$ im betrachteten Punkt}, sodass gilt
 \begin{equation}
-\begin{split}
-\delta \tensor{R}{^\rho_\mu_\nu_\sigma}
-&=\delta \tensor{\partial}{_\nu}\cSym{\rho}{\mu}{\sigma}
--\delta \tensor{\partial}{_\mu}\cSym{\rho}{\nu}{\sigma}\\
-&=\tensor{\partial}{_\nu}\delta \cSym{\rho}{\mu}{\sigma}
--\tensor{\partial}{_\mu}\delta \cSym{\rho}{\nu}{\sigma}\\
-\end{split}
+\tensor{R}{^\rho_\mu_\nu_\sigma}=\tensor{\partial}{_\nu}\cSym{\rho}{\mu}{\sigma}
+-\tensor{\partial}{_\mu}\cSym{\rho}{\nu}{\sigma}\,.\\
 \end{equation}
+Betrachtet die Variation des Ricci-Tensors nach der Metrik so gilt
 \begin{equation}
 \begin{split}
 \delta \tensor{R}{_\mu_\nu}
 &=\delta \tensor{R}{^\rho_\mu_\rho_\nu}\\
+&=\delta\tensor{\partial}{_\rho} \cSym{\rho}{\mu}{\nu}
+-\delta\tensor{\partial}{_\mu} \cSym{\rho}{\rho}{\nu}\\
 &=\tensor{\partial}{_\rho}\delta \cSym{\rho}{\mu}{\nu}
 -\tensor{\partial}{_\mu}\delta \cSym{\rho}{\rho}{\nu}\\
 &=\tensor{\nabla}{_\rho}\delta \cSym{\rho}{\mu}{\nu}
--\tensor{\nabla}{_\mu}\delta \cSym{\rho}{\rho}{\nu}\\
+-\tensor{\nabla}{_\mu}\delta \cSym{\rho}{\rho}{\nu}\,,
 \end{split}
 \end{equation}
-Die Gleichung ist koordinatenunabhängig, da sie eine Tensor Gleichung ist.
-Weiter berechnet man 
+d.h. die Variation liefert eine totale Divergenz.
+Weiter berechnen wir
 \begin{equation}
 \begin{split}
 \delta R &=\delta \left(\tensor{g}{^\mu^\nu}\tensor{R}{_\mu_\nu}\right)\\
@@ -194,74 +190,57 @@ Damit ist die Variation des EH-Funktionales gegeben als
 \begin{equation}
 \begin{split}
 \delta S
-&=\fourint \left[
-R\delta\sqrt{-g}+\sqrt{-g}\delta R\right]\\
-&=\fourint \left[
-\frac{1}{2}\sqrt{-g}\tensor{g}{^\mu^\nu}\delta\tensor{g}{_\mu_\nu}
+&=\int\left(
+R\delta\sqrt{-g}+\sqrt{-g}\delta R\right)\dif{}^4x\\
+&=\int \left[
+\frac{1}{2}\sqrt{-g}\tensor{g}{_\mu_\nu}\delta\tensor{g}{^\mu^\nu}
 R+\sqrt{-g}\left(\tensor{R}{_\mu_\nu}\delta\tensor{g}{^\mu^\nu}
-+\tensor{g}{^\mu^\nu}\delta\tensor{R}{_\mu_\nu}\right)\right]\\
-&=\fourint \sqrt{-g}\left(
-\frac{1}{2}\tensor{g}{^\mu^\nu}
-R+\tensor{R}{^\mu^\nu}\right)\delta\tensor{g}{_\mu_\nu}
-+\fourint \sqrt{-g}\tensor{g}{^\mu^\nu}\delta\tensor{R}{_\mu_\nu}
++\tensor{g}{^\mu^\nu}\delta\tensor{R}{_\mu_\nu}\right)\right]\dif{}^4x\\
+&=\int \sqrt{-g}\left(
+\frac{R}{2}\tensor{g}{_\mu_\nu}
++\tensor{R}{_\mu_\nu}\right)\delta\tensor{g}{^\mu^\nu}\dif{}^4x
++\int \sqrt{-g}\tensor{g}{^\mu^\nu}\delta\tensor{R}{_\mu_\nu}\dif{}^4x
 \,.
 \end{split}
 \end{equation}
-Das zweite Integral liefert nur einen Oberflächenterm:
+Das zweite Integral liefert als totale Divergenz nur einen Oberflächenterm.
+Damit verbleibt
 \begin{equation}
 \begin{split}
-\fourint \sqrt{-g}\tensor{g}{^\mu^\nu}\delta\tensor{R}{_\mu_\nu}
-&=\fourint \sqrt{-g}\tensor{g}{^\mu^\nu}\left(\tensor{\nabla}{_\rho}\delta
-\cSym{\rho}{\mu}{\nu} -\tensor{\nabla}{_\mu}\delta \cSym{\rho}{\rho}{\nu}\right)
-\\
-&=\fourint \tensor{\nabla}{_\rho}\left(\sqrt{-g}\tensor{g}{^\mu^\nu}\delta
-\cSym{\rho}{\mu}{\nu}\right)-\int\dif{}^4 x \tensor{\nabla}{_\mu}\left(\sqrt{-g}\tensor{g}{^\mu^\nu}\delta
-\cSym{\rho}{\rho}{\nu}\right)\,.
+\delta S
+&=\int \sqrt{-g}\left(
+\frac{R}{2}\tensor{g}{_\mu_\nu}
++\tensor{R}{_\mu_\nu}\right)\delta\tensor{g}{^\mu^\nu}\dif{}^4x\,.
 \end{split}
 \end{equation}
-Damit verbleibt 
+Die Extremalbedingung $\delta S=0$ für beliebige $\delta\tensor{g}{^\mu^\nu}$
+impliziert
 \begin{equation}
-\begin{split}
-\delta S\textsubscript{EH}
-&=\fourint \sqrt{-g}\left(
-\frac{1}{2}\tensor{g}{^\mu^\nu}
-R+\tensor{R}{^\mu^\nu}\right)\delta\tensor{g}{_\mu_\nu}\,.
-\end{split}
-\end{equation}
-Wir können also die Variation nach der Metrik berechnen 
-\begin{equation}
-\frac{\delta
-S\textsubscript{EH}[\tensor{g}{_\mu_\nu}(x)]}{\delta\tensor{g}{_\mu_\nu}(x')}
-=\sqrt{-g}\left(\frac{1}{2}\tensor{g}{^\mu^\nu}
-R+\tensor{R}{^\mu^\nu}\right)
-\end{equation}
-Die Extremalforderung impliziert
-\begin{equation}
-\tensor{R}{^\mu^\nu}+\frac{R}{2}\tensor{g}{^\mu^\nu}=0\, .
+\tensor{R}{_\mu_\nu}+\frac{R}{2}\tensor{g}{_\mu_\nu}=0\, .
 \end{equation}
 Die Einsteingleichungen lassen sich also aus dem Variationsprinzip herleiten.
 \subsection{Skalar-Tensor Theorien}
 Brans-Dicke-Theorie
+%TODO Overduin and Wesson 1997a).
 \section{Gemeinsamkeiten und Unterschiede}
 Unterschiede:
 \begin{itemize}
-  	\item Lorentz-Kraft muss postuliert werden. Reine ART enthält keine Kräfte,
- 	alle Teilchen bewegen sich frei auf Geodätischen.
-	\item Ladung hat zwei Vorzeichen, d.h. es kann mittels umgekehrter Ladung
-	entschieden werden ob man frei fällt oder nicht
-	\item Die Einsteingleichungen sind nichtlinear und zweiter Ordnung die
-	Maxwellgleichungen linear und erster Ordnung
-	\item Kraft vs Geometrie
+  \item Lorentz-Kraft muss postuliert werden. Reine ART enthält keine Kräfte,
+  alle Teilchen bewegen sich frei auf Geodäten.
+  \item Ladung hat zwei Vorzeichen, d.h. es kann mittels umgekehrter Ladung
+  entschieden werden ob man frei fällt oder nicht
+  \item Die Einsteingleichungen sind nichtlinear und zweiter Ordnung die
+  Maxwell-Gleichungen linear und erster Ordnung
+  \item Kraft vs Geometrie
 \end{itemize}
 Gemeinsamkeiten:
 \begin{itemize}
-  	\item Diffeomorphismeninvarianz/Eichinvarianz
-	\item In der nichtrelativistischen Näherung $1/r^2$ Gesetz.
-	\item Massenloses bosonisches Vermittlerteilchen.
-	\item Lagrangeformulierung
+  \item Diffeomorphismen-Invarianz/Eichinvarianz
+  \item In der nichtrelativistischen Näherung $1/r^2$ Gesetz.
+  \item Masseloses bosonisches Vermittlerteilchen.
+  \item Lagrangeformulierung
 \end{itemize}
 Insgesamt lässt sich hoffen das eine vereinheitlichte Theorie so formuliert
 werden kann das sie einerseits die Ähnlichkeiten erklärt und auf gemeinsame
 Ursachen zurückführt, andererseits aber auch Gründe für die Unterschiede gibt
 bzw. diese möglicherweise ausräumt.
-

@@ -1,14 +1,21 @@
 \chapter{Moderne Formulierung}
+\section{Modell einer höherdimensionalen Raumzeit}
+
+In diesem Kapitel wollen wir ein möglichst allgemeines Modell einer
+$d+4$-dimensionalen Raumzeit entwerfen. Häufig weisen Probleme in der Physik
+Symmetrien auf, d.h. \ldots
 Auch wenn das Ergebnis sehr überzeugend ist, so ist das vorgehen nicht besonders
 mathematisch. Annahmen:
 \begin{enumerate}
 \item Zylinderbedingung
 \item keine Quellen, $\tensor{T}{_m_n}=0$.
+% 5D Vakuum=> EH wirkung  L=sqrt(g) R unbekannt was \tensor{T}{_m_n} sein soll
 \item die Metrik ist Extremum des EH-Funktionals
+% ist equivalent zu vorherigem\ldots
 \item Testteilchen bewegen sich auf Geodäten
 \item die Eigenzeit ist durch die Bogenlänge gegeben
 \end{enumerate}
-\section{Alternative Darstellung $n+4$ dimensionaler Biliearformen}
+\section{Alternative Darstellung $n+4$ dimensionaler Bilinearformen}
 \section{Eigenschaften der Klein-Metrik}
 An jedem Punkt lässt sich die Metrik $\hat{g}$ durch eine symmetrische
 (Block-)Matrix
@@ -19,7 +26,7 @@ C\transpose& H\end{pmatrix}
 beschreiben, wobei
 $B\in\operatorname{Sym}_4$
 \footnote{$\operatorname{Sym}_k$ bezeichnet die Menge aller symmetrischen
-$k\times k$-Matritzen.} , $H\in\operatorname{Sym}_n$.
+$k\times k$-Matrizen.} , $H\in\operatorname{Sym}_n$.
 $H$ ist nicht entartet, $g$ nicht entartet ist. 
 Da die Matrix reell symmetrisch ist, ist sie (block-) diagonalisierbar
 \begin{equation}
@@ -45,6 +52,7 @@ Die Transformation lässt sich leicht umkehren
 \begin{pmatrix}1& A\\0& 1\end{pmatrix}^{-1}=\begin{pmatrix}1& -A\\0&
 1\end{pmatrix}\,.
 \end{equation}
+% TODO: damit misst das feld quasi das volumen der Zusatzdimension
 Mit diesen Relationen ergibt sich eine alternative Darstellung des
 Linienelements
 \begin{equation}
@@ -68,7 +76,7 @@ als Klein-Metrik bezeichnen.
 Berechnungen angelehnt an \cite{Coquereaux:1990qs} \cite{williams2015field}.
 \subsection{Darstellung in lokalen Koordinaten}
 \begin{equation}
-\tensor{\hat{g}}{_\mu_\nu}=\tensor{g}{_\mu_\nu}+\tensor{h}{_a_b}\tensor{A}*{^a_\mu}\tensor*{A}{^b_\nu}\,,\quad
+\tensor{\hat{g}}{_\mu_\nu}=\tensor{g}{_\mu_\nu}+\tensor{h}{_a_b}\tensor*{A}{^a_\mu}\tensor*{A}{^b_\nu}\,,\quad
 \tensor{\hat{g}}{_a_\mu}=\tensor{h}{_a_b}\tensor*{A}{^b_\mu}\,,\quad
 \tensor{\hat{g}}{_a_b}=\tensor{h}{_a_b}
 \end{equation}
@@ -79,6 +87,9 @@ Wie sich leicht nachprüfen lässt ist die Inverse der Klein-Metrik gegeben als
 \tensor{\hat{g}}{^a^\mu}=-\tensor{A}{^a^\mu}\,,\quad
 \tensor{\hat{g}}{^a^b}=\tensor*{A}{^a_\mu}\tensor*{A}{^b^\mu}+\tensor{h}{^a^b}\,.
 \end{equation}
+% TODO damit kann entweder mit ghut oder g indices nach oben gezogen werden.
+% Inkonsistent? ghut4mu?
+
 % \subsection{Determinante}
 % Die Determinante wird wie üblich zur Berechnung von Volumenelementen benötigt.
 % Bei der Berechnung ist folgende Formel für Matrizen $A,B,C,D$ hilfreich:
@@ -112,7 +123,7 @@ Wie sich leicht nachprüfen lässt ist die Inverse der Klein-Metrik gegeben als
 % \begin{bemerkung}
 % Die entsprechenden Ausdrücke für die Kaluza-Metrik sind deutlich komplizierter.
 % \end{bemerkung}
-\subsection{Christoffelsymbole}
+\subsection{Christoffelsymbol}
 Siehe Williams: "`Field Equations and Lagrangian for the Kaluza Metric
 Evaluated with Tensor Algebra Software"'\cite{williams2015field}
 \subsection{Skalarkrümmung}
@@ -142,8 +153,8 @@ Die Metrik ist von der Form
 \section{Die fünfdimensionale Raumzeit}
 Wir werden im folgenden nur den fünfdimensionalen Fall diskutieren. In den
 meisten Fällen ergibt sich eine Verallgemeinerung natürlich. Sei $(E,\hat{g})$
-eine fünfdimensionale pseudoriemannsche Mannigfaltigkeit. Die Liegruppe
-kompakte Liegruppe $G$ operiere durch Isometrien auf $E$. 
+eine dimensionale pseudo-riemannsche Mannigfaltigkeit. Die Lie-Gruppe
+kompakte Lie-Gruppe $G$ operiere durch Isometrien auf $E$. 
 Dann ergibt sich wie beschrieben eine Faserstruktur auf $E$ mit typischer Faser
 $G.x x\in E$. Seien $T^{(a)}\in \mathfrak{g}$ die Generatoren von $G$
 \begin{equation}
@@ -217,10 +228,10 @@ Da $\tensor{A}{_\mu}$ nur von $\tensor{X}{^\mu}$ abhängt, ist $\tensor{X}{^5}$
 durch die ersten vier Komponenten eindeutig gegeben und enthält keine
 Zusatzinformation.
 \section{Identifikation der Größen}
-Wir wollen die Objekte $A$ und $\psi$ als Eichpotential bzw. Skalarfeld auf $M/G$
-auffassen, dazu müssen wir zeigen das sie entsprechend transformieren.
-Da die Lieableitung der Metrik nach $V=\partial_4$ verschwindet wissen wir, dass die
-Metrik invariant unter infinitesimalen Diffeomorphismsen $\xi$ sein muss.
+Wir wollen die Objekte $A$ und $\psi$ als Eichpotential bzw. Skalarfeld auf
+$M/G$ auffassen, dazu müssen wir zeigen das sie entsprechend transformieren.
+Da die Lie-Ableitung der Metrik nach $V=\partial_4$ verschwindet wissen wir,
+dass die Metrik invariant unter infinitesimalen Diffeomorphismen $\xi$ sein muss.
 Betrachte die Abbildung $f:M\to M$ 
 \begin{equation}
 \tensor{x}{^\mu}\mapsto
@@ -274,7 +285,7 @@ Das Transformationsverhalten der Größen lässt sich zusammenfassen als
 \tensor{A}{_\mu}\to\tensor{A}{_\mu}+\pdif{_\mu}\xi\,,\quad
 \psi\to\psi
 \end{equation}
-Also entsprechen Infinitisimale Diffeomorphismen auf $M$ Eichtransformationen.
+Also entsprechen infinitesimalen Diffeomorphismen auf $M$ Eichtransformationen.
 Weiter ist zu Zeigen das $A$ als Differentialform $M/G$ interpretiert werden,
 um dies einzusehen studieren wir das Verhalten unter Koordinatenwechseln $f:M\to
 M$
@@ -321,7 +332,7 @@ mit einem Diffeomorphismus $h$
 \tensor{A}{_\mu}\to\tensor{A}{_\alpha}\dpd{h^\alpha}{\tensor{x}{^\mu}}\,,\quad
 \psi\to\psi
 \end{equation}
-Diffeomorphismeninvarianz der Klein Metrik impliziert also sowohl die
+Diffeomorphismus-Invarianz der Klein Metrik impliziert also sowohl die
 Eichinvarianz des Viererpotentials $\tensor{A}{_\mu}$, als auch das korrekte
 Transformationsverhalten unter vierdimensionalen Koordinatenwechseln.
 Dabei transformieren $\psi$, $\tensor{A}{_\mu}$ und $\tensor{g}{_\mu_\nu}$ als
@@ -370,7 +381,7 @@ Da wir den Lagrangian gerne in einer Form vorliegen hätten, die dem
 EH-Lagrangian enspricht müssen wir den Vorfaktor $e^{\sigma}$ loswerden. 
 Wir führen dazu eine konforme Transformation durch
 \begin{equation}
-\tensor*{\hat{g}}{*^\star*_i*_j}=e^{2\tau}\tensor{\hat{g}}{_i_j}\,.
+\tensor*{\hat{g}}{*^\star*_i*_j}=\exp\left[{2\tau\left(\tensor{x}{^\mu}\right)}\right]\tensor{\hat{g}}{_i_j}\,.
 \end{equation}
 Dies impliziert sofort
 \begin{equation}
@@ -382,7 +393,7 @@ gegeben als
 \begin{equation}
 \tensor*{F}{*^\star_\mu_\nu}=\tensor{F}{_\mu_\nu}\,,\quad\tensor*{F}{*^\star^\mu^\nu}
 =\tensor*{\hat{g}}{*^\star*^\mu*^\alpha}\tensor*{\hat{g}}{*^\star*^\nu*^\beta}\tensor{F}{_\alpha_\beta}
-=e^{-4\tau}\tensor{F}{^\mu^\nu}
+=e^{-4\tau}\tensor{F}{^\mu^\nu}\,.
 \end{equation}
 Wendet man die Formel für das Transformationsverhalten des Krümmungsskalars an,
 so findet man schließlich
@@ -427,9 +438,12 @@ Setzt man in \eqref{eq:Lagrange1} ein erhält man
 Der Term mit der totalen Divergenz produziert einen nicht beitragenden Randterm
 und kann deshalb fallen gelassen werden. 
 %TODO Randterme
-Da eine Variation der Konformen Metrik auf die
-gleichen Gleichungen führt, lassen wir im folgenden die Sterne an den Größen weg. Zudem führen wir
-Bezeichnungen ein die zu einer üblichen Form führen
+Da die konform Transformierte Metrik die selben Eigenschaften wie die Metrik
+selbst besitzt sind die Probleme $S[g]\to\text{min}$ und
+$S\left[g^\star\right]\to\text{min}$ äquivalent, wir lassen deshalb wir im
+Folgenden die Sterne an den Größen weg. 
+Zudem führen wir Bezeichnungen die den Lagrangian in eine gebräuchlich Form
+bringen:
 \begin{equation}
 \begin{split}
 \mathcal{L}
@@ -440,7 +454,7 @@ Bezeichnungen ein die zu einer üblichen Form führen
 \end{split}
 \end{equation}
 Dabei bezeichnet die
-Größe $H$ die elektromagnetische Verschiebungsfelddichte\footnote{In Analogie zu
+Größe $H$ den elektromagnetischen Verschiebungstensor\footnote{In Analogie zu
 den Verschiebungsfeldern $\vec{D},\vec{H}$ der klassischen Elektrodynamik.
 }
 %TODO Insbesondere handelt es sich nicht um das Nebenfeld
@@ -449,10 +463,24 @@ den Verschiebungsfeldern $\vec{D},\vec{H}$ der klassischen Elektrodynamik.
 \tensor*{H}{_\mu_\nu}:=e^{\sqrt{3}\sigma}\tensor*{F}{_\mu_\nu}\,,
 \end{equation}
 wobei der Term $e^{\sqrt{3}\sigma}$ als variable Perimitivität $\mu(\sigma)$
-interpretiert wird. Dies ist ein beachtliches Ergebnis, dass falls
-$\sigma=\text{const.}=0$ exakt der Lagrangedichte der klassischen
-Maxwell-Einstein Theorie enstpricht. Dieser Umstand ist auch als
+interpretiert wird. 
+\subsection{Das Kaluza-Klein Wunder}
+Setzt man in \eqref{eq:Lagrange2}, $\sigma=\const=0$  so erhält man 
+\begin{equation}\label{eq:Lagrange2}
+\begin{split}
+\mathcal{L}
+&=\sqrt{-g}\left[R-\frac{1}{4}\tensor*{F}{_\mu_\nu}\tensor*{F}{^\mu^\nu}\right]\,,
+\end{split}
+\end{equation}
+die Lagrangedichte der klassischen
+Maxwell-Einstein Theorie. 
+Das Ergebnis ist beachtlich: Im fünfdimensionalen Vakuum sind die Einstein- und
+Maxwell-Gleichungen enthalten.
+Mit anderen Worten die Theorien Einsteins
+und Maxwells lassen sich in einer einzigen Theorie vereinigen, die von 
+überraschender Einfachheit ist. Dieser Umstand ist auch als
 \emph{Kaluza-Klein Wunder} bekannt.
+
 % Ist es konsistent nach den Komponenten einzeln zu variieren?
 \subsection{Bewegungsgleichungen}
 In bekannter Manier impliziert die Form der Lagrangedichte 
@@ -461,17 +489,18 @@ Die Einsteingleichungen:
 \tensor{G}{_\mu_\nu}=\tensor*{T}{*^{\sigma}_\mu_\nu}+\tensor*{T}{*^{A}*_\mu*_\nu}
 \end{equation}
 Weiter erhält man für die Variation nach den $A$ 
-Das Feld $A$ ist Zyklisch, taucht also nicht selbst in der Lagrangedichte auf.
+Das Feld $A$ ist zyklisch, taucht also nicht selbst in der Lagrangedichte auf.
 Die resultierende Bewegungsgleichungen lautet
 \begin{equation}
-0=\tensor{\nabla}{_\alpha}\left(\dpd{\mathcal{L}}{\left(\tensor{\nabla}{_\alpha}\tensor{A}{_\beta}\right)}\right)
-=\tensor{\nabla}{_\alpha}\left[e^{\sqrt{3}\sigma}\dpd{\left(\tensor{F}{_\mu_\nu}\tensor{F}{^\mu^\nu}\right)}{\left(\tensor{\nabla}{_\alpha}\tensor{A}{_\beta}\right)}\right]
-=4\tensor{\nabla}{_\alpha}\tensor{H}{^\alpha^\beta}
+0=\tensor{\nabla}{_\alpha}
+\left[\dpd{\mathcal{L}}{\left(\tensor{\nabla}{_\alpha}\tensor{A}{_\beta}\right)}\right]
+=\tensor{\nabla}{_\alpha}\left[-\frac{1}{4}e^{\sqrt{3}\sigma}\dpd{\left(\tensor{F}{_\mu_\nu}\tensor{F}{^\mu^\nu}\right)}{\left(\tensor{\nabla}{_\alpha}\tensor{A}{_\beta}\right)}\right]
+=-\tensor{\nabla}{_\alpha}\tensor{H}{^\alpha^\beta}
  \end{equation}
  Für das Vektorpotential $A$, sowie
  % Ableitung nach DA im MW teil herleinten
  \begin{equation}
-0=\tensor{\nabla}{_\alpha}\left(\dpd{\mathcal{L}}{\left(\tensor{\partial}{_\alpha}\sigma\right)}\right)
+0=\tensor{\nabla}{_\alpha}\left[\dpd{\mathcal{L}}{\left(\tensor{\partial}{_\alpha}\sigma\right)}\right]
 -\dpd{\mathcal{L}}{\sigma}\\
 =\square \sigma
 -\frac{\sqrt{3}}{4}\tensor*{H}{_\mu_\nu}\tensor*{F}{^\mu^\nu}
@@ -486,17 +515,18 @@ Erhaltungsgröße ist
 \tensor{\hat{K}}{_n}\tensor{\hat{U}}{^n}=\tensor*{\delta}{^4_n}\tensor{\hat{U}}{^n}
 =\tensor{\hat{U}}{^4}:=Q\,.
 \end{equation}
-Da wir Vakuumlösungen $\tensor{T}{_n_m}=0$ betrachten, lässt sich keine erhalte
-Energie 
-\begin{equation}
-E=\int\dif{}^3x \sqrt{-g} \tensor{T}{_0_n}\tensor{K}{^n}
-\end{equation}
-definieren. Wir wollen die erhaltene vierte Komponente der Geschwindigkeit mit 
+% Da wir Vakuumlösungen $\tensor{T}{_n_m}=0$ betrachten, lässt sich keine erhalte
+% Energie 
+% \begin{equation}
+% E=\int\dif{}^3x \sqrt{-g} \tensor{T}{_0_n}\tensor{K}{^n}
+% \end{equation}
+% definieren. 
+Wir wollen die erhaltene vierte Komponente der Geschwindigkeit mit 
 der Ladung $Q$ eines Teilchens identifizieren.
  \section{Geodäten}
  Wir nehmen an das sich (geladene) Teilchen entlang von fünfdimensionalen
  Geodäten bewegen. 
- Zunächst gilt weiterhin, dass diese proportional zur Bogelänge parametrisiert
+ Zunächst gilt weiterhin, dass diese proportional zur Bogenlänge parametrisiert
  sind, d.h.
  \begin{equation}
  \begin{split}
@@ -576,12 +606,13 @@ der Ladung $Q$ eines Teilchens identifizieren.
 % Dies führt zu fragen bezüglich Kausalität
 % \end{bemerkung}
 \section{Die Rolle des skalaren Felds}
-  Klein maß dem zusätzlichen Freiheitsgrad der durch das skalaarfeld
+  Klein maß dem zusätzlichen Freiheitsgrad der durch das Skalarfeld
   $\sigma$\footnote{Bzw. $\phi$ oder $\psi$.} gegeben ist, keine physikalische
   Bedeutung bei.
-  Demensprechend setzte er $\psi=\mathrm{const.}=1$ .
- Dadurch vereinfacht sich die Lagrangedichte zur Lagrangedichte der
- Einstein-Maxwell Theorie. Allerdings impliziert die dynamische Gleichung
+  Dementsprechend setzte er $\psi=\const=1$ .
+ Dadurch vereinfacht sich die Lagrangedichte, zu der der Einstein-Maxwell
+ Theorie.
+ Allerdings impliziert die dynamische Gleichung
  \eqref{eq:dymdilat}
   \begin{equation}
 \tensor*{F}{_\mu_\nu}\tensor*{F}{^\mu^\nu}=0\,,
