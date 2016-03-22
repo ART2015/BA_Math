@@ -1,0 +1,52 @@
+\begin{thebibliography}{AMM78}
+
+\bibitem[AMM78]{abraham1978foundations}
+Ralph Abraham, Jerrold~E Marsden, and Jerrold~E Marsden.
+\newblock {\em Foundations of mechanics}.
+\newblock Benjamin/Cummings Publishing Company Reading, Massachusetts, 1978.
+
+\bibitem[CEF90]{Coquereaux:1990qs}
+Robert Coquereaux and Gilles Esposito-Farese.
+\newblock {The Theory of Kaluza-Klein-Jordan-Thiry revisited}.
+\newblock {\em Annales Poincare Phys. Theor.}, 52:113--150, 1990.
+
+\bibitem[CJ83]{coquereaux1983geometry}
+Robert Coquereaux and A~Jadczyk.
+\newblock Geometry of multidimensional universes.
+\newblock {\em Communications in Mathematical Physics}, 90(1):79--100, 1983.
+
+\bibitem[Kal21]{kaluza1921unitatsproblem}
+Theodor Kaluza.
+\newblock Zum unit{\"a}tsproblem der physik.
+\newblock {\em Sitzungsber. Preuss. Akad. Wiss. Berlin.(Math. Phys.)},
+  1921(966972):45, 1921.
+
+\bibitem[Lee03]{lee2003smooth}
+John~M Lee.
+\newblock {\em Smooth manifolds}.
+\newblock Springer, 2003.
+
+\bibitem[Nor14]{nordstrom1914moglichkeit}
+Gunnar Nordstr{\"o}m.
+\newblock {\"U}ber die m{\"o}glichkeit, das elektromagnetische feld und das
+  gravitationsfeld zu vereinigen.
+\newblock {\em Physikalische Zeitschrift}, pages 504--506, 1914.
+
+\bibitem[Wal10]{wald2010general}
+Robert~M Wald.
+\newblock {\em General relativity}.
+\newblock University of Chicago press, 2010.
+
+\bibitem[Wey18]{weyl1918gravitation}
+Hermann Weyl.
+\newblock Gravitation und elektrizit{\"a}t.
+\newblock {\em Sitzungsberichte der K{\"o}niglich Preu{\ss}ischen Akademie der
+  Wissenschaften (Berlin), Seite 465-478}, 1:465--478, 1918.
+
+\bibitem[Wil15]{williams2015field}
+LL~Williams.
+\newblock Field equations and lagrangian for the kaluza metric evaluated with
+  tensor algebra software.
+\newblock {\em Journal of Gravity}, 2015, 2015.
+
+\end{thebibliography}
