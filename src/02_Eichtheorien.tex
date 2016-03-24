@@ -1,4 +1,4 @@
-\chapter{Maxwell-Einstein Theorie}
+\chapter{Maxwell-Einstein Theorie \label{chap:EMW}}
 Dieser Teil soll die physikalischen Theorien vorstellen, die der
 Kaluza-Klein-Theorie zu Grunde liegen. Dazu zählt neben der
 in ihrer heutigen Formulierung auf Maxwell zurückgehenden
@@ -87,12 +87,11 @@ In koordinatenfreier Notation lauten die Gleichungen schließlich
 Wie in \autoref{bsp:Spinone} gezeigt wurde, erfüllen die Felder die (Vakuum-)
 Maxwell-Gleichungen\footnote{Der Fall $J^\mu\neq 0$ erfordert zusätzlich das
 Einführen des Elektronfeldes, worauf wir der Einfachheit halber hier
-verzichten.}, sofern sie das zum Lagrangian
+verzichten.}, sofern sie das zum Wirkungsintegral
 \begin{equation}
-L\left(\partial_\mu
-A(x),x\right)=-\frac{1}{4}\tensor{F}{_\mu_\nu}\tensor{F}{^\mu^\nu} \,.
+S[A]=-\frac{1}{4}\int_M\tr\left(\star F\wedge F\right)\dif x
 \end{equation}
-korrespondierende Wirkungsintegral maximieren.
+minimieren.
 \subsection{Eichtransformationen}
 In den Maxwell-Gleichungen taucht das Feld $A$ nie explizit, sondern stets in
 der durch $F$ vorgegebenen Kombination auf. Man macht sich leicht klar, das $F$
