@@ -40,7 +40,7 @@ ein.
 Eine Verallgemeinerung von des kartesischen Produkts $B\times F$ stellen
 Faserbündel dar, die \emph{lokal} Produktstruktur besitzen. 
 \begin{definition}[Faserbündel]
-Seien $E,B,F$ topologische Räume, $\pi:E\to B$ eine stetige Surjektion.
+Seien $E,B,F$, topologische Räume, $\pi:E\to B$ eine stetige Surjektion.
 Das Tupel $(E,B,\pi,F)$ heißt \emph{Faserbündel},
 falls für jedes $x\in E$ eine offene Umgebung $U\subseteq B$ und ein
 Homöomorphismus $\varphi:\pi^{-1}(U)\to U\times F$ existiert, sodass das folgende Diagramm kommutiert:
@@ -49,20 +49,21 @@ Homöomorphismus $\varphi:\pi^{-1}(U)\to U\times F$ existiert, sodass das folgen
 \node[scale=1.3] at (0,0) {
 \begin{tikzcd}
 E \arrow{r}{\varphi} \arrow[swap]{d}{\pi} & U\times F
-\arrow{dl}{\operatorname{proj}_1}\\
+\arrow{dl}{\operatorname{proj}_U}\\
 U & 
 \end{tikzcd}
 };
 \end{tikzpicture}\,,
 \end{center}
-wobei $\operatorname{proj}_1:U\times F \to U$, die kanonische Projektion
+wobei $\operatorname{proj}_U:U\times F \to U$, die kanonische Projektion
 bezeichnet. Die Menge aller $\{(U_x,\varphi_x)\}$ heißt \emph{lokale
 Trivialisierung} des Bündels. Für $p\in B$ heißt $\pi^{-1}(\{p\})$
 \emph{Faser} über $p$.  
 Ein Faserbündel heißt \emph{glatt},
-falls $E,B,F$ glatte Manigfaltigkeiten sind und $\pi$ sowie die alle $\varphi_x$
+falls $E,B,F$ glatte Mannigfaltigkeiten sind und $\pi$ sowie die alle $\varphi_x$
 glatt sind.
 \end{definition}
+%http://mathworld.wolfram.com/FiberBundle.html
 \begin{beispiel}[Triviales Bündel]
 Seien $M,N$ glatte Mannigfaltigkeiten, dann ist $E=M\times N$ ein glattes
 Faserbündel, eine lokale Trivialisierung
@@ -196,8 +197,75 @@ to[out=0, in = 180-235,looseness=1.2] (H.center);
 für $\Sphere^1$-Faserbündel über $\Sphere^1$.}
 \label{fig:KleinFlasch}
 \end{figure}
+\begin{definition}[Hauptfaserbündel]
+
+\end{definition}
 \subsection{Äußeres Kalkül}
-Äußere Ableitung, Hodge Dual, Wedge Produkt
+Eine grundlegende Annahme der ART ist die Unabhängigkeit vom gewählten
+Koordinatensystem. Es liegt daher Nahe eine Formulierung z wählen die bereits
+inhärent koordinatenunabhängig ist. Dies liefert das äußer Kalkül. 
+\begin{definition}[Differentialformen]
+Eine \emph{$k$-Form} ist ein alternierendes, kovariantes Tensorfeld der Stufe
+$k$. Den Vektorraum aller $k$-Formen auf $M$ notieren wir als $\Omega^k(M)$
+\end{definition}
+Das natürliche Produkt zweier Formen ist das so genannte Wedgeprodukt, dass
+sich aus dem gewöhnlichen Tensorprodukt durch Antisymmetrisierung ergibt.
+\begin{definition}[Wedgeprodukt]
+Die Abbildung
+\begin{equation}
+\begin{split}
+\wedge:\Omega^k(M)\times \Omega^\ell(M)&\to \Omega^{k+\ell}(M)\\
+(\omega,\eta)&\mapsto\frac{(k+\ell)!}{k!\,\ell!}\operatorname{Alt}(\omega\otimes\eta)
+\end{split}
+\end{equation}
+heißt \emph{Wedge-} oder \emph{Keilprodukt}.
+Dabei bezeichnet $\operatorname{Alt}:\mathfrak{T}^{m}_0(M)\to \Omega^m(M)$ die
+totale Antisymmetrisierung des Tensorfelds $T$:
+\begin{equation}
+\operatorname{Alt}(T)\left(X_1,\dots,X_m\right)=\frac{1}{m!}\sum_{\sigma\in
+S_k}T\left(X_{\sigma(1)},\dots,X_{\sigma(m)}\right)\,.
+\end{equation}
+\end{definition}
+\begin{definition}[Äußere Ableitung]
+Sei $f\in C^\infty$ glatt, $\alpha$ eine $p$- und $\beta$ eine $q$-Form
+Die äußere Ableitung ist eine Abbildung $\dif:\Omega^{k}\to \Omega^{k+1}$ die
+folgende Eigenschaften besitzt:
+\begin{enumerate}
+  \item $\dif f$ ist das Differential von $f$: $\dif
+  f=\pd{f}{\tensor{x}{^i}}\dif\tensor{x}{^i}\,.$
+  \item Das Differential eines Differentials verschwindet: $\dif\,(\dif f)=0$
+  \item $\dif\,(\alpha\wedge \beta)=\dif
+  \alpha\wedge\beta+(-1)^p(\alpha\wedge\dif \beta)$
+\end{enumerate}
+
+\end{definition}
+\begin{definition}[Hodge-Stern-Operator]
+Sei $M$ eine $n$-dimensionale glatte Mannigfaltigkeit, dann definieren wir den
+\emph{Hodge-Star-Operator} $\star:\Omega^k(M)\to \Omega^{n-k}$ durch
+\begin{equation}
+\star \omega = \frac{\sqrt{\vert g \vert}}{k!(n-k)!} 
+\omega_{i_1 \dots i_k} 
+\tensor{\epsilon}{^{i_1 \dots i_k}_{j_{k+1} \dots j_n}}
+\dif x^{j_{k+1}} \wedge \dots \wedge \dif x^{j_n}.
+\end{equation}
+\end{definition}
+\begin{beispiel}[Dualer Feldstärketensor]
+Sei $M$ eine vierdinemsionale (pseudo-)riemannsche Mannigfaltigkeit, $F\in
+\Omega^2(M)$ eine 2-Form, dann gilt
+\begin{equation}
+\begin{split}
+\star F=
+\frac{\sqrt{|g|}}{4}\tensor{F}{_\mu_\nu}
+\tensor{\varepsilon}{^\mu^\nu_\sigma_\rho}
+\dif\tensor{x}{^\sigma}\wedge\dif\tensor{x}{^\rho}
+\end{split}
+\end{equation}
+und folglich in lokalen Koordinaten
+\begin{equation}
+\tensor{(\star
+F)}{_\sigma_\rho}=\frac{\sqrt{|g|}}{4}\tensor{F}{_\mu_\nu} \tensor{\varepsilon}{^\mu^\nu_\sigma_\rho}\,.
+\end{equation}
+\end{beispiel}
 \section{Symmetrien}
 Wir beginnen mit einem einfachen Beispiel für eine Symmetrie, dass uns auch im
 Folgenden als Anschauungsobjekt dienen wird.
@@ -261,18 +329,20 @@ erfüllt sind
 $X$ heißt dann auch $G$-Menge.
 \end{definition}
 Statt $\Phi_g(x)$ schreiben wir kurz $g\gmal x$.
-Ist die Gruppe $G$ eine Lie-Gruppe, $X=M$ eine Mannigfaltigkeit und $\Phi_g$
-glatt, so spricht man von einer \emph{Lie-Gruppenwirkung}. $M$ heißt dann
-auch $G$-Mannigfaltigkeit.
+Sei $X$ eine $G$-Menge. Wir definieren einige
+Eigenschaften von Gruppenwirkungen.
 \begin{definition}
-Sei $X$ eine $G$-Menge. Die Wirkung von $G$ heißt:
+Die Wirkung von $G$ heißt
 \begin{enumerate}
   \item \emph{eigentlich}, falls unter der Abbildung $\Gamma:
   G\times X\to X\times X\,,(g,x)\mapsto (g \gmal x,x)$, Urbilder kompakter
-  Mengen kompakt sind
-  \item \emph{(Fixpunkt-)frei}, falls nur die Identität Fixpunkte besitzt, d.h.
+  Mengen kompakt sind.
+  \item \emph{(Fixpunkt-)frei}, falls nur die Identität Fixpunkte besitzt, d.h.\
   aus $g\gmal x=x$, folgt $g=e$.
 \end{enumerate}
+Ist die Gruppe $G$ eine Lie-Gruppe, $X=M$ eine Mannigfaltigkeit und $\Phi_g$
+glatt, so spricht man von einer \emph{Lie-Gruppenwirkung}. $M$ heißt dann
+auch $G$-Mannigfaltigkeit.
 \end{definition}
 \begin{beispiel}[Wirkung von $\Reals/\Integers$ auf $Z$]
 Sei $G=(\Reals/\Integers,+)$, $Z$ wie oben. Eine Wirkung von $G$ auf $Z$ ist
