@@ -37,13 +37,15 @@ In diesem Kapitel werden wir die mathematischen Grundlage zur Formulierung von
 Symmetrien in der Physik legen. Zunächst führen wir einige Begriffe der Differentialgeometrie
 ein.
 \section{Differentialgeometrie}
-Eine Verallgemeinerung von des kartesischen Produkts $B\times F$ stellen
-Faserbündel dar, die \emph{lokal} Produktstruktur besitzen. 
+Eine Verallgemeinerung des kartesischen Produkts $B\times F$ stellen
+Faserbündel dar, die \emph{lokal} eine solche Produktstruktur besitzen. 
 \begin{definition}[Faserbündel]
-Seien $E,B,F$, topologische Räume, $\pi:E\to B$ eine stetige Surjektion.
-Das Tupel $(E,B,\pi,F)$ heißt \emph{Faserbündel},
+Seien $E,B,F$, glatte Mannigfaltigkeiten, $\pi:E\to B$ eine glatte, stetige
+Surjektion.
+Das Tupel $(E,B,\pi,F)$ heißt \emph{glattes Faserbündel},
 falls für jedes $x\in E$ eine offene Umgebung $U\subseteq B$ und ein
-Homöomorphismus $\varphi:\pi^{-1}(U)\to U\times F$ existiert, sodass das folgende Diagramm kommutiert:
+Diffeomorphismus $\varphi:\pi^{-1}(U)\to U\times F$ existiert, sodass das
+folgende Diagramm kommutiert:
 \begin{center}
 \begin{tikzpicture}
 \node[scale=1.3] at (0,0) {
@@ -55,19 +57,16 @@ U &
 };
 \end{tikzpicture}\,,
 \end{center}
-wobei $\operatorname{proj}_U:U\times F \to U$, die kanonische Projektion
-bezeichnet. Die Menge aller $\{(U_x,\varphi_x)\}$ heißt \emph{lokale
-Trivialisierung} des Bündels. Für $p\in B$ heißt $\pi^{-1}(\{p\})$
+wobei $\operatorname{proj}_U:U\times F \to U$, die kanonische Projektion auf den
+ersten Faktor bezeichnet. Die Menge aller $\{(U_x,\varphi_x)\}$ heißt
+\emph{lokale Trivialisierung} des Bündels. Für $p\in B$ heißt $\pi^{-1}(\{p\})$
 \emph{Faser} über $p$.  
-Ein Faserbündel heißt \emph{glatt},
-falls $E,B,F$ glatte Mannigfaltigkeiten sind und $\pi$ sowie die alle $\varphi_x$
-glatt sind.
 \end{definition}
 %http://mathworld.wolfram.com/FiberBundle.html
 \begin{beispiel}[Triviales Bündel]
 Seien $M,N$ glatte Mannigfaltigkeiten, dann ist $E=M\times N$ ein glattes
-Faserbündel, eine lokale Trivialisierung
-ist gegeben durch $\{(M,\id_{M\times N})\}$.
+Faserbündel, denn eine lokale Trivialisierung
+ist durch $\{(M,\id_{M\times N})\}$ gegeben.
 \end{beispiel}
 Ein Beispiel für ein nicht triviales Bündel, ist die Kleinsche Flasche
 (\autoref{fig:KleinFlasch}). 
@@ -203,19 +202,20 @@ für $\Sphere^1$-Faserbündel über $\Sphere^1$.}
 \subsection{Äußeres Kalkül}
 Eine grundlegende Annahme der ART ist die Unabhängigkeit vom gewählten
 Koordinatensystem. Es liegt daher Nahe eine Formulierung z wählen die bereits
-inhärent koordinatenunabhängig ist. Dies liefert das äußer Kalkül. 
-\begin{definition}[Differentialformen]
+inhärent koordinatenunabhängig ist. Dies liefert das äußere Kalkül. Im folgenden
+sei $(M,g)$ eine (pseudo-)riemannsche Mannigfaltigkeit.
+\begin{definition}[Differentialform]
 Eine \emph{$k$-Form} ist ein alternierendes, kovariantes Tensorfeld der Stufe
-$k$. Den Vektorraum aller $k$-Formen auf $M$ notieren wir als $\Omega^k(M)$
+$k$. Den Vektorraum aller $k$-Formen auf $M$ notieren wir als $\Omega^k(M)$.
 \end{definition}
-Das natürliche Produkt zweier Formen ist das so genannte Wedgeprodukt, dass
+Das natürliche Produkt zweier Formen, ist das so genannte Wedgeprodukt, dass
 sich aus dem gewöhnlichen Tensorprodukt durch Antisymmetrisierung ergibt.
 \begin{definition}[Wedgeprodukt]
 Die Abbildung
 \begin{equation}
 \begin{split}
 \wedge:\Omega^k(M)\times \Omega^\ell(M)&\to \Omega^{k+\ell}(M)\\
-(\omega,\eta)&\mapsto\frac{(k+\ell)!}{k!\,\ell!}\operatorname{Alt}(\omega\otimes\eta)
+(\omega,\eta)&\mapsto\frac{(k+\ell)!}{k!\,\ell\;\!!}\operatorname{Alt}(\omega\otimes\eta)
 \end{split}
 \end{equation}
 heißt \emph{Wedge-} oder \emph{Keilprodukt}.
@@ -227,12 +227,13 @@ S_k}T\left(X_{\sigma(1)},\dots,X_{\sigma(m)}\right)\,.
 \end{equation}
 \end{definition}
 \begin{definition}[Äußere Ableitung]
-Sei $f\in C^\infty$ glatt, $\alpha$ eine $p$- und $\beta$ eine $q$-Form
-Die äußere Ableitung ist eine Abbildung $\dif:\Omega^{k}\to \Omega^{k+1}$ die
-folgende Eigenschaften besitzt:
+Sei $f\in C^\infty(M)$ glatt, $\alpha\in \Omega^p(M)$, $\beta\in\Omega^q(M)$,
+$p$ bzw.\ $q$-Formen Die äußere Ableitung ist eine lineare Abbildung, die jeder
+$k$-Form eine $(k+1)$-Form zuordnet und die
+folgenden Eigenschaften besitzt:
 \begin{enumerate}
   \item $\dif f$ ist das Differential von $f$: $\dif
-  f=\pd{f}{\tensor{x}{^i}}\dif\tensor{x}{^i}\,.$
+  f=\dpd{f}{\tensor{x}{^i}}\dif\tensor{x}{^i}\,.$
   \item Das Differential eines Differentials verschwindet: $\dif\,(\dif f)=0$
   \item $\dif\,(\alpha\wedge \beta)=\dif
   \alpha\wedge\beta+(-1)^p(\alpha\wedge\dif \beta)$
@@ -315,21 +316,21 @@ Allgemeiner wollen wir nun definieren wie die Wirkung einer Gruppe auf einer
 Menge zu verstehen ist. Eine sinnvolle Operation einer Gruppe sollte dabei mit
 den Gruppenoperationen kompatibel sein.
 \begin{definition}[Gruppenwirkung]
-Sei $G$ eine Gruppe, $X$ eine Menge. Eine Abbildung
+Sei $G$ Lie-Gruppe, $M$ eine glatte Manigfaltigkeit. Eine glatte Abbildung
 \begin{equation}
 \Phi:G\times X\to X\,,\quad (g,x)\mapsto\Phi_g(x)
 \end{equation}
-heißt \emph{Gruppenwirkung} von $G$ auf $X$, falls die folgende Eigenschaften
-erfüllt sind
+heißt \emph{Lie-Gruppenwirkung} auf $M$, falls die folgende
+Eigenschaften erfüllt sind
 \begin{enumerate}
   \item \emph{Identität}: für das neutrale Element $e\in G$ gilt
   $\displaystyle\Phi_e=\id_X$
   \item \emph{Verträglichkeit}: $\displaystyle\Phi_{gh}=\Phi_g\circ\Phi_h$
 \end{enumerate}
-$X$ heißt dann auch $G$-Menge.
+$M$ heißt dann auch $G$-Manigfaltigkeit.
 \end{definition}
 Statt $\Phi_g(x)$ schreiben wir kurz $g\gmal x$.
-Sei $X$ eine $G$-Menge. Wir definieren einige
+Wir definieren einige
 Eigenschaften von Gruppenwirkungen.
 \begin{definition}
 Die Wirkung von $G$ heißt
