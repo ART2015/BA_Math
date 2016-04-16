@@ -1,4 +1,81 @@
 \chapter{Moderne Formulierung}
+Wir diskutieren in diesem Kapitel nun eine Formulierung der KK-Theorie in 
+einer zeitgemäßen Formulierung. Die Lie-Gruppe $G$ sei kompakt und wirke auf
+$E$ durch Isometrien. Wir diskutieren zunächst den Fall einer fündimensionalen
+Manigfaltigkeit $E$.
+Damit muss die Lie-Gruppe $\dim G=1$ eindimensional sein. Alle kompakten
+eindimensionalem Manigfaltigkeiten sind diffeomorph zu $\Sphere^1$. Ohne
+Einschränkung sei deshalb im Folgenden $E$ ein $\Sphere^1$-Faserbündel.
+Die Wirkung der Gruppe $G$ erzeugt einen Fluss 
+\begin{equation}
+\Phi_t(p):=t.p
+\end{equation}
+sowie ein assoziertes Vektorfeld 
+\begin{equation}
+V(p):=\left[\dod{}{t}\Phi_t(p)\right]_{t=1}\,.
+\end{equation}
+weiter nehmen wir an das $g(V,V)\neq 0$. 
+Die zu $V$ duale Form bezeichnen wir mit $\alpha$. 
+Per Konstruktion gilt
+\begin{equation}
+\mathcal{L}_{V}g=0
+\end{equation}
+%TODO mit def von L
+\begin{equation}
+\pi^*\bar{g}=g
+\end{equation}
+Die physikalische 4 dimensionale Raumzeit ist damit $(E/G,\bar{g})$ gegeben.
+Der eindimensionale Fall ist besonders schön da insbesondere nur eine kompakte 
+Cinfty MF existiert. Jede Die Orbits sind dann zwingend periodisch. Dies muss 
+schon für $d=2$ nicht mehr der Fall sein wie das Beispiel $\mathbb{T}^2$ zeigt.
+\section{Einige Bemerkungen}
+Der vertikale Raum in $p\in E$ ist definiert als $\Verp=\ker\{\pi_{*p}\}$.
+$\Verp$ ist $G$ invariant. Dazu bemerkt man zunächst, dass $\pi\circ\Phi_g=\pi$, und
+damit $\pi_*\circ{\Phi_g}_*=\pi_*$. Sei $X_p\in \Verp$, dann gilt für 
+$f\circ \Phi_g = f$ 
+\begin{equation}
+\begin{split}
+{\Phi_g}_*\left(X_p(f)\right)&=X_{\Phi_g(p)}(f\circ\Phi_g)\\
+&=X_{\Phi_g(p)}(f)
+\end{split}
+\end{equation}
+Also ${\Phi_g}_*V_p=V_{g.p}$
+Ein Zusammenhang auf $E$ ist eine Zerlegung 
+\begin{equation}
+\Tanp E=\Verp\,\oplus\, \Horp
+\end{equation}
+die stetig von $p$ abhängt und ${\Phi_g}_*\Horp=\mathrm{H}_{g.p}$\,.
+In unserem Fall ermöglicht die Metrik eine natürliche Definition von
+horizontalen Vektoren.
+\begin{equation}
+\Horp=\Verp^\perp=\left\{X\in \Tanp E\,\big|\, g_p(X,V)=0\,,\,\forall\, V\in
+\Verp\right\}\,.
+\end{equation}
+% \begin{equation}
+% \tilde{g}:=g-\left(g(V,V)\right)^{-1}\alpha\otimes\alpha\,,
+% \end{equation}
+% Wir können $T_p(E/G)=T_p E/\mathfrak{g}$ mit $\langle V(p)
+% \rangle^\perp$
+% identifizieren indem wir den Vektorraum-Isomorphismus
+% \begin{equation}
+% \begin{split}
+% \Psi:T_{\pi(p)}(E/G)&\to\langle V(p)
+% \rangle^\perp\\
+% [X]&\mapsto X-\frac{g(X,V)V}{g(V,V)}
+% \end{split}
+% \end{equation}
+% betrachten. Fassen wir also als Biliearform auf $T_pM$ auf. 
+% Es ist zu zeigen, dass es sich dabei auch um eine Metrik handelt.
+% Sei deshalb $X\in T_pM$ sodass für alle $Y\in T_pM$
+% \begin{equation}
+% \tilde{g}(X,Y)=0\,.
+% \end{equation} 
+% Sei $\tilde{Y}\in T_pE$, dann existieren $Y_1\in T_pM $,
+% $Y_2=\alpha V $ und damit gilt
+% \begin{equation}
+% g(X,\tilde{Y})=g(X,Y_1)+g(X,Y_2)=\tilde{g}(X,Y_1)=0\,.
+% \end{equation}
+% Da $g$ nach voraussetzung nicht ausgeartet ist gilt dies auch für $\tilde{g}$.
 \section{Modell einer höherdimensionalen Raumzeit}
 
 In diesem Kapitel wollen wir ein möglichst allgemeines Modell einer
@@ -7,7 +84,6 @@ Symmetrien auf, d.h. \ldots
 Auch wenn das Ergebnis sehr überzeugend ist, so ist das vorgehen nicht besonders
 mathematisch. Annahmen:
 \begin{enumerate}
-\item Zylinderbedingung
 \item keine Quellen, $\tensor{T}{_m_n}=0$.
 % 5D Vakuum=> EH wirkung  L=sqrt(g) R unbekannt was \tensor{T}{_m_n} sein soll
 \item die Metrik ist Extremum des EH-Funktionals
@@ -524,22 +600,75 @@ Erhaltungsgröße ist
 Wir wollen die erhaltene vierte Komponente der Geschwindigkeit mit 
 der Ladung $Q$ eines Teilchens identifizieren.
  \section{Geodäten}
- Wir nehmen an das sich (geladene) Teilchen entlang von fünfdimensionalen
- Geodäten bewegen. 
- Zunächst gilt weiterhin, dass diese proportional zur Bogenlänge parametrisiert
- sind, d.h.
+ \begin{bemerkung}[Umparametrisierung der Geodätengleichung]
+ Sei $c$ Geodäte, sei $\lambda:\Reals\to \Reals$ umparametrisierung,
+ $d=\gamma\circ\lambda$, dann gilt 
  \begin{equation}
- \begin{split}
-  C&=
-  \tensor{\hat{g}}{_\mu_\nu}\tensor{\hat{U}}{^\mu}\tensor{\hat{U}}{^\nu}
-  +\tensor{\hat{g}}{_4_4}\tensor{\hat{U}}{^4}\tensor{\hat{U}}{^4}\\\
- &=\tensor{\hat{g}}{_\mu_\nu}\tensor{\hat{U}}{^\mu}\tensor{\hat{U}}{^\nu}
- +\psi Q^2\\
-  &=\tensor{g}{_\mu_\nu}\tensor{\hat{U}}{^\mu}\tensor{\hat{U}}{^\nu}
-  -\psi\left(\tensor{A}{_\mu}\tensor{\hat{U}}{^\mu}\right)^2
- +\psi Q^2\\
- \end{split}
+\dod[2]{x^a}{\alpha}+\Gamma^{a}_{bc}\dod{x^b}{\alpha}\dod{x^c}{\alpha}=f(\alpha)\dod{x^a}{\alpha}
  \end{equation}
+ mit
+ $f(\lambda)=-\left(\dod[2]{\alpha}{\lambda}\right)\left(\dod{\alpha}{\lambda}\right)^{-2}$
+ \end{bemerkung}
+ 
+ 
+ 
+%  Wir nehmen an das sich (geladene) Teilchen entlang von fünfdimensionalen
+%  Geodäten bewegen. 
+%  Zunächst gilt weiterhin, dass diese proportional zur Bogenlänge parametrisiert
+%  sind, d.h.
+$\dif s^2=\dif \tau^2+\phi^2(A_\nu\dif x^\nu+\dif x^4)^2$
+In lokalen Koordinaten lautet die Geodätengleichung
+\begin{equation}
+\dod[2]{x^a}{s}+\tilde{\Gamma}^{a}_{bc}\dod{x^b}{s}\dod{x^c}{s}=0
+\end{equation}
+parametrisieren wir die Kurve stattdessen nach der Eigenzeit $\tau$ so erhalten
+wir 
+\begin{equation}
+\begin{split}
+0&=\dod[2]{x^\mu}{\tau}+\tilde{\Gamma}^{\mu}_{bc}\dod{x^b}{\tau}\dod{x^c}{\tau}
+-f(\tau)\dod{x^\mu}{\tau}\\
+&=\dod[2]{x^\mu}{\tau}
++\tilde{\Gamma}^{\mu}_{\nu\lambda}\dod{x^\nu}{\tau}\dod{x^\lambda}{\tau}
++\tilde{\Gamma}^{\mu}_{\nu 4}\dod{x^\nu}{\tau}\dod{x^4}{\tau}
++\tilde{\Gamma}^{\mu}_{44}\dod{x^4}{\tau}\dod{x^4}{\tau}
+-f(\tau)\dod{x^a}{\tau}\\
+\end{split}
+\end{equation}
+Umstellen liefert wiederum
+\begin{equation}
+\begin{split}
+\dod[2]{x^\mu}{\tau}
++\Gamma^{\mu}_{\nu\lambda}\dod{x^\nu}{\tau}\dod{x^\lambda}{\tau}
+=&\left(\tilde{\Gamma}^{\mu}_{\nu\lambda}-\Gamma^{\mu}_{\nu\lambda}\right)\dod{x^\nu}{\tau}\dod{x^\lambda}{\tau}
+-\tilde{\Gamma}^{\mu}_{\nu
+4}\dod{x^\nu}{\tau}\dod{x^4}{\tau} \\
+&-\tilde{\Gamma}^{\mu}_{44}\dod{x^4}{\tau}\dod{x^4}{\tau}
++f(\tau)\dod{x^a}{\tau}
+\end{split}
+\end{equation}
+\begin{align}
+\tilde{\Gamma}^{\mu}_{\nu\lambda}-\Gamma^{\mu}_{\nu\lambda}
+&=\frac{1}{2}g^{\mu\alpha}\left(\psi A_{(\mu}F_{\nu)\alpha}+A_{\nu}A_{\lambda}\partial_{\alpha}\psi \right)
+\\
+\tilde{\Gamma}^{\mu}_{\nu 4}
+&=\frac{1}{2}g^{\mu\alpha}\left(F_{\nu\alpha}-A_\nu\partial_\alpha \psi\right)\\
+\tilde{\Gamma}^{\mu}_{4 4}
+&=-\frac{1}{2}g^{\mu\alpha}\partial_{\alpha}\psi
+\end{align}
+%  \begin{equation}
+%  \begin{split}
+%   C&=
+%   \tensor{\hat{g}}{_\mu_\nu}\tensor{\hat{U}}{^\mu}\tensor{\hat{U}}{^\nu}
+%   +\tensor{\hat{g}}{_4_4}\tensor{\hat{U}}{^4}\tensor{\hat{U}}{^4}\\\
+%  &=\tensor{\hat{g}}{_\mu_\nu}\tensor{\hat{U}}{^\mu}\tensor{\hat{U}}{^\nu}
+%  +\psi Q^2\\
+%   &=\tensor{g}{_\mu_\nu}\tensor{\hat{U}}{^\mu}\tensor{\hat{U}}{^\nu}
+%   -\psi\left(\tensor{A}{_\mu}\tensor{\hat{U}}{^\mu}\right)^2
+%  +\psi Q^2\\
+%  \end{split}
+%  \end{equation}
+%  
+%  
 %   Die Geodätengleichung hat die Form
 %  \begin{equation}
 %  0=\tensor{\hat{U}}{^m}\tensor{\hat{\nabla}}{_m} \tensor{\hat{U}}{_n}
@@ -606,6 +735,7 @@ der Ladung $Q$ eines Teilchens identifizieren.
 % Dies führt zu fragen bezüglich Kausalität
 % \end{bemerkung}
 \section{Die Rolle des skalaren Felds}
+% Radius des Internen space
   Klein maß dem zusätzlichen Freiheitsgrad der durch das Skalarfeld
   $\sigma$\footnote{Bzw. $\phi$ oder $\psi$.} gegeben ist, keine physikalische
   Bedeutung bei.

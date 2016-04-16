@@ -130,14 +130,17 @@
 \DeclareMathOperator{\im}{Im}
 \DeclareMathOperator{\id}{id}
 \DeclareMathOperator{\vol}{vol}
+\DeclareMathOperator{\kernel}{kern}
 
 % vector calculus
 
 \DeclareMathOperator{\Div}{div}
+%\DeclareMathOperator{\Dif}{D}
 \DeclareMathOperator{\Rot}{rot}
 \DeclareMathOperator{\Grad}{grad}
 \DeclareMathOperator{\Un}{U}
 \DeclareMathOperator{\Or}{O}
+
 \DeclareMathOperator{\SpUn}{SU}
 \DeclareMathOperator{\SpOr}{SO}
 
@@ -147,6 +150,13 @@
 \newcommand{\Complex}{\ensuremath{\mathbb{C}}}
 \newcommand{\Integers}{\ensuremath{\mathbb{Z}}}
 \newcommand{\Sphere}{\ensuremath{\mathbb{S}}}
+
+\newcommand{\Tan}{\mathrm{T}}
+\newcommand{\Ver}{\mathrm{V}}
+\newcommand{\Hor}{\mathrm{H}}
+\newcommand{\Tanp}{\Tan_p}
+\newcommand{\Verp}{\Ver_p}
+\newcommand{\Horp}{\Hor_p}
 
 % relativity
 
@@ -159,6 +169,8 @@
 \newcommand{\liedif}[2]{\ensuremath{\mathcal{L}_{#1}#2}}
 \newcommand{\pdif}[1]{\tensor{\partial}{#1}}
 \newcommand{\cdif}[1]{\tensor{\partial}{#1}}
+\newcommand*\Laplace{\mathop{}\!\mathbin\bigtriangleup}
+\newcommand*\DAlambert{\mathop{}\!\mathbin\Box}
 
 % area functions
 \DeclareMathOperator{\artanh}{artanh}
@@ -251,7 +263,7 @@ type=symbolslist
 \cfoot[\pagemark]{\pagemark}
 
    
-\input{01_Einleitung}
+%\input{01_Einleitung}
 \input{Allgemeines}
 \input{02_Eichtheorien}
 \input{03_Kaluza}

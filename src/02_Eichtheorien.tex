@@ -67,8 +67,8 @@ Gleichungen
 \pdif{_{\alpha}}\tensor{F}{_\gamma_{\delta}}=0\,,\quad
 \pdif{_\mu}\tensor{F}{^\mu^\nu}=\tensor{J}{^\nu}\,.
 \end{equation}
-Die homogene Gleichung ist dabei trivial, da sie bereits aus der Form des
-Feldstärketensors folgt.
+Die homogene Gleichung ist dabei trivial, sie folgt bereits aus $\dif\, (\dif
+A)=0$, ohne Zusätzliche Forderungen an $A$.
 %d^2=0 oder 
 % https://en.wikipedia.org/wiki/Yang%E2%80%93Mills_theory
 % ^ Zusammenhang Jakobi und Maxwellgleichung\ldots
@@ -76,7 +76,7 @@ In koordinatenfreier Notation lauten die Gleichungen schließlich
 \begin{equation}
 \dif F = 0\,,\quad\quad \dif\,(\star F)= J\,.
 \end{equation}
-% MW2= Jakobi?
+% https://en.wikipedia.org/wiki/Mathematical_descriptions_of_the_electromagnetic_field#Formulation_in_terms_of_differential_forms MW2= Jakobi?
 % Die Lagrange Dichte für das Elektromagnetische Feld im Vakuum $\tensor{J}{^\mu}=0$
 % \begin{equation}
 % \mathcal{L}\left[\partial_\mu
@@ -87,18 +87,18 @@ In koordinatenfreier Notation lauten die Gleichungen schließlich
 Wie in \autoref{bsp:Spinone} gezeigt wurde, erfüllen die Felder die (Vakuum-)
 Maxwell-Gleichungen\footnote{Der Fall $J^\mu\neq 0$ erfordert zusätzlich das
 Einführen des Elektronfeldes, worauf wir der Einfachheit halber hier
-verzichten.}, sofern sie das zum Wirkungsintegral
+verzichten.}, sofern sie das Wirkungsintegral
 \begin{equation}
-S[A]=-\frac{1}{4}\int_M\tr\left(\star F\wedge F\right)\dif x
+S[A]=-\frac{1}{4}\int_M F\wedge \star F\dif x
 \end{equation}
 minimieren.
 \subsection{Eichtransformationen}
-In den Maxwell-Gleichungen taucht das Feld $A$ nie explizit, sondern stets in
-der durch $F$ vorgegebenen Kombination auf. Man macht sich leicht klar, das $F$
-invariant unter Transformationen $A\to A+\dif\Lambda$ mit $\Lambda\in
-C^\infty(\Reals^4)$ einer glatten Funktion. Diese zusätzliche Unbestimmtheit
-bezeichnet man als \emph{Eichfreibeit}, bzw. Transformationen der Form als
-Eichtransformationen.
+Für glatte $\Lambda\in
+C^\infty(\Reals^4)$ gilt $\dif\,(\dif \Lambda)=0$, damit ist klar, 
+dass $F$ unter Transformationen $A\mapsto A+\dif\Lambda$ invariant ist.
+Diese zusätzliche Unterbestimmtheit bezeichnet man als \emph{Eichfreibeit},
+bzw.\
+Transformationen der Form als Eichtransformationen.
 %TODO U1 symmetrie
 %TODO relativistische Lorentzkraft
 %TODO QED in gekrümmtem Raum
@@ -113,6 +113,7 @@ zur kosmologischen Konstante $\Lambda$ hat über kleine Distanzen vernachlässig
 +\Lambda\, \tensor{g}{_\mu_\nu}
 =\tensor{T}{_\mu_\nu}\,.
 \end{equation}
+% TODO R Ric Scal
 Der Tensor $\tensor{T}{_\mu_\nu}$ heißt \emph{Energie-Impuls-Tensor} und
 enthält Information über die Materie, d.h. über die Felder im Raum. Eine
 besonders einfache Form nehmen die Gleichungen im Vakuum an, denn dann gilt
@@ -126,6 +127,7 @@ Einsetzen in die Einsteingleichungen liefert wiederum die Vakuumgleichung
 \begin{equation}
 \tensor{R}{_\mu_\nu}=0\,.
 \end{equation}
+%Tmn=0\iff Rmn=0
 \subsection{Variationsprinzip}
 % TODO So formulieren Das S: Rank2sym->R problem S-> Max und
 % |_\alphS(g+\alphah)=0 für alle Testfunktionen. Rechenregeln
@@ -139,6 +141,7 @@ Das einfachste solche Funktional ist die so genannte
 \begin{equation}
 S[g]=\int_{M}R[g]\,\Omega = \int_{M}\sqrt{-g}R[g] \dif{}^4x \,.
 \end{equation}
+%vol einführen
 Die zugehörige Lagrange Funktion ist gegeben als
 \begin{equation}
 L(g)=\sqrt{-g}R[g]\,.
@@ -243,3 +246,6 @@ Insgesamt lässt sich hoffen das eine vereinheitlichte Theorie so formuliert
 werden kann das sie einerseits die Ähnlichkeiten erklärt und auf gemeinsame
 Ursachen zurückführt, andererseits aber auch Gründe für die Unterschiede gibt
 bzw. diese möglicherweise ausräumt.
+% DIe Art ist in einem gewissen sinn natürlicher, insofern, als dass sie keine
+% Zusätzliche gleichung für die Bewegung von testteilchen von der form (ref )
+% lorentzgleichung benötigt. 

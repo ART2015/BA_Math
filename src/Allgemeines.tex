@@ -1,50 +1,50 @@
-\section{Konventionen}
-Bereits Rechnungen in der "`gewöhnlichen"' Relativitätstheorie haben die Tendenz
-unübersichtlich zu werden, das Einführen zusätzlicher Dimensionen hilft dabei
-natürlich kaum.
-Es ist deshalb an dieser Stelle nützlich einige Konventionen festzulegen. Im
-Folgenden bezeichnet $n$ die Anzahl der Zusatzdimensionen.\footnote{Im Weiteren
-meist $n=1$}
-
-Die Metrik soll stets die Signatur $(1,3)$, bzw. $(1,3+n)$, insbesondere sind
-die Zusatzdimensionen. Die meisten Rechnungen werden in lokalen Koordinaten
-durchgeführt.
-Wir beginnen die Indizierung bei 0, wobei die 0. Komponente mit der Zeit identifiziert wird.
-Griechische Indices laufen über ersten vier Raum-Zeit Koordinaten
-$\mu=0,\ldots,3\,$, lateinische über alle inklusive der
-Zusatzkomponenten \footnote{Verwirrung bezüglich der gängigen Konvention
-mit lateinischen Indices die Raumkomponenten zu benennen sollte dabei nicht
-aufkommen.}, $i=0,\ldots,3+n\,$. Weiter verwenden wir die Einsteinsche
-Summenkonvention, d.h. über paare von Indizes wird implizit summiert.
-
-Im Zusammenhang mit Zusatzdimensionen tauchen Größen auf, die sowohl ein 4, als
-auch ein $4+n$ dimensionales Pendant besitzen. Um diese von einander zu
-unterscheiden, kennzeichnen wir die $4+n$ dimensionale Version mit einem
-Zirkumflex.
-Beispielsweise bezeichnen wir den $4+n$ dimensionalen Ricci-Tensor mit
-$\tensor{\hat{R}}{_i_j}$. Mit $g$ bezeichnen wir die Determinante der Metrik.
-\subsection*{Geometrisierte Einheiten}
-Wir verwenden geometrisierte Einheiten, d.h. Einheiten in denen
-$8\pi G=c=1$. Es verbleibt nur noch eine Längendimension.
-\chapter{Mathematische Grundlagen}
+% \section{Konventionen}
+% Bereits Rechnungen in der "`gewöhnlichen"' Relativitätstheorie haben die Tendenz
+% unübersichtlich zu werden, das Einführen zusätzlicher Dimensionen hilft dabei
+% natürlich kaum.
+% Es ist deshalb an dieser Stelle nützlich einige Konventionen festzulegen. Im
+% Folgenden bezeichnet $n$ die Anzahl der Zusatzdimensionen.\footnote{Im Weiteren
+% meist $n=1$}
+% 
+% Die Metrik soll stets die Signatur $(1,3)$, bzw. $(1,3+n)$, insbesondere sind
+% die Zusatzdimensionen. Die meisten Rechnungen werden in lokalen Koordinaten
+% durchgeführt.
+% Wir beginnen die Indizierung bei 0, wobei die 0. Komponente mit der Zeit identifiziert wird.
+% Griechische Indices laufen über ersten vier Raum-Zeit Koordinaten
+% $\mu=0,\ldots,3\,$, lateinische über alle inklusive der
+% Zusatzkomponenten \footnote{Verwirrung bezüglich der gängigen Konvention
+% mit lateinischen Indices die Raumkomponenten zu benennen sollte dabei nicht
+% aufkommen.}, $i=0,\ldots,3+n\,$. Weiter verwenden wir die Einsteinsche
+% Summenkonvention, d.h. über paare von Indizes wird implizit summiert.
+% 
+% Im Zusammenhang mit Zusatzdimensionen tauchen Größen auf, die sowohl ein 4, als
+% auch ein $4+n$ dimensionales Pendant besitzen. Um diese von einander zu
+% unterscheiden, kennzeichnen wir die $4+n$ dimensionale Version mit einem
+% Zirkumflex.
+% Beispielsweise bezeichnen wir den $4+n$ dimensionalen Ricci-Tensor mit
+% $\tensor{\hat{R}}{_i_j}$. Mit $g$ bezeichnen wir die Determinante der Metrik.
+% \subsection*{Geometrisierte Einheiten}
+% Wir verwenden geometrisierte Einheiten, d.h. Einheiten in denen
+% $8\pi G=c=1$. Es verbleibt nur noch eine Längendimension.
+\chapter{Mathematische Grundlagen \label{chap:Mathematische Grundlagen}}
 Die meisten KK-Theorien machen in der einen oder anderen Form Annahmen über
-Symmetrien der Raumzeit-Mannigfaltigkeit. Dies ist nötig um die Komplexität der
+Symmetrien der Raumzeit-Mannigfaltigkeit. Dies ist nötig, um die Komplexität der
 auftretenden Ausdrücke zu reduzieren und nicht zuletzt auch dafür diese mit der
-physikalischen Realität in Verbindung zu setzen, die zusätzlichen Dimensionen
-müssen sich schon deshalb von den ersten vier unterscheiden, da sie nicht
-(direkt) beobachtet werden können.
-In diesem Kapitel werden wir die mathematischen Grundlage zur Formulierung von
-Symmetrien in der Physik legen. Zunächst führen wir einige Begriffe der Differentialgeometrie
+physikalischen Realität in Verbindung zu setzen. Die zusätzlichen Dimensionen
+sollten auch schon deshalb ausgezeichnet sein, da sie nicht direkt beobachtet
+werden.
+
+In diesem Kapitel legen wir die mathematischen Grundlage zur Formulierung von
+Symmetrien in der Physik. Zunächst führen wir einige Begriffe der Differentialgeometrie
 ein.
 \section{Differentialgeometrie}
 Eine Verallgemeinerung des kartesischen Produkts $B\times F$ stellen
-Faserbündel dar, die \emph{lokal} eine solche Produktstruktur besitzen. 
+\emph{Faserbündel} dar, die \emph{lokal} eine solche Produktstruktur besitzen. 
 \begin{definition}[Faserbündel]
-Seien $E,B,F$, glatte Mannigfaltigkeiten, $\pi:E\to B$ eine glatte, stetige
-Surjektion.
-Das Tupel $(E,B,\pi,F)$ heißt \emph{glattes Faserbündel},
-falls für jedes $x\in E$ eine offene Umgebung $U\subseteq B$ und ein
-Diffeomorphismus $\varphi:\pi^{-1}(U)\to U\times F$ existiert, sodass das
+Seien $E,B,F$, glatte Mannigfaltigkeiten. Eine glatte, stetige
+Surjektion $\pi:E\to B$  heißt \emph{glattes Faserbündel} mit \emph{Basis} $B$
+und \emph{typischer Faser} $F$, falls für jedes $x\in E$, eine offene Umgebung
+$U\subseteq B$ und ein Diffeomorphismus $\varphi:\pi^{-1}(U)\to U\times F$ existiert, sodass das
 folgende Diagramm kommutiert:
 \begin{center}
 \begin{tikzpicture}
@@ -55,21 +55,22 @@ E \arrow{r}{\varphi} \arrow[swap]{d}{\pi} & U\times F
 U & 
 \end{tikzcd}
 };
-\end{tikzpicture}\,,
+\end{tikzpicture}
 \end{center}
 wobei $\operatorname{proj}_U:U\times F \to U$, die kanonische Projektion auf den
 ersten Faktor bezeichnet. Die Menge aller $\{(U_x,\varphi_x)\}$ heißt
 \emph{lokale Trivialisierung} des Bündels. Für $p\in B$ heißt $\pi^{-1}(\{p\})$
-\emph{Faser} über $p$.  
+\emph{Faser} über $p$ und ist diffeomorph zu $F$.
 \end{definition}
 %http://mathworld.wolfram.com/FiberBundle.html
 \begin{beispiel}[Triviales Bündel]
 Seien $M,N$ glatte Mannigfaltigkeiten, dann ist $E=M\times N$ ein glattes
 Faserbündel, denn eine lokale Trivialisierung
-ist durch $\{(M,\id_{M\times N})\}$ gegeben.
+ist durch $\{(M,\id_{M\times N})\}$ gegeben. Der Torus
+ist ein triviales $\Sphere^1$-Bündel über
+$\Sphere^1$. Ein Beispiel für ein nicht triviales Bündel, ist die Kleinsche
+Flasche.(\autoref{fig:KleinFlasch})
 \end{beispiel}
-Ein Beispiel für ein nicht triviales Bündel, ist die Kleinsche Flasche
-(\autoref{fig:KleinFlasch}). 
 \begin{figure}[hbtp!]
 \centering
 \begin{tikzpicture}[baseline,scale=0.9]
@@ -98,17 +99,10 @@ controls (1,-0.5) and (1.5,-0.3) .. (2,0.2);
 (0,.5) .. controls (1,0.5) and (1.5,0.3) .. (1.75,0);
 \draw[fill=white,ultra
 thick] (-1.75,0) .. controls (-1.5,-0.3) and (-1,-0.5) .. (0,-.5) .. controls (1,-0.5) and (1.5,-0.3) .. (1.75,0);
-% \draw[thick, red] (-0,-1.5) [partial ellipse=90:-90:0.4cm and 1cm];
-% \draw (1.3,-1.33) [partial ellipse=90:-90:0.5cm and 1.cm];
-
-% \draw (-1.3,-1.33)  [partial ellipse=270:90:0.5cm and 1cm];
-
-% \draw[gray] (-0,0) [partial ellipse=-180:0:3.5cm
-% and 1.5cm]; %\draw[thick,  blue!80!black] (-0,0) [partial
-% ellipse=-110:-70:3.5cm and 1.5cm];
+\node at (0,3.1) {(a)};
 \end{tikzpicture}
-\quad
-\begin{tikzpicture}[baseline]
+\qquad
+\begin{tikzpicture}[baseline,scale=0.9]
 \node (A) at (-1.45,0.35) {};
 \node (B) at (-0.33,3.85){};
 \node (C) at (-0.3683,-3.85) {};
@@ -191,8 +185,9 @@ to[out=235, in = 180,looseness=1.2] (I.center)
 to[out=0, in = 180-235,looseness=1.2] (H.center);
 
 \draw[ultra thick] (F.center) to[out=230, in =180-210,looseness=1.3] (G.center);
+\node at (-0.3,4.5) {(b)};
 \end{tikzpicture}
-\caption{Torrus und Kleinsche Flasche sind Beispiele
+\caption{Torus (a) und Kleinsche Flasche (b) sind Beispiele
 für $\Sphere^1$-Faserbündel über $\Sphere^1$.}
 \label{fig:KleinFlasch}
 \end{figure}
@@ -201,13 +196,17 @@ für $\Sphere^1$-Faserbündel über $\Sphere^1$.}
 \end{definition}
 \subsection{Äußeres Kalkül}
 Eine grundlegende Annahme der ART ist die Unabhängigkeit vom gewählten
-Koordinatensystem. Es liegt daher Nahe eine Formulierung z wählen die bereits
-inhärent koordinatenunabhängig ist. Dies liefert das äußere Kalkül. Im folgenden
-sei $(M,g)$ eine (pseudo-)riemannsche Mannigfaltigkeit.
+Koordinatensystem. 
+Die Formulierung über Differentialformen, liefert einen Zugang, der bereits
+inhärent koordinatenunabhängig ist.
+ 
+Im folgenden sei $(M,g)$ eine $n$-dimensionale pseudo-riemannsche
+Mannigfaltigkeit.
 \begin{definition}[Differentialform]
 Eine \emph{$k$-Form} ist ein alternierendes, kovariantes Tensorfeld der Stufe
 $k$. Den Vektorraum aller $k$-Formen auf $M$ notieren wir als $\Omega^k(M)$.
 \end{definition}
+% TODO Caroll s.90, s.101 (Stokes)
 Das natürliche Produkt zweier Formen, ist das so genannte Wedgeprodukt, dass
 sich aus dem gewöhnlichen Tensorprodukt durch Antisymmetrisierung ergibt.
 \begin{definition}[Wedgeprodukt]
@@ -220,43 +219,46 @@ Die Abbildung
 \end{equation}
 heißt \emph{Wedge-} oder \emph{Keilprodukt}.
 Dabei bezeichnet $\operatorname{Alt}:\mathfrak{T}^{m}_0(M)\to \Omega^m(M)$ die
-totale Antisymmetrisierung des Tensorfelds $T$:
+ Antisymmetrisierung des Tensorfelds $T$:
 \begin{equation}
 \operatorname{Alt}(T)\left(X_1,\dots,X_m\right)=\frac{1}{m!}\sum_{\sigma\in
-S_k}T\left(X_{\sigma(1)},\dots,X_{\sigma(m)}\right)\,.
+S_k}\operatorname{sgn}(\sigma)T\left(X_{\sigma(1)},\dots,X_{\sigma(m)}\right)\,.
 \end{equation}
 \end{definition}
 \begin{definition}[Äußere Ableitung]
 Sei $f\in C^\infty(M)$ glatt, $\alpha\in \Omega^p(M)$, $\beta\in\Omega^q(M)$,
-$p$ bzw.\ $q$-Formen Die äußere Ableitung ist eine lineare Abbildung, die jeder
+$p$- bzw.\ $q$-Formen Die äußere Ableitung ist eine lineare Abbildung, die jeder
 $k$-Form eine $(k+1)$-Form zuordnet und die
 folgenden Eigenschaften besitzt:
 \begin{enumerate}
-  \item $\dif f$ ist das Differential von $f$: $\dif
-  f=\dpd{f}{\tensor{x}{^i}}\dif\tensor{x}{^i}\,.$
+  \item Das Differential von $f$ ist gegeben als $\dif
+  f=\dpd{f}{\tensor{x}{^i}}\dif\tensor{x}{^i}$.
   \item Das Differential eines Differentials verschwindet: $\dif\,(\dif f)=0$
-  \item $\dif\,(\alpha\wedge \beta)=\dif
+  \item Produktregel: $\dif\,(\alpha\wedge \beta)=\dif
   \alpha\wedge\beta+(-1)^p(\alpha\wedge\dif \beta)$
 \end{enumerate}
 
 \end{definition}
 \begin{definition}[Hodge-Stern-Operator]
-Sei $M$ eine $n$-dimensionale glatte Mannigfaltigkeit, dann definieren wir den
-\emph{Hodge-Star-Operator} $\star:\Omega^k(M)\to \Omega^{n-k}$ durch
+Der \emph{Hodge-Stern-Operator} $\star:\Omega^k(M)\to \Omega^{n-k}(M)$ ist
+definiert durch 
 \begin{equation}
-\star \omega = \frac{\sqrt{\vert g \vert}}{k!(n-k)!} 
+\star \omega := \frac{\sqrt{\vert \det g \vert}}{k!(n-k)!} 
 \omega_{i_1 \dots i_k} 
 \tensor{\epsilon}{^{i_1 \dots i_k}_{j_{k+1} \dots j_n}}
 \dif x^{j_{k+1}} \wedge \dots \wedge \dif x^{j_n}.
 \end{equation}
 \end{definition}
-\begin{beispiel}[Dualer Feldstärketensor]
-Sei $M$ eine vierdinemsionale (pseudo-)riemannsche Mannigfaltigkeit, $F\in
+Der Hodge-Stern-Operator, ist bijektiv, insbesondere liefert er eine eins zu
+eins Korrespondenz zwischen $k$- und $(n-k)$-Formen. Die Form $\star\, \omega$
+heißt zu $\omega$ duale Form.
+ \begin{beispiel}[Dualer Feldstärketensor]
+Sei $\dim M=4$, $F\in
 \Omega^2(M)$ eine 2-Form, dann gilt
 \begin{equation}
 \begin{split}
 \star F=
-\frac{\sqrt{|g|}}{4}\tensor{F}{_\mu_\nu}
+\frac{\sqrt{\vert \det g \vert}}{4}\tensor{F}{_\mu_\nu}
 \tensor{\varepsilon}{^\mu^\nu_\sigma_\rho}
 \dif\tensor{x}{^\sigma}\wedge\dif\tensor{x}{^\rho}
 \end{split}
@@ -264,9 +266,45 @@ Sei $M$ eine vierdinemsionale (pseudo-)riemannsche Mannigfaltigkeit, $F\in
 und folglich in lokalen Koordinaten
 \begin{equation}
 \tensor{(\star
-F)}{_\sigma_\rho}=\frac{\sqrt{|g|}}{4}\tensor{F}{_\mu_\nu} \tensor{\varepsilon}{^\mu^\nu_\sigma_\rho}\,.
+F)}{_\sigma_\rho}=\frac{\sqrt{\vert \det g \vert}}{4}\tensor{F}{_\mu_\nu}
+\tensor{\varepsilon}{^\mu^\nu_\sigma_\rho}\,.
 \end{equation}
 \end{beispiel}
+\begin{definition}[Integration von Formen]
+Sei $U\subset M$ messbar, $\{x^1\dots x^n\}$ eine positiv orientierte Basis,
+$\omega=f(x^1,\dots,x^n)\dif x^1\wedge\cdots\wedge \dif x^n\in \Omega^1(M)$
+dann ist das Integral über $\omega$ definiert als
+\begin{equation}
+\int_U \omega :=\int_U f(x^1,\dots,x^n)\dif x^1\cdots\dif x^n\,,
+\end{equation}
+wobei das rechte Integral im übliche Lebesgue Sinn zu verstehen ist. Eine
+\end{definition}
+\begin{beispiel}[Volumenform]
+
+\end{beispiel}
+\subsection{Konforme Transformationen}
+Jede glatte Funktion ${f\in C^\infty (M)}$, definiert eine weitere Metrik 
+\begin{equation}
+g^\star_p:=e^{2f(p)}g_p\label{eq:konTrafo}
+\end{equation}
+auf $M$. Transformationen vom Typ \eqref{eq:konTrafo} werden \emph{konforme
+Transformationen} genannt. Metriken die sich durch eine konforme
+Transformation zusammen hängen, heißen \emph{konform äquivalent}. Die
+Skalarkrümmung von $g^\star$ lässt sich aus der von $g$
+berechenen.
+\begin{lemma}[Skalarkrümmung unter konformen Transformationen] Sei $\dim M>2$,
+$R,R^\star$, die Skalarkrümmungen bezüglich $g$ bzw.\ $g^\star$ dann gilt
+\begin{equation}
+R^\star = e^{-2f}\left[R -
+4\frac{(n-1)}{(n-2)}e^{-(n-2)f/2}\DAlambert\left( e^{(n-2)f/2} \right)
+\right]\,,
+\end{equation}
+ mit dem \emph{d'Alambertoperator} $\DAlambert:=\nabla^{i}\nabla_i$.
+\end{lemma}
+\begin{proof}
+Eine Rechnung findet sich beispielsweise in \cite[Kap
+2.1]{capozziello2010beyond}.
+\end{proof}
 \section{Symmetrien}
 Wir beginnen mit einem einfachen Beispiel für eine Symmetrie, dass uns auch im
 Folgenden als Anschauungsobjekt dienen wird.
@@ -275,14 +313,14 @@ Wir betrachten einen Zylinder
 \begin{equation}
 Z=\Reals\times\Sphere^1=\left\{(x,y,z)\in\Reals^3\,\Big|\,x^2+y^2=1\right\}\,,
 \end{equation}
-als Teilmenge des $\Reals^3$.
+als Untermannigfaltigkeit des $\Reals^3$.
 Offensichtlich besitzt dieser zwei Symmetrien. Zum Einen wird er durch
 Drehung um die $z$-Achse in sich selbst überführt (Rotationsinvarianz), zum
 Anderen können wir den Ursprung entlang der $z$-Achse beliebig wählen
 (Translationsinvarianz).
 \end{beispiel}
 Eine formale Beschreibung solcher kontinuierlicher Symmetrien bieten 
-Gruppen die zusätzlich eine differenzierbare Struktur besitzen.
+Gruppen, die zusätzlich eine differenzierbare Struktur besitzen.
 \begin{definition}[Lie-Gruppe]
 Sei $G$ eine glatte Mannigfaltigkeit, versehen mit einer Gruppenstruktur
 $(G,*)$.
@@ -295,67 +333,58 @@ Der Zylinder $Z$ besitzt offensichtlich auch eine Spiegelsymmetrie bezüglich de
 Koordinatenachsen. Dabei
 handelt es sich aber um eine diskrete Symmetrien, welche sich nicht durch Lie-Gruppen beschreiben lassen.
 \end{bemerkung}
-\begin{beispiel}[$\SpOr(n)$]% TODO
-\end{beispiel}
-In unserem Fall ist die Lie-Gruppe die die Operationen beschreibt die Gruppe der
-Drehungen um die $z$-Achse. Diese wird mit $\SpOr(2)$ bezeichnet, eine
-Darstellung ergibt sich beispielsweise durch Matrizen der Form
-\begin{equation}
-R(\alpha)=
-\begin{pmatrix}
-\cos\alpha&\sin\alpha&0\\
--\sin\alpha&\cos\alpha&0\\
-0&0&1
-\end{pmatrix}
-\end{equation}
-%TODO zusammenhang SO(2) und R/Z
-Das diese Gruppe eine differenzierbare Struktur besitzt ist klar da die
-Komponenten der Matrizen differenzierbar sind.
-Gruppen können auf Mengen operieren.  
-Allgemeiner wollen wir nun definieren wie die Wirkung einer Gruppe auf einer
+% \begin{beispiel}[$\SpOr(n)$]% TODO
+% Die Menge
+% \begin{equation}
+% \SpOr(n)=\left\{A\in \operatorname{GL}(n)\big|\det A=1\right\}
+% \end{equation}
+% heißt \emph{spezielle orthogonale Gruppe}
+% \end{beispiel}
+%TODO Erzeuger
+Wir wollen nun definieren, wie die Wirkung einer Gruppe auf einer
 Menge zu verstehen ist. Eine sinnvolle Operation einer Gruppe sollte dabei mit
 den Gruppenoperationen kompatibel sein.
 \begin{definition}[Gruppenwirkung]
-Sei $G$ Lie-Gruppe, $M$ eine glatte Manigfaltigkeit. Eine glatte Abbildung
+Sei $(G,*)$ Lie-Gruppe, $M$ eine glatte Mannigfaltigkeit. Eine glatte
+Abbildung
 \begin{equation}
-\Phi:G\times X\to X\,,\quad (g,x)\mapsto\Phi_g(x)
+\Phi:G\times M\to M\,,\quad (g,p)\mapsto\Phi_g(p)
 \end{equation}
 heißt \emph{Lie-Gruppenwirkung} auf $M$, falls die folgende
 Eigenschaften erfüllt sind
 \begin{enumerate}
   \item \emph{Identität}: für das neutrale Element $e\in G$ gilt
-  $\displaystyle\Phi_e=\id_X$
-  \item \emph{Verträglichkeit}: $\displaystyle\Phi_{gh}=\Phi_g\circ\Phi_h$
+  $\displaystyle\Phi_e=\id_M$,
+  \item \emph{Verträglichkeit}: $\displaystyle\Phi_{g*h}=\Phi_g\circ\Phi_h$.
 \end{enumerate}
-$M$ heißt dann auch $G$-Manigfaltigkeit.
+Statt $\Phi_g(p)$ schreiben wir kurz $g\gmal p$ und bezeichnen $M$ als
+$G$-Mannigfaltigkeit.
 \end{definition}
-Statt $\Phi_g(x)$ schreiben wir kurz $g\gmal x$.
 Wir definieren einige
 Eigenschaften von Gruppenwirkungen.
 \begin{definition}
-Die Wirkung von $G$ heißt
+Die Wirkung einer Gruppe $G$ auf einer Mannigfaltigkeit $M$ heißt:
 \begin{enumerate}
   \item \emph{eigentlich}, falls unter der Abbildung $\Gamma:
-  G\times X\to X\times X\,,(g,x)\mapsto (g \gmal x,x)$, Urbilder kompakter
+  G\times M\to M\times M\,,(g,p)\mapsto (g \gmal p,p)$, Urbilder kompakter
   Mengen kompakt sind.
   \item \emph{(Fixpunkt-)frei}, falls nur die Identität Fixpunkte besitzt, d.h.\
-  aus $g\gmal x=x$, folgt $g=e$.
+  aus $g\gmal p=p$, folgt $g=e$.
 \end{enumerate}
-Ist die Gruppe $G$ eine Lie-Gruppe, $X=M$ eine Mannigfaltigkeit und $\Phi_g$
-glatt, so spricht man von einer \emph{Lie-Gruppenwirkung}. $M$ heißt dann
-auch $G$-Mannigfaltigkeit.
 \end{definition}
+Wir geben ein einfaches Beispiel einer Gruppenwirkung.
 \begin{beispiel}[Wirkung von $\Reals/\Integers$ auf $Z$]
-Sei $G=(\Reals/\Integers,+)$, $Z$ wie oben. Eine Wirkung von $G$ auf $Z$ ist
-erklärt durch
+Sei $G=(\Reals/\Integers,+)$. Eine Wirkung von $G$ auf dem Zylinder $Z$ ist
+erklärt durch Rotationen
 \begin{equation}
-t.p= \begin{pmatrix}
+[t].p= \begin{pmatrix}
 \cos\left( 2\pi t\right)&\sin\left( 2\pi t\right)&0\\
 -\sin\left( 2\pi t\right)&\cos\left( 2\pi t\right)&0\\
 0&0&1
-\end{pmatrix}p\,,\quad p\in Z\subseteq \Reals^3
+\end{pmatrix}p\,,\quad p\in Z\subseteq \Reals^3\,.
 \end{equation}
-Wie man sich leicht klar macht ist die Wirkung glatt, frei und eigentlich.
+Wie man sich leicht klar macht ist die Wirkung wohldefiniert, glatt, frei und
+eigentlich.
 \end{beispiel}
 \begin{figure}[!htbp]
 \centering
@@ -393,16 +422,16 @@ Weise Äquivalenzklassen auf einer Mannigfaltigkeit, welche gerade diejenigen
 Elemente enthalten, die sich durch $G$-Wirkung ineinander überführt werden.
 Eine solche Äquivalenzklasse nennen wir Bahn oder Orbit.
 \begin{definition}[Orbit]
-Sei $X$ eine $G$-Menge, $x\in X$, dann heißt die Menge
+Sei $M$ eine $G$-Mannigfaltigkeit, $p\in M$, dann heißt die Menge
 \begin{equation}
-G \gmal x=\{g \gmal x\,|\,g\in G\}
+G \gmal p=\{g \gmal p\,|\,g\in G\}
 \end{equation}
 \emph{Orbit} von $x$. Als \emph{Orbitraum} bezeichnen wir die Menge aller Orbits
 \begin{equation}
-M/G=\{[x]=G.x\,|\,x\in M\}\,,
+M/G=\{[p]=G.p\,|\,p\in M\}\,,
 \end{equation}
 versehen mit der Quotiententopologie, der gröbsten Topologie für die die
-kanonische Projektion $x\mapsto [x]$ stetig ist.
+kanonische Projektion $p\mapsto [p]$ stetig ist.
 \end{definition}
 \begin{beispiel}[Orbits von $\Reals/\Integers$ auf $Z$]
 Wenn wir wieder das Beispiel $G=(\Reals/\Integers,+)$, $M=Z$ heranziehen, so
@@ -412,7 +441,8 @@ G.(0,0,z)=\left\{(\sin (2\pi t),\sin (2\pi t),z)\,,t \in
 [0,1)\right\}\cong\Sphere^1\,.
 \end{equation}
 Der Orbitraum $M/G$ selbst ist offensichtlich diffeomorph zu $\Reals$. Der
-Zylinder lässt sich also lokal als Produkt von Orbitraum und Orbit darstellen.
+Zylinder lässt sich also lokal (und sogar global) als Produkt von Orbitraum und
+Orbit darstellen.
 \end{beispiel}
 \begin{figure}[!htbp]
 \centering
@@ -445,15 +475,16 @@ Zylinder lässt sich also lokal als Produkt von Orbitraum und Orbit darstellen.
 \draw[-latex,thick] (0,4) -- (0,5) ;
 \node at (0.51,1.57){\textbullet};
 ;\end{tikzpicture}
-\caption{Orbits der Wirkung der Gruppe $\Reals/\Integers$ auf $Z$.}
+\caption{Orbits der Wirkung der Gruppe $\Reals/\Integers$ auf $Z$. Der
+Orbitraum $M/G$ ist diffeomorph zu $\Reals$.}
 \end{figure}
 
 Interessant sind insbesondere Fälle, in denen der Orbitraum selbst wieder eine
-Mannigfaltigkeit darstellt. Dies muss allerdings im allgemeinen nicht der Fall
-sein, wie das folgende Beispiel zeigt.
+glatte Mannigfaltigkeitsstruktur besitzt. Dies muss allerdings im allgemeinen
+nicht der Fall sein, wie das folgende Beispiel zeigt.
 \begin{beispiel}[Ein nicht Hausdorffscher
 Quotient \cite{abraham1978foundations}] Sei $G=(\Reals,+)$, $M=\Reals$ und $G$ wirke auf
-$M$ durch $t \gmal x=e^tx$.
+$M$ durch $t \gmal p=e^tp$.
 
 Der Quotient $M/G$ enthält die drei Äquivalenzklassen $[-1],[0],[1]$, da die
 Abbildung das Vorzeichen nicht ändert.
@@ -496,7 +527,7 @@ ist nicht Hausdorff.
 Tatsächlich scheitert die Konstruktion daran, dass die Wirkung nicht eigentlich
 ist, beispielsweise ist das Urbild $\Gamma^{-1}\big([0,1]\times
 \{1\}\big)=(-\infty,0]\times \{1\}$ nicht kompakt.
-Vielmehr lässt sich zeigen dass der Quotient genau dann Hausdorff ist, wenn die
+Es lässt sich zeigen, dass ein Quotient genau dann Hausdorff ist, wenn die
 Gruppe eigentlich wirkt. %TODO REF
 
 Wir geben nun eine Charakterisierung, die solche pathologische
@@ -507,28 +538,23 @@ Mannigfaltigkeit $M$ wirkt, dann ist der Orbitraum eine topologische
 Mannigfaltigkeit der Dimension $\dim M/G=\dim M -\dim G$ und es existiert eine
 eindeutige glatte Struktur sodass $\pi:M\to  M/G$ eine glatte Submersion ist.
 \end{theorem}
-\begin{korollar}
-Sei $G$ eine Lie-Gruppe, die glatt, frei und eigentlich auf einer glatten
-Mannigfaltigkeit $M$ wirkt. Dann ist $\pi:M\to M/G$ ein glattes Hauptfaserbündel,
+\begin{bemerkung}
+Die Abbildung $\pi:M\to M/G$ ist ein glattes Hauptfaserbündel,
 mit Basis $M/G$ und typischer Faser $G$.
-\end{korollar}
-% Das Slice Theorem liefert, das falls $G$ kompakt und fixpunktfrei ist $M/G$ eine
-% Manigfaltigkeitstruktur besitzt, bzw. sogar $M\to M/G$ ein $G$-Hauptfaserbündel
-% ist.
-% %http://math.stackexchange.com/questions/1315445/quotient-manifold-theorem-provides-a-fibrations
+\end{bemerkung}
 \section[Integration inv Fkt]{Integration auf Faserbündeln}
 \begin{theorem}[Verallgemeinerter Fubini]\label{th:fubini}
 Sei $M,N$, $m$ bzw. $n$-dimensionale, orientierbare Mannigfaltigkeiten, mit
 $m\geq n$.
-Sei $\varphi:M\to N$ glatt, $\omega$ eine $(m-n)$-Form auf $M$, sowie $\eta$
+Sei $\pi:M\to N$ glatt, $\omega$ eine $(m-n)$-Form auf $M$, sowie $\eta$
 eine $n$-Form auf $N$. Sei $f:M\to \Reals$ Lebesgue integrabel, dann existiert 
 für fast alle $p\in N$ eine messbare Funktion
 \begin{equation}
-F(p)=\int_{\varphi^{-1}(p)}f\omega\,,
+F(p)=\int_{\pi^{-1}(p)}f\omega\,,
 \end{equation}
 das \emph{Integral entlang der Faser}. Es gilt
 \begin{equation}
-\int_{M}f\omega\wedge\varphi^*\eta=\int_{N}F \eta\,.
+\int_{M}f(\omega\wedge\pi^*\eta)=\int_{N}F \eta\,.
 \end{equation}
 % Seien $M$, $N$ orientierbare Manigfaltigkeiten, $\pi$ die Projektion auf $M$
 % bzw $N$, $\eta$, $\omega$ differentialformen auf $M$ bzw. $N$, $h:M\times N\to
@@ -545,22 +571,23 @@ Siehe Sulantke und Wintgen
 \begin{bemerkung}
 Bei \autoref{th:fubini} handelt es sich um eine Verallgemeinerung, des aus der
 Analysis bekannten Satzes von Fubini.
-Sei $M=\Reals^m$, $N=\Reals^n$, und
+Sei $M=\Reals^{m+n}$, $N=\Reals^n$, und
 \begin{align*}
 \pi :M &\to N\\
-(x_1,\dots,x_n,y_1,\dots,y_k) &\mapsto (x_1,\dots,x_n)\,.
+(x^1,\dots,x^{m+n}) &\mapsto (x^{m+1},\dots,x^{m+n})\,.
 \end{align*}
 Wir definieren Differentialformen auf $N$ bzw. $M$ durch
-$\omega=\dif{x}^1\wedge\cdots\wedge\dif{x}^n$ und
-$\eta=\dif{x}^{n+1}\wedge\cdots\wedge\dif{x}^m$.
-Nach\autoref{th:fubini}gilt
+$\omega=\dif{x}^1\wedge\cdots\wedge\dif{x}^m$ und\\
+$\eta=\dif{x}^{1}\wedge\cdots\wedge\dif{x}^n$. Damit haben wir
+$\omega\wedge\pi^*\eta=\dif x^1\wedge\cdots\wedge \dif x^{m+n}$
+und nach \autoref{th:fubini} gilt
 \begin{equation}
 \begin{split}
-\int_{\Reals^m} f\dif{}^m x &= \int_{\Reals^m}
-f\dif{x}^1\wedge\cdots\wedge\dif{x}^n\wedge\dif{x}^{n+1}\wedge\cdots\wedge\dif{x}^m\\
-&= \int_{\Reals^m}f\,\omega\wedge\pi^*\eta\\
+\int_{\Reals^{m+n}} f\dif{}^{m+n} x 
+&= \int_{\Reals^{m+n}}f(\omega\wedge\pi^*\eta)\\
 &= \int_{\Reals^n}\left(\int_{\pi^{-1}(x)}f\,\omega\right)\eta\\
-&= \int_{\Reals^n}\left(\int_{\{x\}\times\Reals^{(m-n)}}f\,\omega\right)\eta\,,
+&=
+\int_{\Reals^n}\left(\int_{\Reals^{m}}f\left(x\right)\,\dif{}^nx\right)\dif{}^mx\,,
 \end{split}
 \end{equation}
 was der bekannten Formel entspricht.
@@ -583,7 +610,7 @@ Die Abbildung $f:E\to \Reals$ sei $G$-invariant und integrierbar. Dann gilt nach
 \autoref{th:fubini}
 \begin{equation}
 \begin{split}
-\int_E f\sqrt{g}\dif{}\hat{x}&=\int_{M}\int_{G}f\sqrt{g}\dif^{}h \dif x\\
+\int_E f v_g &=\int_{M}\int_{G}f\sqrt{g}\dif^{}h \dif x\\
 &=\int_{M}f\sqrt{g}\int_{G}\dif^{}h \dif x\\
 &=\vol(G)\int_{M}f\sqrt{g} \dif x\\
 \end{split}
@@ -657,8 +684,7 @@ Feldern.
 Wir wollen nun einen Formalismus entwickeln, der es erlaubt ein Funktional, nach
 einer Funktion abzuleiten, um dadurch Extremalbedingungen in
 Analogie zur klassischen Analysis zu formulieren.
-Im Folgenden ist $X$ einen Banachraum, von Funktionen von einer Mannigfaltigkeit
-$M$ in die reellen Zahlen, Typischerweise $X\subseteq C^\infty(M)$.
+Im Folgenden sei $X$ einen Banachraum, beispielsweise $X\subseteq C^\infty(M)$.
 Weiter sei ein Funktional $I:X\to\Reals$ gegeben, dass uns ermöglicht, Problemen
 der Form
 \begin{equation}
@@ -681,104 +707,168 @@ Insbesondere in der physikalischen Literatur wird auf
 eine formale Definition der "`Ableitung nach einer Funktion"' häufig verzichtet, wir
 wollen deshalb an dieser Stelle versuchen, eine möglichst genaue Definition der
 Funktionalableitung zu geben.
-% TODO in der physikalischen Litereatur wird auf eine formale definition der
-% Funktionalableitung meist gänzlich verzichtet
-\begin{definition}[Funktionalableitung]
-Sei $X$ ein Banachraum, $I:X\to \Reals$, eine Funktional. Falls
-\begin{equation}
-\delta I(f)[h]:=\left[\dod{}{\alpha}I[f+\alpha
-h]\right]_{\alpha=0}\label{eq:varderdef}
-\end{equation}
-für alle in $h\in X$, so heißt $I$ in $f$ \emph{(Gâteaux-)differnzierbar} und
-$\delta I(f)$ \emph{Gâteaux-Differential} von $I$ in $f$. Falls $X$ ein
-Funktionenraum ist so heißt $\delta I(f)$ auch \emph{Variationsableitung} oder
-\emph{erste Variation}.
-% für alle $T\in \mathfrak{T}^{m}_n$ und glatt ist, so heißt $\delta F(S)$
-% \emph{Funktionalableitung} oder \emph{1.\ Variation} von $F$ in $S$.
-% Sei $X$ ein Banachraum, $I:X\to
-% \Reals$ ein Funktional. Existiert ein lineares Funktional
+% \begin{definition}[Funktionalableitung]
+% Sei $X$ ein Banachraum, $I:X\to \Reals$, eine Funktional. Falls
 % \begin{equation}
-% \begin{split}
-% \delta I(f):X&\to \Reals\\
-% \end{split}
+% \delta I(f)[h]:=\left[\dod{}{\alpha}I[f+\alpha
+% h]\right]_{\alpha=0}\label{eq:varderdef}
 % \end{equation}
-% sodass
-% \begin{equation}
-% \lim_{\varepsilon\to 0}\frac{I[f+\varepsilon g]-I[f]-\delta
-% I(f)(g)}{\varepsilon}=0\,,
-% \end{equation}
-% für alle $g\in X,$ so heißt $I$ in $f$ differnzierbar und $\delta I(f)$
-% Variationsableitung von $I$ in $f$.
+% für alle in $h\in X$, so heißt $I$ in $f$ \emph{(Gâteaux-)differnzierbar} und
+% $\delta I(f)$ \emph{Gâteaux-Differential} von $I$ in $f$. Falls $X$ ein
+% Funktionenraum ist so heißt $\delta I(f)$ auch \emph{Variationsableitung} oder
+% \emph{erste Variation}.
+% \end{definition}
+% \begin{lemma}[Eigenschaften der Variationsableitung]
+% Sei $X$ ein Banachraum, $F,G:X\to \Reals$ Funktionale,  $f\in X $, $g\in
+% C^1(\Reals)$ $a,b\in\Reals$, dann gilt:
+% \begin{enumerate}
+%   \item Linearität: $\delta (aF+bG)(f)=a\delta F (f)+b\delta G(f)$
+%   \item Kettenregel: $\delta (g\circ F)(f)=g^\prime(F[f])\cdot \delta F(f)$
+%   \item Leibnizregel: $\delta (F\cdot G)(f)=F[f]\cdot \delta G(f)+G[f]\cdot
+%   \delta F(f)$
+% \end{enumerate}
+% \end{lemma}
+% \begin{proof}
+% Per Definition lassen sich alle Eigenschaften auf die Eigenschaften, der
+% Gewöhnlichen Ableitung zurück spielen.
+% \end{proof}
+% Im Weiteren wollen wir allgemeiner Funktionale betrachten, die von Tensorfeldern
+% $T$ abhängen, innerhalb einer Koordinatenumgebung können wir diese durch
+% glatte Koordinatenfunktionen $\tensor*{T}{^{i_1,\dots
+% i_n}_{j_1,\dots,j_m}}\in C^\infty(M)$ beschreiben. Wir betrachten dann
+% Funktionale der Komponentenfunktionen.
+% \subsection{Der Lagrangeformalismus}
 %
-% die lineare Abbildung
+% \end{definition}
+% \begin{lemma}
+% Sei $f$ stationärer Punkt eines lokalen Funktionals $I$,
+% dann erfüllt $f$ die \emph{Euler-Lagrange-Gleichung}
+% \begin{equation}
+% 0=\dpd{L}{f}-\nabla_i\left[\dpd{L}{\left(\tensor{\nabla}{_i}f\right)}\right]
+% +\nabla_i\nabla_j\left[\dmd{L}{2}{\left(\tensor{\nabla}{_i}f\right)}{}{\left(\tensor{\nabla}{_j}f\right)}{}
+% \right]-\dots\,.
+% \end{equation}
+% \end{lemma}
+% \begin{proof}
+% Sei $I$ ein lokales Funktional, dann gilt
 % \begin{equation}
 % \begin{split}
-% \delta I(f):X&\to \Reals\\
-% g&\mapsto \dod{}{\varepsilon} I[f+\varepsilon g]\bigg|_{\varepsilon=0}
+% \delta {I}(f)[h]&=\int_M \left[\dod{}{\varepsilon}L\Big(f+\varepsilon
+% h,\tensor{\nabla}{_i} f+\varepsilon\tensor{\nabla}{_i} h,\dots,x\Big)
+% \right]_{\varepsilon=0}
+% \dif x\\
+% &=\int_M
+% \left[\dpd{L}{f}h+\dpd{L}{\left(\tensor{\nabla}{_i}f\right)}\nabla_i
+% h+\dots\right] \dif x\\
+% &=\int_M
+% \left\{\dpd{L}{f}h-\nabla_i\left[\dpd{L}{\left(\tensor{\nabla}{_i}f\right)}\right]
+% h+\dots\right\} \dif x+\int_{\partial
+% M}\dpd{L}{\left(\tensor{\nabla}{_i}f\right)}h n_i\dif \sigma \,.
 % \end{split}
 % \end{equation}
-% Variationsableitung von $I$ in $f$.
+% dabei ist $\dif \sigma $ die induzierte Volumenforsm auf dem Rand und
+% das Vektorfeld $n_i$ ist normal zum Rand
+% $\partial M$ der Mannigfaltigkeit, wir nehmen dabei an, dass die
+% Mannigfaltigkeit orientierbar ist, d.h.\ ein solches Normalenfeld existiert.
+% Im folgenden wollen wir solche Variationen betrachten die auf dem Rand
+% verschwinden, d.h. $h|_{\partial M}\equiv 0$. Damit ergibt sich
+% \begin{equation}
+% \begin{split}
+% \delta {I}(f)[g]&=\int_M
+% \left\{\dpd{L}{f}h-\nabla_i\left[\dpd{L}{\left(\tensor{\nabla}{_i}f\right)}\right]
+% h+\dots\right\} \dif x \\
+% &=\int_M
+% \left\{\dpd{L}{f}-\nabla_i\left[\dpd{L}{\left(\tensor{\nabla}{_i}f\right)}\right]
+% +\dots\right\}h \dif x \,.
+% \end{split}
+% \end{equation}
+% Mit dem Lemma der Variationsrechnung und $\delta I(f) [h]=0$ für alle $h\in X$
+% folgt
+% \begin{equation}
+% 0=\dpd{L}{f}-\nabla_i\left[\dpd{L}{\left(\tensor{\nabla}{_i}f\right)}\right]
+% +\dots\,.
+% \end{equation}
+% \end{proof}
+% Die \emph{Euler-Lagrange-Gleichung} ist von zentraler Bedeutung unter anderem in der theoretischen Mechanik,
+% spielt aber auch in Feldtheorien eine wichtige Rolle.
+% Das Verfahren eine Funktion als Stationären Punkt eines Funktionals zu wählen,
+% ist unter dem Namen \emph{Lagrange-Formalismus} bekannt und lässt sich auf
+% natürliche Weise auf Funktionale mehrerer Funktionen, d.h.\ Tensorfelder bzw.
+% Feldkonfigurationen verallgemeinern.
+% %TODO partielle Integration auf MF
+% %TODO deltaS=0 => Extremal
+% Ein solches Funktional ist beispielsweise von der
+% Form\footnote{Überraschenderweise lassen sich die nahezu alle physikalischen
+% Theorien, mit Hilfe Differentialgleichungen erster Ordnung Formulieren.}
+% \begin{equation}
+% I[\Psi]=\int_M L\left(\Psi,\nabla_i \Psi,x\right)\dif x
+% \end{equation}
+% und die resultierenden Euler-Lagrange-Gleichungen lauten
+% \begin{equation}
+% \dpd{L}{\Psi}
+% -\nabla_i\left[\dpd{L}{(\nabla_i\Psi)}\right]=0\,,
+% \end{equation}
+% wobei dieser Ausdruck als eine Gleichung pro
+% unabhängige Feldkomponente zu interpretieren ist. Das folgende Beispiel soll
+% erläutern wie der Formalismus anzuwenden ist.
+\begin{definition}[Funktionalableitung]
+Seien $X,Y$ Bannachräume $I:X\to
+Y$, ein Funktional.
+Falls
+\begin{equation}
+\Dif_{\,h} I(f):=\left[\dod{}{\alpha}I(f+\alpha
+h)\right]_{\alpha=0}\label{eq:varderdef}
+\end{equation}
+für alle $h\in X$ existiert heißt 
+\begin{equation}
+\begin{split}
+\Dif I(f):h\mapsto \Dif_{\,h} I(f)
+\end{split}
+\end{equation}
+\emph{Variationsableitung} oder \emph{erste Variation} von $I$ in $f$.
 \end{definition}
-% \begin{bemerkung}[$\delta
-% F(S)$ ist ein Tensorfeld]
-% Nach Zorn (Characterization of Analytic Functions in Banach Spaces) ist $\delta
-% F(f)$ eine lineare, glatte Abbildung von $X$
-% nach $\Reals$, d.h. es existiert ein $\frac{\delta F}{\delta f}\in X^*$, dass
-% z.B. falls $X=L^p$, nach dem Rietz'schen Darstellungssatz auch in integralform
-% geschrieben werden kann:
-% \begin{equation}
-% \begin{split}
-% \delta F(f)[g]&=\left\langle\frac{\delta F}{\delta f},g\right\rangle\\
-% &=\int_M\frac{\delta F}{\delta f} g\dif x\,.
-% \end{split}
-% \end{equation}
-% % Dabei bezeichnet $C:\mathfrak{T}^n_n\to C^\infty(M)$ die totale Kontraktion d.h.
-% % z.B. $A=\tensor{A}{^i_j}\dif \tensor{x}{^j}\otimes\tensor{\partial}{_j}\in
-% % \mathfrak{T}^1_1$$C(A)=\tensor{A}{^i_i}$. Wir schreiben dann auch
-% % \begin{equation}
-% % \frac{\delta F}{\delta S}:=\chi\,.
-% % \end{equation}$f:\mathfrak{T}^m_n\to L^1(M)$
-% % \begin{equation}
-% % \begin{split}
-% % \delta F[S] [T]&=\int_M \left[\dod{}{\alpha}f(S+\alpha T)\right]_{\alpha=0}\dif
-% % x
-% % \end{split}
-% % \end{equation}
-% \end{bemerkung}
 \begin{lemma}[Eigenschaften der Variationsableitung]
-Sei $X$ ein Banachraum, $F,G:X\to \Reals$ Funktionale,  $f\in X $, $g\in
-C^1(\Reals)$ $a,b\in\Reals$, dann gilt:
+Seien $X,Y,Z$ Banachräume
 \begin{enumerate}
-  \item Linearität: $\delta (aF+bG)(f)=a\delta F (f)+b\delta G(f)$
-  \item Kettenregel: $\delta (g\circ F)(f)=g^\prime(F[f])\cdot \delta F(f)$
-  \item Leibnizregel: $\delta (F\cdot G)(f)=F[f]\cdot \delta G(f)+G[f]\cdot
-  \delta F(f)$
+  \item Linearität: Für $I,J:X\to Y$ und $\alpha,\beta\in\Reals$ gilt, falls
+  $\Dif I (f),\Dif J(f)$ existieren:
+  \begin{equation}
+  \Dif\, (\alpha I+\beta J)(f)=\alpha\Dif I (X)+\beta\Dif J(f)\,.
+  \end{equation}  
+  \item Kettenregel: 
+  Für $I:X\to Y$, $J:Y\to Z$ gilt, falls
+  $\Dif I (f),\Dif J(I(f))$ existieren:
+\begin{equation}
+\Dif\, (J\circ
+I)(f)=\Dif J (I(f))\cdot \Dif I(f)\,.
+\end{equation}
+  \item Leibnizregel: $\Dif (I\cdot J)(f)=F[f]\cdot \Dif G(f)+G[f]\cdot
+  \Dif F(f)$
 \end{enumerate}
+%TODO FIX
 \end{lemma}
 \begin{proof}
 Per Definition lassen sich alle Eigenschaften auf die Eigenschaften, der
 Gewöhnlichen Ableitung zurück spielen.
 \end{proof}
-Im Weiteren wollen wir allgemeiner Funktionale betrachten, die von Tensorfeldern
-$T$ abhängen, innerhalb einer Koordinatenumgebung können wir diese durch
-glatte Koordinatenfunktionen $\tensor*{T}{^{i_1,\dots
-i_n}_{j_1,\dots,j_m}}\in C^\infty(M)$ beschreiben. Wir betrachten dann
-Funktionale der Komponentenfunktionen.
-\subsection{Der Lagrangeformalismus}
-Einen wichtigen Spezialfall stellen lokale Funktionale dar, die von der Form
+\section{Der Lagrangefromalismus}
+ Einen wichtigen Spezialfall stellen lokale Funktionale dar, die von der Form
 \begin{equation}
-I[f]=\int_M L\left(f(x),\tensor{\nabla}{_i}
+\begin{split}
+I:C^\infty(M)&\to \Reals\\
+f&\mapsto\int_M L\left(f(x),\tensor{\nabla}{_i}
 f(x),\tensor{\nabla}{_i}\tensor{\nabla}{_j} f(x),\dots,x\right)\dif x\,.
+\end{split}
 \end{equation}
 Wir definieren kritische bzw. stationäre Punkte von Funktionalen als diejenigen
 Punkte an denen die Funktionalableitung verschwindet.
 \begin{definition}
-Sei $F:X\to\Reals$ ein Funktional, eine Funktion $f$ heißt \emph{stationärer
-Punkt} von $I$ falls
+Seien $X,Y$ Banachräume, $I:X\to Y$ ein Funktional, $f\in X$ heißt
+\emph{stationärer Punkt} von $I$ falls
 \begin{equation}
-\delta {I}(f)=0\,,
+\Dif {I}(f)=0\,.
 \end{equation}
-bzw. $\delta {I}(f)[h]=0$ für $h\in X$.
+%d.h.\ $\Dif_{\,h} {I}(f)=0$ für $h\in X$.
 \end{definition}
 \begin{lemma}
 Sei $f$ stationärer Punkt eines lokalen Funktionals $I$,
@@ -793,7 +883,7 @@ dann erfüllt $f$ die \emph{Euler-Lagrange-Gleichung}
 Sei $I$ ein lokales Funktional, dann gilt
 \begin{equation}
 \begin{split}
-\delta {I}(f)[h]&=\int_M \left[\dod{}{\varepsilon}L\Big(f+\varepsilon
+\Dif_{\,h} {I}(f)&=\int_M \left[\dod{}{\varepsilon}L\Big(f+\varepsilon
 h,\tensor{\nabla}{_i} f+\varepsilon\tensor{\nabla}{_i} h,\dots,x\Big)
 \right]_{\varepsilon=0}
 \dif x\\
@@ -814,16 +904,17 @@ Im folgenden wollen wir solche Variationen betrachten die auf dem Rand
 verschwinden, d.h. $h|_{\partial M}\equiv 0$. Damit ergibt sich
 \begin{equation}
 \begin{split}
-\delta {I}(f)[g]&=\int_M
-\left\{\dpd{L}{f}h-\nabla_i\left[\dpd{L}{\left(\tensor{\nabla}{_i}f\right)}\right]
-h+\dots\right\} \dif x \\
+\Dif_{\,h} {I}(f)
+% &=\int_M
+% \left\{\dpd{L}{f}h-\nabla_i\left[\dpd{L}{\left(\tensor{\nabla}{_i}f\right)}\right]
+% h+\dots\right\} \dif x \\
 &=\int_M
 \left\{\dpd{L}{f}-\nabla_i\left[\dpd{L}{\left(\tensor{\nabla}{_i}f\right)}\right]
 +\dots\right\}h \dif x \,.
 \end{split}
 \end{equation}
-Mit dem Lemma der Variationsrechnung und $\delta I(f) [h]=0$ für alle $h\in X$
-folgt
+Mit dem Lemma der Variationsrechnung und $\Dif_{\,h} I(f)=0$ für alle $h\in
+C^\infty_0(M)$, folgt
 \begin{equation}
 0=\dpd{L}{f}-\nabla_i\left[\dpd{L}{\left(\tensor{\nabla}{_i}f\right)}\right]
 +\dots\,.
@@ -833,12 +924,12 @@ Die \emph{Euler-Lagrange-Gleichung} ist von zentraler Bedeutung unter anderem in
 spielt aber auch in Feldtheorien eine wichtige Rolle.
 Das Verfahren eine Funktion als Stationären Punkt eines Funktionals zu wählen,
 ist unter dem Namen \emph{Lagrange-Formalismus} bekannt und lässt sich auf
-natürliche Weise auf Funktionale mehrerer Funktionen, d.h.\ Tensorfelder bzw.
-Feldkonfigurationen verallgemeinern.
+natürliche Weise auf Funktionale mehrerer Funktionen, d.h.\ Tensorfelder $T$
+verallgemeinern.
 %TODO partielle Integration auf MF
 %TODO deltaS=0 => Extremal
 Ein solches Funktional ist beispielsweise von der
-Form\footnote{Überraschenderweise lassen sich die nahezu alle physikalischen
+Form\footnote{Es lassen sich nahezu alle physikalischen
 Theorien, mit Hilfe Differentialgleichungen erster Ordnung Formulieren.}
 \begin{equation}
 I[\Psi]=\int_M L\left(\Psi,\nabla_i \Psi,x\right)\dif x
@@ -861,8 +952,8 @@ nicht etwa "`geraten"' werden, vielmehr handelt es sich um die allgemeinste
 solche Funktion die gewissen Symmetrien genügt, der Faktor $-\nicefrac{1}{4}$ ist dagegen
 Konvention.}
 \begin{equation}
-L(A,\nabla A,x):=-\frac{1}{4}\tr\left(\star F\wedge
-F\right)=-\frac{1}{4}\tensor{F}{_\mu_\nu}\tensor{F}{^\mu^\nu}\,.
+L(A,\nabla A,x):=-\frac{1}{4}F\wedge
+\star F=-\frac{1}{4}\tensor{F}{_\mu_\nu}\tensor{F}{^\mu^\nu}\,.
 \end{equation}
 mit
 $F:=\dif A$. Da wir unabhängig nach den Komponenten variieren können, gilt
@@ -902,18 +993,12 @@ In \autoref{chap:EMW} werden wir sehen, dass es sich hierbei gerade um die
 Maxwell-Gleichungen im Vakuum handelt.
 %TODO
 \end{beispiel}
-\begin{definition}[Tensordichte]
-Eine Tensordichte $\mathcal{T}$ vom Gewicht $w$
-\end{definition}
-Wirkungsintegral, Lagrangedichte, Lokalität
-\begin{beispiel}[Levi-Civita-Symbol]
-\end{beispiel}
-\begin{lemma}[Jacobi Formel]
-Sei $A\in \Reals^{n\times n}$ eine Matrix mit $\det(A)\neq 0$, dann gilt
-\begin{equation}
-\dpd{\det A}{A_{ij}}=\det A ({A^{-1}})_{ij}\,.
-\end{equation}
-\end{lemma}
+% \begin{lemma}[Jacobi Formel]
+% Sei $A\in \Reals^{n\times n}$ eine Matrix mit $\det(A)\neq 0$, dann gilt
+% \begin{equation}
+% \dpd{\det A}{A_{ij}}=\det A ({A^{-1}})_{ij}\,.
+% \end{equation}
+% \end{lemma}
 \subsection{Randterme}
 % TODO Volumenformen
 % \begin{definition}[Variationsableitung]
