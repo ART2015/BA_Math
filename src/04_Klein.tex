@@ -28,10 +28,13 @@ Die physikalische 4 dimensionale Raumzeit ist damit $(E/G,\bar{g})$ gegeben.
 Der eindimensionale Fall ist besonders schön da insbesondere nur eine kompakte 
 Cinfty MF existiert. Jede Die Orbits sind dann zwingend periodisch. Dies muss 
 schon für $d=2$ nicht mehr der Fall sein wie das Beispiel $\mathbb{T}^2$ zeigt.
-\section{Einige Bemerkungen}
-Der vertikale Raum in $p\in E$ ist definiert als $\Verp=\ker\{\pi_{*p}\}$.
-$\Verp$ ist $G$ invariant. Dazu bemerkt man zunächst, dass $\pi\circ\Phi_g=\pi$, und
-damit $\pi_*\circ{\Phi_g}_*=\pi_*$. Sei $X_p\in \Verp$, dann gilt für 
+\section{Horizontale und vertikale Räume}
+Den Kern der Bündelprojektion nennen wir vertikalen Raum $\Verp
+E:=\ker\{\pi_{*p}\}$. Anschaulich enthält $\Verp$ also gerade die Felder die
+entlang der Faser verlaufen.
+\begin{bemerkung}[$\Verp E$ ist $G$ invariant]
+Zunächst bemerkt man, dass
+$\pi\circ\Phi_g=\pi$ und damit $\pi_*\circ{\Phi_g}_*=\pi_*$. Sei $X_p\in \Verp$, dann gilt für 
 $f\circ \Phi_g = f$ 
 \begin{equation}
 \begin{split}
@@ -40,74 +43,35 @@ $f\circ \Phi_g = f$
 \end{split}
 \end{equation}
 Also ${\Phi_g}_*V_p=V_{g.p}$
+\end{bemerkung}
 Ein Zusammenhang auf $E$ ist eine Zerlegung 
 \begin{equation}
-\Tanp E=\Verp\,\oplus\, \Horp
+\Tanp E=\Verp E\,\oplus\, \Horp E
 \end{equation}
-die stetig von $p$ abhängt und ${\Phi_g}_*\Horp=\mathrm{H}_{g.p}$\,.
-In unserem Fall ermöglicht die Metrik eine natürliche Definition von
-horizontalen Vektoren.
+die stetig von $p$ abhängt und ${\Phi_g}_*\Horp=\mathrm{H}_{g.p}$.
+Ist eine $G$-invariante Metrik auf $\Tan E$ gegeben, so ergibt sich durch  
 \begin{equation}
-\Horp=\Verp^\perp=\left\{X\in \Tanp E\,\big|\, g_p(X,V)=0\,,\,\forall\, V\in
-\Verp\right\}\,.
+\Horp:=\Verp^\perp=\left\{X\in \Tanp E\,\big|\, g_p(X,V)=0\,,\,\forall\, V\in
+\Verp\right\}\,
 \end{equation}
-% \begin{equation}
-% \tilde{g}:=g-\left(g(V,V)\right)^{-1}\alpha\otimes\alpha\,,
-% \end{equation}
-% Wir können $T_p(E/G)=T_p E/\mathfrak{g}$ mit $\langle V(p)
-% \rangle^\perp$
-% identifizieren indem wir den Vektorraum-Isomorphismus
-% \begin{equation}
-% \begin{split}
-% \Psi:T_{\pi(p)}(E/G)&\to\langle V(p)
-% \rangle^\perp\\
-% [X]&\mapsto X-\frac{g(X,V)V}{g(V,V)}
-% \end{split}
-% \end{equation}
-% betrachten. Fassen wir also als Biliearform auf $T_pM$ auf. 
-% Es ist zu zeigen, dass es sich dabei auch um eine Metrik handelt.
-% Sei deshalb $X\in T_pM$ sodass für alle $Y\in T_pM$
-% \begin{equation}
-% \tilde{g}(X,Y)=0\,.
-% \end{equation} 
-% Sei $\tilde{Y}\in T_pE$, dann existieren $Y_1\in T_pM $,
-% $Y_2=\alpha V $ und damit gilt
-% \begin{equation}
-% g(X,\tilde{Y})=g(X,Y_1)+g(X,Y_2)=\tilde{g}(X,Y_1)=0\,.
-% \end{equation}
-% Da $g$ nach voraussetzung nicht ausgeartet ist gilt dies auch für $\tilde{g}$.
-\section{Modell einer höherdimensionalen Raumzeit}
+eine natürliche Definition des horizontalen Bündels.
+Insegsammt erhalten wir eine Zerlegung des Tangentialbündels in ein vertikales
+und ein horizontales Bündel
+\begin{equation}
+\Tan E=\Ver E\,\oplus\, \Hor E\,.
+\end{equation}
 
-In diesem Kapitel wollen wir ein möglichst allgemeines Modell einer
-$d+4$-dimensionalen Raumzeit entwerfen. Häufig weisen Probleme in der Physik
-Symmetrien auf, d.h. \ldots
-Auch wenn das Ergebnis sehr überzeugend ist, so ist das vorgehen nicht besonders
-mathematisch. Annahmen:
-\begin{enumerate}
-\item keine Quellen, $\tensor{T}{_m_n}=0$.
-% 5D Vakuum=> EH wirkung  L=sqrt(g) R unbekannt was \tensor{T}{_m_n} sein soll
-\item die Metrik ist Extremum des EH-Funktionals
-% ist equivalent zu vorherigem\ldots
-\item Testteilchen bewegen sich auf Geodäten
-\item die Eigenzeit ist durch die Bogenlänge gegeben
-\end{enumerate}
-\section{Alternative Darstellung $n+4$ dimensionaler Bilinearformen}
-\section{Eigenschaften der Klein-Metrik}
-An jedem Punkt lässt sich die Metrik $\hat{g}$ durch eine symmetrische
-(Block-)Matrix
 \begin{equation}
-\widehat{G}=\begin{pmatrix}B& C\\
-C\transpose& H\end{pmatrix}
+\Ver E\cong \Tan G\cong M\times \mathfrak{g}\,,\quad
+\Hor E\cong \Tan  (E/G)
 \end{equation}
-beschreiben, wobei
-$B\in\operatorname{Sym}_4$
-\footnote{$\operatorname{Sym}_k$ bezeichnet die Menge aller symmetrischen
-$k\times k$-Matrizen.} , $H\in\operatorname{Sym}_n$.
-$H$ ist nicht entartet, $g$ nicht entartet ist. 
-Da die Matrix reell symmetrisch ist, ist sie (block-) diagonalisierbar
+Die Horizontalen Felder sind diejenigen die physikalische Größen beschreiben. 
+\section{Eigenschaften der Klein-Metrik}
+Wie man leicht nachrechnet gilt
 \begin{equation}
 \begin{split}
-\widehat{G}
+\widehat{G}=\begin{pmatrix}B& C\\
+C\transpose& H\end{pmatrix}
 &=
 \begin{pmatrix}1& A\\0& 1\end{pmatrix}
 \begin{pmatrix}G& 0\\0& H
@@ -115,13 +79,13 @@ Da die Matrix reell symmetrisch ist, ist sie (block-) diagonalisierbar
 \begin{pmatrix}1& 0\\A\transpose& 1\end{pmatrix}\,.
 \end{split}
 \end{equation}
-Die Blöcke sind gegeben als
+mit Blöcken 
 \begin{equation}
 G=B-CH^{-1}C\transpose\,,\quad A=CH^{-1}\,.
 \end{equation}
-Damit lässt sich direkt die Determinante angeben
+Damit gilt weiter
 \begin{equation}
-\det(\hat{G})=\det(G)\det(H)
+\det(\fived{G})=\det(G)\det(H)
 \end{equation}
 Die Transformation lässt sich leicht umkehren
 \begin{equation}
@@ -130,10 +94,10 @@ Die Transformation lässt sich leicht umkehren
 \end{equation}
 % TODO: damit misst das feld quasi das volumen der Zusatzdimension
 Mit diesen Relationen ergibt sich eine alternative Darstellung des
-Linienelements
+Linienelements:
 \begin{equation}
 \begin{split}
-\dif \hat{s}^2&=\dif \vec{x}\transpose G
+\dif \fived{s}^2&=\dif \vec{x}\transpose G
 \dif \vec{x}\\
 &=\dif \vec{x}\transpose
 \begin{pmatrix}1& -A\\0& 1\end{pmatrix}
@@ -143,25 +107,36 @@ Linienelements
 \dif \vec{x}\\
 &=\tensor{g}{_\mu_\nu}\dif \tensor{x}{^\mu}\dif\tensor{x}{^\nu}
 +\tensor{h}{_a_b}\left(\dif\tensor{x}{^a}-\tensor*{A}{^a_\mu}\dif\tensor{x}{^\mu}\right)
-\left(\dif\tensor{x}{^b}-\tensor*{A}{^b_\mu}\dif\tensor{x}{^\mu}\right)
+\left(\dif\tensor{x}{^b}-\tensor*{A}{^b_\mu}\dif\tensor{x}{^\mu}\right)\,.
 \end{split}
 \end{equation}
 Da diese Darstellung im Wesentlichen vom Typ ist wie sie von Klein verwendet
 wurde soll wird sie im Folgenden als Klein-Darstellung bzw. eine Metrik vom Typ
 als Klein-Metrik bezeichnen.
-Berechnungen angelehnt an \cite{Coquereaux:1990qs} \cite{williams2015field}.
-\subsection{Darstellung in lokalen Koordinaten}
+%Berechnungen angelehnt an \cite{Coquereaux:1990qs} \cite{williams2015field}.
+Im fünfdimensionalen Fall können wir die Metrik schreiben als
 \begin{equation}
-\tensor{\hat{g}}{_\mu_\nu}=\tensor{g}{_\mu_\nu}+\tensor{h}{_a_b}\tensor*{A}{^a_\mu}\tensor*{A}{^b_\nu}\,,\quad
-\tensor{\hat{g}}{_a_\mu}=\tensor{h}{_a_b}\tensor*{A}{^b_\mu}\,,\quad
-\tensor{\hat{g}}{_a_b}=\tensor{h}{_a_b}
+\tensor{\fived{g}}{_\mu_\nu}=\tensor{g}{_\mu_\nu}+\psi\tensor*{A}{_\mu}\tensor*{A}{_\nu}\,,\quad
+\tensor{\fived{g}}{_4_\mu}=\psi\tensor*{A}{_\mu}\,,\quad
+\tensor{\fived{g}}{_4_4}=\psi
 \end{equation}
+In Koordinatenfreier Darstellung
+\begin{equation}
+\fived{g}=g+\psi\,\omega\otimes\omega\,.
+\end{equation} 
+mit der 
+1-Form $\omega$
+\begin{equation}
+\omega=\dif\tensor{x}{^4}+\tensor{A}{_\mu}\dif\tensor{x}{^\mu}\,.
+\end{equation}
+Damit ist $M=\ker \omega$, mit anderen Worten $\omega$ ist eine
+Zusammenhangsform auf $E$
 \subsection{Inverse}
 Wie sich leicht nachprüfen lässt ist die Inverse der Klein-Metrik gegeben als
 \begin{equation}
-\tensor{\hat{g}}{^\mu^\nu}=\tensor{g}{^\mu^\nu}\,,\quad
-\tensor{\hat{g}}{^a^\mu}=-\tensor{A}{^a^\mu}\,,\quad
-\tensor{\hat{g}}{^a^b}=\tensor*{A}{^a_\mu}\tensor*{A}{^b^\mu}+\tensor{h}{^a^b}\,.
+\tensor{\fived{g}}{^\mu^\nu}=\tensor{g}{^\mu^\nu}\,,\quad
+\tensor{\fived{g}}{^4^\mu}=-\tensor{A}{^\mu}\,,\quad
+\tensor{\fived{g}}{^4^4}=\tensor*{A}{_\mu}\tensor*{A}{^\mu}+\frac{1}{\psi}\,.
 \end{equation}
 % TODO damit kann entweder mit ghut oder g indices nach oben gezogen werden.
 % Inkonsistent? ghut4mu?
@@ -182,7 +157,7 @@ Wie sich leicht nachprüfen lässt ist die Inverse der Klein-Metrik gegeben als
 % Damit ergibt sich 
 % \begin{equation}
 % \begin{split}
-%  \hat{g}&=
+%  \fived{g}&=
 %  \det\begin{pmatrix}\tensor{g}{_\mu_\nu}+\psi\tensor{A}{_\mu}\tensor{A}{_\nu}
 %  &\psi \tensor{A}{_\mu}\\
 %  \psi \tensor{A}{_\mu}	 & \psi
@@ -199,110 +174,12 @@ Wie sich leicht nachprüfen lässt ist die Inverse der Klein-Metrik gegeben als
 % \begin{bemerkung}
 % Die entsprechenden Ausdrücke für die Kaluza-Metrik sind deutlich komplizierter.
 % \end{bemerkung}
-\subsection{Christoffelsymbol}
-Siehe Williams: "`Field Equations and Lagrangian for the Kaluza Metric
-Evaluated with Tensor Algebra Software"'\cite{williams2015field}
-\subsection{Skalarkrümmung}
-\begin{equation}
-\hat{R}=R-\frac{1}{4}\psi\tensor{F}{_\mu_\nu}\tensor{F}{^\mu^\nu}
-+\frac{1}{2\psi^2}(\pdif{_\mu}\psi)(\pdif{^\mu}\psi)
--\frac{1}{\psi}\square\psi
-\end{equation}
-Wir führen zwei weitere Felder $\psi=:\phi^2$ und $\psi=:e^{2\sigma}$ ein womit
-sich der Term nochmals vereinfacht \footnote{Dies stellt keine Einschränkung
-dar, da $\psi$ positiv sein muss, damit $\hat{g}$ das gleiche Vorzeichen hat wie $g$. (Bei der Zusatzdimension handelt es sich um
-eine Raumdimension)}:
-\begin{equation}
-\hat{R}=R-\frac{1}{4}\phi^2\tensor{F}{_\mu_\nu}\tensor{F}{^\mu^\nu}
--\frac{2}{\phi}\square \phi
-\end{equation}
-
-\begin{equation}
-\hat{R}=R-\frac{1}{4}e^{2\sigma}\tensor{F}{_\mu_\nu}\tensor{F}{^\mu^\nu}
--2e^{-\sigma}\square e^{\sigma}
-\end{equation}
-
-\section{Die fünfdimensionale Raumzeit}
-Konstruktion der MFG: Siehe "`Coquereau Geometry of Multidimensional
-Universes"'\cite{coquereaux1983geometry}.
-Die Metrik ist von der Form
-\section{Die fünfdimensionale Raumzeit}
-Wir werden im folgenden nur den fünfdimensionalen Fall diskutieren. In den
-meisten Fällen ergibt sich eine Verallgemeinerung natürlich. Sei $(E,\hat{g})$
-eine dimensionale pseudo-riemannsche Mannigfaltigkeit. Die Lie-Gruppe
-kompakte Lie-Gruppe $G$ operiere durch Isometrien auf $E$. 
-Dann ergibt sich wie beschrieben eine Faserstruktur auf $E$ mit typischer Faser
-$G.x x\in E$. Seien $T^{(a)}\in \mathfrak{g}$ die Generatoren von $G$
-\begin{equation}
-V^{(a)}(p):=\od{}{t}\bigg|_{t=0}\exp\left(tT^{(a)}\right).p\,,\quad p\in E
-\end{equation}
-Da $U(1)$ eindimensional ist existiert in unserem Fall nur ein solches
-Vektorfeld. Wähle ein Koordinatensystem sodass 
-\begin{equation}
-V^{(1)}=V^4\partial_4\,,\quad \partial_4\tensor{\hat{g}}{_\mu_\nu}=0\,.
-\end{equation}
-% geht immer?
-Die Metrik ist von der Form \footnote{$\tensor{\hat{g}}{_4_4}>0$ sonst
-zusätzliche Zeitartige Vektoren}
-\begin{equation}
-\hat{g}=\tensor{\hat{g}}{_\mu_\nu}\dif\tensor{x}{^\mu}\dif\tensor{x}{^\nu}
-+\tensor{\hat{g}}{_\mu_4}\dif\tensor{x}{^\mu}\dif\tensor{x}{^4}
-+\tensor{\hat{g}}{_4_\mu}\dif\tensor{x}{^4}\dif\tensor{x}{^\mu}
-+\tensor{\hat{g}}{_4_4}\dif\tensor{x}{^4}\dif\tensor{x}{^4}\,.
-\end{equation}
-Sortiert man die Terme in der Metrik etwas um, so erhält man die Klein-Metrik
-\begin{equation}
-\hat{g}=\left(\tensor{\hat{g}}{_\mu_\nu}-\frac{\tensor{\hat{g}}{_\mu_4}\tensor{\hat{g}}{_\nu_4}}{\tensor{\hat{g}}{_4_4}}\right)\dif\tensor{x}{^\mu}\dif\tensor{x}{^\nu}
-+\tensor{\hat{g}}{_4_4}\left(\dif\tensor{x}{^4}+\frac{\tensor{\hat{g}}{_\mu_4}}{\tensor{\hat{g}}{_4_4}}\dif\tensor{x}{^\mu}\right)^2
-\,.
-\end{equation}
-Man definiert 
-\begin{equation}
-\tensor{g}{_\mu_\nu}:=\tensor{\hat{g}}{_\mu_\nu}-\frac{\tensor{\hat{g}}{_\mu_4}\tensor{\hat{g}}{_\nu_4}}{\tensor{\hat{g}}{_4_4}}
-\,,\quad
-\tensor{A}{_\mu}:=\frac{\tensor{\hat{g}}{_\mu_4}}{\tensor{\hat{g}}{_4_4}}
-\,,\quad
-\psi:=\tensor{\hat{g}}{_4_4}\,,
-\end{equation}
-sowie eine 1-Form $\omega$ durch
-\begin{equation}
-\omega=\dif\tensor{x}{^4}+\tensor{A}{_\mu}\dif\tensor{x}{^\mu}\,.
-\end{equation}
-Damit lässt sich die Metrik in zwei Anteile Unterteilen:
-\begin{equation}
-\hat{g}=g+\psi\,\omega\otimes\omega\,.
-\end{equation}
-Es gilt:
-\begin{equation}
-\begin{split}
-0&=\hat{g}(\partial_4,\partial_\mu)\\
-&=\left(\tensor{\hat{g}}{_4_\nu}\dif\tensor{x}{^\nu}
-+\tensor{\hat{g}}{_4_4}\dif\tensor{x}{^4}\right)(\partial_\mu)\\
-&=\left(\tensor{\hat{g}}{_4_\mu}\dif\tensor{x}{^\mu}
-+\tensor{\hat{g}}{_4_4}\dif\tensor{x}{^4}\right)(\partial_\mu)\\
-&=: \tensor{\hat{g}}{_4_4}\omega(\partial_\mu)
-\end{split}
-\end{equation}
-Die induzierte Metrik auf dem Bündel 
-\begin{equation}
-B=\bigsqcup_{p\in E/G}\mathrm{Span}\left\{\partial_\mu|_p\right\}
-\end{equation}
-ist also gegeben durch die Metrik $g$. $B$ soll im Folgenden als Modell für die
-(bekannte) vierdimensionale Raumzeit stehen.
-Es handelt sich zunächst lediglich
-um eine Umbenennung, die Bedeutung dieser Größen wird im Folgenden klar werden. Die von Klein verwendet Metrik ist also verschieden von der Kaluza
-Metrik, beide sind aber vom Informationsgehalt äquivalent\footnote{Verschiedene
-Autoren verwenden zu $\hat{g}$ konform äquivalente Metriken, 
-bzw. Metriken die noch einen Zusätzlichen Freiheitsgrad $\kappa$ enthalten.
-Dieser lässt sich aber in die Größen $\tensor{A}{_\mu}$ bzw. $\phi$ absorbieren.}
-Die bekannten Vierervektoren $X^\mu$ entsprechen Fünfervektoren mit
-\begin{equation}
-\tensor{X}{^5}=-\tensor{A}{_\mu}\tensor{X}{^\mu}
-\end{equation}
-%(=Projektion?)
-Da $\tensor{A}{_\mu}$ nur von $\tensor{X}{^\mu}$ abhängt, ist $\tensor{X}{^5}$
-durch die ersten vier Komponenten eindeutig gegeben und enthält keine
-Zusatzinformation.
+% 
+% 
+% \section{Die fünfdimensionale Raumzeit}
+% Konstruktion der MFG: Siehe "`Coquereau Geometry of Multidimensional
+% Universes"'\cite{coquereaux1983geometry}.
+% Die Metrik ist von der Form
 \section{Identifikation der Größen}
 Wir wollen die Objekte $A$ und $\psi$ als Eichpotential bzw. Skalarfeld auf
 $M/G$ auffassen, dazu müssen wir zeigen das sie entsprechend transformieren.
@@ -316,17 +193,17 @@ Betrachte die Abbildung $f:M\to M$
 \end{equation}
 mit $\xi\in C^\infty\left(\Reals\right)$ beliebig. 
 %TODO kommt von killingvector del4
-Pullback $\hat{g}^\prime:=f^*\hat{g}$
+Pullback $\fived{g}^\prime:=f^*\fived{g}$
 %TODO Pullback in Komponenten
 \begin{equation}
 \begin{split}
-\tensor*{\hat{g}}{*^\prime_\mu_\nu}&=\tensor{\hat{g}}{_a_b}\dpd{f^a}{\tensor{x}{^\mu}}\dpd{f^b}{\tensor{x}{^\nu}}\\
-&=\tensor{\hat{g}}{_\alpha_\beta}\dpd{f^\alpha}{\tensor{x}{^\mu}}\dpd{f^\beta}{\tensor{x}{^\nu}}
-+\tensor{\hat{g}}{_\alpha_4}\dpd{f^\alpha}{\tensor{x}{^\mu}}\dpd{f^4}{\tensor{x}{^\nu}}
-+\tensor{\hat{g}}{_4_\beta}\dpd{f^4}{\tensor{x}{^\mu}}\dpd{f^\beta}{\tensor{x}{^\nu}}
-+\tensor{\hat{g}}{_4_4}\dpd{f^4}{\tensor{x}{^\mu}}\dpd{f^4}{\tensor{x}{^\nu}}
+\tensor*{\fived{g}}{*^\prime_\mu_\nu}&=\tensor{\fived{g}}{_a_b}\dpd{f^a}{\tensor{x}{^\mu}}\dpd{f^b}{\tensor{x}{^\nu}}\\
+&=\tensor{\fived{g}}{_\alpha_\beta}\dpd{f^\alpha}{\tensor{x}{^\mu}}\dpd{f^\beta}{\tensor{x}{^\nu}}
++\tensor{\fived{g}}{_\alpha_4}\dpd{f^\alpha}{\tensor{x}{^\mu}}\dpd{f^4}{\tensor{x}{^\nu}}
++\tensor{\fived{g}}{_4_\beta}\dpd{f^4}{\tensor{x}{^\mu}}\dpd{f^\beta}{\tensor{x}{^\nu}}
++\tensor{\fived{g}}{_4_4}\dpd{f^4}{\tensor{x}{^\mu}}\dpd{f^4}{\tensor{x}{^\nu}}
 \\
-&=\tensor{\hat{g}}{_\mu_\nu}
+&=\tensor{\fived{g}}{_\mu_\nu}
 +\psi\tensor{A}{_\mu}\pdif{_\nu}\xi
 +\psi\tensor{A}{_\nu}\pdif{_\mu}\xi
 +\psi\pdif{_\mu}\xi\pdif{_\nu}\xi\\
@@ -337,21 +214,21 @@ Pullback $\hat{g}^\prime:=f^*\hat{g}$
 \end{equation}
 \begin{equation}
 \begin{split}
-\tensor*{\hat{g}}{*^\prime_\mu_4}&=\tensor{\hat{g}}{_a_b}\dpd{f^a}{\tensor{x}{^\mu}}\dpd{f^b}{\tensor{x}{^4}}\\
-&=\tensor{\hat{g}}{_\alpha_\beta}\dpd{f^\alpha}{\tensor{x}{^\mu}}\dpd{f^\beta}{\tensor{x}{^4}}
-+\tensor{\hat{g}}{_\alpha_4}\dpd{f^\alpha}{\tensor{x}{^\mu}}\dpd{f^4}{\tensor{x}{^4}}
-+\tensor{\hat{g}}{_4_\beta}\dpd{f^4}{\tensor{x}{^\mu}}\dpd{f^\beta}{\tensor{x}{^4}}
-+\tensor{\hat{g}}{_4_4}\dpd{f^4}{\tensor{x}{^\mu}}\dpd{f^4}{\tensor{x}{^4}}\\
+\tensor*{\fived{g}}{*^\prime_\mu_4}&=\tensor{\fived{g}}{_a_b}\dpd{f^a}{\tensor{x}{^\mu}}\dpd{f^b}{\tensor{x}{^4}}\\
+&=\tensor{\fived{g}}{_\alpha_\beta}\dpd{f^\alpha}{\tensor{x}{^\mu}}\dpd{f^\beta}{\tensor{x}{^4}}
++\tensor{\fived{g}}{_\alpha_4}\dpd{f^\alpha}{\tensor{x}{^\mu}}\dpd{f^4}{\tensor{x}{^4}}
++\tensor{\fived{g}}{_4_\beta}\dpd{f^4}{\tensor{x}{^\mu}}\dpd{f^\beta}{\tensor{x}{^4}}
++\tensor{\fived{g}}{_4_4}\dpd{f^4}{\tensor{x}{^\mu}}\dpd{f^4}{\tensor{x}{^4}}\\
 &=\psi\left(\tensor{A}{_\mu}+\pdif{_\mu}\xi\right)
 \end{split}
 \end{equation}
 \begin{equation}
 \begin{split}
-\tensor*{\hat{g}}{*^\prime_4_4}&=\tensor{\hat{g}}{_a_b}\dpd{f^a}{\tensor{x}{^4}}\dpd{f^b}{\tensor{x}{^4}}\\
-&=\tensor{\hat{g}}{_\alpha_\beta}\dpd{f^\alpha}{\tensor{x}{^4}}\dpd{f^\beta}{\tensor{x}{^4}}
-+\tensor{\hat{g}}{_\alpha_4}\dpd{f^\alpha}{\tensor{x}{^4}}\dpd{f^4}{\tensor{x}{^4}}
-+\tensor{\hat{g}}{_4_\beta}\dpd{f^4}{\tensor{x}{^4}}\dpd{f^\beta}{\tensor{x}{^4}}
-+\tensor{\hat{g}}{_4_4}\dpd{f^4}{\tensor{x}{^4}}\dpd{f^4}{\tensor{x}{^4}}\\
+\tensor*{\fived{g}}{*^\prime_4_4}&=\tensor{\fived{g}}{_a_b}\dpd{f^a}{\tensor{x}{^4}}\dpd{f^b}{\tensor{x}{^4}}\\
+&=\tensor{\fived{g}}{_\alpha_\beta}\dpd{f^\alpha}{\tensor{x}{^4}}\dpd{f^\beta}{\tensor{x}{^4}}
++\tensor{\fived{g}}{_\alpha_4}\dpd{f^\alpha}{\tensor{x}{^4}}\dpd{f^4}{\tensor{x}{^4}}
++\tensor{\fived{g}}{_4_\beta}\dpd{f^4}{\tensor{x}{^4}}\dpd{f^\beta}{\tensor{x}{^4}}
++\tensor{\fived{g}}{_4_4}\dpd{f^4}{\tensor{x}{^4}}\dpd{f^4}{\tensor{x}{^4}}\\
 &=\psi
 \end{split}
 \end{equation}
@@ -372,12 +249,12 @@ h(\tensor{x}{^\mu})\,,\quad\tensor{x}{^4}\mapsto\tensor{x}{^4}
 mit einem Diffeomorphismus $h$
 \begin{equation}
 \begin{split}
-\tensor*{\hat{g}}{*^\prime_\mu_\nu}&=\tensor{\hat{g}}{_a_b}\dpd{f^a}{\tensor{x}{^\mu}}\dpd{f^b}{\tensor{x}{^\nu}}\\
-&=\tensor{\hat{g}}{_\alpha_\beta}\dpd{f^\alpha}{\tensor{x}{^\mu}}\dpd{f^\beta}{\tensor{x}{^\nu}}
-+\tensor{\hat{g}}{_\alpha_4}\dpd{f^\alpha}{\tensor{x}{^\mu}}\dpd{f^4}{\tensor{x}{^\nu}}
-+\tensor{\hat{g}}{_4_\beta}\dpd{f^4}{\tensor{x}{^\mu}}\dpd{f^\beta}{\tensor{x}{^\nu}}
-+\tensor{\hat{g}}{_4_4}\dpd{f^4}{\tensor{x}{^\mu}}\dpd{f^4}{\tensor{x}{^\nu}}\\
-&=\tensor{\hat{g}}{_\alpha_\beta}\dpd{h^\alpha}{\tensor{x}{^\mu}}\dpd{h^\beta}{\tensor{x}{^\nu}}\\
+\tensor*{\fived{g}}{*^\prime_\mu_\nu}&=\tensor{\fived{g}}{_a_b}\dpd{f^a}{\tensor{x}{^\mu}}\dpd{f^b}{\tensor{x}{^\nu}}\\
+&=\tensor{\fived{g}}{_\alpha_\beta}\dpd{f^\alpha}{\tensor{x}{^\mu}}\dpd{f^\beta}{\tensor{x}{^\nu}}
++\tensor{\fived{g}}{_\alpha_4}\dpd{f^\alpha}{\tensor{x}{^\mu}}\dpd{f^4}{\tensor{x}{^\nu}}
++\tensor{\fived{g}}{_4_\beta}\dpd{f^4}{\tensor{x}{^\mu}}\dpd{f^\beta}{\tensor{x}{^\nu}}
++\tensor{\fived{g}}{_4_4}\dpd{f^4}{\tensor{x}{^\mu}}\dpd{f^4}{\tensor{x}{^\nu}}\\
+&=\tensor{\fived{g}}{_\alpha_\beta}\dpd{h^\alpha}{\tensor{x}{^\mu}}\dpd{h^\beta}{\tensor{x}{^\nu}}\\
 &=\tensor{g}{_\alpha_\beta}\dpd{h^\alpha}{\tensor{x}{^\mu}}\dpd{h^\beta}{\tensor{x}{^\nu}}
 +\psi\tensor{A}{_\alpha}\dpd{h^\alpha}{\tensor{x}{^\mu}}
 \tensor{A}{_\beta}\dpd{h^\beta}{\tensor{x}{^\nu}}
@@ -385,21 +262,21 @@ mit einem Diffeomorphismus $h$
 \end{equation}
 \begin{equation}
 \begin{split}
-\tensor*{\hat{g}}{*^\prime_\mu_4}&=\tensor{\hat{g}}{_a_b}\dpd{f^a}{\tensor{x}{^\mu}}\dpd{f^b}{\tensor{x}{^4}}\\
-&=\tensor{\hat{g}}{_\alpha_\beta}\dpd{f^\alpha}{\tensor{x}{^\mu}}\dpd{f^\beta}{\tensor{x}{^4}}
-+\tensor{\hat{g}}{_\alpha_4}\dpd{f^\alpha}{\tensor{x}{^\mu}}\dpd{f^4}{\tensor{x}{^4}}
-+\tensor{\hat{g}}{_4_\beta}\dpd{f^4}{\tensor{x}{^\mu}}\dpd{f^\beta}{\tensor{x}{^4}}
-+\tensor{\hat{g}}{_4_4}\dpd{f^4}{\tensor{x}{^\mu}}\dpd{f^4}{\tensor{x}{^4}}\\
+\tensor*{\fived{g}}{*^\prime_\mu_4}&=\tensor{\fived{g}}{_a_b}\dpd{f^a}{\tensor{x}{^\mu}}\dpd{f^b}{\tensor{x}{^4}}\\
+&=\tensor{\fived{g}}{_\alpha_\beta}\dpd{f^\alpha}{\tensor{x}{^\mu}}\dpd{f^\beta}{\tensor{x}{^4}}
++\tensor{\fived{g}}{_\alpha_4}\dpd{f^\alpha}{\tensor{x}{^\mu}}\dpd{f^4}{\tensor{x}{^4}}
++\tensor{\fived{g}}{_4_\beta}\dpd{f^4}{\tensor{x}{^\mu}}\dpd{f^\beta}{\tensor{x}{^4}}
++\tensor{\fived{g}}{_4_4}\dpd{f^4}{\tensor{x}{^\mu}}\dpd{f^4}{\tensor{x}{^4}}\\
 &=\psi\tensor{A}{_\alpha}\dpd{h^\alpha}{\tensor{x}{^\mu}}
 \end{split}
 \end{equation}
 \begin{equation}
 \begin{split}
-\tensor*{\hat{g}}{*^\prime_4_4}&=\tensor{\hat{g}}{_a_b}\dpd{f^a}{\tensor{x}{^4}}\dpd{f^b}{\tensor{x}{^4}}\\
-&=\tensor{\hat{g}}{_\alpha_\beta}\dpd{f^\alpha}{\tensor{x}{^4}}\dpd{f^\beta}{\tensor{x}{^4}}
-+\tensor{\hat{g}}{_\alpha_4}\dpd{f^\alpha}{\tensor{x}{^4}}\dpd{f^4}{\tensor{x}{^4}}
-+\tensor{\hat{g}}{_4_\beta}\dpd{f^4}{\tensor{x}{^4}}\dpd{f^\beta}{\tensor{x}{^4}}
-+\tensor{\hat{g}}{_4_4}\dpd{f^4}{\tensor{x}{^4}}\dpd{f^4}{\tensor{x}{^4}}\\
+\tensor*{\fived{g}}{*^\prime_4_4}&=\tensor{\fived{g}}{_a_b}\dpd{f^a}{\tensor{x}{^4}}\dpd{f^b}{\tensor{x}{^4}}\\
+&=\tensor{\fived{g}}{_\alpha_\beta}\dpd{f^\alpha}{\tensor{x}{^4}}\dpd{f^\beta}{\tensor{x}{^4}}
++\tensor{\fived{g}}{_\alpha_4}\dpd{f^\alpha}{\tensor{x}{^4}}\dpd{f^4}{\tensor{x}{^4}}
++\tensor{\fived{g}}{_4_\beta}\dpd{f^4}{\tensor{x}{^4}}\dpd{f^\beta}{\tensor{x}{^4}}
++\tensor{\fived{g}}{_4_4}\dpd{f^4}{\tensor{x}{^4}}\dpd{f^4}{\tensor{x}{^4}}\\
 &=\psi
 \end{split}
 \end{equation}
@@ -414,50 +291,52 @@ Transformationsverhalten unter vierdimensionalen Koordinatenwechseln.
 Dabei transformieren $\psi$, $\tensor{A}{_\mu}$ und $\tensor{g}{_\mu_\nu}$ als
 Skalar, Vektor, bzw. Tensor.
 %TODO sind noch weitere Trafos erlaubt?
-
-\section{Lagrangedichte}
-%Karte auf $M/G$?
+\section{Krümmung}
+\begin{equation}
+\fived{R}=R-\frac{1}{4}\psi\tensor{F}{_\mu_\nu}\tensor{F}{^\mu^\nu}
++\frac{1}{2\psi^2}(\pdif{_\mu}\psi)(\pdif{^\mu}\psi)
+-\frac{1}{\psi}\square\psi
+\end{equation}
+Wir führen zweckmäßigerweise ein Feld
+$\sigma=\ln\frac{\psi}{2}\psi$ ein, womit sich der Term nochmals
+vereinfacht \footnote{Dies stellt keine Einschränkung dar, da $\psi$ positiv sein muss, damit $\fived{g}$ das gleiche Vorzeichen hat wie $g$. (Bei der Zusatzdimension handelt es sich um
+eine Raumdimension)}:
+\begin{equation}
+\fived{R}=R-\frac{1}{4}e^{2\sigma}\tensor{F}{_\mu_\nu}\tensor{F}{^\mu^\nu}
+-2e^{-\sigma}\square e^{\sigma}
+\end{equation}
+\section{Die Wirkung in fünf Dimensionen}
 Kleins Idee war es das Wirkungsprinzip nach Hilbert auf fünf Dimensionen zu
 erweitern. Folglich lautet das Wirkungsintegral
 \begin{equation}
-\hat{S}=\int_{M_5}\sqrt{-\hat{g}}\hat{R}\dif{^5}
+\fived{S}=\int_{E}\sqrt{-\fived{g}}\fived{R}\dif{^5}
 x\,.
 \end{equation}
-% TODO d.h. Vakuum
-Hierbei tritt ein ernsthaftes Problem auf. Der Integrand ist nicht von der
-Zusatzdimension abhängig. Würde man also $\tensor{x}{^4}$ wie die verbleibenden
-Raumkoordinaten behandeln, wie dies beispielsweise bei Kaluza der Fall war, so
-ist $\hat{S}$ nicht wohldefiniert. Klein erkannte das er das Problem umgehen
-konnte wenn die Zusatzkoordinate zylindrisch wäre. Nimmt man für 
-$\tensor{x}{^4}$ einen Radius $r$ an so ergibt sich
+Da die Metrik $G$-invariant ist der Integrand offensichtlich ebenfalls
+$G$-Invariant und wir können ??? anwenden. Damit gilt:
 \begin{equation}
 \begin{split}
-\hat{S}&=\int_{M_5}\sqrt{-g}\phi\hat{R}\dif{^5}x\\
-&=2\pi
-r\int_{M_4}\sqrt{-g}\phi\hat{R}\dif{^4}x\,.
+\fived{S}&=2\pi
+r\int_{M}\sqrt{-g}\psi^{1/2}\fived{R}\dif{^4}x\,,
 \end{split}
 \end{equation}
-%TODO dies ist die minimale skalare Theorie
-%TODO wenn faserbündel korrekt dann mit trafoformel argumentieren (überdeckung
-% etc\ldots)
-Die Lagrangedichte ist also gegeben als
+wobei wir mit $r=\frac{1}{2\pi}\vol(G)$ den Radius des Orbits bezeichnen.
+Die Lagrangedichte auf $M$ ist also gegeben durch
 \begin{equation}
 \begin{split}
 \mathcal{L}&=\sqrt{-g}e^{\sigma}\left(R-\frac{1}{4}e^{2\sigma}\tensor{F}{_\mu_\nu}\tensor{F}{^\mu^\nu}
 -2e^{-\sigma}\square e^{\sigma}\right)\\
 &=\sqrt{-g}e^{\sigma}\left(R-\frac{1}{4}e^{2\sigma}\tensor{F}{_\mu_\nu}\tensor{F}{^\mu^\nu}\right)+2\sqrt{-g}\square
-e^{\sigma}\label{eq:Lagrange1}
+e^{\sigma}\,.\label{eq:Lagrange1}
 \end{split}
 \end{equation}
 Der letzte Term liefert als totale Divergenz keinen Beitrag.
-Der Term der die Krümmung enthält unterscheidet sich um einen Faktor $\phi$ von
-der klassischen Einstein-Hilbert Lagrangedichte.
 \subsection{Konforme Transformation}
 Da wir den Lagrangian gerne in einer Form vorliegen hätten, die dem
 EH-Lagrangian enspricht müssen wir den Vorfaktor $e^{\sigma}$ loswerden. 
 Wir führen dazu eine konforme Transformation durch
 \begin{equation}
-\tensor*{\hat{g}}{*^\star*_i*_j}=\exp\left[{2\tau\left(\tensor{x}{^\mu}\right)}\right]\tensor{\hat{g}}{_i_j}\,.
+\tensor*{\fived{g}}{*^\star*_i*_j}=e^{2\tau}\tensor{\fived{g}}{_i_j}\,.
 \end{equation}
 Dies impliziert sofort
 \begin{equation}
@@ -468,7 +347,7 @@ Die Komponenten des elektrischen Feldstärketensors ist in der konformen Metrik
 gegeben als
 \begin{equation}
 \tensor*{F}{*^\star_\mu_\nu}=\tensor{F}{_\mu_\nu}\,,\quad\tensor*{F}{*^\star^\mu^\nu}
-=\tensor*{\hat{g}}{*^\star*^\mu*^\alpha}\tensor*{\hat{g}}{*^\star*^\nu*^\beta}\tensor{F}{_\alpha_\beta}
+=\tensor*{\fived{g}}{*^\star*^\mu*^\alpha}\tensor*{\fived{g}}{*^\star*^\nu*^\beta}\tensor{F}{_\alpha_\beta}
 =e^{-4\tau}\tensor{F}{^\mu^\nu}\,.
 \end{equation}
 Wendet man die Formel für das Transformationsverhalten des Krümmungsskalars an,
@@ -481,8 +360,8 @@ beziehungsweise
 \begin{equation}
 \begin{split}
 \sqrt{-g}\phi
-\hat{R}
-&=e^{\sigma-2\tau}\sqrt{-g^\star}\left[\hat{R}^\star
+\fived{R}
+&=e^{\sigma-2\tau}\sqrt{-g^\star}\left[\fived{R}^\star
 -6(\tensor*{\partial}{^\star_\mu}\tau)(\tensor{\partial}{^\star^\mu}\tau)
 -6\square^\star\tau\right]\,.
 \end{split}
@@ -494,7 +373,7 @@ $\sigma$ behandelt werden.}, so ergibt sich
 \begin{equation}
 \begin{split}
 \sqrt{-g}\phi
-\hat{R}&=\sqrt{-g^\star}\left[R^\star
+\fived{R}&=\sqrt{-g^\star}\left[R^\star
 -\frac{3}{2}(\tensor*{\partial}{^\star_\mu}\sigma)(\tensor{\partial}{^\star^\mu}\sigma)
 -3\square^\star\sigma\right]\,.
 \end{split}
@@ -540,23 +419,6 @@ den Verschiebungsfeldern $\vec{D},\vec{H}$ der klassischen Elektrodynamik.
 \end{equation}
 wobei der Term $e^{\sqrt{3}\sigma}$ als variable Perimitivität $\mu(\sigma)$
 interpretiert wird. 
-\subsection{Das Kaluza-Klein Wunder}
-Setzt man in \eqref{eq:Lagrange2}, $\sigma=\const=0$  so erhält man 
-\begin{equation}\label{eq:Lagrange2}
-\begin{split}
-\mathcal{L}
-&=\sqrt{-g}\left[R-\frac{1}{4}\tensor*{F}{_\mu_\nu}\tensor*{F}{^\mu^\nu}\right]\,,
-\end{split}
-\end{equation}
-die Lagrangedichte der klassischen
-Maxwell-Einstein Theorie. 
-Das Ergebnis ist beachtlich: Im fünfdimensionalen Vakuum sind die Einstein- und
-Maxwell-Gleichungen enthalten.
-Mit anderen Worten die Theorien Einsteins
-und Maxwells lassen sich in einer einzigen Theorie vereinigen, die von 
-überraschender Einfachheit ist. Dieser Umstand ist auch als
-\emph{Kaluza-Klein Wunder} bekannt.
-
 % Ist es konsistent nach den Komponenten einzeln zu variieren?
 \subsection{Bewegungsgleichungen}
 In bekannter Manier impliziert die Form der Lagrangedichte 
@@ -585,52 +447,58 @@ Die resultierende Bewegungsgleichungen lautet
  für das Skalarfeld $\sigma$. 
  % Lässt sich das durch redifinition zur Klein Gordon Gleichung hinbiegen?
 \section{Erhaltungrößen}
-Per Konstruktion ist $K=\partial_4$ ein Killing-Vektorfeld, die entsprechende
-Erhaltungsgröße ist 
-\begin{equation}
-\tensor{\hat{K}}{_n}\tensor{\hat{U}}{^n}=\tensor*{\delta}{^4_n}\tensor{\hat{U}}{^n}
-=\tensor{\hat{U}}{^4}:=Q\,.
-\end{equation}
-% Da wir Vakuumlösungen $\tensor{T}{_n_m}=0$ betrachten, lässt sich keine erhalte
-% Energie 
-% \begin{equation}
-% E=\int\dif{}^3x \sqrt{-g} \tensor{T}{_0_n}\tensor{K}{^n}
-% \end{equation}
-% definieren. 
-Wir wollen die erhaltene vierte Komponente der Geschwindigkeit mit 
-der Ladung $Q$ eines Teilchens identifizieren.
- \section{Geodäten}
- \begin{bemerkung}[Umparametrisierung der Geodätengleichung]
- Sei $c$ Geodäte, sei $\lambda:\Reals\to \Reals$ umparametrisierung,
- $d=\gamma\circ\lambda$, dann gilt 
- \begin{equation}
-\dod[2]{x^a}{\alpha}+\Gamma^{a}_{bc}\dod{x^b}{\alpha}\dod{x^c}{\alpha}=f(\alpha)\dod{x^a}{\alpha}
- \end{equation}
- mit
- $f(\lambda)=-\left(\dod[2]{\alpha}{\lambda}\right)\left(\dod{\alpha}{\lambda}\right)^{-2}$
- \end{bemerkung}
- 
- 
- 
-%  Wir nehmen an das sich (geladene) Teilchen entlang von fünfdimensionalen
-%  Geodäten bewegen. 
-%  Zunächst gilt weiterhin, dass diese proportional zur Bogenlänge parametrisiert
-%  sind, d.h.
-$\dif s^2=\dif \tau^2+\phi^2(A_\nu\dif x^\nu+\dif x^4)^2$
-In lokalen Koordinaten lautet die Geodätengleichung
-\begin{equation}
-\dod[2]{x^a}{s}+\tilde{\Gamma}^{a}_{bc}\dod{x^b}{s}\dod{x^c}{s}=0
-\end{equation}
-parametrisieren wir die Kurve stattdessen nach der Eigenzeit $\tau$ so erhalten
-wir 
+Da nach Konstruktion $\partial_4$ ein Killing Vektorfeld, damit erhalten wir
+eine Erhaltungsgröße
 \begin{equation}
 \begin{split}
-0&=\dod[2]{x^\mu}{\tau}+\tilde{\Gamma}^{\mu}_{bc}\dod{x^b}{\tau}\dod{x^c}{\tau}
--f(\tau)\dod{x^\mu}{\tau}\\
-&=\dod[2]{x^\mu}{\tau}
-+\tilde{\Gamma}^{\mu}_{\nu\lambda}\dod{x^\nu}{\tau}\dod{x^\lambda}{\tau}
-+\tilde{\Gamma}^{\mu}_{\nu 4}\dod{x^\nu}{\tau}\dod{x^4}{\tau}
-+\tilde{\Gamma}^{\mu}_{44}\dod{x^4}{\tau}\dod{x^4}{\tau}
+K&=\delta^\mu_4\fived{U}_\mu\\
+&=\fived{g}_{4\mu}\fived{U}^\mu\\
+&=\psi\left(A_\nu\fived{U}^\nu+\fived{U}^4\right)\\
+&=\psi\left(A_\nu U^\nu+U^4\right)\dod{s}{\tau}\\
+\end{split}
+\end{equation}
+Die vierergeschwindigkeit identifizert man mit
+\begin{equation}
+U^a=\dod{x^a}{\tau}=\dod{s}{\tau}\hat{U}^a
+\end{equation}
+Es ist günstig die Größen
+\begin{equation}
+\Delta=A_\nu U^\nu+U^4\,,\quad
+\fived{\Delta}=\Delta\dod{s}{\tau}\,,
+\end{equation}
+einzuführen.
+\begin{equation}
+\begin{split}
+K
+&=\psi\hat{\Delta}\\
+\end{split}
+\end{equation}
+Weiter gilt dann 
+\begin{equation}
+\left(\dod{\tau}{s}\right)^2=1+\psi\fived{\Delta}^2=1+K^2\psi^{-1}
+\end{equation}
+%TODO Tachionen
+ \section{Geodäten und die Lorentzkraft}
+In lokalen Koordinaten lautet die Geodätengleichung
+\begin{equation}
+\dod[2]{x^a}{s}+\fived{\Gamma}^{a}_{bc}\dod{x^b}{s}\dod{x^c}{s}=0
+\end{equation}
+Zunächst bemerken wir, dass das Linienelement  
+$\dif s^2=\dif \tau^2+\psi(A_\nu\dif x^\nu+\dif x^4)^2$ 
+verschieden von der Eigenzeit $\dif \tau^2$ ist.
+Parametrisieren wir die Kurve nach der Eigenzeit $\tau$, so erhalten
+wir 
+\begin{equation}
+\dod[2]{x^a}{\tau}+\fived{\Gamma}^{a}_{bc}\dod{x^b}{\tau}\dod{x^c}{\tau}
+=f(\tau)\dod{x^a}{\tau}\,.
+\end{equation}
+Für die ersten vier Komponenten erhalten wir
+\begin{equation}
+\begin{split}
+0=\dod[2]{x^\mu}{\tau}
++\fived{\Gamma}^{\mu}_{\nu\lambda}\dod{x^\nu}{\tau}\dod{x^\lambda}{\tau}
++2\fived{\Gamma}^{\mu}_{\nu 4}\dod{x^\nu}{\tau}\dod{x^4}{\tau}
++\fived{\Gamma}^{\mu}_{44}\dod{x^4}{\tau}\dod{x^4}{\tau}
 -f(\tau)\dod{x^a}{\tau}\\
 \end{split}
 \end{equation}
@@ -639,31 +507,88 @@ Umstellen liefert wiederum
 \begin{split}
 \dod[2]{x^\mu}{\tau}
 +\Gamma^{\mu}_{\nu\lambda}\dod{x^\nu}{\tau}\dod{x^\lambda}{\tau}
-=&\left(\tilde{\Gamma}^{\mu}_{\nu\lambda}-\Gamma^{\mu}_{\nu\lambda}\right)\dod{x^\nu}{\tau}\dod{x^\lambda}{\tau}
--\tilde{\Gamma}^{\mu}_{\nu
+=&\left(\fived{\Gamma}^{\mu}_{\nu\lambda}-\Gamma^{\mu}_{\nu\lambda}\right)
+\dod{x^\nu}{\tau}\dod{x^\lambda}{\tau}
+-2\fived{\Gamma}^{\mu}_{\nu
 4}\dod{x^\nu}{\tau}\dod{x^4}{\tau} \\
-&-\tilde{\Gamma}^{\mu}_{44}\dod{x^4}{\tau}\dod{x^4}{\tau}
-+f(\tau)\dod{x^a}{\tau}
+&-\fived{\Gamma}^{\mu}_{44}\left(\dod{x^4}{\tau}\right)^2
++f(\tau)\dod{x^\mu}{\tau}\,.\label{eq:geod4d}
 \end{split}
 \end{equation}
+Geodäten der fünfdimensionalen Raumzeit sind also im Algemeinen nicht 
+geodäten in der vierdimensionalen Raumzeit. Die
+auftretenden Christoffelsymbole der Klein Metrik lauten
 \begin{align}
-\tilde{\Gamma}^{\mu}_{\nu\lambda}-\Gamma^{\mu}_{\nu\lambda}
-&=\frac{1}{2}g^{\mu\alpha}\left(\psi A_{(\mu}F_{\nu)\alpha}+A_{\nu}A_{\lambda}\partial_{\alpha}\psi \right)
+\fived{\Gamma}^{\mu}_{\nu\lambda}-\Gamma^{\mu}_{\nu\lambda}
+&=\frac{1}{2}g^{\mu\alpha}\left(\psi
+A_{(\nu}F_{\lambda)\alpha}+A_{\nu}A_{\lambda}\partial_{\alpha}\psi \right)\,,
 \\
-\tilde{\Gamma}^{\mu}_{\nu 4}
-&=\frac{1}{2}g^{\mu\alpha}\left(F_{\nu\alpha}-A_\nu\partial_\alpha \psi\right)\\
-\tilde{\Gamma}^{\mu}_{4 4}
-&=-\frac{1}{2}g^{\mu\alpha}\partial_{\alpha}\psi
+\fived{\Gamma}^{\mu}_{\nu 4}
+&=\frac{1}{2}g^{\mu\alpha}\left(\psi F_{\nu\alpha}-A_\nu\partial_\alpha
+\psi\right)\,,\\
+\fived{\Gamma}^{\mu}_{4 4}
+&=-\frac{1}{2}g^{\mu\alpha}\partial_{\alpha}\psi\,.
 \end{align}
-%  \begin{equation}
-%  \begin{split}
+Eine Berechnung findet sich beispielsweise in \cite{williams2015field} und wird
+zweckmäßigerweise mithilfe eines Computers durchgeführt. In der
+vierdimensionalen Raumzeit wirkt die  rechte Seite von
+\eqref{eq:geod4d} wie eine Kraft $F^\mu$ 
+\begin{equation}
+\begin{split}
+F^\mu=&\frac{1}{2}g^{\mu\alpha}\Bigg[\left(\psi
+A_{\nu}F_{\lambda\alpha}+A_{\nu}A_{\lambda}\partial_{\alpha}\psi
+\right)U^\nu U^\lambda\\
+&+2\left(A_\nu\partial_\alpha\psi-\psi F_{\nu\alpha}\right)U^\nu
+U^4+\partial_{\alpha}\psi \left(U^4\right)^2\Bigg]+f(\tau)U^\mu\\
+=&\frac{1}{2}g^{\mu\alpha}\Bigg[\psi
+(A_\nu U^\nu-2U^4) F_{\lambda\alpha}U^\lambda +
+\Delta ^2\partial_\alpha\psi\Bigg]+f(\tau)U^\mu\,.
+\end{split}
+\end{equation}
+Im \enquote{klassischen} Grenzfall
+\begin{equation}
+A_\nu U^\nu\to 0\,,\quad
+\partial_\mu\phi\to 0\,\quad
+\end{equation}
+verbleibt nur ein Beitrag zur Kraft
+\begin{equation}
+\begin{split}
+F^\mu=-\psi g^{\mu\alpha}F_{\nu\alpha}U^\nu U^4\,.
+\end{split}
+\end{equation}
+Dieser Ausdruck motiviert die Identifikation $U^4=\frac{q}{m}$.
+\begin{equation}
+\begin{split}
+F^\mu=F^\mu_{\text{L}}+\frac{1}{2}g^{\mu\alpha}\Bigg[\psi A_\nu
+U^\nu F_{\lambda\alpha}U^\lambda + \Delta
+^2\partial_\alpha\psi\Bigg]+h(\psi)U^\mu
+\end{split}
+\end{equation}
+\subsection{Das Kaluza-Klein Wunder}
+Setzt man in \eqref{eq:Lagrange2}, $\sigma=\const=0$  so erhält man 
+\begin{equation}\label{eq:Lagrange2}
+\begin{split}
+\mathcal{L}
+&=\sqrt{-g}\left[R-\frac{1}{4}\tensor*{F}{_\mu_\nu}\tensor*{F}{^\mu^\nu}\right]\,,
+\end{split}
+\end{equation}
+die Lagrangedichte der klassischen
+Maxwell-Einstein Theorie. 
+Das Ergebnis ist beachtlich: Im fünfdimensionalen Vakuum sind die Einstein- und
+Maxwell-Gleichungen enthalten.
+Mit anderen Worten die Theorien Einsteins
+und Maxwells lassen sich in einer einzigen Theorie vereinigen, die von 
+überraschender Einfachheit ist. Dieser Umstand ist auch als
+\emph{Kaluza-Klein Wunder} bekannt.
+% 
+% \begin{equation}  \begin{split}
 %   C&=
-%   \tensor{\hat{g}}{_\mu_\nu}\tensor{\hat{U}}{^\mu}\tensor{\hat{U}}{^\nu}
-%   +\tensor{\hat{g}}{_4_4}\tensor{\hat{U}}{^4}\tensor{\hat{U}}{^4}\\\
-%  &=\tensor{\hat{g}}{_\mu_\nu}\tensor{\hat{U}}{^\mu}\tensor{\hat{U}}{^\nu}
+%   \tensor{\fived{g}}{_\mu_\nu}\tensor{\fived{U}}{^\mu}\tensor{\fived{U}}{^\nu}
+%   +\tensor{\fived{g}}{_4_4}\tensor{\fived{U}}{^4}\tensor{\fived{U}}{^4}\\\
+%  &=\tensor{\fived{g}}{_\mu_\nu}\tensor{\fived{U}}{^\mu}\tensor{\fived{U}}{^\nu}
 %  +\psi Q^2\\
-%   &=\tensor{g}{_\mu_\nu}\tensor{\hat{U}}{^\mu}\tensor{\hat{U}}{^\nu}
-%   -\psi\left(\tensor{A}{_\mu}\tensor{\hat{U}}{^\mu}\right)^2
+%   &=\tensor{g}{_\mu_\nu}\tensor{\fived{U}}{^\mu}\tensor{\fived{U}}{^\nu}
+%   -\psi\left(\tensor{A}{_\mu}\tensor{\fived{U}}{^\mu}\right)^2
 %  +\psi Q^2\\
 %  \end{split}
 %  \end{equation}
@@ -671,34 +596,34 @@ Umstellen liefert wiederum
 %  
 %   Die Geodätengleichung hat die Form
 %  \begin{equation}
-%  0=\tensor{\hat{U}}{^m}\tensor{\hat{\nabla}}{_m} \tensor{\hat{U}}{_n}
+%  0=\tensor{\fived{U}}{^m}\tensor{\fived{\nabla}}{_m} \tensor{\fived{U}}{_n}
 %  \end{equation}
 %  Betrachten wir speziell die vierdimensionalen Komponenten $n=\nu$ so finden wir
 % \begin{equation}
 % \begin{split}
-% 0&=\tensor{\hat{U}}{^m}\tensor{\hat{\nabla}}{_m} \tensor{\hat{U}}{_\nu}\\
-% &=\tensor{\hat{U}}{^m}\tensor{\partial}{_m} \tensor{\hat{U}}{_\nu}
-%  +\tensor*{\hat{\Gamma}}{_m_\ell_\nu}
-%  \tensor{\hat{U}}{^m}\tensor{\hat{U}}{^\ell}\\
-%  &=\dod{}{\lambda} \tensor{\hat{U}}{_\nu}
-% +\tensor*{\hat{\Gamma}}{_\mu_\lambda_\nu}
-%  \tensor{\hat{U}}{^\mu}\tensor{\hat{U}}{^\lambda}
-%  +2\tensor*{\hat{\Gamma}}{_\mu_4_\nu}
-%  \tensor{\hat{U}}{^4}\tensor{\hat{U}}{^\mu}
-%  +\tensor*{\hat{\Gamma}}{_4_4_\nu}
-%  \tensor{\hat{U}}{^4}\tensor{\hat{U}}{^4}\\
-%   &=\dod{}{\lambda} \tensor{\hat{U}}{_\nu}
-% +\tensor*{\hat{\Gamma}}{_\mu_\lambda_\nu}
-%  \tensor{\hat{U}}{^\mu}\tensor{\hat{U}}{^\lambda}
-%  +2Q\tensor*{\hat{\Gamma}}{_\mu_4_\nu}
-%  \tensor{\hat{U}}{^\mu}
-%  +Q^2\tensor*{\hat{\Gamma}}{_4_4_\nu}
+% 0&=\tensor{\fived{U}}{^m}\tensor{\fived{\nabla}}{_m} \tensor{\fived{U}}{_\nu}\\
+% &=\tensor{\fived{U}}{^m}\tensor{\partial}{_m} \tensor{\fived{U}}{_\nu}
+%  +\tensor*{\fived{\Gamma}}{_m_\ell_\nu}
+%  \tensor{\fived{U}}{^m}\tensor{\fived{U}}{^\ell}\\
+%  &=\dod{}{\lambda} \tensor{\fived{U}}{_\nu}
+% +\tensor*{\fived{\Gamma}}{_\mu_\lambda_\nu}
+%  \tensor{\fived{U}}{^\mu}\tensor{\fived{U}}{^\lambda}
+%  +2\tensor*{\fived{\Gamma}}{_\mu_4_\nu}
+%  \tensor{\fived{U}}{^4}\tensor{\fived{U}}{^\mu}
+%  +\tensor*{\fived{\Gamma}}{_4_4_\nu}
+%  \tensor{\fived{U}}{^4}\tensor{\fived{U}}{^4}\\
+%   &=\dod{}{\lambda} \tensor{\fived{U}}{_\nu}
+% +\tensor*{\fived{\Gamma}}{_\mu_\lambda_\nu}
+%  \tensor{\fived{U}}{^\mu}\tensor{\fived{U}}{^\lambda}
+%  +2Q\tensor*{\fived{\Gamma}}{_\mu_4_\nu}
+%  \tensor{\fived{U}}{^\mu}
+%  +Q^2\tensor*{\fived{\Gamma}}{_4_4_\nu}
 %  \\
-%    &=\dod{}{\lambda} \tensor{\hat{U}}{_\nu}
+%    &=\dod{}{\lambda} \tensor{\fived{U}}{_\nu}
 % +\tensor*{\Gamma}{_\mu_\lambda_\nu}
-%  \tensor{\hat{U}}{^\mu}\tensor{\hat{U}}{^\lambda}
+%  \tensor{\fived{U}}{^\mu}\tensor{\fived{U}}{^\lambda}
 %  +\psi Q\tensor*{F}{_\mu_\nu}
-%  \tensor{\hat{U}}{^\mu}
+%  \tensor{\fived{U}}{^\mu}
 %  +Q^2\partial_\nu\psi\\
 % \end{split}
 % \end{equation}
@@ -715,8 +640,8 @@ Umstellen liefert wiederum
 % m\tensor{\ddot{x}}{^\mu}+m\tensor*{\Gamma}{^\mu_\nu_\lambda}
 % \tensor{\dot{x}}{^\nu}\tensor{\dot{x}}{^\lambda}=
 % \psi q\tensor*{F}{_\mu_\nu}
-%  \tensor{\hat{U}}{^\mu}
-%  \tensor{\hat{U}}{^\mu}
+%  \tensor{\fived{U}}{^\mu}
+%  \tensor{\fived{U}}{^\mu}
 %  +\frac{q^2}{m}\partial_\nu\psi
 % \end{equation}
 % % Dies kann wie folgt interpretiert werden: 
@@ -730,7 +655,7 @@ Umstellen liefert wiederum
 % \begin{bemerkung}
 % Will man die Normierung $\tensor{U}{_\mu}\tensor{U}{^\mu}={0,-1}$ aufrecht
 % erhalten so muss
-% $\tensor{\hat{U}}{_m}\tensor{\hat{U}}{^m}=\tensor{U}{_\mu}\tensor{U}{^\mu}+Q^2={Q^2,Q^2-1}$
+% $\tensor{\fived{U}}{_m}\tensor{\fived{U}}{^m}=\tensor{U}{_\mu}\tensor{U}{^\mu}+Q^2={Q^2,Q^2-1}$
 % gelten. Die Vektoren in fünf Dimensionen sind also je nach Ladung raumartig!
 % Dies führt zu fragen bezüglich Kausalität
 % \end{bemerkung}
@@ -751,22 +676,25 @@ Umstellen liefert wiederum
  Dies führt die Konstruktion ad absurdum. Einziger Ausweg ist die $\tensor{g}{_4_4}$-Komponente
 \emph{a priori} konstant zu setzen und nicht zu variieren. Dies trübt
 die Allgemeinheit der Theorie, da dadurch diese Komponente gegenüber den anderen
-ausgezeichnet ist. Zusätzliche skalare Felder tauchen häufig in Theorien auf die
-sich der dimensionalen Reduktion bedienen. Sie werden häufig mit einem Teilchen,
-dem \emph{Dilaton} identifiziert. Zusätzliche Teilchen stellen an sich kein
+ausgezeichnet ist.
+Einziger Ausweg ist das Skalarfeld als physikalische Größe Zu betrachten, diese 
+Interpretation wurde erstmals durch Yordan und Thiery vorgenommen.
+Zusätzliche skalare Felder tauchen häufig in Theorien auf die kompakte
+Zusatzdimensionen enthalten.
+Sie werden häufig mit einem Teilchen, dem \emph{Dilaton} identifiziert. Zusätzliche Teilchen stellen an sich kein
 Probleme dar, einige ungelöste Fragestellungen der Physik (dunkle
 Materie/Energie) benötigen sie sogar um beantwortet zu werden. 
 \section{Quantisierung der Ladung}
 Die Kompaktheit von $\Sphere^1$ impliziert die Quantisierung der Ladung (Klein)
-% \hat{R}^\star
-% =e^{-\tau}\left(\hat{R}+3\tensor{\nabla}{_\mu}\left(\tensor{\hat{g}}{^\mu^\nu}\tensor{\partial}{_\nu}\tau\right)
-% -\frac{3}{2}\tensor{\hat{g}}{^\mu^\nu}\tensor{\partial}{_\mu}\tau\tensor{\partial}{_\nu}\tau\right)\,,\quad\sqrt{-\hat{g}^\star}=e^{5\varphi}\sqrt{-\hat{g}}
+% \fived{R}^\star
+% =e^{-\tau}\left(\fived{R}+3\tensor{\nabla}{_\mu}\left(\tensor{\fived{g}}{^\mu^\nu}\tensor{\partial}{_\nu}\tau\right)
+% -\frac{3}{2}\tensor{\fived{g}}{^\mu^\nu}\tensor{\partial}{_\mu}\tau\tensor{\partial}{_\nu}\tau\right)\,,\quad\sqrt{-\fived{g}^\star}=e^{5\varphi}\sqrt{-\fived{g}}
 % \end{equation}
 % \begin{equation}
 % \begin{split}
 % \mathcal{L}^\star
-% &=\hat{R}^\star\sqrt{-\hat{g}^\star}\\
-% &=e^{3\varphi}\sqrt{-\hat{g}}\left(\hat{R}+\frac{16}{3}e^{-\frac{3}{2}\varphi}\square
+% &=\fived{R}^\star\sqrt{-\fived{g}^\star}\\
+% &=e^{3\varphi}\sqrt{-\fived{g}}\left(\fived{R}+\frac{16}{3}e^{-\frac{3}{2}\varphi}\square
 % e^{\frac{3}{2}\varphi}\right)\\
 % &=e^{3\varphi}\sqrt{-g}\phi\left(R-\frac{1}{4}\phi^3\tensor{F}{_\mu_\nu}\tensor{F}{^\mu^\nu}+\frac{16}{3}e^{-\frac{3}{2}\varphi}\square
 % e^{\frac{3}{2}\varphi}\right)\\
@@ -781,7 +709,7 @@ Die Kompaktheit von $\Sphere^1$ impliziert die Quantisierung der Ladung (Klein)
 % Es liegt nahe $\phi=e^{-3\varphi}$ zu setzen.
 % \begin{equation}
 % \begin{split}
-% \hat{R}^\star\sqrt{-\hat{g}^\star}
+% \fived{R}^\star\sqrt{-\fived{g}^\star}
 % &=\sqrt{-g}\left(R+12\pdif{_\mu}\varphi\pdif{^\mu}\varphi+8\square
 % \varphi\right)
 % \end{split}
@@ -789,7 +717,7 @@ Die Kompaktheit von $\Sphere^1$ impliziert die Quantisierung der Ladung (Klein)
 % $\sigma=\sqrt{24}\varphi$
 % \begin{equation}
 % \begin{split}
-% \hat{R}^\star\sqrt{-\hat{g}^\star}
+% \fived{R}^\star\sqrt{-\fived{g}^\star}
 % &=\sqrt{-g}\left(R+\frac{1}{2}\pdif{_\mu}\sigma\pdif{^\mu}\sigma\right)
 % \end{split}
 % \end{equation}
@@ -834,11 +762,11 @@ Die Kompaktheit von $\Sphere^1$ impliziert die Quantisierung der Ladung (Klein)
 % \begin{equation}
 % \tensor{J}{^\beta}
 % =-\frac{3}{\phi\sqrt{-g}}\tensor{F}{^\alpha^\beta}\tensor{\partial}{_\alpha}\phi
-% =-3\left(-\hat{g}\right)^{-\nicefrac{1}{2}}\tensor{F}{^\alpha^\beta}\tensor{\partial}{_\alpha}\phi
+% =-3\left(-\fived{g}\right)^{-\nicefrac{1}{2}}\tensor{F}{^\alpha^\beta}\tensor{\partial}{_\alpha}\phi
 % \end{equation}
 % \begin{equation}
 % \begin{split}
-% \tilde{R}&=e^{-2\varphi}\left(R+\frac{16}{3}e^{-\frac{3}{2}\varphi}\square
+% \fived{R}&=e^{-2\varphi}\left(R+\frac{16}{3}e^{-\frac{3}{2}\varphi}\square
 % e^{\frac{3}{2}\varphi}\right)\\
 % &=e^{-2\varphi}\left(R+8\square\varphi+12\pdif{_\mu}\varphi\pdif{^\mu}\varphi\right)
 % \end{split}
@@ -847,14 +775,14 @@ Die Kompaktheit von $\Sphere^1$ impliziert die Quantisierung der Ladung (Klein)
 % \begin{split}
 % \phi\sqrt{-g}R
 % &=\phi
-% e^{-\varphi}\sqrt{\tilde{g}}\left(\tilde{R}+8\square\varphi+12\pdif{_\mu}\varphi\pdif{^\mu}\varphi\right)\\
+% e^{-\varphi}\sqrt{\fived{g}}\left(\fived{R}+8\square\varphi+12\pdif{_\mu}\varphi\pdif{^\mu}\varphi\right)\\
 % \end{split}
 % \end{equation}
 % $\varphi=\ln \phi$
 % \begin{equation}
 % \begin{split}
 % \phi\sqrt{-g}R
-% &=\sqrt{\tilde{g}}\left(\tilde{R}
+% &=\sqrt{\fived{g}}\left(\fived{R}
 % +8{\square}\ln\phi 
 % +\frac{12}{\phi^2}\pdif{_\mu}\phi\pdif{^\mu}\phi\right)
 % \end{split}
@@ -862,7 +790,7 @@ Die Kompaktheit von $\Sphere^1$ impliziert die Quantisierung der Ladung (Klein)
 % \begin{equation}
 % \begin{split}
 % \phi\sqrt{-g}R
-% &=\sqrt{\tilde{g}}\left(\tilde{R}
+% &=\sqrt{\fived{g}}\left(\fived{R}
 % +8\frac{1}{\phi}\square\phi 
 % +\frac{4}{\phi^2}\pdif{_\mu}\phi\pdif{^\mu}\phi\right)
 % \end{split}
@@ -870,7 +798,7 @@ Die Kompaktheit von $\Sphere^1$ impliziert die Quantisierung der Ladung (Klein)
 % \begin{equation}
 % \begin{split}
 % \phi\sqrt{-g}R
-% &=\sqrt{\tilde{g}}\left(\tilde{R}
+% &=\sqrt{\fived{g}}\left(\fived{R}
 % +8\frac{1}{\phi}\square\phi 
 % +16\pdif{_\mu}\Lambda\pdif{^\mu}\Lambda\right)
 % \end{split}
@@ -886,13 +814,13 @@ Die Kompaktheit von $\Sphere^1$ impliziert die Quantisierung der Ladung (Klein)
 % \end{split}
 % \end{equation}
 % \begin{split}
-% \tensor*{\hat{g}}{*^\prime_\mu_\nu}&=\tensor{\hat{g}}{_a_b}\dpd{f^a}{\tensor{x}{^\mu}}\dpd{f^b}{\tensor{x}{^\nu}}\\
-% &=\tensor{\hat{g}}{_\alpha_\beta}\dpd{f^\alpha}{\tensor{x}{^\mu}}\dpd{f^\beta}{\tensor{x}{^\nu}}
-% +\tensor{\hat{g}}{_\alpha_4}\dpd{f^\alpha}{\tensor{x}{^\mu}}\dpd{f^4}{\tensor{x}{^\nu}}
-% +\tensor{\hat{g}}{_4_\beta}\dpd{f^4}{\tensor{x}{^\mu}}\dpd{f^\beta}{\tensor{x}{^\nu}}
-% +\tensor{\hat{g}}{_4_4}\dpd{f^4}{\tensor{x}{^\mu}}\dpd{f^4}{\tensor{x}{^\nu}}
+% \tensor*{\fived{g}}{*^\prime_\mu_\nu}&=\tensor{\fived{g}}{_a_b}\dpd{f^a}{\tensor{x}{^\mu}}\dpd{f^b}{\tensor{x}{^\nu}}\\
+% &=\tensor{\fived{g}}{_\alpha_\beta}\dpd{f^\alpha}{\tensor{x}{^\mu}}\dpd{f^\beta}{\tensor{x}{^\nu}}
+% +\tensor{\fived{g}}{_\alpha_4}\dpd{f^\alpha}{\tensor{x}{^\mu}}\dpd{f^4}{\tensor{x}{^\nu}}
+% +\tensor{\fived{g}}{_4_\beta}\dpd{f^4}{\tensor{x}{^\mu}}\dpd{f^\beta}{\tensor{x}{^\nu}}
+% +\tensor{\fived{g}}{_4_4}\dpd{f^4}{\tensor{x}{^\mu}}\dpd{f^4}{\tensor{x}{^\nu}}
 % \\
-% &=\tensor{\hat{g}}{_\alpha_\beta}\dpd{f^\alpha}{\tensor{x}{^\mu}}\dpd{f^\beta}{\tensor{x}{^\nu}}
+% &=\tensor{\fived{g}}{_\alpha_\beta}\dpd{f^\alpha}{\tensor{x}{^\mu}}\dpd{f^\beta}{\tensor{x}{^\nu}}
 % +\psi\tensor{A}{_\alpha}\dpd{g^\alpha}{\tensor{x}{^\mu}}\pdif{_\nu}h
 % +\psi\tensor{A}{_\beta}\dpd{g^\beta}{\tensor{x}{^\nu}}\pdif{_\mu}h
 % +\psi\pdif{_\mu}h\pdif{_\nu}h\\
@@ -903,22 +831,22 @@ Die Kompaktheit von $\Sphere^1$ impliziert die Quantisierung der Ladung (Klein)
 % \end{equation}
 % \begin{equation}
 % \begin{split}
-% \tensor*{\hat{g}}{*^\prime_\mu_4}&=\tensor{\hat{g}}{_a_b}\dpd{f^a}{\tensor{x}{^\mu}}\dpd{f^b}{\tensor{x}{^4}}\\
-% &=\tensor{\hat{g}}{_\alpha_\beta}\dpd{f^\alpha}{\tensor{x}{^\mu}}\dpd{f^\beta}{\tensor{x}{^4}}
-% +\tensor{\hat{g}}{_\alpha_4}\dpd{f^\alpha}{\tensor{x}{^\mu}}\dpd{f^4}{\tensor{x}{^4}}
-% +\tensor{\hat{g}}{_4_\beta}\dpd{f^4}{\tensor{x}{^\mu}}\dpd{f^\beta}{\tensor{x}{^4}}
-% +\tensor{\hat{g}}{_4_4}\dpd{f^4}{\tensor{x}{^\mu}}\dpd{f^4}{\tensor{x}{^4}}\\
+% \tensor*{\fived{g}}{*^\prime_\mu_4}&=\tensor{\fived{g}}{_a_b}\dpd{f^a}{\tensor{x}{^\mu}}\dpd{f^b}{\tensor{x}{^4}}\\
+% &=\tensor{\fived{g}}{_\alpha_\beta}\dpd{f^\alpha}{\tensor{x}{^\mu}}\dpd{f^\beta}{\tensor{x}{^4}}
+% +\tensor{\fived{g}}{_\alpha_4}\dpd{f^\alpha}{\tensor{x}{^\mu}}\dpd{f^4}{\tensor{x}{^4}}
+% +\tensor{\fived{g}}{_4_\beta}\dpd{f^4}{\tensor{x}{^\mu}}\dpd{f^\beta}{\tensor{x}{^4}}
+% +\tensor{\fived{g}}{_4_4}\dpd{f^4}{\tensor{x}{^\mu}}\dpd{f^4}{\tensor{x}{^4}}\\
 % &=\psi\tensor{A}{_\alpha}\dpd{g^\alpha}{\tensor{x}{^\mu}}\pdif{_4}h+\psi\pdif{_\mu}h\pdif{_4}h\\
 % &=\psi\pdif{_4}h\left(\tensor{A}{_\alpha}\dpd{g^\alpha}{\tensor{x}{^\mu}}+\pdif{_\mu}h\right)
 % \end{split}
 % \end{equation}
 % \begin{equation}
 % \begin{split}
-% \tensor*{\hat{g}}{*^\prime_4_4}&=\tensor{\hat{g}}{_a_b}\dpd{f^a}{\tensor{x}{^4}}\dpd{f^b}{\tensor{x}{^4}}\\
-% &=\tensor{\hat{g}}{_\alpha_\beta}\dpd{f^\alpha}{\tensor{x}{^4}}\dpd{f^\beta}{\tensor{x}{^4}}
-% +\tensor{\hat{g}}{_\alpha_4}\dpd{f^\alpha}{\tensor{x}{^4}}\dpd{f^4}{\tensor{x}{^4}}
-% +\tensor{\hat{g}}{_4_\beta}\dpd{f^4}{\tensor{x}{^4}}\dpd{f^\beta}{\tensor{x}{^4}}
-% +\tensor{\hat{g}}{_4_4}\dpd{f^4}{\tensor{x}{^4}}\dpd{f^4}{\tensor{x}{^4}}\\
+% \tensor*{\fived{g}}{*^\prime_4_4}&=\tensor{\fived{g}}{_a_b}\dpd{f^a}{\tensor{x}{^4}}\dpd{f^b}{\tensor{x}{^4}}\\
+% &=\tensor{\fived{g}}{_\alpha_\beta}\dpd{f^\alpha}{\tensor{x}{^4}}\dpd{f^\beta}{\tensor{x}{^4}}
+% +\tensor{\fived{g}}{_\alpha_4}\dpd{f^\alpha}{\tensor{x}{^4}}\dpd{f^4}{\tensor{x}{^4}}
+% +\tensor{\fived{g}}{_4_\beta}\dpd{f^4}{\tensor{x}{^4}}\dpd{f^\beta}{\tensor{x}{^4}}
+% +\tensor{\fived{g}}{_4_4}\dpd{f^4}{\tensor{x}{^4}}\dpd{f^4}{\tensor{x}{^4}}\\
 % &=\psi\left(\pdif{_4}h\right)^2
 % \end{split}
 % \end{equation}
@@ -932,27 +860,27 @@ Die Kompaktheit von $\Sphere^1$ impliziert die Quantisierung der Ladung (Klein)
 %  
 %  In Verallgemeinerung der vierdimensionalen Geodätischen
 %  \begin{equation}
-%  0=\tensor{\hat{U}}{^m}\tensor{\nabla}{_m}
-%  \tensor{\hat{U}}{_n}=\dod{}{\lambda}
-%  \tensor{\hat{U}}{_n}+\tensor{\hat{U}}{^m}\tensor*{\hat{\Gamma}}{^\ell_m_n}\tensor{\hat{U}}{_\ell}
+%  0=\tensor{\fived{U}}{^m}\tensor{\nabla}{_m}
+%  \tensor{\fived{U}}{_n}=\dod{}{\lambda}
+%  \tensor{\fived{U}}{_n}+\tensor{\fived{U}}{^m}\tensor*{\fived{\Gamma}}{^\ell_m_n}\tensor{\fived{U}}{_\ell}
 %  \end{equation}
 %  % Erhaltungsgröße zu killingtensor d4
 %  \begin{equation}
 %  \begin{split}
-%   0&=\tensor{\hat{U}}{^m}\tensor{\nabla}{_m} \tensor{\hat{U}}{_5}\\
-%  &=\dod{}{\lambda}\tensor{\hat{U}}{_5}
-%  +\tensor{\hat{U}}{^m}\tensor*{\hat{\Gamma}}{*^n_5_m} \tensor{\hat{U}}{_n}\\
-%  &=\dod{}{\lambda}\tensor{\hat{U}}{_5}
-%  +\frac{1}{2}\tensor{\hat{U}}{^m}\tensor{\hat{g}}{^n^a}\left(\tensor{\hat{g}}{_a_m_{,5}}
-%  +\tensor{\hat{g}}{_a_5_{,m}}
-%  -\tensor{\hat{g}}{_m_5_{,a}}
-%  \right)\tensor{\hat{U}}{_n}\\
-%   &=\dod{}{\lambda}\tensor{\hat{U}}{_5}
-%  +\frac{1}{2}\tensor{\hat{U}}{^m}\tensor{\hat{U}}{^a}\left(
-%  \tensor{\hat{g}}{_a_5_{,m}}
-%  -\tensor{\hat{g}}{_m_5_{,a}}
+%   0&=\tensor{\fived{U}}{^m}\tensor{\nabla}{_m} \tensor{\fived{U}}{_5}\\
+%  &=\dod{}{\lambda}\tensor{\fived{U}}{_5}
+%  +\tensor{\fived{U}}{^m}\tensor*{\fived{\Gamma}}{*^n_5_m} \tensor{\fived{U}}{_n}\\
+%  &=\dod{}{\lambda}\tensor{\fived{U}}{_5}
+%  +\frac{1}{2}\tensor{\fived{U}}{^m}\tensor{\fived{g}}{^n^a}\left(\tensor{\fived{g}}{_a_m_{,5}}
+%  +\tensor{\fived{g}}{_a_5_{,m}}
+%  -\tensor{\fived{g}}{_m_5_{,a}}
+%  \right)\tensor{\fived{U}}{_n}\\
+%   &=\dod{}{\lambda}\tensor{\fived{U}}{_5}
+%  +\frac{1}{2}\tensor{\fived{U}}{^m}\tensor{\fived{U}}{^a}\left(
+%  \tensor{\fived{g}}{_a_5_{,m}}
+%  -\tensor{\fived{g}}{_m_5_{,a}}
 %  \right)\\
-%   &=\dod{}{\lambda}\tensor{\hat{U}}{_5}\\
+%   &=\dod{}{\lambda}\tensor{\fived{U}}{_5}\\
 %  \end{split}
 %  \end{equation}
 %  Der zweite Term verschwindet als Spur eines Produkt eines symmetrischen mit

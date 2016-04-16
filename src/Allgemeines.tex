@@ -897,7 +897,7 @@ M}\dpd{L}{\left(\tensor{\nabla}{_i}f\right)}h n_i\dif \sigma \,.
 \end{split}
 \end{equation}
 dabei ist $\dif \sigma $ die induzierte Volumenforsm auf dem Rand und
-das Vektorfeld $n_i$ ist normal zum Rand
+das Vektorfeld $n_i$ steht normal zum Rand
 $\partial M$ der Mannigfaltigkeit, wir nehmen dabei an, dass die
 Mannigfaltigkeit orientierbar ist, d.h.\ ein solches Normalenfeld existiert.
 Im folgenden wollen wir solche Variationen betrachten die auf dem Rand
@@ -921,7 +921,7 @@ C^\infty_0(M)$, folgt
 \end{equation}
 \end{proof}
 Die \emph{Euler-Lagrange-Gleichung} ist von zentraler Bedeutung unter anderem in der theoretischen Mechanik,
-spielt aber auch in Feldtheorien eine wichtige Rolle.
+spielt aber auch in der Feldtheorie eine wichtige Rolle.
 Das Verfahren eine Funktion als Stationären Punkt eines Funktionals zu wählen,
 ist unter dem Namen \emph{Lagrange-Formalismus} bekannt und lässt sich auf
 natürliche Weise auf Funktionale mehrerer Funktionen, d.h.\ Tensorfelder $T$
@@ -963,7 +963,7 @@ insbesondere
 =\tensor*{\delta}{^\alpha_\mu}\tensor*{\delta}{^\beta_\nu}\,,\quad
 \pd{(\tensor{\nabla}{_\mu}\tensor{A}{_\nu})}{\tensor{A}{_\alpha}}=0\,.
 \end{equation}
-Damit lässt sich $\tensor{F}{_\mu_\nu}\tensor{F}{^\mu^\nu}$ nach
+Damit lässt sich der Ausdruck $\tensor{F}{_\mu_\nu}\tensor{F}{^\mu^\nu}$ nach
 $\tensor{\nabla}{_\mu}\tensor{A}{_\nu}$ differenzieren:
 \begin{equation}
 \begin{split}
@@ -991,15 +991,36 @@ Die Euler-Lagrange-Gleichungen lauten schließlich
 \end{equation}
 In \autoref{chap:EMW} werden wir sehen, dass es sich hierbei gerade um die
 Maxwell-Gleichungen im Vakuum handelt.
-%TODO
 \end{beispiel}
-% \begin{lemma}[Jacobi Formel]
-% Sei $A\in \Reals^{n\times n}$ eine Matrix mit $\det(A)\neq 0$, dann gilt
-% \begin{equation}
-% \dpd{\det A}{A_{ij}}=\det A ({A^{-1}})_{ij}\,.
-% \end{equation}
-% \end{lemma}
-\subsection{Randterme}
+\subsection{Geodäten}
+Eine Kurve $c:I\to M$ heißt Geodäte, falls ihr Tangentialvektor entlang von 
+$c$ parallel transportiert wird. In lokalen Koordinaten bedeutet dies 
+$c(\lambda)=\varphi(x^1(\lambda),\dots, x^n(\lambda))$ 
+\begin{equation}
+0=\dod[2]{x^j}{\lambda}+\Gamma^{j}_{kl}\dod{x^k}{\lambda}\dod{x^l}{\lambda}
+\end{equation}
+% Physikalisch beschreiben diese Kurven, freie Bewegungen bei denen keine Kraft
+% in tangentialer Richtung wirkt. 
+Für Geodäten gilt insbesondere das diese parallel zur Bogenlänge parametrisiert
+sind. Wählt man eine beliebige Umparametrisierung  $\alpha$ des Weges 
+und , so ist $d=c\circ \alpha$ im Allgemeinen keine
+Geodäte mehr. Stattdessen ergibt sich nach Anwenden der gewöhnlichen Kettenregel
+für die lokalen Koordinaten $y^i=x^i\circ\alpha$
+\begin{equation}
+\dod[2]{y^j}{\alpha}+\Gamma^{j}_{kl}\dod{y^k}{\alpha}\dod{y^l}{\alpha}
+=f(\alpha)\dod{y^j}{\alpha}
+\end{equation}
+mit 
+\begin{equation}
+f(\lambda)
+ =-\left(\dod[2]{\alpha}{\lambda}\right)\left(\dod{\alpha}{\lambda}\right)^{-2}
+ =\dod{}{\lambda}\ln\left(\dod{\alpha}{\lambda}\right)\,.
+\end{equation}
+Für eine allgemeine Kurve definieren wir eine Kraft
+\begin{equation}
+F^j:=\dod[2]{x^j}{\lambda}+\Gamma^{j}_{kl}\dod{x^k}{\lambda}\dod{x^l}{\lambda}\,.
+\end{equation}
+
 % TODO Volumenformen
 % \begin{definition}[Variationsableitung]
 % Sei $\Omega$ ein normierter Vektorraum, $I:\Omega\to \Reals$ ein Funktional,

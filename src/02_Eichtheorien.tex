@@ -1,13 +1,11 @@
 \chapter{Maxwell-Einstein Theorie \label{chap:EMW}}
-Dieser Teil soll die physikalischen Theorien vorstellen, die der
+Dieses Kapitel soll die physikalischen Theorien vorstellen, die der
 Kaluza-Klein-Theorie zu Grunde liegen. Dazu zählt neben der
 in ihrer heutigen Formulierung auf Maxwell zurückgehenden
 Elektrodynamik, Einsteins allgemeine Relativitätstheorie.
 Deutlich älter ist die Elektrodynamik, deren fundamentales Gesetz, die Konstanz
 der Lichtgeschwindigkeit, die Grundlage der speziellen Relativitätstheorie
 darstellt.
-Die Ähnlichkeit beider Theorien lässt hoffen, dass eine
-übergeordnete Theorie beide als Spezialfälle enthält.
 \section{Elektrodynamik}
 Die Elektrodynamik beschreibt das Wechselspiel von elektrischen und
 magnetischen Feldern. Die Phänomenologie lässt sich mittels zweier glatter Vektorfelder
@@ -139,7 +137,7 @@ abhängt.
 Das einfachste solche Funktional ist die so genannte
 \emph{Einstein-Hilbert-Wirkung}
 \begin{equation}
-S[g]=\int_{M}R[g]\,\Omega = \int_{M}\sqrt{-g}R[g] \dif{}^4x \,.
+S[g]=\int_{M}R[g]\dif{}^4x = \int_{M}\sqrt{-g}R[g] \dif{}^4x \,.
 \end{equation}
 %vol einführen
 Die zugehörige Lagrange Funktion ist gegeben als
@@ -221,31 +219,56 @@ impliziert
 \tensor{R}{_\mu_\nu}+\frac{R}{2}\tensor{g}{_\mu_\nu}=0\, .
 \end{equation}
 Die Einsteingleichungen lassen sich also aus dem Variationsprinzip herleiten.
-\subsection{Skalar-Tensor Theorien}
-Brans-Dicke-Theorie
-%TODO Overduin and Wesson 1997a).
+\subsection{Geodäten}
+Frei fallende physikalische Teilchen bewegen sich auf Geodäten, die sich 
+beispielsweise dadurch charakterisieren lassen das sie lokal längenminimierend
+sind. In lokalen Koordinaten erfüllt eine Geodäte 
+$c(\lambda)=\varphi(x^1(\lambda),\dots, x^n(\lambda))$ die Gleichung
+\begin{equation}
+0=\dod[2]{x^j}{\lambda}+\Gamma^{j}_{kl}\dod{x^k}{\lambda}\dod{x^l}{\lambda}
+\end{equation}
+Für Geodäten gilt insbesondere das diese proportional zur Bogenlänge
+parametrisiert sind. Wählt man eine beliebige Umparametrisierung  $\alpha$ des Weges 
+und , so ist $d=c\circ \alpha$ im Allgemeinen keine
+Geodäte mehr. Stattdessen ergibt sich nach Anwenden der gewöhnlichen Kettenregel
+für die lokalen Koordinaten $y^i=x^i\circ\alpha$
+\begin{equation}
+\dod[2]{y^j}{\alpha}+\Gamma^{j}_{kl}\dod{y^k}{\alpha}\dod{y^l}{\alpha}
+=f(\alpha)\dod{y^j}{\alpha}
+\end{equation}
+mit 
+\begin{equation}
+f(\lambda)
+ =-\left(\dod[2]{\alpha}{\lambda}\right)\left(\dod{\alpha}{\lambda}\right)^{-2}
+ =\dod{}{\lambda}\ln\left(\dod{\alpha}{\lambda}\right)\,.
+\end{equation}
+Für eine allgemeine Kurve definieren wir eine Kraft durch
+\begin{equation}
+F^j:=\dod[2]{x^j}{\lambda}+\Gamma^{j}_{kl}\dod{x^k}{\lambda}\dod{x^l}{\lambda}\,.
+\end{equation}
 \section{Gemeinsamkeiten und Unterschiede}
-Unterschiede:
-\begin{itemize}
-  \item Lorentz-Kraft muss postuliert werden. Reine ART enthält keine Kräfte,
-  alle Teilchen bewegen sich frei auf Geodäten.
-  \item Ladung hat zwei Vorzeichen, d.h. es kann mittels umgekehrter Ladung
-  entschieden werden ob man frei fällt oder nicht
-  \item Die Einsteingleichungen sind nichtlinear und zweiter Ordnung die
-  Maxwell-Gleichungen linear und erster Ordnung
-  \item Kraft vs Geometrie
-\end{itemize}
-Gemeinsamkeiten:
-\begin{itemize}
-  \item Diffeomorphismen-Invarianz/Eichinvarianz
-  \item In der nichtrelativistischen Näherung $1/r^2$ Gesetz.
-  \item Masseloses bosonisches Vermittlerteilchen.
-  \item Lagrangeformulierung
-\end{itemize}
-Insgesamt lässt sich hoffen das eine vereinheitlichte Theorie so formuliert
-werden kann das sie einerseits die Ähnlichkeiten erklärt und auf gemeinsame
-Ursachen zurückführt, andererseits aber auch Gründe für die Unterschiede gibt
-bzw. diese möglicherweise ausräumt.
-% DIe Art ist in einem gewissen sinn natürlicher, insofern, als dass sie keine
-% Zusätzliche gleichung für die Bewegung von testteilchen von der form (ref )
-% lorentzgleichung benötigt. 
+Wir wollen nun kurz noch einmal hervorheben was die Gemeinsamkeiten
+sowie die Unterschiede der Theorien sind.
+Zunächst einmal handelt es sich bei beiden Theorien um Eichtheorien, d.h.\
+Theorien die Invariant unter gewissen Transformationen sind.
+Im Falle der Elektrodynamik sind dies die Transformationen des 
+Vektorpotentials 
+%TODO REf
+, die ART ist Koordinatenunabhängig, d.h.\ invariant unter Diffeomorphismen.
+In der linearen Näherung  
+%TODO Ref
+erhält man in beiden Theorien Wellengleichungen. Zudem haben wir gesehen das 
+sich beide Theorien mithilfe von Variationsprinzipien formulieren lassen. 
+Die Theorien sind jeweils durch Differentialgleichungen für die fundamentalen
+Felder $g_{\mu\nu}$ und $A_\mu$ charakterisiert. 
+Dabei sind die Einsteingleichungen im Gegensatz zu den Maxwellgleichungen
+nichtlinear.
+Eine Vereinheitlichte Theorie sollte die Felder $g_{\mu\nu}$ und $A_\mu$ in
+Verbindung setzen.
+Ziel ist es eine Erweiterung der ART zu finden, die den die phänomene des
+Elektromagnetismus auf natürliche weise erklärt, also insbesondere
+\begin{enumerate}
+  \item die Maxwell-Gleichungen impliziert
+  \item die Natur der Eichtransformationen erklärt
+  \item die Bewegung geladener Teilchen als freie Bewegungen deuten kann
+\end{enumerate}

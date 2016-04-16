@@ -1,3 +1,29 @@
+\subsection{Geodäten}
+Eine Kurve $c:I\to M$ heißt Geodäte, falls ihr Tangentialvektor entlang von 
+$c$ parallel transportiert wird. In lokalen Koordinaten bedeutet dies 
+$c(\lambda)=\varphi(x^1(\lambda),\dots, x^n(\lambda))$ 
+\begin{equation}
+0=\dod[2]{x^j}{\lambda}+\Gamma^{j}_{kl}\dod{x^k}{\lambda}\dod{x^l}{\lambda}\,.
+\end{equation}
+Für Geodäten gilt insbesondere das diese parallel zur Bogenlänge parametrisiert
+sind. Wählt man eine beliebige Umparametrisierung  $\alpha$ des Weges 
+und , so ist $d=c\circ \alpha$ im Allgemeinen keine
+Geodäte mehr. Stattdessen ergibt sich nach Anwenden der gewöhnlichen Kettenregel
+für die lokalen Koordinaten $y^i=x^i\circ\alpha$
+\begin{equation}
+\dod[2]{y^j}{\alpha}+\Gamma^{j}_{kl}\dod{y^k}{\alpha}\dod{y^l}{\alpha}
+=f(\alpha)\dod{y^j}{\alpha}
+\end{equation}
+mit 
+\begin{equation}
+f(\lambda)
+ =-\left(\dod[2]{\alpha}{\lambda}\right)\left(\dod{\alpha}{\lambda}\right)^{-2}
+ =\dod{}{\lambda}\ln\left(\dod{\alpha}{\lambda}\right)\,.
+\end{equation}
+Für eine allgemeine Kurve definieren wir eine Kraft
+\begin{equation}
+F^j:=\dod[2]{x^j}{\lambda}+\Gamma^{j}_{kl}\dod{x^k}{\lambda}\dod{x^l}{\lambda}\,.
+\end{equation}
 \chapter{Kaluzas erste Schritte}
 Wie bereits in den vorherigen Kapiteln klar wurde, weißt die Struktur von
 Elektromagnetismus und allgemeiner Relativitätstheorie deutliche Parallelen auf.
